@@ -1,0 +1,16 @@
+This is a custom data exporter based on Osmium.
+
+See the simple MAKEFILE on how to build it.
+
+It takes two filenames on the command line: The first is the name of
+an OSM source file, and the second is the name of the destination file
+which will be created, through the OGR output driver, in SQLITE format.
+
+The result will have planet_osm_point, planet_osm_line, planet_osm_polygon,
+and planet_osm_roads tables compatible with osm2pgsql's database schema.
+
+The program also reads three environment variables - CDE_FIELDS_NODES,
+CDE_FIELDS_WAYS, CDE_FIELDS_AREAS - which each contain a comma-separated
+list of fields to be included in the output tables.
+
+

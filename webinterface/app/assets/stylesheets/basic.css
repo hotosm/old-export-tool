@@ -1,0 +1,387 @@
+/* set all distances to zero */
+body, div, span, h1, h2, h3, h4, h5, h6, ol, ul, li, fieldset, legend, p, i, b, em, pre, code, img {
+   padding: 0px;
+   margin: 0px;   
+   border: 0px;
+}
+table, thead, tbody, tr, th, td {
+   padding: 0px;
+   margin: 0px;   
+   border: 0px;
+}
+form, input, select, option {
+   padding: 0px;
+   margin: 0px;
+}
+
+a img {
+   border: 0px;   
+}
+
+
+/* colors
+
+*/
+
+
+/* body */
+body {
+   font-family: sans-serif;   
+   background-color: #FFF;   
+}
+
+/* generel styles */
+.round {
+   -moz-border-radius: 10px;
+   -webkit-border-radius: 10px;
+   border-radius: 10px;
+}
+
+
+
+/* default styles */
+
+h1 {
+   color: #234;
+   font-size: 1.7em;   
+   font-weight: normal;
+   margin: 20px 0px 10px 0px;
+}
+
+
+h2 {
+   color: #234;   
+   font-size: 1.2em;
+   font-weight: bold;
+   margin: 20px 0px 10px 0px;
+}
+
+
+h3, h4, h5, h6 {
+   color: #888;
+   margin: 10px 0px 5px 0px;
+}
+
+p, td, th {
+   font-size: .85em;
+}
+
+p {
+   margin: 5px 0px;
+}
+
+a {
+   color: #920902;
+   text-decoration: none;
+}
+
+a:hover {
+   text-decoration: underline;   
+}
+
+/*
+table {
+   width: 100%;
+   margin-top: 10px;
+   empty-cells: show;
+   border-collapse: collapse;
+   border: 1px solid #aaa;
+}
+
+
+table th, table td {
+   padding: 3px 10px;
+   vertical-align: top;   
+   border: 1px solid #fff;
+}
+
+table th {
+   background-color: #88bbcc; 
+   color: #fff;
+}
+
+table tr:nth-child(1n+2) {
+   background-color: #F4F4F4;
+}
+
+table tr, table tr:nth-child(2n+3) {
+   background-color: #F1F4F5;
+}
+
+table tr:hover {
+}
+*/
+
+
+ul {
+   list-style-type: none;   
+   margin: 5px 0px;
+}
+
+/* buttons */
+input[type=submit], input[type=button] {
+   margin-top: 20px;
+   padding: 1px 12px;
+   font-size: 12px;
+   color: #950B04;
+   font-weight: normal;
+}
+
+
+textarea {
+   height: 180px;   
+}
+
+option {
+   width: 180px;  
+   background-color: #fefefe; 
+}
+
+
+li {
+   line-height: 1.5;   
+}
+
+/* jobindex */
+table.jobindex {
+   margin-top: 20px;
+   background-color: #efefef;
+   border-collapse: collapse;   
+}
+
+table.jobindex th, table.jobindex td {
+   text-align: left;   
+   padding: 3px;
+   border: 1px solid #ccc;
+   font-size: 0.8em;
+}
+
+span.size {
+   color: #aaa;   
+}
+
+
+/* jobaction */
+table.jobaction td {
+   vertical-align: bottom;   
+}
+
+
+/* wizard */
+div.wizard {
+   border: 0px solid #ccc;
+   margin: 10px 0px;
+   padding: 0px;
+}
+
+p.wizard {
+   margin: 20px 0px;   
+}
+
+table.wizard {
+   width: 900px;
+   margin: 40px 0px;
+   border-collapse: collapse;
+}
+
+table.wizard th, table.wizard td {
+   padding: 5px;    
+   border: 0px none #fff;
+}
+
+table.wizard th {
+   text-align: left;
+   width: 80px;
+   background-color: #FFF;
+   color: #2f2f2f;
+   font-weight: normal;
+}
+
+table.wizard input, table.wizard textarea {
+   width: 450px;   
+}
+
+table.wizard textarea {
+   height: 4em;   
+}
+
+#map {
+   float: left;
+   border: 1px solid #920900;
+   width: 550px;
+   height: 400px;
+}
+
+/* table latlon */
+
+#latlon {
+   margin-left: 570px;
+}
+
+table.latlon {
+   margin-top: 20px;
+   padding: 0px;
+   border: 1px solid #920900;
+   background-color: #F1EEE8;
+}
+
+table.latlon th, table.latlon td {
+   padding: 5px;    
+}
+
+table.latlon th {
+   text-align: left;
+   width: 120px;
+   color: #2f2f2f;
+   font-weight: normal;
+   font-size: 0.8em;
+}
+
+table.latlon input {
+   width: 80px;   
+}
+
+
+
+/* header, footer, content overwrites default styles */
+
+#content {
+   clear: left;
+   margin: 0px 80px 0px 80px;
+   padding: 0px;
+}
+
+
+
+/* header */
+#header {
+  background-repeat: repeat-x;
+  padding: 0px 80px; 
+  height: 75px;
+  min-width: 600px;
+}
+
+#header div.nav {
+   float: right;
+   text-align: right;
+}
+
+#header div.nav ul {
+   margin-top: 20px;
+   list-style-type: none;
+}
+
+#header div.nav ul li {
+   display:inline;
+   padding-left: 12px;
+}
+
+#header div.nav ul li a {
+   text-decoration: none;
+   color: #fff;
+}
+
+#header div.nav ul li a:hover {
+   text-decoration: underline;
+}
+
+#header div.nav ul li img {
+   width: 40px;
+   height: 40px;
+}
+
+
+#header div.logo {
+   width: 400px;
+   float: left;
+   padding: 10px 0px 40px 0px;
+}
+
+#header div.logo img.logo {
+   float: left;
+   vertical-align: middle;
+   margin: 1px;
+   margin-right: 20px;
+}
+
+#header div.logo h1 {
+   margin: 0px;
+   font-family: serif;
+   font-weight: normal;
+   text-shadow: #000 1px 1px 1px; font-size: 28px; color: #fff;
+}
+
+/* footer */
+#footer {
+   clear: both;
+   margin-top: 40px;
+   padding: 40px 20px 20px 80px;
+   background-image: url('/assets/footer.png');
+   background-repeat: repeat-x;
+}
+
+#footer p {
+   color: #aaa;
+   font-size: .7em;
+   font-style: italic;
+}
+
+
+
+/* error messages */
+#error_explanation {
+   width: 500px;
+   border: 1px solid #B3232C;
+   margin: 20px 0px;
+   background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+   margin: 0px;
+   padding: 5px 10px;
+   font-size: 0.9em;
+   font-weight: normal;
+   color: #B3232C;
+}
+
+#error_explanation ul li, #error_explanation p {
+   font-size: .8em;
+   padding: 2px 10px;
+}
+
+#error_explanation ul li {
+   margin-left: 20px;
+   list-style: square;
+}
+
+
+div.flash {
+   padding: 2px 10px;
+}
+
+div.success {
+   border: 2px solid #B9FFA2;
+   background-color: #B9FFA2;
+}
+
+div.error {
+   border: 2px solid #e4c7dd;
+   background-color: #e4c7dd;
+}
+
+input.error { border: 1px solid red; }
+
+label.error {
+   color: red;
+   padding-left: 0px;
+   margin-left: 20px;
+}
+
+
+
+
+
+
+
+
+

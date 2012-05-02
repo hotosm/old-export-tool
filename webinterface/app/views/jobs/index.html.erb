@@ -1,0 +1,31 @@
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+   $("#jobfilter").bind("keyup", function() {
+
+      filtertxt = $(this).val();
+      // $("#jobfilter").attr({value: filtertxt});
+      var tr = $("tr.jobfilter");
+
+      if (filtertxt == "") {
+         tr.show();
+      } else {
+         tr.hide();
+         tr.filter(":contains(" + filtertxt + ")").show();
+      }
+   });
+});
+
+</script>
+<h1>All Jobs</h1>
+
+<p>Filter <input type="text" size=10 id="jobfilter"></p>
+
+<table class="jobindex">
+<tr>
+<th width="440">Name</th>
+<th width="220">Created At</th>
+</tr>
+<%= render @jobs %>
+</table>

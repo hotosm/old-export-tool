@@ -1,0 +1,22 @@
+<tr>
+<td>
+<img src="<%= asset_path "status/#{run.state}.png" %>" class="state" title="<%= run.state %>">
+</td>
+<td>
+<% if run.state == 'success' %>
+<ul>
+<% run.downloads.all.each do |dl| %>
+<li><a href="<%= dl.url %>"><%= dl.name %></a> <span class="size">[<%= dl.size %>]</span></li>
+<% end %>
+</ul>
+<% elsif run.state == 'new' or run.state == 'running' %>
+[job is running - no downloads available yet]
+<% elsif run.state == 'error' %>
+<%= run.comment %>
+<% else %>
+[no download available]
+<% end %>
+</td>
+<td><%= run.updated_at.strftime("%Y-%m-%d %H:%M") %></td>
+</tr>
+

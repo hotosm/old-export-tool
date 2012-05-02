@@ -1,0 +1,3 @@
+This directory contains the code that processes jobs written into the
+PostGIS database by calling the custom data exporter accordingly, and
+then executing a series of ogr2ogr calls do generate various outputs.

@@ -1,0 +1,225 @@
+<script type="text/javascript" src="<%= asset_path 'jquery-validation-1.9.0/jquery.validate.min.js' %>"></script>
+<script type="text/javascript" src="<%= asset_path 'OpenLayers-2.11/OpenLayers.js' %>"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+   $("#new_job").validate();
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+   var proj4326;
+   var projmerc;
+   var map;
+   var mapnik_layer;
+   var vectors;
+   var box;
+   var transform;
+
+   init_map();
+
+   $(".select_area").click(function() { 
+      init_drawfeature();
+   });
+
+   $("input").filter(".latlon").change(function() {
+      lonmin = $("#job_lonmin").val();
+      latmin = $("#job_latmin").val();
+      lonmax = $("#job_lonmax").val();
+      latmax = $("#job_latmax").val();
+      values2box(lonmin, latmin, lonmax, latmax);
+   });
+
+
+
+function init_map(){
+   proj4326 = new OpenLayers.Projection("EPSG:4326");
+   projmerc = new OpenLayers.Projection("EPSG:900913");
+
+   map = new OpenLayers.Map("map", {
+      controls: [
+         // new OpenLayers.Control.KeyboardDefaults(),
+         new OpenLayers.Control.Navigation(),
+         new OpenLayers.Control.ZoomPanel(),
+         new OpenLayers.Control.MousePosition()
+      ],
+      maxExtent:  new OpenLayers.Bounds(-20037508.34,-20037508.34,
+                                         20037508.34, 20037508.34),
+      numZoomLevels: 18,
+      maxResolution: 156543,
+      units: 'm',
+      projection: projmerc,
+      displayProjection: proj4326,
+      theme: "<%= asset_path 'OpenLayers-2.11/theme/default/style.css' %>"
+   } );
+
+   mapnik_layer = new OpenLayers.Layer.XYZ('OSM Mapnik', 'http://tile.openstreetmap.org/${z}/${x}/${y}.png'); /*, {
+      sphericalMercator: true
+   });*/
+
+   map.addLayers([mapnik_layer]);
+   map.events.register("moveend", map, move_end);
+   
+<% if @job.id.nil? %>
+
+   var lonlat = new OpenLayers.LonLat(-73, 19);
+   var zoom = 8;
+   lonlat.transform(proj4326, projmerc);
+   map.setCenter(lonlat, zoom);
+   set_bounds(map.getExtent());
+
+<% else %>
+
+   extent = new OpenLayers.Bounds(<%= @job.lonmin %>, <%= @job.latmin %>, <%= @job.lonmax %>, <%= @job.latmax %>);
+   extent.transform(proj4326,projmerc);
+   map.zoomToExtent(extent.scale(2))
+   
+   init_drawfeature();
+   box.deactivate();
+   init_values2box();
+<% end %>
+
+}
+
+function move_end() {
+   if (!vectors) {
+      set_bounds(map.getExtent());
+   }
+}
+
+function init_drawfeature() {
+
+   if (vectors) { 
+      vectors.destroy();
+   }
+
+   vectors = new OpenLayers.Layer.Vector("Box", {
+      displayInLayerSwitcher: false
+   });
+   map.addLayers([vectors]);
+
+   box = new OpenLayers.Control.DrawFeature(vectors, OpenLayers.Handler.RegularPolygon, { 
+      handlerOptions: {
+         sides: 4,
+         snapAngle: 90,
+         irregular: true,
+         persist: true
+      }
+   });
+   box.handler.callbacks.done = draw_end;
+   map.addControl(box);
+   //activate_drawfeature();
+
+   transform = new OpenLayers.Control.TransformFeature(vectors, {
+      rotate: false,
+      irregular: true
+   });
+   transform.events.register("transformcomplete", transform, transformComplete);
+   map.addControl(transform);
+
+   box.activate();
+}
+
+function transformComplete(event) {
+   set_bounds(event.feature.geometry.bounds);
+}
+
+function draw_end(bbox) {
+   bounds = bbox.getBounds();
+   draw_box(bounds);
+   set_bounds(bounds);
+   box.deactivate();
+}
+
+function draw_box(bounds) {
+   var feature = new OpenLayers.Feature.Vector(bounds.toGeometry());
+   vectors.addFeatures(feature);
+   transform.setFeature(feature);
+}
+
+
+function set_bounds(bounds) {
+   bounds.transform(projmerc,proj4326);
+
+   z = 10000
+
+   var left    = Math.round(bounds.left   * z) / z;
+   var bottom  = Math.round(bounds.bottom * z) / z;
+   var right   = Math.round(bounds.right  * z) / z;
+   var top     = Math.round(bounds.top    * z) / z;
+
+   $("#job_lonmin").val(left);
+   $("#job_latmin").val(bottom);
+   $("#job_lonmax").val(right);
+   $("#job_latmax").val(top);
+}
+
+function values2box(xminlon, xminlat, xmaxlon, xmaxlat) {
+   bounds = new OpenLayers.Bounds(xminlon, xminlat, xmaxlon, xmaxlat);
+   bounds.transform(proj4326,projmerc);
+   draw_box(bounds);
+}
+
+function init_values2box() {
+
+<% if !@job.id.nil? %>
+   xminlon = <%= @job.lonmin %>
+   xminlat = <%= @job.latmin %>
+   xmaxlon = <%= @job.lonmax %>
+   xmaxlat = <%= @job.latmax %>
+
+   bounds = new OpenLayers.Bounds(xminlon, xminlat, xmaxlon, xmaxlat);
+   bounds.transform(proj4326,projmerc);
+   draw_box(bounds);
+<% end %>
+
+}
+
+});
+</script>
+<h1><%= @h1 %></h1>
+
+<div class="wizard">
+   <%= form_for @job, :url => { :action => @action } do |f| %>
+   <%= hidden_field_tag(:old_job_id, @job.id) %>
+   <%= render 'shared/error_messages' %>
+   <table class="wizard">
+      <tr>
+         <th><%= f.label :name, 'Job Name' %></th>
+         <td><%= f.text_field(:name, :class => 'required') %></td>
+      </tr>
+      <tr>
+         <th><%= f.label :description, 'Description' %></th>
+         <td><%= f.text_area :description %></td>
+      </tr>
+   </table>
+
+   <div id="map"></div>
+
+   <div id="latlon">
+   <p><img src="/assets/Pointer.png" style="width:20px;" class="select_area"><a href="#" class="select_area">Select smaller Area</a></p>
+   <table class="latlon">
+      <tr>
+         <th><%= f.label(:lonmin, "Min. Longitude") %></th>
+         <td><%= f.text_field(:lonmin, :class => 'latlon') %></td>
+      </tr>
+      <tr>
+         <th><%= f.label(:latmin, "Min. Latitude") %></th>
+         <td><%= f.text_field(:latmin, :class => 'latlon') %></td>
+      </tr>
+      <tr>
+         <th><%= f.label(:lonmax, "Max. Longitude") %></th>
+         <td><%= f.text_field(:lonmax, :class => 'latlon') %></td>
+      </tr>
+      <tr>
+         <th><%= f.label(:latmax, "Max. Latitude") %></th>
+         <td><%= f.text_field(:latmax, :class => 'latlon') %></td>
+      </tr>
+   </table>
+   </div>
+
+   <div style="clear: left;">
+   <%= f.submit "Save" %>
+   </div>
+   <% end %>
+</div>

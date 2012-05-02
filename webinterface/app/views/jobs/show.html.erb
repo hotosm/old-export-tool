@@ -1,0 +1,139 @@
+<script type="text/javascript" src="<%= asset_path 'OpenLayers-2.11/OpenLayers.js' %>"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+   $("img.state").each(function() {
+      var state = $(this).attr('src');
+      if (state.match(/new/)) {
+         setInterval( "reloadRuns();", 30000 );
+      } else if (state.match(/running/)) {
+         setInterval( "reloadRuns();", 30000 );
+      }
+   });
+});
+
+   function reloadRuns() {
+      window.location.reload();   
+   }
+
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+   var proj4326;
+   var projmerc;
+   var map;
+   var mapnik_layer;
+   var vectors;
+   var box;
+
+   init_map();
+   init_drawfeature();
+   init_values2box();
+
+});
+
+function init_map(){
+   proj4326 = new OpenLayers.Projection("EPSG:4326");
+   projmerc = new OpenLayers.Projection("EPSG:900913");
+
+   map = new OpenLayers.Map("map", {
+      controls: [
+         // new OpenLayers.Control.KeyboardDefaults(),
+         new OpenLayers.Control.Navigation(),
+         new OpenLayers.Control.ZoomPanel(),
+         new OpenLayers.Control.MousePosition()
+      ],
+      maxExtent:  new OpenLayers.Bounds(-20037508.34,-20037508.34,
+                                         20037508.34, 20037508.34),
+      numZoomLevels: 18,
+      maxResolution: 156543,
+      units: 'm',
+      projection: projmerc,
+      displayProjection: proj4326,
+      theme: "<%= asset_path 'OpenLayers-2.11/theme/default/style.css' %>"
+   } );
+
+   mapnik_layer = new OpenLayers.Layer.XYZ('OSM Mapnik', 'http://tile.openstreetmap.org/${z}/${x}/${y}.png'); /*, {
+      sphericalMercator: true
+   });*/
+   map.addLayers([mapnik_layer]);
+
+   extent = new OpenLayers.Bounds(<%= @job.lonmin %>, <%= @job.latmin %>, <%= @job.lonmax %>, <%= @job.latmax %>);
+   extent.transform(proj4326,projmerc);
+   map.zoomToExtent(extent.scale(2))
+}
+
+function init_drawfeature() {
+   vectors = new OpenLayers.Layer.Vector("Box");
+   map.addLayers([vectors]);
+
+   box = new OpenLayers.Control.DrawFeature(vectors, OpenLayers.Handler.RegularPolygon, { 
+      handlerOptions: {
+         sides: 4,
+         snapAngle: 90,
+         irregular: true,
+         persist: true
+      }
+   });
+   map.addControl(box);
+}
+
+function draw_box(bounds) {
+   var feature = new OpenLayers.Feature.Vector(bounds.toGeometry());
+   vectors.removeAllFeatures();
+   vectors.addFeatures(feature);
+}
+
+function init_values2box() {
+   bounds = new OpenLayers.Bounds(<%= @job.lonmin %>, <%= @job.latmin %>, <%= @job.lonmax %>, <%= @job.latmax %>);
+   bounds.transform(proj4326,projmerc);
+   draw_box(bounds);
+}
+
+</script>
+<h1>Job <i><%= @job.name %></i></h1>
+<p><%= simple_format(@job.description) %></p>
+<h2>Runs</h2>
+<table class="jobindex">
+<tr>
+<th width="30">State</th>
+<th width="520">Download</th>
+<th width="120">Created At</th>
+</tr>
+<%= render @runs %>
+</table>
+
+<%= form_tag("/newrun", :method => "get") do %>
+<%= hidden_field_tag("job_id", @job.id) %>
+<p><input type="submit" value="Start new run" name="commit"></p>
+<% end %>
+
+
+
+<h2>Area</h2>
+<div id="map"></div>
+
+<div id="latlon">
+<table class="latlon">
+<tr><th>Min. Longitude</th><td id="job_lonmin"><%= @job.lonmin %></td></tr>
+<tr><th>Min. Latitude </th><td id="job_latmin"><%= @job.latmin %></td></tr>
+<tr><th>Max. Longitude</th><td id="job_lonmax"><%= @job.lonmax %></td></tr>
+<tr><th>Max. Latitude </th><td id="job_latmax"><%= @job.latmax %></td></tr>
+</table>
+</div>
+
+
+<h2 style="clear: left; padding-top: 40px;">Tags</h2>
+<select>
+<% @tags.each do |tag| %>
+<option><%= tag.key %> [<%= tag.geometrytype %>]</option> 
+<% end %>
+</select>
+<p>
+<%= form_tag("/newwithtags", :method => "get") do %>
+<%= hidden_field_tag("job_id", @job.id) %>
+<input type="submit" value="Create Job" name="commit">
+Create a new job with a new area but the same tags as this job.
+<% end %>
+</p>
