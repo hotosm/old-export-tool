@@ -13,9 +13,10 @@
 #
 
 class Job < ActiveRecord::Base
-   attr_accessible :name, :description, :latmin, :latmax, :lonmin, :lonmax
+   attr_accessible :name, :description, :latmin, :latmax, :lonmin, :lonmax, :region_id
    has_many :runs, :dependent => :destroy
    has_many :tags, :dependent => :destroy
+   belongs_to :region
    after_create :create_run
    default_scope :order => 'jobs.created_at DESC'
 
@@ -38,6 +39,8 @@ class Job < ActiveRecord::Base
    validates :lonmax, 
       :presence => true, 
       :numericality => true
+
+   validates :region_id, :presence => true
 
 private
    def create_run

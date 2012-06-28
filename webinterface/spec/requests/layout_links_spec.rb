@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe "LayoutLinks" do
+   before(:each) do
+      @region = Factory(:region)
+   end
 
    it "should have a job index at '/jobs'" do
       get '/jobs'

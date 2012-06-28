@@ -62,10 +62,10 @@ function init_map(){
    
 <% if @job.id.nil? %>
 
-   var lonlat = new OpenLayers.LonLat(-73, 19);
-   var zoom = 8;
-   lonlat.transform(proj4326, projmerc);
-   map.setCenter(lonlat, zoom);
+   <% r = Region.first %> 
+   extent = new OpenLayers.Bounds(<%= r.left %>, <%= r.bottom %>, <%= r.right %>, <%= r.top %>);
+   extent.transform(proj4326,projmerc);
+   map.zoomToExtent(extent)
    set_bounds(map.getExtent());
 
 <% else %>
@@ -78,6 +78,27 @@ function init_map(){
    box.deactivate();
    init_values2box();
 <% end %>
+
+   var region = new Array();
+   <% Region.all.each do |r| %>
+   region[<%= r.id %>] = new Object();
+   region[<%= r.id %>]["left"]      = <%= r.left %>;
+   region[<%= r.id %>]["bottom"]    = <%= r.bottom %>;
+   region[<%= r.id %>]["right"]     = <%= r.right %>;
+   region[<%= r.id %>]["top"]       = <%= r.top %>;
+   <% end %>
+
+   // change extent with change event of dropdown
+   $("#job_region_id").change(function () {
+      $("#job_region_id option:selected").each(function () {
+         rid = $(this).attr('value');
+      });
+
+      extent = new OpenLayers.Bounds(region[rid]["left"], region[rid]["bottom"], region[rid]["right"], region[rid]["top"]);
+      extent.transform(proj4326,projmerc);
+      map.zoomToExtent(extent)
+      set_bounds(map.getExtent());
+   });
 
 }
 
@@ -184,6 +205,10 @@ function init_values2box() {
    <%= hidden_field_tag(:old_job_id, @job.id) %>
    <%= render 'shared/error_messages' %>
    <table class="wizard">
+      <tr>
+         <th><%= f.label :region, 'Region' %></th>
+         <th><%= collection_select(:job, :region_id, Region.all, :id, :name, {}, {:class => 'change_project'}) %></th>
+      </tr>
       <tr>
          <th><%= f.label :name, 'Job Name' %></th>
          <td><%= f.text_field(:name, :class => 'required') %></td>

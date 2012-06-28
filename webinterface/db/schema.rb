@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120329085146) do
+ActiveRecord::Schema.define(:version => 20120625082806) do
 
   create_table "downloads", :force => true do |t|
     t.string   "name"
@@ -33,6 +33,18 @@ ActiveRecord::Schema.define(:version => 20120329085146) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.text     "description"
+    t.integer  "region_id"
+  end
+
+  create_table "regions", :force => true do |t|
+    t.string   "internal_name"
+    t.string   "name"
+    t.float    "left"
+    t.float    "bottom"
+    t.float    "right"
+    t.float    "top"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "runs", :force => true do |t|

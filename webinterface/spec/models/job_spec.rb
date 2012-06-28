@@ -17,6 +17,7 @@ require 'spec_helper'
 describe Job do
 
    before(:each) do
+      @region = Factory(:region)
       @attr = {
          :name => "Example job",
          :latmin => 7,
@@ -27,64 +28,66 @@ describe Job do
    end
 
    it "should create a new instance given valid attributes" do
-      Job.create!(@attr)
+      @region.jobs.create!(@attr)
    end
 
    it "should require a name" do
-      no_name_job = Job.new(@attr.merge(:name => ""))
-      no_name_job.should_not be_valid
+      @region.jobs.new(@attr.merge(:name => "")).should_not be_valid
+      @region.jobs.new(@attr).should be_valid
    end
 
    it "should reject names that are too long" do
       long_name = "a" * 257
-      long_name_job = Job.new(@attr.merge(:name => long_name))
-      long_name_job.should_not be_valid
+      @region.jobs.new(@attr.merge(:name => long_name)).should_not be_valid
    end
 
    it "should require latmin" do
-      no_name_job = Job.new(@attr.merge(:latmin => ""))
-      no_name_job.should_not be_valid
+      @region.jobs.new(@attr.merge(:latmin => "")).should_not be_valid
    end
 
    it "should require latmax" do
-      no_name_job = Job.new(@attr.merge(:latmax => ""))
-      no_name_job.should_not be_valid
+      @region.jobs.new(@attr.merge(:latmax => "")).should_not be_valid
    end
 
    it "should require lonmin" do
-      no_name_job = Job.new(@attr.merge(:lonmin => ""))
-      no_name_job.should_not be_valid
+      @region.jobs.new(@attr.merge(:lonmin => "")).should_not be_valid
    end
 
    it "should require lonmax" do
-      no_name_job = Job.new(@attr.merge(:lonmax => ""))
-      no_name_job.should_not be_valid
+      @region.jobs.new(@attr.merge(:lonmax => "")).should_not be_valid
    end
 
    it "should have a numeric latmin" do
-      Job.new(@attr.merge(:latmin => 7)).should be_valid
-      Job.new(@attr.merge(:latmin => 'xx')).should_not be_valid
+      @region.jobs.new(@attr.merge(:latmin => 7)).should be_valid
+      @region.jobs.new(@attr.merge(:latmin => 'xx')).should_not be_valid
    end
 
    it "should have a numeric latmax" do
-      Job.new(@attr.merge(:latmax => 7)).should be_valid
-      Job.new(@attr.merge(:latmax => 'xx')).should_not be_valid
+      @region.jobs.new(@attr.merge(:latmax => 7)).should be_valid
+      @region.jobs.new(@attr.merge(:latmax => 'xx')).should_not be_valid
    end
 
    it "should have a numeric lonmin" do
-      Job.new(@attr.merge(:lonmin => 7)).should be_valid
-      Job.new(@attr.merge(:lonmin => 'xx')).should_not be_valid
+      @region.jobs.new(@attr.merge(:lonmin => 7)).should be_valid
+      @region.jobs.new(@attr.merge(:lonmin => 'xx')).should_not be_valid
    end
 
    it "should have a numeric lonmax" do
-      Job.new(@attr.merge(:lonmax => 7)).should be_valid
-      Job.new(@attr.merge(:lonmax => 'xx')).should_not be_valid
+      @region.jobs.new(@attr.merge(:lonmax => 7)).should be_valid
+      @region.jobs.new(@attr.merge(:lonmax => 'xx')).should_not be_valid
    end
 
    it "should save a description" do
-      job = Job.new(@attr.merge(:description => 'blub'))
+      job = @region.jobs.new(@attr.merge(:description => 'blub'))
       job.save!
       job.reload
       job.description.should == 'blub'
    end
+
+
+   it "should require a region id" do
+      Job.new(@attr).should_not be_valid
+      @region.jobs.new(@attr).should be_valid
+   end
+
 end

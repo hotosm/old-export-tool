@@ -18,11 +18,9 @@ my $OUTPUT_PATH="var/runs";
 my $CDE="bin/cde";
 my $OSMOSIS="osmosis/bin/osmosis";
 
-my $extname = "haiti";
-
 my $dbh = DBI->connect("dbi:Pg:dbname=$DBNAME;host=$DBHOST", $DBUSER, $DBPASS, {});
 
-my $sth_fetch = $dbh->prepare("SELECT runs.id as id, job_id, latmin,latmax,lonmin,lonmax FROM runs,jobs WHERE state='new' and runs.job_id=jobs.id LIMIT 1");
+my $sth_fetch = $dbh->prepare("SELECT runs.id as id, regions.internal_name as region, job_id, latmin,latmax,lonmin,lonmax FROM runs,jobs,regions WHERE state='new' and runs.job_id=jobs.id AND jobs.region_id = regions.id LIMIT 1");
 my $sth_fetch_tags = $dbh->prepare("SELECT * FROM tags WHERE job_id=?");
 my $sth_update_running = $dbh->prepare("UPDATE runs SET state='running',updated_at=now() at time zone 'utc' WHERE id=?");
 my $sth_update_finish = $dbh->prepare("UPDATE runs SET state='success',updated_at=now() at time zone 'utc' WHERE id=?");
@@ -35,6 +33,7 @@ if (my $run = $sth_fetch->fetchrow_hashref)
 {
     my $rid = sprintf("%06d", $run->{'id'});
     my $jid = $run->{'job_id'};
+    my $extname = $run->{'region'};
     printf(STDERR "job $jid, rid $rid\n");
     $logfile = "$OUTPUT_PATH/$rid/log.txt";
     $sth_update_running->execute($run->{id});

@@ -62,7 +62,6 @@ class JobsController < ApplicationController
          end
       end
 
-
       if error == 0 then
          flash[:success] = "Job successfully created!"
          redirect_to @job

@@ -5,6 +5,7 @@ Factory.define :job do |job|
    job.latmin                   20.0
    job.lonmax                   11.0
    job.latmax                   21.0
+   job.association              :region
 end
 
 Factory.define :tag do |tag|
@@ -24,3 +25,12 @@ Factory.define :download do |dl|
    dl.association     :run
 end
 
+
+Factory.define :region do |r|
+   r.internal_name  'ht'
+   r.name           'haiti'
+   r.left           '1'
+   r.bottom         '10'
+   r.right          '3'
+   r.top            '12'
+end

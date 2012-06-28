@@ -24,6 +24,10 @@ describe JobsController do
 
 
    describe "GET 'new'" do
+      before(:each) do
+         @region = Factory(:region)
+      end
+
       it "should be successful" do
          get 'new'
          response.should be_success
@@ -36,55 +40,12 @@ describe JobsController do
          get 'new'
          response.should have_selector("div", :id => "map")
       end
-   end
 
-
-   describe "POST 'create'" do
-      before(:each) do
-         @attr = {
-            :name => "My new job",
-            :lonmin => 12.2,
-            :latmin => 33.3,
-            :lonmax => 15.4, 
-            :latmax => 34.5
-         }
-      end
-
-
-      describe "success" do
-         it "should create a job" do
-            lambda do
-               post :create, :job => @attr
-            end.should change(Job, :count).by(1)
-         end
-
-         it "should have a success message" do
-            post :create, :job => @attr
-            flash[:success].should =~ /success/i
-         end
-
-         it "should start a run of the job" do
-            lambda do
-               post :create, :job => @attr
-            end.should change(Run, :count).by(1)
-         end
-
-      end
-
-      describe "failure" do
-         it "should not create a job" do
-            lambda do
-               post :create, :job => @attr.merge(:name => "")
-            end.should change(Job, :count).by(0)
-         end
-
-         it "should have a error message" do
-            post :create, :job => @attr.merge(:name => "")
-            flash[:error].should =~ /No job saved/i
-         end
+      it "should have a regions dropdown" do
+         get 'new'
+         response.should have_selector('select', :id => "job_region_id")
       end
    end
-
 
    describe "POST 'wizard_area'" do
       it "should be successfull" do
@@ -97,21 +58,22 @@ describe JobsController do
 
    describe "POST 'tagupload'" do
       before(:each) do
+         @region = Factory(:region)
          @attr = {
             :name => "My new job",
             :lonmin => 12.2,
             :latmin => 33.3,
             :lonmax => 15.4, 
-            :latmax => 34.5
+            :latmax => 34.5,
+            :region_id => @region.id
          }
          @file = fixture_file_upload('/preset.xml', 'text/xml')
       end
 
       it "can upload a preset file" do
-         post :tagupload, :upload => @file
-         response.should be_success
+         post :tagupload, :upload => @file, :job => @attr
+         response.should redirect_to(job_path(assigns(:job)))
       end
-
 
       it "should save the default tags" do
          @count = 0
@@ -130,7 +92,6 @@ describe JobsController do
             post :tagupload, :upload => @file, :job => @attr
          end.should change(Job, :count).by(1)
       end
-
 
       it "should save a new run" do
          lambda do
@@ -177,6 +138,7 @@ describe JobsController do
  
    describe "newwithtags_create" do
       before(:each) do
+         @region = Factory(:region)
          @oldjob = Factory(:job)
          @oldtags = Factory(:tag)
          @attr = {
@@ -184,7 +146,8 @@ describe JobsController do
             :lonmin => 12.2,
             :latmin => 33.3,
             :lonmax => 15.4, 
-            :latmax => 34.5
+            :latmax => 34.5,
+            :region_id => @region.id
          }
       end
 
@@ -199,6 +162,7 @@ describe JobsController do
             post :newwithtags_create, :job => @attr, :old_job_id => @oldjob.id
          end.should change(Run, :count).by(1)
       end
+
 
       it "should create a new job with old tags" do
          lambda do

@@ -3,6 +3,9 @@ require 'spec_helper'
 describe "Jobs" do
 
    describe "new job" do
+      before(:each) do
+         @region = Factory(:region)
+      end
 
       it "should have the right path" do
          get newjob_path
