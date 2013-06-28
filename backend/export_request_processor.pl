@@ -15,6 +15,7 @@ chdir "/home/hot";
 
 my $EXTRACT_PATH="var/extracts";
 my $OUTPUT_PATH="var/runs";
+my $UPLOAD_PATH="web/public/uploads";
 my $CDE="bin/cde";
 my $OSMOSIS="osmosis/bin/osmosis";
 
@@ -22,6 +23,8 @@ my $dbh = DBI->connect("dbi:Pg:dbname=$DBNAME;host=$DBHOST", $DBUSER, $DBPASS, {
 
 my $sth_fetch = $dbh->prepare("SELECT runs.id as id, regions.internal_name as region, job_id, latmin,latmax,lonmin,lonmax FROM runs,jobs,regions WHERE state='new' and runs.job_id=jobs.id AND jobs.region_id = regions.id LIMIT 1");
 my $sth_fetch_tags = $dbh->prepare("SELECT * FROM tags WHERE job_id=?");
+my $sth_fetch_transforms = $dbh->prepare("SELECT filename FROM uploads u,jobs_uploads ju where u.uptype='tagtransform' and u.visibility and u.id=ju.upload_id and ju.job_id=?");
+my $sth_fetch_translations = $dbh->prepare("SELECT filename FROM uploads u,jobs_uploads ju where u.uptype='translation' and u.visibility and u.id=ju.upload_id and ju.job_id=?");
 my $sth_update_running = $dbh->prepare("UPDATE runs SET state='running',updated_at=now() at time zone 'utc' WHERE id=?");
 my $sth_update_finish = $dbh->prepare("UPDATE runs SET state='success',updated_at=now() at time zone 'utc' WHERE id=?");
 my $sth_update_error = $dbh->prepare("UPDATE runs SET state='error',updated_at=now() at time zone 'utc', comment=? WHERE id=?");
@@ -38,6 +41,7 @@ if (my $run = $sth_fetch->fetchrow_hashref)
     $logfile = "$OUTPUT_PATH/$rid/log.txt";
     $sth_update_running->execute($run->{id});
     
+
     $sth_fetch_tags->execute($jid);
     my @pointtags;
     my @areatags;
@@ -80,6 +84,15 @@ if (my $run = $sth_fetch->fetchrow_hashref)
     mymsg("CDE_FIELDS_WAYS=".$ENV{"CDE_FIELDS_WAYS"}."\n");
     mymsg("CDE_FIELDS_AREAS=".$ENV{"CDE_FIELDS_AREAS"}."\n");
 
+    $sth_fetch_translations->execute($jid);
+    my @transtables;
+    while(my $tt = $sth_fetch_translations->fetchrow_hashref)
+    {
+       push(@transtables, $UPLOAD_PATH."/".$tt->{filename});
+    }
+    $ENV{"CDE_TRANSLATION_TABLES"} = join(",", @transtables);
+    mymsg("CDE_TRANSLATION_TABLES=".$ENV{"CDE_TRANSLATION_TABLES"}."\n");
+    
     if (!mysystem("$CDE $OUTPUT_PATH/$rid/rawdata.osm.pbf $OUTPUT_PATH/$rid/extract.sqlite"))
     {
         $sth_update_error->execute("error in CDE", $rid);
@@ -90,9 +103,17 @@ if (my $run = $sth_fetch->fetchrow_hashref)
     # CDE program creates the SQLite file.
     addfile($rid, "extract.sqlite", "SQLite file");
 
+    $sth_fetch_transforms->execute($jid);
+    while(my $tfm = $sth_fetch_transforms->fetchrow_hashref)
+    {
+        mymsg("running transformation: ".$tfm->{filename}."\n");
+        mysystem("spatialite $OUTPUT_PATH/$rid/extract.sqlite < $UPLOAD_PATH/".$tfm->{filename});
+    }
+
     # call ogr2ogr to make PostGIS dump 
     mysystem("ogr2ogr -overwrite -f 'PGDump' -dsco PG_USE_COPY=YES -dsco GEOMETRY_NAME=way $OUTPUT_PATH/$rid/extract.sql $OUTPUT_PATH/$rid/extract.sqlite");
-    addfile($rid, "extract.sql", "PostGIS dump file (.sql)");
+    mysystem("gzip $OUTPUT_PATH/$rid/extract.sql");
+    addfile($rid, "extract.sql.gz", "PostGIS dump file (compressed - .sql.gz)");
 
     # call ogr2ogr to make Spatiallite file
     mysystem("ogr2ogr -overwrite -f 'SQLite' -dsco SPATIALLITE=YES $OUTPUT_PATH/$rid/extract.spatiallite $OUTPUT_PATH/$rid/extract.sqlite");
@@ -100,7 +121,7 @@ if (my $run = $sth_fetch->fetchrow_hashref)
 
     # call ogr2ogr to make shape files in temporary directory
     mkdir "/tmp/$rid-shp";
-    mysystem("ogr2ogr -overwrite -f 'ESRI Shapefile' /tmp/$rid-shp $OUTPUT_PATH/$rid/extract.sqlite");
+    mysystem("ogr2ogr -overwrite -f 'ESRI Shapefile' --config SHAPE_ENCODING UTF-8 /tmp/$rid-shp $OUTPUT_PATH/$rid/extract.sqlite");
 
     # load ogr2ogr output to find out field name truncations
     my $crosswalk = {};
@@ -120,15 +141,28 @@ if (my $run = $sth_fetch->fetchrow_hashref)
         my $cw = $shp;
         $cw =~ s/dbf$/crosswalk.csv/;
         open(CW, ">$cw");
-	my $dbf = new XBase($shp);
+        my $dbf = new XBase($shp);
         my $x = 1;
         foreach my $field($dbf->field_names)
         {
             $field = lc($field);
             printf CW "%d,\"%s\",\"%s\"\n", $x, $crosswalk->{$field} || $field, $field;
-	    $x++;
+            $x++;
         }
         close(CW);
+    }
+
+    # overwrite PRJs and create CPG
+    foreach my $prj(glob("/tmp/$rid-shp/*.prj"))
+    {
+        open(PRJ, ">$prj");
+        print PRJ 'PROJCS["WGS 84 / Pseudo-Mercator",GEOGCS["Popular Visualisation CRS",DATUM["Popular_Visualisation_Datum",SPHEROID["Popular Visualisation Sphere",6378137,0,AUTHORITY["EPSG","7059"]],TOWGS84[0,0,0,0,0,0,0],AUTHORITY["EPSG","6055"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.01745329251994328,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4055"]],UNIT["metre",1,AUTHORITY["EPSG","9001"]],PROJECTION["Mercator_1SP"],PARAMETER["central_meridian",0],PARAMETER["scale_factor",1],PARAMETER["false_easting",0],PARAMETER["false_northing",0],AUTHORITY["EPSG","3785"],AXIS["X",EAST],AXIS["Y",NORTH]]';
+        close(PRJ);
+        $prj =~ /(.*)\.prj$/;
+        my $cpg = $1.'.cpg';
+        open(CPG, ">$cpg");
+        print(CPG "UTF-8\n");
+        close(CPG);
     }
 
     # zip resulting shapefile components and remove tempdir
