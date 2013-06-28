@@ -4,7 +4,7 @@
 #
 
 JOBID=foo
-OSMFILE=/arc/geodata/osm/bremen.osm.pbf
+OSMFILE=bremen.osm.pbf
 
 export CDE_FIELDS_NODES="amenity,shop"
 export CDE_FIELDS_WAYS="highway,railway"
@@ -15,8 +15,9 @@ PREFIX=out/cde.$JOBID
 
 MASTERFILE=$PREFIX.sqlite
 rm -f $MASTERFILE
-#valgrind --leak-check=full --show-reachable=yes ./cde /arc/geodata/osm/bremen.osm.pbf $MASTERFILE
+#valgrind --leak-check=full --show-reachable=yes ./cde $OSMFILE  $MASTERFILE
 ./cde $OSMFILE $MASTERFILE
+#gdb ./cde
 
 mkdir -p ${PREFIX}_shp
 rm -f ${PREFIX}_shp/*

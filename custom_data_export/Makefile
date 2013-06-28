@@ -7,10 +7,10 @@
 CXX = g++
 #CXX = clang
 
-#CXXFLAGS = -g
 CXXFLAGS = -O3
+#CXXFLAGS = -g
 
-CXXFLAGS += -Wall -Wextra -Wredundant-decls -Wdisabled-optimization -pedantic -Wctor-dtor-privacy -Wnon-virtual-dtor -Woverloaded-virtual -Wsign-promo
+#CXXFLAGS += -Wall -Wextra -Wredundant-decls -Wdisabled-optimization -pedantic -Wctor-dtor-privacy -Wnon-virtual-dtor -Woverloaded-virtual -Wsign-promo
 #CXXFLAGS += -Wpadded -Winline -Weffc++ -Wold-style-cast
 
 # uncomment this if you want information on how long it took to build the multipolygons
@@ -23,7 +23,6 @@ CXXFLAGS_OGR     = -DOSMIUM_WITH_OGR $(shell gdal-config --cflags)
 
 CXXFLAGS += -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
 
-CXXFLAGS += -I../include -I$(HOME)/osmium-joto/include
 
 LDFLAGS = -L/usr/local/lib -lexpat -lpthread
 
@@ -41,7 +40,7 @@ PROGRAMS = cde
 all: $(PROGRAMS)
 
 cde: cde.cpp
-	$(CXX) $(CXXFLAGS) $(CXXFLAGS_OGR) $(CXXFLAGS_GEOS) -o $@ $< $(LDFLAGS) $(LIB_PROTOBUF) $(LIB_OGR) $(LIB_GEOS)
+	$(CXX) $(CXXFLAGS) $(CXXFLAGS_OGR) $(CXXFLAGS_GEOS) -o $@ $< $(LDFLAGS) $(LIB_PROTOBUF) $(LIB_OGR) $(LIB_GEOS) -lboost_regex
 
 clean:
 	rm -f *.o core $(PROGRAMS)
