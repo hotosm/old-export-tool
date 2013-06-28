@@ -1,0 +1,96 @@
+# Localization for english
+# Upload section
+
+de:
+   uploads:
+      h1:               "Konfiguration"
+
+      newupload:
+         title:         "Neuer Upload"
+         h1:            "Upload einer Konfigurationsdatei"
+         text:          'Konfigurationsdateien können Tagging-Presets (wurde schon in der Vergangenheit unterstützt), SQL-Transform-Files oder Translation-Tabellen sein. Wenn Sie ein File hochladen, geben Sie ihm am besten einen aussagekräftigen Namen (z. Bsp "Hot Presets für Haiti v1.23"); denn wenn Sie später einen Job erstellen, werden Ihnen diese Namen zur Auswahl angeboten.'
+         name:          "Neuer Upload"
+
+      index:
+         title:         "Konfiguration"
+         h1:            "Konfiguration"
+
+      presets:       
+         title:         "Uploads | Preset Files"
+         h1:            "Preset Files"
+         name:          "Preset Files"
+
+      tagtransforms:    
+         title:         "Uploads | Tag Transform SQL Files"
+         h1:            "Tag Transform SQL Files"
+         name:          "Tag Transform SQL Files"
+
+      translations:
+         title:         "Uploads | Translations"
+         h1:            "Translation Files"
+         name:          "Translation Files"
+
+      tagpreview:
+         title:         "Tag Check"
+         h1:            "Tag Check"
+         h2:            "Tags aus dem Preset File"
+
+      defaulttags:
+         title:         "Default Tags"
+         h1:            "Default Tags"
+
+      update:
+         title:         "Neue Version des Uploads"
+         h1:            "Upload einer neuen Dateiversion"
+         text:          "Wenn Sie eine neue Datei hochladen, wird die alte Datei überschrieben."
+
+      th:
+         name:          "Dateiame"
+         updated_at:    "Aktualisiert am"
+         created_by:    "Erstellt von"
+         download:      "Download"
+         delete:        "Löschen"
+         update:        "Aktualisieren"
+         tagpreview:    "Tag Vorschau"
+         tag:           "Tag"
+         geometrytype:  "Geometry-Typ"
+         type:          "Typ"
+         file:          "Datei"
+
+      span:
+         show:             "Anzeigen"
+         hide:             "Verbergen"
+         deleted_uploads:  "gelöschte Uploads"
+
+      action:
+         newupload:     "Neuer Upload"
+         showdeleted:   "Anzeige der gelöschten Uploads."   
+         hidedeleted:   "Verbergen der gelöschten Uploads"
+         defaulttags:   "Default Tags"
+
+      button:
+         save:          "Speichern"
+
+      message:
+         nofiles:       "Es sind noch keine Konfigurationsdateien hochgeladen worden."
+
+      error:
+         xml_corrupt:   "Das XML ist kaputt und ein Fehler ist aufgetreten."
+         xml_exception: "XML Exception"
+
+      flash:
+         error:
+            xml_parsing_failed:  "Das Parsen des XML war nicht erfolgreich. Der Upload wurde nicht gespeichert."
+            not_saved:           "Der Upload wurde nicht gespeichert."
+            restored:            "Der Upload wurde nicht wiederhergestellt!"
+            deleted:             "Der Upload wurde nicht gelöscht!"
+
+         success:
+            newversion_saved:    "Neue Dateiversion gespeichert für: "
+            saved:               "Der Upload wurde gespeichert."
+            restored:            "Der Upload wurde wiederhergestellt!"
+            deleted:             "Der Upload wurde gelöscht!"
+
+
+
+

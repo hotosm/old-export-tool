@@ -1,0 +1,41 @@
+de:
+   errors:
+      messages:               
+         not_saved:           "Nicht gespeichert!"
+
+   activerecord:
+      errors:
+         models:
+            user:
+               attributes:
+                  email:
+                     blank:         "Bitte geben Sie eine Email an."
+                  password:
+                     blank:         "Bitte geben Sie ein Passwort an (8 Zeichen)."
+                     confirmation:  "Passwort und Passwort-Wiederholung stimmen nicht überein."
+                     too_short:     "Das Passwort ist zu kurz (mindestens 8 Zeichen)."
+                  current_password:
+                     blank:         "Bitte geben Sie Ihr aktuelles Passwort ein."
+                     invalid:       "Bitte geben Sie Ihr aktuelles Passwort ein." 
+
+            upload:
+               attributes:
+                  name:
+                     blank:         "Bitte geben Sie einen aussagekräftigen Namen an."
+                  uploadfile:       
+                     blank:         "Bitte geben Sie die Datei an, die hochgeladen werden soll."
+
+            job:
+               attributes:
+                  name:
+                     blank:         "Bitte geben Sie einen aussagekräftigen Namen an."
+                  lonmin:
+                     blank:         "Wählen Sie ein Gebiet aus."
+                  lonmax:
+                     blank:         "Wählen Sie ein Gebiet aus."
+                  latmin:     
+                     blank:         "Wählen Sie ein Gebiet aus."
+                  latmax:
+                     blank:         "Wählen Sie ein Gebiet aus."
+
+

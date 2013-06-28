@@ -1,0 +1,49 @@
+<h1><%= t 'help.transform.h1' %></h1>
+
+<h2><%= t 'help.transform.whatfor.title' %></h2>
+<p><%= t 'help.transform.whatfor.text1' %></p>
+<p><%= t 'help.transform.whatfor.text2' %></p>
+<p><%= t 'help.transform.whatfor.text3' %></p>
+
+
+<h2><%= t 'help.transform.looklike.title' %></h2>
+<p><%= t 'help.transform.looklike.text1' %></p>
+<p><%= t 'help.transform.looklike.text2' %></p>
+
+<blockquote>
+<pre>
+alter table planet_osm_point add column testcolumn varchar;
+update planet_osm_point set testcolumn=amenity;
+</pre>
+</blockquote>
+
+<p><%= t 'help.transform.looklike.text3' %></p>
+
+<blockquote>
+<pre>
+alter table planet_osm_polygon add column building_roof_material_stone integer;
+alter table planet_osm_polygon add column building_roof_material_concrete integer;
+update planet_osm_polygon set building_roof_material_stone=1 where building_roof_material like "%stone%";
+update planet_osm_polygon set building_roof_material_concrete=1 where building_roof_material like "%concrete%";
+</pre>
+</blockquote>
+
+<p><%= t 'help.transform.looklike.text4' %></p>
+
+<h2><%= t 'help.transform.howtest.title' %></h2>
+<p><%= t 'help.transform.howtest.text1' %></p>
+
+<blockquote>
+<pre>
+spatiallite extract.sqlite
+</pre>
+</blockquote>
+
+<p><%= t 'help.transform.howtest.text2' %></p>
+
+<h2><%= t 'help.transform.howuse.title' %></h2>
+<p><%= t 'help.transform.howuse.text1' %></p>
+<p><%= t 'help.transform.howuse.text2' %></p>
+
+<h2><%= t 'help.transform.advanced.title' %></h2>
+<p><%= t 'help.transform.advanced.text' %></p>

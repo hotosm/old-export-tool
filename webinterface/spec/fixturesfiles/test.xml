@@ -1,0 +1,18 @@
+<presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0"
+	author="Kate Chapman"
+	description="Building collection presets for Indonesia"
+	shortdescription="Buildings"
+	version="1.0">
+	<item name="Building">
+		<key key="building" value="yes"/>
+		<combo key="building:use" text="fungsi bangunan" values="residential,commercial,government,ruko,education,shop,medical,accommodation,storage,industrial,place_of_worship,multipurpose" display_values="hunian (residential),komersial (commercial),kantor pemerintahan (government office),ruko (residence with shop),sekolah,toko,fasilitas medis (medical facility),hotel/penginapan,gudang (storage),industri (industrial),Fasilitas keagamaan (places of worship),Gedung serbaguna (multipurpose)" default="" delete_if_empty="true" />
+		<combo key="building:structure" text="struktur bangunan"  values="reinforced_masonry,unreinforced_masonry,plastered,confined_masonry" display_values="Tembok dengan penguat beton bertulang,Tembok tanpa penguat beton bertulang,Tembok berplester,Rangka beton bertulang" />
+		<combo key="building:walls" text="tipe dinding" values="brick,wood,bamboo,tin" display_values="bata (brick),papan kayu (wood),bamboo (bamboo),seng (tin)" />
+		<combo key="building:roof" text="tipe atap" values="tile,tin,asbestos,concrete" display_values="genteng (tile),seng (tin),asbes (asbestos),beton (concrete)" />
+		<text key="building:levels" text="jumlah tingkat"/>
+	</item>
+	<item name="Supermarket">
+		<key key="shop" value="supermarket"/>
+		<text key="name" text="nama"/>
+	</item>
+</presets>

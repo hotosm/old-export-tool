@@ -1,0 +1,22 @@
+<% @title = t('users.login') %>
+<h2><%= t 'users.login' %></h2>
+
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+<table class="account_create">
+<tr>
+  <th><%= f.label t('users.th.email') %></th>
+  <td><%= f.email_field :email, :autofocus => true %></td>
+</tr>
+
+<tr>
+   <th><%= f.label t('users.th.password') %></th>
+   <td><%= f.password_field :password %></td>
+</tr>
+
+<tr>
+   <td colspan="2"><%= f.submit t('users.button.login') %></td>
+</tr>
+</table>
+<% end %>
+
+<%= render "devise/shared/links" %>

@@ -1,22 +1,49 @@
 HotExports::Application.routes.draw do
 
+   scope "(:locale)" do
+      root :to => "pages#home"
+      devise_for :users
 
-   root :to => "pages#home"
-
-   #get "jobs/new"
-   resources :jobs
-
-   match '/newwithtags',         :to => 'jobs#newwithtags'
-   match '/newwithtags_create',  :to => 'jobs#newwithtags_create'
+      match '/locked_users',           :to => 'users#locked_users'
+      match '/active_users',           :to => 'users#active_users'
+      match '/suspend_user',           :to => 'users#suspend_user'
+      match '/unsuspend_user',         :to => 'users#unsuspend_user'
 
 
-   match '/newrun',     :to => 'jobs#newrun'
-   match '/newjob',     :to => 'jobs#new'
+      match '/uploads/invisible',      :to => 'uploads#invisible'
+      match '/uploads/restore',        :to => 'uploads#restore'
+      match '/uploads/newfileversion', :to => 'uploads#newfileversion'
+      match '/uploads/checktags',      :to => 'uploads#checktags'
+      match '/uploads/defaulttags',    :to => 'uploads#defaulttags' 
+     
+      match '/uploads/presets',        :to => 'uploads#presets' 
+      match '/uploads/tagtransforms',  :to => 'uploads#tagtransforms' 
+      match '/uploads/translations',   :to => 'uploads#translations' 
+
+      match '/jobs/invisible',         :to => 'jobs#invisible'
+      match '/jobs/restore',           :to => 'jobs#restore'
+
+      resources :uploads
+      resources :jobs
+
+      match '/wizard_area',                  :to => 'jobs#wizard_area'
+      match '/wizard_configuration',         :to => 'jobs#wizard_configuration'
+      match '/wizard_configuration_create',  :to => 'jobs#wizard_configuration_create'
+      match '/newwithconfiguration',         :to => 'jobs#newwithconfiguration'
+      match '/newwithconfiguration_create',  :to => 'jobs#newwithconfiguration_create'
+
+      match '/reload_runs',   :to => 'jobs#reload_runs'
+      match '/newrun',        :to => 'jobs#newrun'
+      match '/newjob',        :to => 'jobs#wizard_area'
+
+
+      match '/home',          :to => 'pages#home'
+
+      match '/help',           :to => 'pages#help'
+      match '/help_translate', :to => 'pages#help_translate'
+      match '/help_transform', :to => 'pages#help_transform'
    
-   match '/wizard_area', :to => 'jobs#wizard_area'
-   match '/tagupload',   :to => 'jobs#tagupload'
-
-   match '/home',       :to => 'pages#home'
+   end
 
 
   # The priority is based upon order of creation:

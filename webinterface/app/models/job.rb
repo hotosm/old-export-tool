@@ -13,10 +13,15 @@
 #
 
 class Job < ActiveRecord::Base
-   attr_accessible :name, :description, :latmin, :latmax, :lonmin, :lonmax, :region_id
+   attr_accessible :name, :description, :latmin, :latmax, :lonmin, :lonmax, :region_id, :visible, :user_id
    has_many :runs, :dependent => :destroy
    has_many :tags, :dependent => :destroy
    belongs_to :region
+   belongs_to :user
+   validate :check_region
+
+   has_and_belongs_to_many :uploads
+
    after_create :create_run
    default_scope :order => 'jobs.created_at DESC'
 
@@ -41,12 +46,85 @@ class Job < ActiveRecord::Base
       :numericality => true
 
    validates :region_id, :presence => true
+   
+   validates :user_id, :presence => true
+
+
+   # maximum of (latmax-latmin) * (lonmax-lonmin)
+   BBOX_MAX = 100
+
 
 private
+
+
+   def check_region
+
+      if (!self.lonmin.is_a?(Numeric))
+         errors.add(:lonmin, I18n.t('jobs.errors.no_valid_region'))
+         return true
+      elsif (!self.lonmax.is_a?(Numeric))
+         errors.add(:lonmax, I18n.t('jobs.errors.no_valid_region'))
+         return true
+      elsif (!self.latmin.is_a?(Numeric))
+         errors.add(:latmin, I18n.t('jobs.errors.no_valid_region'))
+         return true
+      elsif (!self.latmax.is_a?(Numeric))
+         errors.add(:latmax, I18n.t('jobs.errors.no_valid_region'))
+         return true
+      end
+
+      check_bbox_max
+      check_area_in_region
+
+   end
+
+
+   def check_area_in_region
+
+      select = "select * from regions 
+         where polygon && st_setsrid(st_makebox2d(st_point(#{self.lonmin}, #{self.latmin}), st_point(#{self.lonmax}, #{self.latmax})), 4326) 
+         order by st_area(st_intersection(polygon, st_setsrid(st_makebox2d(st_point(#{self.lonmin}, #{self.latmin}), st_point(#{self.lonmax}, #{self.latmax})),4326))) desc 
+         limit 1;"
+
+      region = ActiveRecord::Base.connection.select_one(select)
+
+      if (region.is_a? Hash)
+         self.region_id = region['id']
+      else
+         errors.add(:lonmin, I18n.t('jobs.errors.no_valid_region'))
+      end
+   end
+
+
+   def check_bbox_max
+      x = (self.latmax - self.latmin)
+      y = (self.lonmax - self.lonmin)
+      xx = x*y
+
+      if ( xx > Job::BBOX_MAX) then
+         errors.add(:lonmin, I18n.t('jobs.errors.area_too_large'))
+      end
+
+      if (self.lonmin < -180 or self.lonmin > 180) then
+         errors.add(:lonmin, I18n.t('jobs.errors.out_of_range'))
+      end
+      if (self.lonmax < -180 or self.lonmax > 180) then
+         errors.add(:lonmax, I18n.t('jobs.errors.out_of_range'))
+      end
+      if (self.latmin < -85 or self.latmin > 85) then
+         errors.add(:latmin, I18n.t('jobs.errors.out_of_range'))
+      end
+      if (self.latmax < -85 or self.latmax > 85) then
+         errors.add(:latmax, I18n.t('jobs.errors.out_of_range'))
+      end
+   end
+
+
    def create_run
       run = Run.new
-      run.state = 'new'
-      run.job_id = self.id
+      run.state   = 'new'
+      run.job_id  = self.id
+      run.user_id = self.user_id
       run.save!
    end
             

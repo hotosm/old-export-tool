@@ -1,0 +1,27 @@
+<ul class="upload_actions">
+
+<!-- Show deleted //-->
+<% if current_page?(uploads_translations_path) or current_page?(uploads_tagtransforms_path) or current_page?(uploads_presets_path) %>
+<li>
+<img src="<%= asset_path 'view.png' %>">
+<a href="#" class="jq_show"><span id="showhide"><%= t 'uploads.span.show' %></span> <%= t 'uploads.span.deleted_uploads' %></a>
+</li>
+<% end %>
+
+<!-- New Upload //-->
+<% if user_signed_in? %>
+<li>
+<img src="<%= asset_path 'new.png' %>">
+<a href="<%= new_upload_path %>"><%= t 'uploads.action.newupload' %></a>
+</li>
+<% end %>
+
+<!-- Default Tags //-->
+<% if current_page?(uploads_presets_path) %>
+<li>
+<img src="<%= asset_path 'checktags.png' %>">
+<a href="<%= uploads_defaulttags_path %>"><%= t 'uploads.action.defaulttags' %></a>
+</li>
+<% end %>
+
+</ul>

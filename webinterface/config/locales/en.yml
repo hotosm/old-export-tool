@@ -2,4 +2,29 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+   tool:                      "Hot Exports"
+
+   locale:
+      english:                "English"
+      german:                 "German"
+      french:                 "French"
+   
+   navigation:
+      home:                   "Home"
+      help:                   "Help"
+      jobs:                   "Jobs"
+      newjob:                 "New Job"
+      newjob_hint:            "Log in or create an account for new jobs!"
+       
+   footer:
+      your_account:           "Your Account"
+      expert_functions:       "Expert Functions"
+      user_administration:    "User Administration"
+      logged_in_as:           "You are logged in as"
+      text:                   "Copyright © 2013 Humanitarian OpenStreetMap Team · Map data from OpenStreetMap, ODbL 1.0 license"
+
+
+   error:
+      
+
+

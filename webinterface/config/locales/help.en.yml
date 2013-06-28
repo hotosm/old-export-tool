@@ -1,0 +1,111 @@
+# Localization for english
+# Home and help section
+
+en:
+
+   home:
+      title:         "Home"
+      h1:            "HOT Exports"
+      about:         
+         title:      "About"
+         text:       "This platform allows you to create custom OpenStreetMap exports for various regions. You can specify an area of interest and a list of features (OpenStreetMap tags) for the export. A current OpenStreetMap data extract for that area in various data formats is then created for you within minutes."
+
+      note:          
+         title:      "Note"
+         text:       "This system is a shared resource, please be mindful of the export jobs you create."
+
+      new:           
+         title:      "What's new?"
+         text1:      "Upload of configuration files."
+         text2:      "Jobs are deletable."
+         text3:      "User Accounts."
+
+
+   help:
+      title:         "Help"
+      h1:            "Help"
+      
+      newjob:
+         title:      "Creating a New Job"
+         text:       'Click on "New Job" in the top navigation bar to run the new job wizard. Enter the name and a description for the new job, so that you (and others) can easily identify it later. Then choose the region you are interested in (currently must be a box). In the last step you fix the tags. There are two ways. You can choose a JOSM preset file with your tags. And you can select default tags with a checkbox.'
+   
+      rerunjob:      
+         title:      "Re-running an Existing Job"
+         text:       'Choose "Jobs" at the top navigation. Look for the job you want to re-run by its name. A filter helps you to reduce the number of jobs in the list. Then click on your job to get to the detail page again, and click on the "Start new run" button. A new run is started in the background, and again, the download files will be available after a short wait.'
+
+      recyclejob:
+         title:      "Recycling an Existing Job"
+         text:       'You can create a new job on the basis of an existing job with the "Create Job" button that is shown at the bottom of the detail page of a job. This button gets you to the "New Job" wizard where you can specify a different geometry, but the uploaded tags will be re-used from the existing job.'
+
+      download:
+         title:      "Download Your Data"
+         text:       "After you created a job, the job is run for you in the background and a detail page is shown for the job. The detail page has information on all previous runs of this job - initially the list will be empty. The page refreshes automatically, and after a few minutes you will see a number of files in different formats ready for download."
+
+      presets:
+         title:      "Configuration of Preset Files"
+         text:       "Upload your preset files with the upload manager. If a preset file is obsolet overwrite it with a updated version or delete it."
+
+      advanced:
+         title:      "Advanced Help Topics"
+         text1:      "Using Translation Tables"
+         text2:      "Using Database Transformations"
+
+
+      translation:
+         title:         "Help for Translations"
+         h1:            "Using Translation Tables"
+         
+         whatfor:
+            title:      "What are Translation Tables for?"
+            text1:       "You can use translation tables to translate the content of a database field (but not the name of a field)."
+            text2:      'For example, you might want to translate the term "bakery" to "boulangerie", and "traffic_signals" to "feu".'
+
+         looklike:
+            title:      "How Do Translation Tables Look Like?"
+            text1:      "You could write a translation table like this:"
+            text2:      "A translation table is a simple text file that has one translation per line, with the word to be translated on the left, followed by one or more tab or space characters, and then the translation."
+            text3:      "A translation table may contain empty lines, or lines beginning with a hash sign (#) to denote a comment."
+
+         howuse:
+            title:      "How Do I Use a Translation Table?" 
+            text1:      'You can create a translation table on your computer using a text editor of your choosing. Then, choose the "New Upload" link in the expert functions in the bottom and request uploading a translation file. At that stage you can give a symbolic name to your translation file, e.g. "General Terms - French" or so.'
+            text2:      'When creating a new job, after selecting the area of interest, you can now select one or more translation tables that have been uploaded. These tables will be applied to every run of that job, and will affect all output formats with the exception of raw OSM data.'
+
+         advancedtables:
+            title:      "Advanced Translation Tables"
+            text:       'In some cases it might be necessary to distinguish between different uses of the same term. For example, you might want to translate the term "residential" differently depending on wheter it appears as "building=residential" or as "highway=residential". This is possible by prepending the OSM key to the item in the translation table, for example:'
+
+
+      transform:
+         title:         "Help for Tagtransform"
+         h1:            "Using Database Transformations"
+
+         whatfor:
+            title:      "What are Database Transformations for?"
+            text1:      'You can use database transformations to execute arbitrary SQL (spatialite) commands on the results of the custom export. You can, for example, create new database columns, drop existing database columns, rename columns, merge columns, or drop records from the extract depending on certain filter criteria.'
+            text2:      'You can also change the contents of columns, although if you simply want to replace one content with another, the translation table mechanism might be a better choice.'
+            text3:      'Database transformations can also be used to create completely new tables derived from the standard tables.'
+
+         looklike:
+            title:      "How Do Database Transformations Look Like?"
+            text1:      'Database transformations are SQL files. They must contain valid SQL that can be executed by the "spatialite" interpreter when applied to a standard SQLite export file created by this export service.'
+            text2:      'Here is a very simple database transformation that inserts a new column into the planet_osm_point table and fills it with a copy of the "amenity" value:'
+            text3:      'Here is a more complex example that introduces two new columns into the table, called building_roof_material_stone and building_roof_material_concrete, and sets them to 1 if the existing column building_roof_material contains these terms:'
+            text4:      'In SQL, comments start with a double dash on the line, so you may add any number of these comments.'
+
+         howtest:
+            title:      "How Can I Test a Database Transformation?"
+            text1:      'From an existing HOT export run, download the "extract.sqlite" file, and open it in spatiallite:'
+            text2:      'You can now try out your SQL commands, and when satisfied with the result, copy them into a database transformation file.'
+
+         howuse:
+            title:      "How Do I Use a Database Transformation?"
+            text1:      'When creating a new job, after selecting the area of interest, you can now select one or more transformations that have been uploaded. These transformations will be applied to every run of that job, and will affect all output formats with the exception of raw OSM data. Database transformations are applied after translation tables.'
+            text2:       'Note that every run also has a "log.txt" file for download; if something is wrong with your database transformation, you will find the relevant SQL error messages in that file.'
+
+         advanced:
+            title:      "Advanced Database Transformations"
+            text:       'tbd'
+
+
+

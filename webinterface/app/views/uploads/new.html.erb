@@ -1,0 +1,30 @@
+<% if !@e.nil? %>
+   <pre style="margin-top: 20px;"><%= @e.message %></pre>
+<% end %>
+
+<h1><%= t 'uploads.newupload.h1' %></h1>
+<p><%= t 'uploads.newupload.text' %></p>
+
+
+<div class="wizard">
+<%= form_for @upload, :validate => true, :url => {:action => "create"}, :method => :post, :html => {:multipart => true} do |f| %>
+<%= render 'shared/error_messages' %>
+
+<table class="wizard">
+<tr>
+   <th><%= label_tag(:name, t('uploads.th.name')) %></th>
+   <td><%= f.text_field(:name) %></td>
+</tr>
+<tr>
+   <th><%= label_tag(:uploadfile, t('uploads.th.file')) %></th>
+   <td><%= f.file_field :uploadfile %></td>
+</tr>
+<tr>
+   <th><%= label_tag(:uptype, t('uploads.th.type')) %></th>
+   <th><%= f.select(:uptype, options_for_select(Upload.uptype_options)) %></th>
+</tr>
+</table>
+
+<%= f.submit(t('uploads.button.save')) %>
+<% end %>
+</div>

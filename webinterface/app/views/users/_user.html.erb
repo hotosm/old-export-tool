@@ -1,0 +1,18 @@
+<tr>
+<td><%= user.email %></td>
+<td>
+<% if user.admin? %>
+Admin
+<% else %>
+-
+<% end %>
+</td>
+<td><%= user.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+<td>
+<a href="<%= suspend_user_path(:id => user.id) %>" title="<%= t 'users.suspend_user' %>">
+   <img src="<%= asset_path 'delete.png' %>" class="delicon">
+</a>
+</td>
+</tr>
+
+

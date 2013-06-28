@@ -1,0 +1,115 @@
+# Localization for english
+# Jobs section
+
+de:
+
+   jobs:
+      title:               "Jobs"
+      h1:                  "Alle Jobs"
+
+      nojobs:              "Es sind keine (aktiven) Jobs in der Datenbank."
+      filter:              "Filter"
+
+      not_owner:           "nicht Eigentümer"
+      
+      based_upon:
+         default_tags:     "nur Default Tags"
+         directly:         "direkt hochgeladen (alte Version)" 
+
+      th:
+         name:             "Name"
+         description:      "Beschreibung"
+         region:           "Region"
+         created_at:       "Erstellt am"
+         created_by:       "Erstellt von"
+         based_preset:     "Basierend auf dem Presetfile"
+         delete:           "Löschen"
+         state:            "Status"
+         download:         "Download"
+         preset:           "Tags/Preset File"
+         transform:        "Tag Transform SQL File"
+         translate:        "Translation File"
+   
+         minlon:           "Min. Längengrad"
+         maxlon:           "Max. Längengrad"
+         minlat:           "Min. Breitengrad"
+         maxlat:           "Max. Breitengrad"
+
+      action:
+         show_deleted:     "Anzeige der gelöschten Jobs"
+         hide_deleted:     "Verbergen der gelöschten Jobs"
+         select_area:      "Gebiet auswählen"
+
+      button:
+         newrun:           "Neuen Durchlauf starten"
+         recyclejob:       "Job erzeugen"
+         save:             "Speichern"
+
+      job:
+         h1:               "Job"
+         restore:          "Wiederherstellen"
+
+      runs:
+         h2:               "Durchläufe"
+         message:
+            jobrunning:    "Der Job läuft - Downloads sind noch nicht verfügbar."
+            nodownload:    "Keine Downloads verfügbar."
+     
+      area:             
+         h2:               "Gebiet"
+
+      config:           
+         h2:               "Konfiguration"
+
+      recycle:          
+         h2:               "Neuer Job mit derselben Konfiguration"
+         text:             "Erzeugen Sie einen neuen Job mit denselben Konfigurations-Parametern wie dieser Job."
+
+      newjob:
+         title:            "Neuer Export-Job"
+         h1:               "Neuer Export-Job"
+
+      newjobconf:
+         title:            "Job-Konfiguration"
+         h1:               "Neuer Export-Job - Konfiguration"
+
+         th:
+            name:          "Jobname"
+            preset:        "Auswahl Preset File"
+            default_tags:  "Default Tags hinzufügen?"
+            transform:     "Tag Transform SQL File"
+            translation:   "Translation File"
+
+      newjobwithconf:
+         title:            "Neuer Export-Job (mit vorgegebener Konfiguration)"
+         h1:               "Neuer Export-Job (mit vorgegebener Konfiguration)"
+
+
+
+      flash:
+         success:
+            job_created:         "Der Job wurde erzeugt!"
+            run_saved:           "Der Durchlauf wurde gestartet!"
+            restored:            "Der Job wurde wiederhergestellt!"
+            deleted:             "Der Job wurde gelöscht!"
+
+         error:
+            xml_parsing_failed:  "Das Parsen des XML war nicht erfolgreich. Es wurde kein Job erzeugt."
+            no_tags:             "Es wurden keine Tags gefunden und kein Job erzeugt. Bitte wählen Sie ein Preset-File aus oder Default-Tags."
+            not_saved:           "Der Job wurde nicht gespeichert!"
+            running_job:         "Es gibt schon einen laufenden Job."
+            no_run_started:      "Es wurde kein Durchlauf gestartet!"
+            restored:            "Der Job wurde nicht wiederhergestellt!"
+            deleted:             "Der Job wurde ncht gelöscht!"
+
+      errors:
+         no_valid_region:     "Das ausgewählte Gebiet befindet sich nicht in einer gültigen Region.."
+         out_of_range:        "Der Wert liegt ausserhalb des gültigen Bereichs."
+         area_not_covered:    "Das ausgewählte Gebiet wird nicht vom Service abgedeckt!"
+         area_too_large:      "Das ausgewählte Gebiet ist zu gross: "
+         bb_only_allowed:     " - Nur maximal %{bbox_max} sind erlaubt."
+
+
+
+
+

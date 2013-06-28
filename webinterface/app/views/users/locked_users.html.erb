@@ -1,0 +1,43 @@
+<h1><%= t 'users.locked.h1' %></h1>
+
+<% if @locked.count == 0 %>
+<p><%= t 'users.message.no_locked_users' %></p>
+<% else %>
+
+<table class="jobindex">
+   <tr>
+   <th width="400"><%= t 'users.th.email' %></th>
+   <th width="220"><%= t 'users.th.locked_at' %></th>
+   <th width="220"><%= t 'users.th.lock_reason' %></th>
+   <th><%= t 'users.th.restore' %></th>
+   </tr>
+
+   <% @locked && @locked.each do |user| %>
+   <tr>
+      <td><%= user.email %></td>
+      <td>
+         <% if !user.suspended_at.nil? %>
+         <%= user.suspended_at.strftime("%Y-%m-%d %H:%M") %>
+         <% else %>
+         <%= user.updated_at.strftime("%Y-%m-%d %H:%M") %>
+         <% end %>
+      </td>
+      <td>
+         <% if user.confirmed_at.nil? %>
+         <%= t'users.unconfirmed_user' %>
+         <% elsif !user.suspended_at.nil? %>
+         <%= user.suspension_reason %>
+         <% end %>
+      </td>
+      <td>
+         <% if user.confirmed_at.nil? %>
+         <% elsif !user.suspended_at.nil? %>
+         <%= link_to t('users.restore'), unsuspend_user_path(:id => user.id) %>
+         <% end %>
+      </td>
+   </tr>
+   <% end %>
+</table>
+<% end %>
+
+

@@ -10,13 +10,16 @@
 <% end %>
 </ul>
 <% elsif run.state == 'new' or run.state == 'running' %>
-[job is running - no downloads available yet]
+[<%= t 'jobs.runs.message.jobrunning' %>]
 <% elsif run.state == 'error' %>
 <%= run.comment %>
 <% else %>
-[no download available]
+[<%= t 'jobs.runs.message.nodownload' %>]
 <% end %>
 </td>
 <td><%= run.updated_at.strftime("%Y-%m-%d %H:%M") %></td>
+<% if current_user.try(:admin?) %>
+<td><%= run.user.email %></td>
+<% end %>
 </tr>
 

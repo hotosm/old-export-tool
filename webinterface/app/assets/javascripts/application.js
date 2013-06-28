@@ -5,5 +5,6 @@
 // the compiled file.
 //
 //= require jquery
+//= require jquery-migrate
 //= require jquery_ujs
 //= require_tree .

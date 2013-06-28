@@ -1,0 +1,66 @@
+# Localization for french
+# User section
+
+fr:
+   users:
+      title:                        "Utilisateurs"
+      h1:                           "Utilisateurs"
+
+      login:                        "Connexion"
+      logout:                       "Déconnexion"
+      create_account:               "Créer un Compte"
+      edit_account:                 "Modifier les paramètres du compte"
+      cancel_account:               "Annuler le compte"
+      cancel_account_text:          "Voulez-vous supprimer votre compte?"
+      cancel_account_confirm:       "Etes-vous sûr??"
+      change_password:              "Modifier le mot de passe"
+      lost_password:                "Mot de passe perdu?"
+      resend_confirmation:          "Recevoir à nouveau l'instruction de confirmation"
+      no_confirmation:              "Vous n'avez pas reçu les instructions de confirmation?"
+      suspend_user:                 "Suspendre Utilisateur"
+      active_users:                 "Utilisateurs actifs"
+      locked_users:                 "Utilisateurs verrouillés"
+      restore:                      "[Restaurer]"
+      unconfirmed_user:             "Utilisateur pas confirmé"
+      suspended_by:                 "Suspendue par"
+
+      locked:
+         title:                     "Utilisateurs verrouillés"
+         h1:                        "Utilisateurs verrouillés"
+
+      th:
+         email:                     "E-mail"
+         password:                  "Mot de passe"
+         password_confirmation:     "Confirmation du mot de passe"
+         password_current:          "Mot de passe actuel"
+         password_new:              "Nouveau mot de passe"
+         created_at:                "Date de création"
+         locked_at:                 "Date de verrouillage"
+         lock_reason:               "Raison de verrouillage"
+         admin:                     "Administrateur?"
+         restore:                   "Restaurer"
+         suspend:                   "Verrouiller"
+
+      button:
+         login:                     "Connexion"
+         update:                    "Sauver"
+         create_account:            "Créer Compte"
+         cancel_account:            "Annuler Compte"
+         logout:                    "Déconnexion"
+         resend_confirmation:       "Recevoir à nouveau l'instruction de confirmation"
+         send_reset_password:       "Envoyez-moi instructions de réinitialisation de mot de passe"
+         change_password:           "Changer mon mot de passe"
+
+      message:
+         no_locked_users:           "Aucun membre verrouillés dans la base."
+         no_active_users:           "Pas utilisateurs actifs dans la base."
+         leave_blank:               "Laissez ce champ vide si vous ne voulez pas le changer."
+         need_current_password:     "Nous avons besoin de votre mot de passe actuel pour confirmer vos modifications."
+
+      flash:
+         success:
+            suspended:              "Utilisateur verrouillé avec succès:"
+            unsuspended:            "Utilisateur deverrouillé avec succès:"
+
+   
+

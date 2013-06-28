@@ -1,0 +1,11 @@
+# Localization for french
+# Devise section
+
+fr:
+   
+   devise:
+      failure:
+         user:
+            suspended: "Compte est suspendu."
+
+   

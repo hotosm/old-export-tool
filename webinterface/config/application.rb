@@ -27,7 +27,9 @@ module HotExports
     config.autoload_paths += %W(#{config.root}/lib/xml)
     config.assets.precompile += ['OpenLayers-2.11/OpenLayers.js' ]
     config.assets.precompile += ['OpenLayers-2.11/theme/default/style.css' ]
-    config.assets.precompile += ['jquery-validation-1.9.0/jquery.validate.min.js' ]
+    config.assets.precompile += ['jquery-validation-1.11.1/dist/jquery.validate.min.js']
+    config.assets.precompile += ['jquery-validation-1.9.0/jquery.validate.min.js']
+    config.assets.precompile += ['rails.validations.js']
     config.assets.compile = true
 
     # Only load the plugins named here, in the order given (default is alphabetical).

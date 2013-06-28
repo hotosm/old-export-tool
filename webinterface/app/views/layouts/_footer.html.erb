@@ -1,5 +1,87 @@
-<div id="footer" style="background-image: url(<%= asset_path 'layout/footer.png' %>);">
+<div id="footer">
 
-<p>Copyright&copy; 2012 Humanitarian OpenStreetMap Team
-&middot; Map data from OpenStreetMap, CC-BY-SA 2.0
+<div id="footer_account">
+<h4><%= t 'footer.your_account' %></h4>
+
+<% if user_signed_in? %>
+<p><%= t 'footer.logged_in_as' %><br>
+<b><%= current_user.email %></b>.
+</p>
+<% end %>
+
+<ul>
+<% if user_signed_in? %>
+   <li>
+      <img src="<%= asset_path 'new.png' %>">
+      <%= link_to t('users.logout'), destroy_user_session_path, :method=>'delete' %>
+   </li>
+
+   <li>
+      <img src="<%= asset_path 'new.png' %>">
+      <%= link_to t('users.edit_account'), edit_user_registration_path %>
+   </li>
+
+<% else %>
+   <li>
+      <img src="<%= asset_path 'new.png' %>">
+      <%= link_to t('users.create_account'), new_user_registration_path %>
+   </li>
+   <li>
+      <img src="<%= asset_path 'new.png' %>">
+      <%= link_to t('users.login'), new_user_session_path %>
+   </li>
+   <li>
+      <img src="<%= asset_path 'new.png' %>">
+      <%= link_to t('lost_password'), new_user_password_path %>
+   </li>
+<% end %>
+</ul>
+</div>
+
+<div id="footer_expert">
+<h4><%= t 'footer.expert_functions' %></h4>
+<ul>
+<li>
+   <img src="<%= asset_path 'view.png' %>">
+   <%= link_to t('uploads.presets.name'), uploads_presets_path %>
+</li>
+<li>
+   <img src="<%= asset_path 'view.png' %>">
+   <%= link_to t('uploads.tagtransforms.name'), uploads_tagtransforms_path %>
+</li>
+<li>
+   <img src="<%= asset_path 'view.png' %>">
+   <%= link_to t('uploads.translations.name'), uploads_translations_path %>
+</li>
+
+<% if user_signed_in? %>
+<li>
+   <img src="<%= asset_path 'new.png' %>">
+   <%= link_to t('uploads.newupload.name'), new_upload_path %>
+</li>
+<% end %>
+</ul>
+</div>
+
+<% if current_user.try(:admin?) %>
+<div id="footer_useradmin">
+<h4><%= t 'footer.user_administration' %></h4>
+<ul>
+<li>
+   <img src="<%= asset_path 'view.png' %>">
+   <%= link_to t('users.active_users'), active_users_path %>
+</li>
+<li>
+   <img src="<%= asset_path 'view.png' %>">
+   <%= link_to t('users.locked_users'), locked_users_path %>
+</li>
+</ul>
+</div>
+<% end %>
+
+<div class="imp" style="clear:both;">
+<p style="clear:both; font-style: italic;">
+<%= t 'footer.text' %>
+</div>
+
 </div>

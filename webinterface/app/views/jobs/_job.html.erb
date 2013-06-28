@@ -1,6 +1,57 @@
+<% if job.visible? %>
 <tr class="jobfilter">
-<td><a href="<%= job_path(job.id) %>"><%= job.name %></a></td>
-<td><%= Region.find(job.region_id).name %></td>
-<td><%= job.updated_at.strftime("%Y-%m-%d %H:%M") %></td>
-</tr>
+<% else %>
+<tr class="jobfilter invisible">
+<% end %>
 
+<!-- Name //-->
+<td>
+<% if job.visible? %>
+<a href="<%= job_path(job.id) %>"><%= job.name %></a>
+<% else %>
+<a href="<%= job_path(job.id) %>"><s><%= job.name %></s></a>
+<% end %>
+</td>
+
+<!-- Region //-->
+<td><%= Region.find(job.region_id).name %></td>
+
+<!-- Created At //-->
+<td><%= job.updated_at.strftime("%Y-%m-%d %H:%M") %></td>
+
+<!-- Created By //-->
+<% if current_user.try(:admin?) and job.user.try(:email) %>
+   <td><%= job.user.email %></td>
+<% end %>
+
+<!-- Based upon Presefile //-->
+<td>
+<% if job.presetfile == 'old' %>
+   <%= t 'jobs.based_upon.directly' %>
+<% elsif job.presetfile? %>
+   <%= job.presetfile %>
+<% else %>
+   <%= t 'jobs.based_upon.default_tags' %>
+<% end %>
+</td>
+
+<!-- Delete and restore //-->
+<% if user_signed_in? %>
+   <td class="delicon">
+   <% if user_right_deletion? job %>
+      <% if job.visible? %>
+         <a href="<%= jobs_invisible_path(:id => job.id) %>" title="Delete <%= job.name %>" class="jq_visible">
+            <img src="<%= asset_path 'delete.png' %>" class="delicon">
+         </a>
+      <% else %>
+         <a href="<%= jobs_restore_path(:id => job.id, :deleted => 'y') %>" title="Restore <%= job.name %>" class="jq_invisible">
+            <%= t 'jobs.job.restore' %>
+         </a>
+      <% end %>
+   <% else %>
+   [<%= t 'jobs.not_owner' %>]
+   <% end %>
+   </td>
+<% end %>
+
+</tr>

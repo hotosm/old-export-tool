@@ -1,0 +1,11 @@
+# Localization for english
+# Devise section
+
+en:
+   
+   devise:
+      failure:
+         user:
+            suspended: "Account is suspended."
+   
+

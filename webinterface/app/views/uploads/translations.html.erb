@@ -1,0 +1,18 @@
+<%= render "uploads_show_hide" %>
+<h1>Translation Files</h1>
+
+<p class="message"></p>
+<table class="upindex">
+<tr>
+   <!-- <th>Type</th> -->
+   <th>File Name</th>
+   <th>Updated At</th>
+   <th>Download</th>
+   <th>Delete</th>
+   <th>Update</th>
+</tr>
+<%= render @uploads %>
+</table>
+
+<%= render "upload_actions" %>
+

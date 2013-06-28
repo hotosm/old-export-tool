@@ -15,18 +15,42 @@ $(document).ready(function(){
          tr.filter(":contains(" + filtertxt + ")").show();
       }
    });
+
 });
 
 </script>
-<h1>All Jobs</h1>
+<h1><%= t 'jobs.h1' %></h1>
 
-<p>Filter <input type="text" size=10 id="jobfilter"></p>
+<% if @jobs.count == 0 %>
+<p><%= t 'jobs.nojobs' %></p>
+<% else %>
+<p><%= t 'jobs.filter' %> <input type="text" size=10 id="jobfilter"></p>
 
 <table class="jobindex">
-<tr>
-<th width="440">Name</th>
-<th width="220">Region</th>
-<th width="220">Created At</th>
-</tr>
-<%= render @jobs %>
+   <tr>
+   <th width="400"><%= t 'jobs.th.name' %></th>
+   <th width="220"><%= t 'jobs.th.region' %></th>
+   <th width="220"><%= t 'jobs.th.created_at' %></th>
+   <% if current_user.try(:admin?) %>
+      <th width="220"><%= t 'jobs.th.created_by' %></th>
+   <% end %>
+   <th width="220"><%= t 'jobs.th.based_preset' %></th>
+   <% if user_signed_in? %>
+      <th><%= t 'jobs.th.delete' %></th>
+   <% end %>
+   </tr>
+   <%= render @jobs %>
 </table>
+<% end %>
+
+<ul class="upload_actions">
+<!-- Show deleted //-->
+<li>
+<img src="<%= asset_path 'view.png' %>">
+<% if @hide_invisible == true %>
+<%= link_to t('jobs.action.show_deleted'), jobs_path(:deleted => 'y') %>
+<% else %>
+<%= link_to t('jobs.action.hide_deleted'), jobs_path %>
+<% end %>
+</li>
+</ul>

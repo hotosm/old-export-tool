@@ -1,24 +1,24 @@
-<h1>Help</h1>
+<h1><%= t 'help.h1' %></h1>
 
-<h2>Create a new job</h2>
-Click on "New Job" at the top navigation.
-A wizard starts.
-Enter the name of your job.
-This is an important step because later you look for this name, when you want to download your data.
-In the second step you choose the geographic section.
-In the third step you can upload your tags with a JOSM preset file.
-In the last step you choose the output format.
+<h2><%= t 'help.newjob.title' %></h2>
+<p><%= t 'help.newjob.text' %></p>
 
+<h2><%= t 'help.rerunjob.title' %></h2>
+<p><%= t 'help.rerunjob.text' %></p>
 
-<h2>Recycle an existing job</h2>
-Click on "All Jobs" at the top navigation.
-Look for the job you want to recycle.
-Click on the recycle button behind your job.
-You get a wizard like the new job wizard.
-But it contains all data from the chosen job.
-You can modify everything now or you can left the given presets from the old job.
+<h2><%= t 'help.recyclejob.title' %></h2>
+<p><%= t 'help.recyclejob.text' %></p>
 
-<h2>Fetch your export</h2>
-Some minutes after you started your job, you can fetch your data. 
-Click on "All Jobs" at the top navigation.
-Look for your job. Click on the download button behind your job.
+<h2><%= t 'help.download.title' %></h2>
+<p><%= t 'help.download.text' %></p>
+
+<h2><%= t 'help.presets.title' %></h2>
+<p><%= t 'help.presets.text' %></p>
+
+<h2><%= t 'help.advanced.title' %></h2>
+
+<ul>
+<li><%= link_to t('help.advanced.text1'), help_translate_path %></li>
+<li><%= link_to t('help.advanced.text2'), help_transform_path %></li>
+</ul>
+

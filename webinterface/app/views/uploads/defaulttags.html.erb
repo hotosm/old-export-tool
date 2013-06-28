@@ -1,0 +1,30 @@
+<h1><%= t 'uploads.defaulttags.h1' %></h1>
+
+<table class="checktags">
+<tr>
+<th><%= t 'uploads.th.tag' %></th>
+<th><%= t 'uploads.th.geometrytype' %></th>
+</tr>
+
+<% @tags.sort.each do |k, v| %>
+<tr>
+<td><%= k %>
+</td>
+<td>
+   <%=
+      # v: {"point"=>false, "line"=>false, "polygon"=>false}      
+      gstring = v.keys.map { |kk, vv| "#{kk}" }.join(", ")
+   %>
+</td>
+</tr>
+<% end %>
+
+
+
+</table>
+
+
+
+
+
+

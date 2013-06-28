@@ -1,0 +1,28 @@
+<% @title = t('users.create_account') %>
+<h2><%= t 'users.create_account' %></h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+
+<table class="account_create">
+<tr>
+   <th><%= f.label t('users.th.email') %></th>
+   <td><%= f.email_field :email, :autofocus => true %></td>
+</tr>
+<tr>
+   <th><%= f.label t('users.th.password') %></th>
+   <td><%= f.password_field :password %></td>
+</tr>
+<tr>
+   <th><%= f.label t('users.th.password_confirmation') %></th>
+   <td><%= f.password_field :password_confirmation %></td>
+</tr>
+<tr>
+   <td colspan="2"><%= f.submit t('users.button.create_account') %></td>
+</tr>
+</table>
+<% end %>
+
+<%= render "devise/shared/links" %>
+

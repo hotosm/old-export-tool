@@ -1,0 +1,17 @@
+<%= render "uploads_show_hide" %>
+<h1><%= t 'uploads.tagtransforms.h1' %></h1>
+
+<p class="message"></p>
+<table class="upindex">
+<tr>
+   <!-- <th>Type</th> -->
+   <th><%= t 'uploads.th.name' %></th>
+   <th><%= t 'uploads.th.updated_at' %></th>
+   <th><%= t 'uploads.th.download' %></th>
+   <th><%= t 'uploads.th.delete' %></th>
+   <th><%= t 'uploads.th.update' %></th>
+</tr>
+<%= render @uploads %>
+</table>
+
+<%= render "upload_actions" %>

@@ -1,0 +1,10 @@
+# Localization for german
+# Devise section
+
+de:
+   
+   devise:
+      failure:
+         user:
+            suspended: "Der Account ist gesperrt."
+   

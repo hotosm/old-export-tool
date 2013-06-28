@@ -1,0 +1,286 @@
+<script type="text/javascript" src="<%= asset_path 'OpenLayers-2.11/OpenLayers.js' %>"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+  
+   // map
+   var proj4326;
+   var projmerc;
+
+   var map;
+   var mapnik_layer;
+   var regions_layer;
+   var check_layer;
+
+   var vectors;
+   var box;
+   var transform;
+
+   init_map();
+
+   $(".select_area").click(function() { 
+      init_drawfeature();
+   });
+   
+   $(".latlon").change(function() {
+      init_drawfeature();
+      //box.deactivate();
+      init_values2box();
+   });
+
+
+<% if @job.id.nil? %>
+<% else %>
+   // XXX check for "newwithconfiguration"
+   init_drawfeature();
+   box.deactivate();
+   init_values2box();
+<% end %>
+
+
+function init_map(){
+   proj4326 = new OpenLayers.Projection("EPSG:4326");
+   projmerc = new OpenLayers.Projection("EPSG:900913");
+
+   map = new OpenLayers.Map("map", {
+      controls: [
+         // new OpenLayers.Control.KeyboardDefaults(),
+         new OpenLayers.Control.Navigation(),
+         new OpenLayers.Control.ZoomPanel(),
+         new OpenLayers.Control.MousePosition()
+      ],
+      maxExtent:  new OpenLayers.Bounds(-20037508.34,-20037508.34,
+                                         20037508.34, 20037508.34),
+      numZoomLevels: 18,
+      maxResolution: 156543,
+      units: 'm',
+      projection: projmerc,
+      displayProjection: proj4326,
+      theme: "<%= asset_path 'OpenLayers-2.11/theme/default/style.css' %>"
+   } );
+
+   mapnik_layer = new OpenLayers.Layer.XYZ('OSM Mapnik', 'http://tile.openstreetmap.org/${z}/${x}/${y}.png'); /*, {
+      sphericalMercator: true
+   });*/
+   
+   map.addLayer(mapnik_layer);
+
+   regions_layer = new OpenLayers.Layer.Vector("KML", {
+      projection: map.displayProjection,
+      strategies: [new OpenLayers.Strategy.Fixed()],
+      protocol: new OpenLayers.Protocol.HTTP({
+         url: "/kml/loch.kml",
+         format: new OpenLayers.Format.KML({
+            maxDepth: 2
+         })
+      }),
+      styleMap: new OpenLayers.StyleMap({
+         "default": new OpenLayers.Style({
+            graphicName: "cross",
+            pointRadius: 6,
+            fillOpacity: 0.30,
+            fillColor: "#339966",
+            strokeColor: "#339966",
+            strokeWidth: 2
+         })
+      })
+   });
+   
+   check_layer = new OpenLayers.Layer.Vector("KML", {
+      projection: map.displayProjection,
+      strategies: [new OpenLayers.Strategy.Fixed()],
+      protocol: new OpenLayers.Protocol.HTTP({
+         url: "/kml/check.kml",
+         format: new OpenLayers.Format.KML({
+            maxDepth: 2
+         })
+      }),
+      styleMap: new OpenLayers.StyleMap({
+         "default": new OpenLayers.Style({
+            graphicName: "cross",
+            pointRadius: 6,
+            fillOpacity: 0,
+            fillColor: "#efefef",
+            strokeColor: "#339966",
+            strokeWidth: 2
+         })
+      })
+   });
+
+   map.addLayer(regions_layer);
+   map.addLayer(check_layer);
+  
+   
+<% if @job.id.nil? %>
+
+   extent = new OpenLayers.Bounds(-180, -80, 180, 80);
+   extent.transform(proj4326,projmerc);
+   map.zoomToExtent(extent)
+<% else %>
+
+   extent = new OpenLayers.Bounds(<%= @job.lonmin %>, <%= @job.latmin %>, <%= @job.lonmax %>, <%= @job.latmax %>);
+   extent.transform(proj4326,projmerc);
+   map.zoomToExtent(extent.scale(2))
+<% end %>
+   
+}
+
+function init_drawfeature() {
+
+   if (vectors) { 
+      vectors.destroy();
+   }
+
+   vectors = new OpenLayers.Layer.Vector("Box", {
+      displayInLayerSwitcher: false
+   });
+   map.addLayers([vectors]);
+
+   box = new OpenLayers.Control.DrawFeature(vectors, OpenLayers.Handler.RegularPolygon, { 
+      handlerOptions: {
+         sides: 4,
+         snapAngle: 90,
+         irregular: true,
+         persist: true
+      }
+   });
+   box.handler.callbacks.done = draw_end;
+   map.addControl(box);
+   //activate_drawfeature();
+
+   transform = new OpenLayers.Control.TransformFeature(vectors, {
+      rotate: false,
+      irregular: true
+   });
+   transform.events.register("transformcomplete", transform, transformComplete);
+   map.addControl(transform);
+
+   box.activate();
+}
+
+function transformComplete(event) {
+   set_bounds(event.feature.geometry.bounds);
+}
+
+function draw_end(bbox) {
+   bounds = bbox.getBounds();
+   draw_box(bounds);
+   set_bounds(bounds);
+   box.deactivate();
+}
+
+function draw_box(bounds) {
+   var feature = new OpenLayers.Feature.Vector(bounds.toGeometry());
+   vectors.addFeatures(feature);
+   transform.setFeature(feature);
+}
+
+
+function set_bounds(bounds) {
+   
+   if (!check_bounds(bounds)) {
+      return false;
+   }
+
+   bounds.transform(projmerc,proj4326);
+
+   z = 10000
+
+   var left    = Math.round(bounds.left   * z) / z;
+   var bottom  = Math.round(bounds.bottom * z) / z;
+   var right   = Math.round(bounds.right  * z) / z;
+   var top     = Math.round(bounds.top    * z) / z;
+
+   $("#job_lonmin").val(left);
+   $("#job_latmin").val(bottom);
+   $("#job_lonmax").val(right);
+   $("#job_latmax").val(top);
+}
+
+function init_values2box() {
+
+   xminlon = <%= @job.lonmin %>
+   xminlat = <%= @job.latmin %>
+   xmaxlon = <%= @job.lonmax %>
+   xmaxlat = <%= @job.latmax %>
+
+   bounds = new OpenLayers.Bounds(xminlon, xminlat, xmaxlon, xmaxlat);
+   bounds.transform(proj4326,projmerc);
+   draw_box(bounds);
+}
+
+function check_bounds(bounds) {
+
+   var poly = bounds.toGeometry();
+   var check = check_layer.features[0].geometry.intersects(poly);
+   
+   var max_bounds_area = <%= Job::BBOX_MAX %>;
+   var area = bounds.transform(projmerc, proj4326).toGeometry().getArea();
+   bounds.transform(proj4326,projmerc);
+
+   if (!check) {
+      alert('<%= t('jobs.errors.area_not_covered') %>');
+      return false;
+   }
+   else if (area > max_bounds_area) {
+      alert('<%= t('jobs.errors.area_too_large') %>' + parseInt(area) + '<%= t('jobs.errors.bb_only_allowed', :bbox_max => Job::BBOX_MAX) %>'); 
+   } else { 
+      return true;
+   }
+}
+
+
+});
+</script>
+<h1><%= @h1 %></h1>
+
+<div class="wizard">
+   <%= form_for @job, :validate => true, :url => { :action => @action } do |f| %>
+   <%= hidden_field_tag(:old_job_id, @job.id) %>
+   <%= render 'shared/error_messages' %>
+   <table class="wizard">
+
+<!--
+      <tr>
+         <th><%= f.label :region, t('jobs.th.region') %></th>
+         <th><%= collection_select(:job, :region_id, Region.all, :id, :name, {}, {:class => 'change_project'}) %></th>
+      </tr>
+//-->
+      <tr>
+         <th><%= f.label :name, t('jobs.th.name') %></th>
+         <td><%= f.text_field :name %></td>
+      </tr>
+      <tr>
+         <th><%= f.label :description, t('jobs.th.description') %></th>
+         <td><%= f.text_area :description %></td>
+      </tr>
+   </table>
+
+   <div id="map"></div>
+
+   <div id="latlon">
+   <p><img src="/assets/Pointer.png" style="width:20px;" class="select_area"><a href="#" class="select_area"><%= t 'jobs.action.select_area' %></a></p>
+   <table class="latlon">
+      <tr>
+         <th><%= f.label(:lonmin, t('jobs.th.minlon')) %></th>
+         <td><%= f.text_field(:lonmin, :class => 'latlon') %></td>
+      </tr>
+      <tr>
+         <th><%= f.label(:latmin, t('jobs.th.minlat')) %></th>
+         <td><%= f.text_field(:latmin, :class => 'latlon') %></td>
+      </tr>
+      <tr>
+         <th><%= f.label(:lonmax, t('jobs.th.maxlon')) %></th>
+         <td><%= f.text_field(:lonmax, :class => 'latlon') %></td>
+      </tr>
+      <tr>
+         <th><%= f.label(:latmax, t('jobs.th.maxlat')) %></th>
+         <td><%= f.text_field(:latmax, :class => 'latlon') %></td>
+      </tr>
+   </table>
+   </div>
+
+   <div style="clear: left;">
+   <%= f.submit t('jobs.button.save') %>
+   </div>
+   <% end %>
+</div>

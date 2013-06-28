@@ -1,9 +1,17 @@
 <div id="header" style="background-image: url(<%= asset_path 'layout/red-header.png' %>);">
    <div class="nav">
       <ul>
-         <li><%= link_to "Home", root_path %></li>
-         <li><%= link_to "New Job", new_job_path %></li>
-         <li><%= link_to "All Jobs", jobs_path %></li>
+         <li><%= link_to t('navigation.home'), root_path %></li>
+         <li><%= link_to t('navigation.help'), help_path %></li>
+         <li><%= link_to t('navigation.jobs'), jobs_path %></li>
+
+         <% if user_signed_in? %>
+         <li><%= link_to t('navigation.newjob'), wizard_area_path %></li>
+         <% else %>
+         <li><span class="inactive" title="<%= t 'navigation.newjob_hint' %>"><%= t 'navigation.newjob' %></span></li>
+         <% end %>
+
+
       </ul>
    </div>
    <div class="logo">
@@ -11,5 +19,11 @@
       <h1>HOT Exports</h1>
    </div>
 </div>
-
+<div id="switch_language" style="float: right;">
+<p>
+<%= link_to_unless I18n.locale == :en, "English", :locale => :en %>
+|
+<%= link_to_unless I18n.locale == :de, "Deutsch", :locale => :de %>
+</p>
+</div>
 

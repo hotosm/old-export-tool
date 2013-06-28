@@ -19,19 +19,22 @@ class Tag < ActiveRecord::Base
       end
    
       default_tags.each_key do |key|
-         tags[key] = Hash.new
+         if (!tags.has_key?(key)) then 
+            tags[key] = Hash.new
+         end
          default_tags[key].each_key do |geom|
             tags[key][geom] = default_tags[key][geom]
          end
       end
 
-      logger.error tags
+      # logger.error tags
 
       return tags
    end
 
 
    def self.default_tags
+
       tags = {
          "access"             => { "point" => true, "line" => true },
          "addr:housename"     => { "point" => true, "line" => true },
@@ -102,9 +105,8 @@ class Tag < ActiveRecord::Base
       return tags
    end
 
-
    def self.from_xml(xml)
-      
+
       tags = Hash.new
       p = XML::Parser.string(xml)
       doc = p.parse
@@ -112,35 +114,52 @@ class Tag < ActiveRecord::Base
       items = doc.find('//fuzz:item')
 
       items.each do |item|
-         item_geometrytype = Tag.type2geometrytype(item['type'])
-
-         # iterates each child with key attribute not nil
-         item.children.each do |child|
-            if(!child['key'].nil?)
-
-               key = child['key']
-               if !tags.has_key?(key)
-                  tags[key] = Hash.new
-               end
-
-               if child['type'].nil?
-                  geomlist = item_geometrytype
-               else
-                  geomlist = Tag.type2geometrytype(child['type'])
-               end
-
-               geomlist.each do |type|
-                  tags[key][type] = false
-               end
-
-            end
-         end
+         process_item_and_children(tags, item, Tag.type2geometrytype(nil))
       end
       return tags
+
+   end
+
+   def self.save_tags(tags, job_id)
+
+      tags.each_key do |key|
+         tags[key].each do |type, value|
+            tag = Tag.new
+            tag.key = key
+            tag.geometrytype = type
+            tag.job_id = job_id
+            tag.default = value
+            tag.save
+         end
+      end
    end
 
 
+
 private
+  def self.process_item_and_children(tags, something, geometrytype)
+
+      if (!something['type'].nil?)
+         geometrytype = Tag.type2geometrytype(something['type'])
+      end
+
+      if (!something['key'].nil? && !geometrytype.nil?)
+         key = something['key']
+         if !tags.has_key?(key)
+            tags[key] = Hash.new
+         end
+
+         geometrytype.each do |type|
+            tags[key][type] = false
+         end
+     end
+
+     something.children.each do |child|
+        process_item_and_children(tags, child, geometrytype)
+     end
+   end
+
+
    def self.type2geometrytype(type) 
 
       geometrytype = Array.new

@@ -37,7 +37,9 @@ body {
    border-radius: 10px;
 }
 
-
+.marker {
+   background-color: #90E3FF;
+}
 
 /* default styles */
 
@@ -127,7 +129,6 @@ input[type=submit], input[type=button] {
    font-weight: normal;
 }
 
-
 textarea {
    height: 180px;   
 }
@@ -137,15 +138,67 @@ option {
    background-color: #fefefe; 
 }
 
-
 li {
    line-height: 1.5;   
 }
 
+/* uploads index */
+table.upindex {
+   margin-top: 20px;
+   background-color: #efefef;
+   border-collapse: collapse;   
+}
+
+table.upindex tr.invisible {
+   background-color: #dedede;   
+}
+
+table.upindex th, table.upindex td {
+   text-align: left;   
+   padding: 3px;
+   border: 1px solid #ccc;
+   font-size: 0.8em;
+}
+
+table.upindex td.delicon {
+   text-align: center;
+}
+
+ul.upload_actions {
+   margin: 50px 0px;   
+}
+
+ul.account_actions {
+   margin: 10px 0px;   
+}
+
+
+table.account_create th {
+   text-align: left;
+   width: 200px;
+}
+
+
+/* checktags */
+table.checktags {
+   margin-top: 20px;
+   border-collapse: collapse;   
+   background-color: #efefef;   
+}
+
+table.checktags td, table.checktags th {
+   padding: 3px 7px;
+   font-size: small;   
+}
+
+table.checktags tr:nth-of-type(odd) {
+     background-color:#cdcdcd;
+} 
+
 /* jobindex */
 table.jobindex {
    margin-top: 20px;
-   background-color: #efefef;
+   background-color: #e0e0e0;
    border-collapse: collapse;   
 }
 
@@ -154,6 +207,23 @@ table.jobindex th, table.jobindex td {
    padding: 3px;
    border: 1px solid #ccc;
    font-size: 0.8em;
+}
+
+table.jobindex tr:nth-child(1n+2) {
+   background-color: #efefef;
+}
+
+table.jobindex tr:nth-child(2n+3) {
+   background-color: #e0e0e0;
+}
+
+table.jobindex tr.invisible {
+   background-color: #DECCCC;
+}
+
+
+table.jobindex td.delicon {
+   text-align: center;
 }
 
 span.size {
@@ -181,7 +251,6 @@ p.wizard {
 table.wizard {
    width: 900px;
    margin: 40px 0px;
-   border-collapse: collapse;
 }
 
 table.wizard th, table.wizard td {
@@ -191,10 +260,9 @@ table.wizard th, table.wizard td {
 
 table.wizard th {
    text-align: left;
-   width: 80px;
+   width: 200px;
    background-color: #FFF;
    color: #2f2f2f;
-   font-weight: normal;
 }
 
 table.wizard input, table.wizard textarea {
@@ -203,6 +271,10 @@ table.wizard input, table.wizard textarea {
 
 table.wizard textarea {
    height: 4em;   
+}
+
+table.wizard label {
+   margin-left: 10px;   
 }
 
 #map {
@@ -285,6 +357,10 @@ table.latlon input {
    text-decoration: underline;
 }
 
+#header div.nav ul li span.inactive {
+   color: #ccc;
+}
+
 #header div.nav ul li img {
    width: 40px;
    height: 40px;
@@ -311,21 +387,60 @@ table.latlon input {
    text-shadow: #000 1px 1px 1px; font-size: 28px; color: #fff;
 }
 
+/* switch language */
+#switch_language {
+   float: right;
+   margin: 0px 80px 0px 0px;
+}
+
 /* footer */
 #footer {
    clear: both;
    margin-top: 40px;
-   padding: 40px 20px 20px 80px;
-   background-image: url('/assets/footer.png');
-   background-repeat: repeat-x;
+   padding: 20px 80px 20px 80px;
+   background-color: #474E59;
+   border-top: 5px solid #940903;
 }
 
 #footer p {
-   color: #aaa;
-   font-size: .7em;
-   font-style: italic;
+   color: #fff;
+   font-size: .8em;
 }
 
+#footer div.imp {
+   border-top: 1px solid #ffffff;
+}
+
+
+#footer_account, #footer_expert, #footer_useradmin {
+   float: left;
+   margin: 0px 10px 10px 0px;
+   padding: 5px;
+   width: 220px;
+   border-radius: 4px;
+}
+
+#footer_account h4, #footer_expert h4, #footer_useradmin h4{
+   font-size: 14px;
+   color: #fff;
+   margin: 0px 0px 20px 0px;
+}
+
+#footer_account a, #footer_expert a, #footer_useradmin a{
+   color: #fff;
+   font-size: 12px;
+}
+
+#footer select {
+   margin-left: 10px;
+   font-size: 12px;
+   font-weight: bold;
+   color: #940903;
+}
+
+#footer option {
+   width: 30px;
+}
 
 
 /* error messages */
@@ -359,12 +474,12 @@ div.flash {
    padding: 2px 10px;
 }
 
-div.success {
+div.success, div.notice {
    border: 2px solid #B9FFA2;
    background-color: #B9FFA2;
 }
 
-div.error {
+div.error, div.alert {
    border: 2px solid #e4c7dd;
    background-color: #e4c7dd;
 }
@@ -374,11 +489,15 @@ input.error { border: 1px solid red; }
 label.error {
    color: red;
    padding-left: 0px;
-   margin-left: 20px;
+   margin-left: 10px;
 }
 
-
-
+div.field_with_errors label.message {
+   color: red;
+   padding-left: 0px;
+   margin-left: 10px;
+   font-size: 0.8em;   
+}
 
 
 

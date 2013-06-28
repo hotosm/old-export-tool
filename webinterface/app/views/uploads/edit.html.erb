@@ -1,0 +1,30 @@
+<h1><%= t 'uploads.update.h1' %></h1>
+
+<p>
+<%= t 'uploads.update.text' %>
+</p>
+
+<div class="wizard">
+<%= form_tag({:controller => "uploads", :action => "newfileversion"}, :method => "post",  :multipart => true, :validate => true) do %>
+<%= hidden_field_tag("id", @upload.id) %>
+<%= render 'shared/error_messages' %>
+<table class="wizard">
+<tr>
+   <th><%= label_tag(:name, t('uploads.th.name')) %></th>
+   <td><%= @upload.name %></td>
+</tr>
+<tr>
+   <th><%= label_tag(:uptype, t('uploads.th.type')) %></th>
+   <th><%= Upload.uptypes[@upload.uptype] %></th>
+
+</tr>
+<tr>
+   <th><%= label_tag(:uploadfile, t('uploads.th.file')) %></th>
+   <td><%= file_field_tag :uploadfile %></td>
+</tr>
+</table>
+
+<%= submit_tag(t('uploads.button.save')) %>
+<% end %>
+</div>
+

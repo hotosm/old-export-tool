@@ -1,0 +1,9 @@
+<h1><%= t 'uploads.index.h1' %></h1>
+
+<ul>
+<li><a href="<%= uploads_presets_path %>"><%= t 'uploads.presets.name' %></a></li>
+<li><a href="<%= uploads_tagtransforms_path %>"><%= t 'uploads.tagtransforms.name' %></a></li>
+<li><a href="<%= uploads_translations_path %>"><%= t 'uploads.translations.name' %></a></li>
+</ul>
+
+<%= render "upload_actions" %>

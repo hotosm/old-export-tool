@@ -1,0 +1,112 @@
+# Localization for english
+# Jobs section
+
+en:
+
+   jobs:
+      title:               "Jobs"
+      h1:                  "All Jobs"
+
+      nojobs:              "No active jobs in database."
+      filter:              "Filter"
+
+      not_owner:           "not owner"
+      
+      based_upon:
+         default_tags:     "default tags only"
+         directly:         "directly uploaded (old version)" 
+
+      th:
+         name:             "Name"
+         description:      "Description"
+         region:           "Region"
+         created_at:       "Created At"
+         created_by:       "Created By"
+         based_preset:     "Based upon Presetfile"
+         delete:           "Delete"
+         state:            "State"
+         download:         "Download"
+         preset:           "Tags/Preset File"
+         transform:        "Tag Transform SQL File"
+         translate:        "Translation File"
+   
+         minlon:           "Min. Longitude"
+         maxlon:           "Max. Longitude"
+         minlat:           "Min. Latitude"
+         maxlat:           "Max. Latitude"
+
+      action:
+         show_deleted:     "Show deleted Jobs"
+         hide_deleted:     "Hide deleted Jobs"
+         select_area:      "Select Area"
+
+      button:
+         newrun:           "Start new run"
+         recyclejob:       "Create Job"
+         save:             "Save"
+
+      job:
+         h1:               "Job"
+         restore:          "Restore"
+
+      runs:
+         h2:               "Runs"
+         message:
+            jobrunning:    "job is running - no downloads available yet"
+            nodownload:    "no download available"
+     
+      area:             
+         h2:               "Area"
+
+      config:           
+         h2:               "Job Configuration"
+
+      recycle:          
+         h2:               "New Job with Similar Configuration"
+         text:             "Create a new job with a new area but the same configuration as this job."
+
+      newjob:
+         title:            "New Export Job"
+         h1:               "New Export Job"
+
+      newjobconf:
+         title:            "Job Configuration"
+         h1:               "New Export Job - Configuration"
+
+         th:
+            name:          "Job Name"
+            preset:        "Select Preset File"
+            default_tags:  "Add Default Tags?"
+            transform:     "Tag Transform SQL File"
+            translation:   "Translation File"
+
+      newjobwithconf:
+         title:            "New Export Job (with fixed Configuration)"
+         h1:               "New Export Job (with fixed Configuration)"
+
+
+
+      flash:
+         success:
+            job_created:         "Job successfully created!"
+            run_saved:           "Run successfully started!"
+            restored:            "Job successfully restored!"
+            deleted:             "Job successfully deleted!"
+
+         error:
+            xml_parsing_failed:  "XML parsing failed. No job created."
+            no_tags:             "No tags found. No job created. Please select a preset file or default tags."
+            not_saved:           "No job saved!"
+            running_job:         "There is already a running job."
+            no_run_started:      "No run started!"
+            restored:            "Job not restored!"
+            deleted:             "Job not deleted!"
+
+      errors:
+         no_valid_region:     "Your selected area is not in an valid region."
+         out_of_range:        "Value out of range."
+         area_not_covered:    "Selected area is not covered by the service!"
+         area_too_large:      "Selected Area is too large: "
+         bb_only_allowed:     " - Only %{bbox_max} is allowed."
+
+

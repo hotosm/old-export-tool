@@ -1,0 +1,18 @@
+<h1><%= t 'users.h1' %></h1>
+
+<% if @users.count == 0 %>
+<p><%= t 'users.message.no_active_users' %></p>
+<% else %>
+
+<table class="jobindex">
+   <tr>
+   <th width="400"><%= t 'users.th.email' %></th>
+   <th width="220"><%= t 'users.th.admin' %></th>
+   <th width="220"><%= t 'users.th.created_at' %></th>
+   <th width="80"><%= t 'users.th.suspend' %></th>
+   </tr>
+   <%= render @users %>
+</table>
+<% end %>
+
+

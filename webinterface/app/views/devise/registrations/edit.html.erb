@@ -1,0 +1,49 @@
+<% @title = t('users.edit_account') %>
+<h2><%= t 'users.edit_account' %></h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+
+<table class="account_create">
+<tr>
+   <th><%= f.label t('users.th.email') %></th>
+   <td><%= f.email_field :email, :autofocus => true %></td>
+   <td></td>
+</tr>
+
+<% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+<tr>
+   <td colspan="3">Currently waiting confirmation for: <%= resource.unconfirmed_email %></td>
+</tr>
+<% end %>
+
+<tr>
+   <th><%= f.label t('users.th.password') %></th>
+   <td><%= f.password_field :password, :autocomplete => "off" %></td>
+   <td><i><%= t 'users.message.leave_blank' %></i></td>
+</tr>
+
+<tr>
+  <th><%= f.label t('users.th.password_confirmation') %></th>
+  <td><%= f.password_field :password_confirmation %></th>
+  <td></td>
+</tr>
+
+<tr>
+  <th><%= f.label t('users.th.password_current') %></th>
+  <td><%= f.password_field :current_password %></td>
+  <td><i><%= t 'users.message.need_current_password' %></i></td>
+</tr>
+
+<tr>
+  <td colspan="3"><%= f.submit t('users.button.update') %></td>
+</tr>
+</table>
+
+<% end %>
+
+<h2><%= t 'users.cancel_account' %></h2>
+
+<p><%= t 'users.cancel_account_text' %> <%= button_to t('users.button.cancel_account'), registration_path(resource_name), :data => { :confirm => t('users.cancel_account_confirm') }, :method => :delete %></p>
+

@@ -1,79 +1,173 @@
 class JobsController < ApplicationController
 
-   require 'xml/libxml'
+   before_filter :authenticate_user!, :except => [:index, :show, :reload_runs]
 
-   def new
-      @job     = Job.new
-      @title   = 'New Export Job'
-      @h1      = 'New Export Job'
-      @action  = 'wizard_area'
+   require 'xml/libxml'
+   
+   def index
+      @title = t('jobs.title')
+
+      # Parameter
+      # show deleted:   deleted = y 
+      # hide deleted:   no parameter or deleted = n
+
+      if params['deleted'] == 'y'
+         @jobs = Job.all
+         @hide_invisible = false
+      else
+         @jobs = Job.where("visible = ?", true)
+         @hide_invisible = true
+      end
+   end
+   
+   def show
+      @job = Job.find(params[:id])
+      @runs = Run.where("job_id = ?", params[:id])
+      # XXX TODO @lastdownload= Download.find(@runs.first.id)
+
+      @uploads = @job.uploads.order('uptype').reverse_order
+      @tags = Tag.where("job_id = ?", params[:id]).order('key')
+      @title = @job.name
    end
 
-   def newwithtags
-      if params[:job_id].nil?
-         flash[:error] = "No job id given!"
-         redirect_to newjob_path
-      else
-         @job     = Job.find(params[:job_id])
-         @title   = 'New Export Job (with given Tags)'
-         @h1      = 'New Export Job (with given Tags)'
-         @action  = 'newwithtags_create'
-         render :new
+   def reload_runs
+      @runs = Run.where("job_id = ?", params[:job_id])
+
+      respond_to do |format|
+         if (current_user.try(:admin?)) 
+            format.json {render :json => @runs, :include => :user}
+         else
+            format.json {render :json => @runs }
+         end
       end
    end
 
    def wizard_area
-      @job = Job.new(params[:job])
-      @title = "Tag Upload"
-      render 'tagupload_form'
+      @job     = Job.new
+      @title   = t('jobs.newjob.title')
+      @h1      = t('jobs.newjob.h1')
+      @action  = 'wizard_configuration'
    end
 
-   def tagupload
-      @job = Job.new(params[:job])
-      error = 0
+   def newwithconfiguration
+      if params[:job_id].nil?
+         flash[:error] = "No job id given!"
+         redirect_to wizard_area_path
+      else
+         @job         = Job.find(params[:job_id])
+         @job.user_id = current_user.id
 
+         @title   =  t('jobs.newjobwithconf.title') 
+         @h1      =  t('jobs.newjobwithconf.h1')
+         @action  = 'newwithconfiguration_create'
+
+         @max_bounds_area = 100
+         render :wizard_area
+      end
+   end
+
+   def wizard_configuration
+      @job = Job.new(params[:job])
+
+      @upfiles = uploadfiles_prepare
+      @title = t('jobs.newjobconf.title')
+      render 'wizard_configuration_form'
+   end
+
+   def wizard_configuration_create
+      @job = Job.new(params[:job])
+      @job.user_id = current_user.id
+
+      @uploads = params[:uploads]
+      # default tags
+      if @uploads['default_tags']
+         tags = Tag.default_tags
+      else
+         tags = Hash.new
+      end
+     
+      error = 0
       Job.transaction do
          if @job.save then
+            #puts @job.inspect
          else 
             error = 1
          end
 
-         # default tags
-         tags = Tag.default_tags
+         begin
+            # presetfile (uploaded tags)
+            if @uploads['presetfile'] != "0" then
 
-         # uploaded tags
-         if params[:tagfile] then
-            content = content_from_upload(params[:tagfile])
-             
-            uploaded_tags = Tag.from_xml(content)
-            tags = Tag.join_taghashes(tags, uploaded_tags)
-         end
+               upload = Upload.find(@uploads['presetfile'])
+               @job.uploads << upload
 
-         # save tags
-         tags.each_key do |key|
-            tags[key].each do |type, value|
-               tag = Tag.new
-               tag.key = key
-               tag.geometrytype = type
-               tag.job_id = @job.id
-               tag.default = value
-               tag.save
+               at_string = upload.updated_at.strftime("%Y-%m-%d %H:%M")
+               @job.presetfile = "#{upload.name} (#{at_string})"
+
+               uploaded_tags = Tag.from_xml(upload.f_xml)
+               tags = Tag.join_taghashes(tags, uploaded_tags)
             end
+
+            # tagtransform
+            if @uploads['tagtransform'] then
+               @uploads['tagtransform'].each do |id|
+                  upload = Upload.find(id)
+                  @job.uploads << upload
+               end
+            end
+
+            # translation
+            if @uploads['translation'] != "0" then
+               upload = Upload.find(@uploads['translation'])
+               @job.uploads << upload
+            end
+
+            @job.save!
+            Tag.save_tags(tags,@job.id)
+
+         rescue Exception => @e
+            error = 11
+            @job.delete
+            puts error
+            puts @e.inspect
          end
+
+      end
+
+      if tags.count == 0 
+         error = 111
       end
 
       if error == 0 then
-         flash[:success] = "Job successfully created!"
+         flash[:success] = t('jobs.flash.success.job_created')
          redirect_to @job
+
+      elsif error == 11 then
+         flash[:error] = t('jobs.flash.error.xml_parsing_failed')
+         @upfiles = uploadfiles_prepare
+         @title = t('jobs.newjobconf.h1')
+         render 'wizard_configuration_form'
+
+      elsif error == 111 then
+         flash[:error] = t('jobs.flash.error.no_tags')
+         @upfiles = uploadfiles_prepare
+         @title = t('jobs.newjobconf.h1')
+         render 'wizard_configuration_form'
+
       else 
-         @title = "New Job"
-         flash[:error] = "No job saved!"
-         render 'new'
+         @title = t('jobs.newjob.title')
+         flash[:error] = t('jobs.flash.error.not_saved')
+         render 'wizard_area'
       end
    end
 
-   def newwithtags_create
-      @job = Job.new(params[:job])
+   def newwithconfiguration_create
+      @job            = Job.new(params[:job])
+      @old_job        = Job.find(params[:old_job_id])
+      @job.presetfile = @old_job.presetfile
+      @job.uploads    = @old_job.uploads
+      @job.user_id    = current_user.id
+
       error = 0
 
       Job.transaction do
@@ -82,7 +176,7 @@ class JobsController < ApplicationController
             error = 1
          end
 
-         @old_tags = Tag.where('job_id = ?', params[:old_job_id])
+         @old_tags = Tag.where('job_id = ?', @old_job.id)
 
          @old_tags.each do |ot|
             tag = Tag.new
@@ -95,75 +189,100 @@ class JobsController < ApplicationController
       end
 
       if error == 0 then
-         flash[:success] = "Job successfully created!"
+         flash[:success] = t('jobs.flash.success.job_created')
          redirect_to @job
       else 
          @title = "New Job"
-         flash[:error] = "No job saved!"
-         render 'new'
+         flash[:error] = t('jobs.flash.error.not_saved')
+         render 'wizard_area'
       end
    end
-
-
-
-
-   def show
-      @job = Job.find(params[:id])
-      @runs = Run.where("job_id = ?", params[:id])
-      # XXX TODO @lastdownload= Download.find(@runs.first.id)
-      @tags = Tag.where("job_id = ?", params[:id]).order('key')
-      @title = @job.name
-   end
-
-
-   def index
-      @title = "All Jobs"
-      @jobs = Job.all
-   end
-
 
    def newrun
       @job = Job.find(params[:job_id])
 
       @run = Run.new
       @run.job_id = params[:job_id]
+      @run.user_id = current_user.id
       @run.state = 'new'
       
 
       # check if there is already a job runnning
       if Run.where("job_id = ? and state = 'new'", @job.id).count > 0 then
-         flash[:error] = "There is already a running job."
+         flash[:error] = t('jobs.flash.error.running_job')
       # else save
       elsif @run.save
-         flash[:success] = "Run successfully started!"
+         flash[:success] = t('jobs.flash.success.run_started')
       else 
-         flash[:error] = "No run started!"
+         flash[:error] = t('jobs.flash.error.no_run_started')
       end
 
       @title = @job.name
       redirect_to @job
    end
+  
+  
+   def invisible
+      change_visibility(params[:id], false, params['deleted'])
+   end
 
-
-
-
-
-# XXX obsolet 
-   def create
-      @job = Job.new(params[:job])
-      if @job.save
-         flash[:success] = "Job successfully created!"
-         redirect_to @job
-      else 
-         @title = "New Job"
-         flash[:error] = "No job saved!"
-         render 'new'
-      end
+   def restore
+      change_visibility(params[:id], true, params['deleted'])
    end
 
 
-
 private
+
+   def change_visibility(id,resdel, deleted)
+      job = Job.find(id)
+      job.visible = resdel
+
+
+      if !user_right_deletion? job
+         if (resdel == true)
+            flash[:error] = t('jobs.flash.error.restored')
+         else
+            flash[:error] = t('jobs.flash.error.deleted')
+         end
+         redirect_to :action => 'index', :deleted => deleted
+         return
+      end
+
+      if job.save then
+         if (resdel == true)
+            flash[:success] = t('jobs.flash.success.restored')
+         else
+            flash[:success] = t('jobs.flash.success.deleted')
+         end
+      else
+         if (resdel == true)
+            flash[:error] = t('jobs.flash.error.restored')
+         else
+            flash[:error] = t('jobs.flash.error.deleted')
+         end
+      end
+
+      redirect_to :action => 'index', :deleted => deleted
+   end
+
+   def uploadfiles_prepare
+      up = Hash.new
+      up['preset']       = up_prepare('preset')
+      up['tagtransform'] = up_prepare('tagtransform')
+      up['translation']  = up_prepare('translation')
+      return up
+   end
+
+   def up_prepare(uptype)
+      upf = Upload.where("visibility=true and uptype=?", uptype)
+      upfiles = Hash.new
+      upfiles['No File'] = 0      
+
+      upf.each do |up|
+         upfiles[up.name] = up.id
+      end
+      return upfiles
+   end
 
    def content_from_upload(file_data)
       if file_data.respond_to?(:read)
@@ -175,6 +294,5 @@ private
       end
       return content
    end
-
 
 end

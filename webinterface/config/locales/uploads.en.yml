@@ -1,0 +1,96 @@
+# Localization for english
+# Upload section
+
+en:
+   uploads:
+      h1:               "Configuration"
+
+      newupload:
+         title:         "New Upload"
+         h1:            "Upload a Configuration File"
+         text:          'Configuration files can be tagging presets (already supported), or SQL transforms or translation tables (planned). When you upload a file, choose a human-readable name for it (e.g. "HOT Presets for Haiti v1.23"); when creating a new job later, you can then select which of these files to apply.'
+         name:          "New Upload"
+
+      index:
+         title:         "Configuration"
+         h1:            "Configuration"
+
+      presets:       
+         title:         "Uploads | Preset Files"
+         h1:            "Preset Files"
+         name:          "Preset Files"
+
+      tagtransforms:    
+         title:         "Uploads | Tag Transform SQL Files"
+         h1:            "Tag Transform SQL Files"
+         name:          "Tag Transform SQL Files"
+
+      translations:
+         title:         "Uploads | Translations"
+         h1:            "Translation Files"
+         name:          "Translation Files"
+
+      tagpreview:
+         title:         "Tag Check"
+         h1:            "Tag Check"
+         h2:            "Tags from Preset File"
+
+      defaulttags:
+         title:         "Default Tags"
+         h1:            "Default Tags"
+
+      update:
+         title:         "New Version of Upload"
+         h1:            "Upload a New Version of the File"
+         text:          "If you upload a new file, the old file is overwritten!"
+
+      th:
+         name:          "File Name"
+         updated_at:    "Updated At"
+         created_by:    "Created By"
+         download:      "Download"
+         delete:        "Delete"
+         update:        "Update"
+         tagpreview:    "Tag Preview"
+         tag:           "Tag"
+         geometrytype:  "Geometrytype"
+         type:          "Type"
+         file:          "File"
+
+      span:
+         show:             "Show"
+         hide:             "Hide"
+         deleted_uploads:  "deleted uploads"
+
+      action:
+         newupload:     "New Upload"
+         showdeleted:   "Show deleted uploads"   
+         hidedeleted:   "Hide deleted uploads"
+         defaulttags:   "Default Tags"
+
+      button:
+         save:          "Save"
+
+      message:
+         nofiles:       "No uploaded configuration files yet."
+
+      error:
+         xml_corrupt:   "The xml is corrupt and an exception occured."
+         xml_exception: "XML Exception"
+
+      flash:
+         error:
+            xml_parsing_failed:  "XML parsing failed. Upload not saved."
+            not_saved:           "Upload not saved."
+            restored:            "Upload not restored!"
+            deleted:             "Upload not deleted!"
+
+         success:
+            newversion_saved:    "New file version successfully saved for"
+            saved:               "Upload successfully stored."
+            restored:            "Upload successfully restored!"
+            deleted:             "Upload successfully deleted!"
+
+
+
+

@@ -1,0 +1,35 @@
+<h1><%= t 'uploads.tagpreview.h1' %></h1>
+<h2><%= t 'uploads.tagpreview.h2' %> <span class="marker"><%= @upload.name %></span></h2>
+
+<% if @tags == 'XML Exception' %>
+
+<div class="error">
+<%= t 'uploads.error.xml_corrupt' %>
+</div>
+
+<pre style="margin-top: 20px;">
+<%= @e.message %>
+</pre>
+
+<% else %>
+<table class="checktags">
+<tr>
+<th><%= t 'uploads.th.tag' %></th>
+<th><%= t 'uploads.th.geometrytype' %></th>
+</tr>
+
+<% @tags.sort.each do |k, v| %>
+<tr>
+<td><%= k %>
+</td>
+<td>
+   <%=
+      # v: {"point"=>false, "line"=>false, "polygon"=>false}      
+      gstring = v.keys.map { |kk, vv| "#{kk}" }.join(", ")
+   %>
+</td>
+</tr>
+<% end %>
+</table>
+
+<% end %>

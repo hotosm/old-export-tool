@@ -1,0 +1,110 @@
+# Localization for french
+# Jobs section
+
+fr:
+
+   jobs:
+      title:               "Procédures"
+      h1:                  "Procédures"
+
+      nojobs:              "Aucun procédure active dans la base."
+      filter:              "Filter"
+
+      not_owner:           "pas propriétaire"
+      
+      based_upon:
+         default_tags:     "seulement default tags"
+         directly:         "directly uploaded (old version)" 
+
+      th:
+         name:             "Name"
+         description:      "Description"
+         region:           "Region"
+         created_at:       "Created At"
+         created_by:       "Created By"
+         based_preset:     "Sur la base de fichier preset"
+         delete:           "Supprimer"
+         state:            "Etat"
+         download:         "Téléchargement"
+         preset:           "Fichier Tags/Preset"
+         transform:        "Fichier Tag Transformation SQL"
+         translate:        "Fichier Translation"
+   
+         minlon:           "Min. Longitude"
+         maxlon:           "Max. Longitude"
+         minlat:           "Min. Latitude"
+         maxlat:           "Max. Latitude"
+
+      action:
+         show_deleted:     "Afficher procédures supprimés"
+         hide_deleted:     "Masquer procédures supprimés"
+         select_area:      "Selectionner la zone"
+
+      button:
+         newrun:           "Commencer nouvelle procédure"
+         recyclejob:       "Créer une procédure"
+         save:             "Enregistrer"
+
+      job:
+         h1:               "Procédure"
+         restore:          "Restaurer"
+         
+      runs:
+         h2:               "Passages"
+         message:
+            jobrunning:    "job is running - no downloads available yet"
+            nodownload:    "no download available"
+     
+      area:             
+         h2:               "Zone"
+
+      config:           
+         h2:               "Configuration de Procédure"
+
+      recycle:          
+         h2:               "Nouvelle procédureavec la même configuration"
+         text:             "Créer une nouvelle procédure avec une nouvelle zone mais la même configuration."
+
+      newjob:
+         title:            "Nouvelle Procédure"
+         h1:               "Nouvelle Procédure"
+
+      newjobconf:
+         title:            "Configuration de procédure"
+         h1:               "Nouvelle Procédure - Configuration"
+
+         th:
+            name:          "Nom de Procédure"
+            preset:        "Selectionner le fichier preset"
+            default_tags:  "Ajouter Default Tags?"
+            transform:     "Fichier Tag Transformation SQL"
+            translation:   "Fichier Traduction"
+
+      newjobwithconf:
+         title:            "Nouvelle Procédure (avec la même Configuration)"
+         h1:               "Nouvelle Procédure (avec la même Configuration)"
+
+      flash:
+         success:
+            job_created:         "Procédure crée!"
+            run_saved:           "Procédure commoncé!"
+            restored:            "Procédure restauré!"
+            deleted:             "Procédure supprimé!"
+
+         error:
+            xml_parsing_failed:  "XML parsing failed. No job created."
+            no_tags:             "No tags found. No job created. Please select a preset file or default tags."
+            not_saved:           "No job saved!"
+            running_job:         "There is already a running job."
+            no_run_started:      "No run started!"
+            restored:            "Job not restored!"
+            deleted:             "Job not deleted!"
+
+      errors:
+         no_valid_region:     "Your selected area is not in an valid region."
+         out_of_range:        "Value out of range."
+         area_not_covered:    "Selected area is not covered by the service!"
+         area_too_large:      "Selected Area is too large: "
+         bb_only_allowed:     " - Only %{bbox_max} is allowed."
+
+

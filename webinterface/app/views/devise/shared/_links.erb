@@ -1,0 +1,31 @@
+<ul class="account_actions">
+
+<%- if controller_name != 'sessions' %>
+<li>
+   <img src="<%= asset_path 'new.png' %>">
+   <%= link_to t('users.login'), new_session_path(resource_name) %>
+</li>
+<% end -%>
+
+<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+<li>
+   <img src="<%= asset_path 'new.png' %>">
+   <%= link_to t('users.create_account'), new_registration_path(resource_name) %>
+</li>
+<% end -%>
+
+<%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
+<li>
+   <img src="<%= asset_path 'new.png' %>">
+   <%= link_to t('users.lost_password'), new_password_path(resource_name) %>
+</li>
+<% end -%>
+
+<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+<li>
+   <img src="<%= asset_path 'new.png' %>">
+   <%= link_to t('users.no_confirmation'), new_confirmation_path(resource_name) %>
+</li>
+<% end -%>
+
+</ul>

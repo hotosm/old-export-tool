@@ -1,0 +1,66 @@
+# Localization for english
+# User section
+
+de:
+   users:
+      title:                        "Benutzer"
+      h1:                           "Benutzer"
+
+      login:                        "Login"
+      logout:                       "Logout"
+      create_account:               "Account erstellen"
+      edit_account:                 "Profil bearbeiten"
+      cancel_account:               "Account löschen"
+      cancel_account_text:          "Möchten Sie wirklich Ihren Account löschen?"
+      cancel_account_confirm:       "Sind Sie sicher?"
+      change_password:              "Passwort ändern"
+      lost_password:                "Haben Sie Ihr Passwort vergessen?"
+      resend_confirmation:          "Anmelde-Bestätigung"
+      no_confirmation:              "Haben Sie die Anleitung zur Anmelde-Bestätigung nicht erhalten?"
+      suspend_user:                 "Benutzer Sperren"
+      active_users:                 "Aktive Benutzer"
+      locked_users:                 "Gesperrte Benutzer"
+      restore:                      "[Wiederherstellen]"
+      unconfirmed_user:             "Unbestätigter Benutzer"
+      suspended_by:                 "Gesperrt von"
+
+      locked:
+         title:                     "Gesperrte Benutzer"
+         h1:                        "Gesperrte Benutzer"
+
+      th:
+         email:                     "Email"
+         password:                  "Passwort"
+         password_confirmation:     "Passwort Wiederholung"
+         password_current:          "Aktuelles Passwort"
+         password_new:              "Neues Passwort"
+         created_at:                "Erstellt am"
+         locked_at:                 "Gesperrt am"
+         lock_reason:               "Grund der Sperrung"
+         admin:                     "Admin?"
+         restore:                   "Benutzer wiederherstellen"
+         suspend:                   "Benutzer sperren"
+
+      button:
+         login:                     "Login"
+         update:                    "Speichern"
+         create_account:            "Account erstellen"
+         cancel_account:            "Meinen Account löschen"
+         logout:                    "Logout"
+         resend_confirmation:       "Anleitung zur Anmelde-Bestätigung erneut schicken"
+         send_reset_password:       "Passwort-Reset Anleitung schicken"
+         change_password:           "Passwort ändern"
+
+      message:
+         no_locked_users:           "Es sind keine gesperrten Benutzer in der Datenbank."
+         no_active_users:           "Es sind keine aktiven Benutzer in der Datenbank."
+         leave_blank:               "Feld leer lassen, wenn Sie das Passwort nicht ändern möchten."
+         need_current_password:     "Wir benötigen Ihr aktuelles Passwort, um die Änderung durchzuführen."
+
+      flash:
+         success:
+            suspended:              "Benutzer wurde gesperrt:"
+            unsuspended:            "Benutzer wurde entsperrt:"
+
+   
+

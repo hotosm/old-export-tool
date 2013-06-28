@@ -1,0 +1,43 @@
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+   <% if @hide_invisible == true %>
+      hide_invisible();
+   <% else %>
+      show_invisible();
+   <% end %>
+
+   $(".jq_show").toggle(function(){
+      show_invisible();
+   }, function() {
+      hide_invisible();
+   });
+
+   function show_invisible() {
+      $(".jq_invisible").parent().parent().show();   
+      $("#showhide").text("<%= t 'uploads.span.hide' %>");
+      counttr();
+   }
+
+   function hide_invisible() {
+      $(".jq_invisible").parent().parent().hide();   
+      $("#showhide").text("<%= t 'uploads.span.show' %>");
+      counttr();
+   }
+
+   function counttr() {
+      c2 = $("table.upindex tr:visible").length
+
+      if (c2 == '1') {
+         $("table.upindex").hide();
+         $("p.message").html("<tr><td colspan='7'><%= t 'uploads.message.nofiles' %></td></tr>");   
+      } else {
+         $("table.upindex").show();
+         $("p.message").empty();
+      }
+      return c2;
+   }
+
+});
+</script>

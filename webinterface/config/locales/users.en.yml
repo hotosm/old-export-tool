@@ -1,0 +1,66 @@
+# Localization for english
+# User section
+
+en:
+   users:
+      title:                        "Users"
+      h1:                           "Users"
+
+      login:                        "Login"
+      logout:                       "Logout"
+      create_account:               "Create Account"
+      edit_account:                 "Edit Profile"
+      cancel_account:               "Cancel Account"
+      cancel_account_text:          "Do you want to delete your account?"
+      cancel_account_confirm:       "Are you sure?"
+      change_password:              "Change Password"
+      lost_password:                "Lost Password?"
+      resend_confirmation:          "Resend confirmation instruction"
+      no_confirmation:              "Didn't receive confirmation instructions?"
+      suspend_user:                 "Suspend User"
+      active_users:                 "Active Users"
+      locked_users:                 "Locked Users"
+      restore:                      "[Restore]"
+      unconfirmed_user:             "Unconfirmed User"
+      suspended_by:                 "Suspended by"
+
+      locked:
+         title:                     "Locked Users"
+         h1:                        "Locked Users"
+
+      th:
+         email:                     "Email"
+         password:                  "Password"
+         password_confirmation:     "Password confirmation"
+         password_current:          "Current password"
+         password_new:              "New password"
+         created_at:                "Created At"
+         locked_at:                 "Locked At"
+         lock_reason:               "Lock Reason"
+         admin:                     "Admin?"
+         restore:                   "Restore User"
+         suspend:                   "Suspend User"
+
+      button:
+         login:                     "Login"
+         update:                    "Update"
+         create_account:            "Create Account"
+         cancel_account:            "Cancel my account"
+         logout:                    "Logout"
+         resend_confirmation:       "Resend confirmation instructions"
+         send_reset_password:       "Send me reset password instructions"
+         change_password:           "Change my password"
+
+      message:
+         no_locked_users:           "No locked users in database."
+         no_active_users:           "No active users in database."
+         leave_blank:               "Leave blank if you don't want to change it."
+         need_current_password:     "We need your current password to confirm your changes."
+
+      flash:
+         success:
+            suspended:              "User successfully suspended:"
+            unsuspended:            "User successfully unsuspended:"
+
+   
+

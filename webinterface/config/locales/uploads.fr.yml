@@ -1,0 +1,96 @@
+# Localization for french
+# Upload section
+
+fr:
+   uploads:
+      h1:               "Configuration"
+
+      newupload:
+         title:         "Téléchargement nouveau"
+         h1:            "Télécharger un fichier de configuration"
+         text:          'Configuration files can be tagging presets (already supported), or SQL transforms or translation tables (planned). When you upload a file, choose a human-readable name for it (e.g. "HOT Presets for Haiti v1.23"); when creating a new job later, you can then select which of these files to apply.'
+         name:          "Téléchargement nouveau"
+
+      index:
+         title:         "Configuration"
+         h1:            "Configuration"
+
+      presets:       
+         title:         "Téléchargement | Fichier Preset"
+         h1:            "Fichier Preset"
+         name:          "Fichier Preset"
+
+      tagtransforms:    
+         title:         "Téléchargement | Fichier Tag Transformation SQL"
+         h1:            "Fichier Tag Transformation SQL"
+         name:          "Fichier Tag Transformation SQL"
+
+      translations:
+         title:         "Téléchargement | Traduction"
+         h1:            "Fichier Traduction"
+         name:          "Fichier Traduction"
+
+      tagpreview:
+         title:         "Vérifier les tags"
+         h1:            "Vérifier les tags"
+         h2:            "Tags des fichiers preset"
+
+      defaulttags:
+         title:         "Default Tags"
+         h1:            "Default Tags"
+
+      update:
+         title:         "Télécharger une nouvelle version du fichier"
+         h1:            "Télécharger une nouvelle version du fichier"
+         text:          "Si vous téléchargez un nouveau fichier, l'ancien fichier est écrasé!"
+
+      th:
+         name:          "Nom de fichier"
+         updated_at:    "Updated At"
+         created_by:    "Created By"
+         download:      "Télécharger"
+         delete:        "Supprimer"
+         update:        "Update"
+         tagpreview:    "Tag Preview"
+         tag:           "Tag"
+         geometrytype:  "Type de géométrie"
+         type:          "Catégorie"
+         file:          "Fichier"
+
+      span:
+         show:             "Afficher"
+         hide:             "Masquer"
+         deleted_uploads:  "supprimer téléchargements"
+
+      action:
+         newupload:     "Téléchargement nouveau"
+         showdeleted:   "Afficher téléchargements supprimés"
+         hidedeleted:   "Masquer téléchargements supprimés"
+         defaulttags:   "Default Tags"
+
+      button:
+         save:          "Sauver"
+
+      message:
+         nofiles:       "Aucun fichier de configuration téléchargées encore."
+
+      error:
+         xml_corrupt:   "Le XML est corrompu et une exception est survenue."
+         xml_exception: "XML Exception"
+
+      flash:
+         error:
+            xml_parsing_failed:  "Parsing XML a échoué. Téléchargement pas enregistré."
+            not_saved:           "Téléchargement pas enregistré."
+            restored:            "Téléchargement pas restauré!"
+            deleted:             "Téléchargement pas supprimé!"
+
+         success:
+            newversion_saved:    "Nouvelle version du fichier sauvegardé avec succès: "
+            saved:               "Téléchargement enregistré avec succès."
+            restored:            "Téléchargement restauré avec succès."
+            deleted:             "Téléchargement supprimé avec succès."
+
+
+
+

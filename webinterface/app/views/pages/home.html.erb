@@ -1,50 +1,15 @@
-<h1>HOT Exports</h1>
+<h1><%= t 'home.h1' %></h1>
 
-<h2>About HOT Exports Tool</h2>
-<p>
-This platform allows you to create custom OpenStreetMap exports for various regions (at the moment only Haiti is supported).
-You can specify an area of interest and a list of features (OpenStreetMap tags) for the export.
-A current OpenStreetMap data extract for that area in various data formats is then created for you within minutes.
-</p>
+<h2><%= t 'home.about.title' %></h2>
+<p><%= t 'home.about.text' %></p>
 
-<h2>Create a new job</h2>
-<p>
-Click on <a href="/newjob">New Job</a> in the top navigation bar to 
-run the new job wizard.
-Enter the name and a description for the new job, so that you (and others) 
-can easily identify it later. Then choose the region you are interested in
-(currently must be a box).
-In the last step, you can upload a JOSM preset file with your tags.
-If you don't upload any tags, only default tags are used for this job.
-</p>
+<h2><%= t 'home.note.title' %></h2>
+<p><%= t 'home.note.text' %>
 
-<h2>Fetch your export</h2>
-<p>
-After you created a job, the job is run for you in the background and
-a detail page is shown for the job. The detail page has information on all
-previous runs of this job - initially the list will be empty. The page 
-refreshes automatically, and after a few minutes you will see a number of 
-files in different formats ready for download.
-</p>
-
-<h2>Re-run a job</h2>
-<p>
-Choose <a href="/jobs">All Jobs</a> at the top navigation.
-Look for the job you want to re-run by its name.
-A filter helps you to reduce the number of jobs in the list.
-Then click on your job to get to the detail page again, and 
-click on the "Start new run" button. A new run is started in 
-the background, and again, the download files will be available
-after a short wait.
-</p>
-
-<h2>Edit a job</h2>
-<p>
-You can create a new job on the basis of an existing job with the "Create Job" button 
-that is shown at the bottom of a job's detail page.
-This button gets you to the "new job" wizard where you can specify a different geometry,
-but the uploaded tags will be re-used from the existing job.
-</p>
-
-
+<h2><%= t 'home.new.title' %></h2>
+<ul>
+   <li><%= t 'home.new.text3' %></li>
+   <li><%= t 'home.new.text2' %></li>
+   <li><%= t 'home.new.text1' %></li>
+</ul>
 

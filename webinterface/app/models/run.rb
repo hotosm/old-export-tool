@@ -7,8 +7,9 @@
 #  success:  run has finished successfully
 
 class Run < ActiveRecord::Base
-   attr_accessible :state, :job_id, :comment
+   attr_accessible :state, :job_id, :comment, :user_id
    belongs_to :job
+   belongs_to :user
    has_many :downloads, :dependent => :destroy
    default_scope :order => 'runs.created_at DESC' # newest first
 
@@ -17,5 +18,6 @@ class Run < ActiveRecord::Base
       :inclusion => { :in => ["new", "running", "error", "success"] }
 
    validates :job_id, :presence => true
+   validates :user_id, :presence => true
    
 end
