@@ -1,0 +1,31 @@
+# Sample localization file for Japanese. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+ja:
+   tool:                      "Hot Exports"
+
+   locale:
+      english:                "English"
+      german:                 "German"
+      french:                 "French"
+      japanese:               "日本語"
+   
+   navigation:
+      home:                   "ホーム"
+      help:                   "ヘルプ"
+      jobs:                   "ジョブ"
+      newjob:                 "新規ジョブ作成"
+      newjob_hint:            "ジョブ作成にはアカウント作成とログインが必要です"
+       
+   footer:
+      your_account:           "アカウント"
+      expert_functions:       "詳細機能設定"
+      user_administration:    "ユーザ設定管理"
+      logged_in_as:           "ログインアカウント"
+      text:                   "Copyright © 2013 Humanitarian OpenStreetMap Team · Map data from OpenStreetMap, ODbL 1.0 license"
+
+
+   error:
+      
+
+
