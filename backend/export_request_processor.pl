@@ -21,7 +21,7 @@ my $OSMOSIS="osmosis/bin/osmosis";
 
 my $dbh = DBI->connect("dbi:Pg:dbname=$DBNAME;host=$DBHOST", $DBUSER, $DBPASS, {});
 
-my $sth_fetch = $dbh->prepare("SELECT runs.id as id, regions.internal_name as region, job_id, latmin,latmax,lonmin,lonmax FROM runs,jobs,regions WHERE state='new' and runs.job_id=jobs.id AND jobs.region_id = regions.id LIMIT 1");
+my $sth_fetch = $dbh->prepare("SELECT runs.id as id, jobs.name as name, regions.internal_name as region, job_id, latmin,latmax,lonmin,lonmax FROM runs,jobs,regions WHERE state='new' and runs.job_id=jobs.id AND jobs.region_id = regions.id LIMIT 1");
 my $sth_fetch_tags = $dbh->prepare("SELECT * FROM tags WHERE job_id=?");
 my $sth_fetch_transforms = $dbh->prepare("SELECT filename FROM uploads u,jobs_uploads ju where u.uptype='tagtransform' and u.visibility and u.id=ju.upload_id and ju.job_id=?");
 my $sth_fetch_translations = $dbh->prepare("SELECT filename FROM uploads u,jobs_uploads ju where u.uptype='translation' and u.visibility and u.id=ju.upload_id and ju.job_id=?");
@@ -37,7 +37,14 @@ if (my $run = $sth_fetch->fetchrow_hashref)
     my $rid = sprintf("%06d", $run->{'id'});
     my $jid = $run->{'job_id'};
     my $extname = $run->{'region'};
-    printf(STDERR "job $jid, rid $rid\n");
+    my $name = lc($run->{'name'});
+
+    # clean name so it becomes usable as a file name
+    $name =~ s/\W/_/g;
+    $name =~ s/_+/_/g;
+    $name = $1 if ($name =~ /^_?(.*?)_?$/);
+
+    printf(STDERR "job $jid, rid $rid, output file name $name\n");
     $logfile = "$OUTPUT_PATH/$rid/log.txt";
     $sth_update_running->execute($run->{id});
     
@@ -93,7 +100,7 @@ if (my $run = $sth_fetch->fetchrow_hashref)
     $ENV{"CDE_TRANSLATION_TABLES"} = join(",", @transtables);
     mymsg("CDE_TRANSLATION_TABLES=".$ENV{"CDE_TRANSLATION_TABLES"}."\n");
     
-    if (!mysystem("$CDE $OUTPUT_PATH/$rid/rawdata.osm.pbf $OUTPUT_PATH/$rid/extract.sqlite"))
+    if (!mysystem("$CDE $OUTPUT_PATH/$rid/rawdata.osm.pbf $OUTPUT_PATH/$rid/$name.sqlite"))
     {
         $sth_update_error->execute("error in CDE", $rid);
         exit 1;
@@ -101,27 +108,27 @@ if (my $run = $sth_fetch->fetchrow_hashref)
     mymsg("cde finished.\n");
 
     # CDE program creates the SQLite file.
-    addfile($rid, "extract.sqlite", "SQLite file");
+    addfile($rid, "$name.sqlite", "SQLite file");
 
     $sth_fetch_transforms->execute($jid);
     while(my $tfm = $sth_fetch_transforms->fetchrow_hashref)
     {
         mymsg("running transformation: ".$tfm->{filename}."\n");
-        mysystem("spatialite $OUTPUT_PATH/$rid/extract.sqlite < $UPLOAD_PATH/".$tfm->{filename});
+        mysystem("spatialite $OUTPUT_PATH/$rid/$name.sqlite < $UPLOAD_PATH/".$tfm->{filename});
     }
 
     # call ogr2ogr to make PostGIS dump 
-    mysystem("ogr2ogr -overwrite -f 'PGDump' -dsco PG_USE_COPY=YES -dsco GEOMETRY_NAME=way $OUTPUT_PATH/$rid/extract.sql $OUTPUT_PATH/$rid/extract.sqlite");
-    mysystem("gzip $OUTPUT_PATH/$rid/extract.sql");
-    addfile($rid, "extract.sql.gz", "PostGIS dump file (compressed - .sql.gz)");
+    mysystem("ogr2ogr -overwrite -f 'PGDump' -dsco PG_USE_COPY=YES -dsco GEOMETRY_NAME=way $OUTPUT_PATH/$rid/$name.sql $OUTPUT_PATH/$rid/$name.sqlite");
+    mysystem("gzip $OUTPUT_PATH/$rid/$name.sql");
+    addfile($rid, "$name.sql.gz", "PostGIS dump file (compressed - .sql.gz)");
 
     # call ogr2ogr to make Spatiallite file
-    mysystem("ogr2ogr -overwrite -f 'SQLite' -dsco SPATIALLITE=YES $OUTPUT_PATH/$rid/extract.spatiallite $OUTPUT_PATH/$rid/extract.sqlite");
-    addfile($rid, "extract.spatiallite", "Spatiallite file");
+    mysystem("ogr2ogr -overwrite -f 'SQLite' -dsco SPATIALLITE=YES $OUTPUT_PATH/$rid/$name.spatiallite $OUTPUT_PATH/$rid/$name.sqlite");
+    addfile($rid, "$name.spatiallite", "Spatiallite file");
 
     # call ogr2ogr to make shape files in temporary directory
     mkdir "/tmp/$rid-shp";
-    mysystem("ogr2ogr -overwrite -f 'ESRI Shapefile' --config SHAPE_ENCODING UTF-8 /tmp/$rid-shp $OUTPUT_PATH/$rid/extract.sqlite");
+    mysystem("ogr2ogr -overwrite -f 'ESRI Shapefile' --config SHAPE_ENCODING UTF-8 /tmp/$rid-shp $OUTPUT_PATH/$rid/$name.sqlite");
 
     # load ogr2ogr output to find out field name truncations
     my $crosswalk = {};
@@ -166,8 +173,8 @@ if (my $run = $sth_fetch->fetchrow_hashref)
     }
 
     # zip resulting shapefile components and remove tempdir
-    mysystem("zip -j $OUTPUT_PATH/$rid/extract.shp.zip /tmp/$rid-shp/*");
-    addfile($rid, "extract.shp.zip", "ESRI Shapefile (zipped)");
+    mysystem("zip -j $OUTPUT_PATH/$rid/$name.shp.zip /tmp/$rid-shp/*");
+    addfile($rid, "$name.shp.zip", "ESRI Shapefile (zipped)");
     mysystem("rm -rf /tmp/$rid-shp");
 
     # ADD FURTHER ogr2ogr CALLS HERE!
