@@ -403,7 +403,7 @@ private:
         OGRMultiPolygon* ogrgeom = Osmium::Geometry::create_ogr_geometry(mp);
         ogrgeom->transform(m_transformation);
         feature->SetGeometryDirectly(ogrgeom);
-        sprintf(longint, "%ld", area->id());
+        sprintf(longint, "%ld", area->from_way() ? area->orig_id() : -area->orig_id());
         feature->SetField("osm_id", longint);
         feature->SetField("z_order", calculate_z_order(area.get()));
         feature->SetField("way_area", ogrgeom->get_Area());
