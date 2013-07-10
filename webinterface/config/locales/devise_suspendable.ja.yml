@@ -1,0 +1,11 @@
+# Localization for japanese
+# Devise section
+
+ja:
+   
+   devise:
+      failure:
+         user:
+            suspended: "アカウントは停止されています。"
+   
+

@@ -1,0 +1,66 @@
+# Localization for english
+# User section
+
+ja:
+   users:
+      title:                        "ユーザ"
+      h1:                           "ユーザ"
+
+      login:                        "ログイン"
+      logout:                       "ログアウト"
+      create_account:               "アカウント作成"
+      edit_account:                 "プロファイル変更"
+      cancel_account:               "アカウント削除"
+      cancel_account_text:          "このアカウントを削除してよろしいですか？"
+      cancel_account_confirm:       "本当によろしいですか？"
+      change_password:              "パスワード変更"
+      lost_password:                "パスワードをお忘れですか？"
+      resend_confirmation:          "アカウント設定方法を再送"
+      no_confirmation:              "アカウント設定方法が未受領"
+      suspend_user:                 "停止中ユーザ"
+      active_users:                 "有効なユーザ"
+      locked_users:                 "ロック中ユーザ"
+      restore:                      "[Restore]"
+      unconfirmed_user:             "未認証ユーザ"
+      suspended_by:                 "停止処理の実行"
+
+      locked:
+         title:                     "ロック中のユーザ"
+         h1:                        "ロック中のユーザ"
+
+      th:
+         email:                     "メール"
+         password:                  "パスワード"
+         password_confirmation:     "パスワード再確認"
+         password_current:          "現在のパスワード"
+         password_new:              "新しいパスワード"
+         created_at:                "作成日"
+         locked_at:                 "ロックされた日"
+         lock_reason:               "ロック事由"
+         admin:                     "管理者権限"
+         restore:                   "ユーザ復元"
+         suspend:                   "ユーザ停止"
+
+      button:
+         login:                     "ログイン"
+         update:                    "更新"
+         create_account:            "アカウント作成"
+         cancel_account:            "アカウント削除"
+         logout:                    "ログアウト"
+         resend_confirmation:       "アカウント設定方法を再送"
+         send_reset_password:       "アカウント設定方法の再送を実施"
+         change_password:           "パスワード変更"
+
+      message:
+         no_locked_users:           "ロック中のユーザが存在していません"
+         no_active_users:           "有効なユーザが存在していません"
+         leave_blank:               "変更しない項目は空白のままでかまいません"
+         need_current_password:     "変更を確定するには、現在のパスワードを再入力してください"
+
+      flash:
+         success:
+            suspended:              "ユーザの停止処理完了:"
+            unsuspended:            "ユーザの停止解除処理完了:"
+
+   
+
