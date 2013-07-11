@@ -49,6 +49,7 @@ class CDEHandlerPass2 : public Osmium::Handler::Base {
 
     std::map<const std::string, int> m_highway2z;
     char longint[100];
+    osm_object_id_t last_area_seen; 
 
 public:
 
@@ -61,6 +62,7 @@ public:
         m_srs_wgs84(),
         m_srs_out()
     {
+        last_area_seen = 0;
         if (m_srs_wgs84.SetWellKnownGeogCS("WGS84") != OGRERR_NONE) 
         {
             std::cerr << "Can't initalize WGS84 SRS\n";
@@ -136,6 +138,7 @@ public:
 
     void way(const shared_ptr<const Osmium::OSM::Way>& way) 
     {
+        if (way->id() == last_area_seen) return;
         OGRFeature* feature = 0;
         stringv::const_iterator it;
         for (it=m_fields_ways.begin(); it != m_fields_ways.end(); ++it) 
@@ -206,6 +209,7 @@ public:
             {
                 if (!feature) 
                 {
+                    last_area_seen = area->orig_id();
                     try  
                     {
                         feature = create_area_feature(area);
