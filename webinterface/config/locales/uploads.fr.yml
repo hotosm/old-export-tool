@@ -6,10 +6,10 @@ fr:
       h1:               "Configuration"
 
       newupload:
-         title:         "Téléchargement nouveau"
+         title:         "Nouveau téléchargement"
          h1:            "Télécharger un fichier de configuration"
-         text:          'Configuration files can be tagging presets (already supported), or SQL transforms or translation tables (planned). When you upload a file, choose a human-readable name for it (e.g. "HOT Presets for Haiti v1.23"); when creating a new job later, you can then select which of these files to apply.'
-         name:          "Téléchargement nouveau"
+         text:          'Les fichiers de configuration peuvent être (déjà supporté) des presets JOSM, ou des tables SQL transforms (en cours de développement). Lorsque vous uploadez un fichier, choisissez un nom compréhensible (par exemple "HOT Presets for Haiti v1.23"); lors de la création d'un job plus tard, vous pouvez sélectionner le fichier désiré.'
+         name:          "Nouveau téléchargement"
 
       index:
          title:         "Configuration"
@@ -33,25 +33,25 @@ fr:
       tagpreview:
          title:         "Vérifier les tags"
          h1:            "Vérifier les tags"
-         h2:            "Tags des fichiers preset"
+         h2:            "Tags des fichiers presets"
 
       defaulttags:
-         title:         "Default Tags"
-         h1:            "Default Tags"
+         title:         "Tags par défaut"
+         h1:            "Tags par défaut"
 
       update:
          title:         "Télécharger une nouvelle version du fichier"
          h1:            "Télécharger une nouvelle version du fichier"
-         text:          "Si vous téléchargez un nouveau fichier, l'ancien fichier est écrasé!"
+         text:          "Si vous téléchargez un nouveau fichier, l'ancien fichier est écrasé !"
 
       th:
          name:          "Nom de fichier"
-         updated_at:    "Updated At"
-         created_by:    "Created By"
+         updated_at:    "Mis à jour le"
+         created_by:    "Créé par"
          download:      "Télécharger"
          delete:        "Supprimer"
-         update:        "Update"
-         tagpreview:    "Tag Preview"
+         update:        "Mettre à jour"
+         tagpreview:    "Prévisualition du tag"
          tag:           "Tag"
          geometrytype:  "Type de géométrie"
          type:          "Catégorie"
@@ -60,19 +60,19 @@ fr:
       span:
          show:             "Afficher"
          hide:             "Masquer"
-         deleted_uploads:  "supprimer téléchargements"
+         deleted_uploads:  "Uploads supprimés"
 
       action:
-         newupload:     "Téléchargement nouveau"
-         showdeleted:   "Afficher téléchargements supprimés"
-         hidedeleted:   "Masquer téléchargements supprimés"
-         defaulttags:   "Default Tags"
+         newupload:     "Nouveau téléchargement"
+         showdeleted:   "Afficherles  téléchargements supprimés"
+         hidedeleted:   "Masquer les téléchargements supprimés"
+         defaulttags:   "Tags par défaut"
 
       button:
          save:          "Sauver"
 
       message:
-         nofiles:       "Aucun fichier de configuration téléchargées encore."
+         nofiles:       "Aucun fichier de configuration encore téléchargé."
 
       error:
          xml_corrupt:   "Le XML est corrompu et une exception est survenue."
@@ -80,13 +80,13 @@ fr:
 
       flash:
          error:
-            xml_parsing_failed:  "Parsing XML a échoué. Téléchargement pas enregistré."
+            xml_parsing_failed:  "Le parsing XML a échoué. Le téléchargement n'a pas été enregistré."
             not_saved:           "Téléchargement pas enregistré."
-            restored:            "Téléchargement pas restauré!"
-            deleted:             "Téléchargement pas supprimé!"
+            restored:            "Téléchargement pas restauré !"
+            deleted:             "Téléchargement pas supprimé !"
 
          success:
-            newversion_saved:    "Nouvelle version du fichier sauvegardé avec succès: "
+            newversion_saved:    "Nouvelle version du fichier sauvegardé avec succès : "
             saved:               "Téléchargement enregistré avec succès."
             restored:            "Téléchargement restauré avec succès."
             deleted:             "Téléchargement supprimé avec succès."
