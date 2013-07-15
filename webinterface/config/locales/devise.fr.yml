@@ -35,7 +35,7 @@ fr:
       updated: "Votre mise à jour a été prise en compte."
       destroyed: "Votre compte a été supprimé. Nous espérons vous revoir bientôt."
       user:
-        signed_up_but_unconfirmed: 'Un message contenant un lien de confirmation a été envoyé à votre adresse e-mail Adressse. Ouvrez le lien pour activer le compte.'
+        signed_up_but_unconfirmed: 'Un message contenant un lien de confirmation a été envoyé à votre adresse e-mail. Ouvrez le lien pour activer le compte.'
     unlocks:
       send_instructions: "Vous allez recevoir un courriel avec des instructions pour déverrouiller votre compte."
       unlocked: "Votre compte est déverrouillé. Vous êtes maintenant connecté."
@@ -96,12 +96,12 @@ fr:
         # For "leave blank if you don't want to change it"
         password_instruction: "Laisser vide si vous ne voulez pas le changer"
         # For "we need your current password to confirm your changes"
-        current_password_instruction: "Vous devez saisir votre mot de passe courant pour confirmer vos changement"                
+        current_password_instruction: "Vous devez saisir votre mot de passe courant pour confirmer vos changements"                
         update: "Mettre à jour"
         cancel_my_account: "Annuler mon compte"
-        unhappy?: "Pas content(e) ?"
+        unhappy?: "Insatisfait(e) ?"
         are_you_sure?: "Êtes-vous sûr ?"
         back: "Retour"
     unlocks:
       new:
-        resend_unlock_instructions: "Renvoyez le mail pour déverrouiller mon compte"          
+        resend_unlock_instructions: "Renvoyer le mail pour déverrouiller mon compte"          
