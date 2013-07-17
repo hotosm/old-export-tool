@@ -1,0 +1,28 @@
+# Sample localization file for French. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+   tool:                      "Hot Exports"
+
+   locale:
+      english:                "English"
+      german:                 "Deutsh"
+      french:                 "Français"
+      japanese:               "Japanese"
+   
+   navigation:
+      home:                   "Home"
+      help:                   "Aide"
+      jobs:                   "Jobs"
+      newjob:                 "Nouveau job"
+      newjob_hint:            "Se connecter ou créer un compte pour créer de nouveaux jobs"
+       
+   footer:
+      your_account:           "Votre compte"
+      expert_functions:       "Fonctions avancées"
+      user_administration:    "Gestion des utilisateurs"
+      logged_in_as:           "Vous êtes connecté(e) comme"
+      text:                   "Copyright © 2013 Humanitarian OpenStreetMap Team · Données d'OpenStreetMap, ODbL 1.0 license"
+
+
+   error:
