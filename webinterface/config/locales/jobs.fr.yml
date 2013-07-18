@@ -4,31 +4,31 @@
 fr:
 
    jobs:
-      title:               "Procédures"
-      h1:                  "Procédures"
+      title:               "Jobs"
+      h1:                  "Jobs"
 
-      nojobs:              "Aucun procédure active dans la base."
-      filter:              "Filter"
+      nojobs:              "Aucun job actif dans la base."
+      filter:              "Filtre"
 
-      not_owner:           "pas propriétaire"
+      not_owner:           "Non propriétaire"
       
       based_upon:
-         default_tags:     "seulement default tags"
-         directly:         "directly uploaded (old version)" 
+         default_tags:     "Seulement les tags par défaut"
+         directly:         "Uploadé directement (ancienne version)" 
 
       th:
-         name:             "Name"
+         name:             "Nom"
          description:      "Description"
-         region:           "Region"
-         created_at:       "Created At"
-         created_by:       "Created By"
-         based_preset:     "Sur la base de fichier preset"
+         region:           "Région"
+         created_at:       "Créé à"
+         created_by:       "Créé par"
+         based_preset:     "Sur la base d'un fichier preset"
          delete:           "Supprimer"
          state:            "Etat"
          download:         "Téléchargement"
-         preset:           "Fichier Tags/Preset"
+         preset:           "Fichier Presets"
          transform:        "Fichier Tag Transformation SQL"
-         translate:        "Fichier Translation"
+         translate:        "Fichier traduction"
    
          minlon:           "Min. Longitude"
          maxlon:           "Max. Longitude"
@@ -36,75 +36,75 @@ fr:
          maxlat:           "Max. Latitude"
 
       action:
-         show_deleted:     "Afficher procédures supprimés"
-         hide_deleted:     "Masquer procédures supprimés"
-         select_area:      "Selectionner la zone"
+         show_deleted:     "Afficher les jobs supprimés"
+         hide_deleted:     "Masquer les jobs supprimés"
+         select_area:      "Sélectionner la zone"
 
       button:
-         newrun:           "Commencer nouvelle procédure"
-         recyclejob:       "Créer une procédure"
+         newrun:           "Commencer un nouveau job"
+         recyclejob:       "Créer un job"
          save:             "Enregistrer"
 
       job:
-         h1:               "Procédure"
+         h1:               "Job"
          restore:          "Restaurer"
          
       runs:
-         h2:               "Passages"
+         h2:               "Exécution"
          message:
-            jobrunning:    "job is running - no downloads available yet"
-            nodownload:    "no download available"
+            jobrunning:    "Le job est en cours d'élaboration - pas encore de téléchargement disponible"
+            nodownload:    "Pas encore de téléchargement disponible"
      
       area:             
          h2:               "Zone"
 
       config:           
-         h2:               "Configuration de Procédure"
+         h2:               "Configuration de job"
 
       recycle:          
-         h2:               "Nouvelle procédureavec la même configuration"
-         text:             "Créer une nouvelle procédure avec une nouvelle zone mais la même configuration."
+         h2:               "Nouveau job avec la même configuration"
+         text:             "Créer une nouveau job avec une nouvelle zone mais la même configuration."
 
       newjob:
-         title:            "Nouvelle Procédure"
-         h1:               "Nouvelle Procédure"
+         title:            "Nouveau job"
+         h1:               "Nouveau job"
 
       newjobconf:
-         title:            "Configuration de procédure"
-         h1:               "Nouvelle Procédure - Configuration"
+         title:            "Configuration de job"
+         h1:               "Nouveau job - Configuration"
 
          th:
-            name:          "Nom de Procédure"
-            preset:        "Selectionner le fichier preset"
-            default_tags:  "Ajouter Default Tags?"
+            name:          "Nom du job"
+            preset:        "Sélectionner le fichier preset"
+            default_tags:  "Ajouter les tags par défaut ?"
             transform:     "Fichier Tag Transformation SQL"
             translation:   "Fichier Traduction"
 
       newjobwithconf:
-         title:            "Nouvelle Procédure (avec la même Configuration)"
-         h1:               "Nouvelle Procédure (avec la même Configuration)"
+         title:            "Nouveau job (avec la même Configuration)"
+         h1:               "Nouveau job (avec la même Configuration)"
 
       flash:
          success:
-            job_created:         "Procédure crée!"
-            run_saved:           "Procédure commoncé!"
-            restored:            "Procédure restauré!"
-            deleted:             "Procédure supprimé!"
+            job_created:         "Job créé!"
+            run_saved:           "Job commencé !"
+            restored:            "Job restauré !"
+            deleted:             "Job supprimé !"
 
          error:
-            xml_parsing_failed:  "XML parsing failed. No job created."
-            no_tags:             "No tags found. No job created. Please select a preset file or default tags."
-            not_saved:           "No job saved!"
-            running_job:         "There is already a running job."
-            no_run_started:      "No run started!"
-            restored:            "Job not restored!"
-            deleted:             "Job not deleted!"
+            xml_parsing_failed:  "Le parsing XML a échoué. Le job n'a pas été créé."
+            no_tags:             "Pas de tags trouvés. Le job n'a pas été créé. Veuillez sélectionner un fichier preset ou les tags par défaut."
+            not_saved:           "Pas de job sauvegardé !"
+            running_job:         "Il y a déjà un job en cours d'élaboration."
+            no_run_started:      "Pas de processus d'actualisation lancé !"
+            restored:            "Le job n'a pas été restauré."
+            deleted:             "Le job n'a pas été supprimé."
 
       errors:
-         no_valid_region:     "Your selected area is not in an valid region."
-         out_of_range:        "Value out of range."
-         area_not_covered:    "Selected area is not covered by the service!"
-         area_too_large:      "Selected Area is too large: "
-         bb_only_allowed:     " - Only %{bbox_max} is allowed."
+         no_valid_region:     "La zone de sélection n'est pas valide."
+         out_of_range:        "Valeur non autorisée."
+         area_not_covered:    "La zone de sélection ne fait pas partie d'une région disponible dans le service."
+         area_too_large:      "La zone de sélection est trop large: "
+         bb_only_allowed:     "Seulement %{bbox_max} est autorisé."
 
 

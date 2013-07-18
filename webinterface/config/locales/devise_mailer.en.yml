@@ -1,0 +1,21 @@
+# Localization for english
+# Devise mailer
+
+en:
+   devise:
+      mailer:
+         hello:         "Hello"
+         regards1:      "Best regards,"
+         regards2:      "your friendly HOT export server"
+
+         confirmation:
+            text1:      "Someone (possibly you) has requested to set up an account for this e-mail address on the HOT export server. If this request is genuine, please proceed to the confirmation link below to finish creating the account."
+
+            text2:      "If you did not request the creation of an account, please ignore this message and accept our apologies."
+            link:       "Confirm my account"
+
+         reset:
+            text1:      "Someone (possibly you) has requested that your password on the HOT export server be changed. If this request is genuine, you can follow the link below to change your password."
+            text2:      "If you did not request a change of password, please ignore this message and accept our apologies. Your password will not change if you do not click on the link." 
+            link:       "Change my password"
+          

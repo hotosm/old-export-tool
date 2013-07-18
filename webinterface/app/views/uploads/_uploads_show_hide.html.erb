@@ -1,4 +1,14 @@
 <script type="text/javascript">
+   
+$.fn.toggleClick = function() {
+   var events = arguments;
+   var iteration = 0;
+   
+   return $(this).click( function() {
+      events[iteration].apply(this, arguments);
+      iteration = (iteration + 1) % events.length;
+   });
+};
 
 $(document).ready(function() {
 
@@ -8,20 +18,23 @@ $(document).ready(function() {
       show_invisible();
    <% end %>
 
-   $(".jq_show").toggle(function(){
+   $(".jq_show").toggleClick(function(){
       show_invisible();
    }, function() {
       hide_invisible();
    });
 
+
    function show_invisible() {
-      $(".jq_invisible").parent().parent().show();   
+      //$(".jq_invisible").parent().parent().show();   
+      $(".invisible").show();   
       $("#showhide").text("<%= t 'uploads.span.hide' %>");
       counttr();
    }
 
    function hide_invisible() {
-      $(".jq_invisible").parent().parent().hide();   
+      //$(".jq_invisible").parent().parent().hide();   
+      $(".invisible").hide();   
       $("#showhide").text("<%= t 'uploads.span.show' %>");
       counttr();
    }

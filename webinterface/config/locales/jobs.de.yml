@@ -54,6 +54,7 @@ de:
          message:
             jobrunning:    "Der Job läuft - Downloads sind noch nicht verfügbar."
             nodownload:    "Keine Downloads verfügbar."
+            no_created_by: "Ohne Eigentümer"
      
       area:             
          h2:               "Gebiet"
@@ -72,6 +73,7 @@ de:
       newjobconf:
          title:            "Job-Konfiguration"
          h1:               "Neuer Export-Job - Konfiguration"
+         no_file:          "Kein File"
 
          th:
             name:          "Jobname"
@@ -92,6 +94,7 @@ de:
             run_saved:           "Der Durchlauf wurde gestartet!"
             restored:            "Der Job wurde wiederhergestellt!"
             deleted:             "Der Job wurde gelöscht!"
+            run_started:         "Ein neuer Durchlauf wurde gestartet!"
 
          error:
             xml_parsing_failed:  "Das Parsen des XML war nicht erfolgreich. Es wurde kein Job erzeugt."

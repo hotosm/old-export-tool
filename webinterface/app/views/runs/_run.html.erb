@@ -1,7 +1,11 @@
 <tr>
+
+<!-- state //-->
 <td>
 <img src="<%= asset_path "status/#{run.state}.png" %>" class="state" title="<%= run.state %>">
 </td>
+
+<!-- download //-->
 <td>
 <% if run.state == 'success' %>
 <ul>
@@ -17,9 +21,19 @@
 [<%= t 'jobs.runs.message.nodownload' %>]
 <% end %>
 </td>
+
+<!-- created_at //-->
 <td><%= run.updated_at.strftime("%Y-%m-%d %H:%M") %></td>
+
+<!-- created_by //-->
 <% if current_user.try(:admin?) %>
-<td><%= run.user.email %></td>
+   <td>
+   <% if run.try(:user) %>
+      <%= run.user.email %>
+   <% else %>
+      <%= t 'jobs.runs.message.no_created_by' %>
+   <% end %>
+   </td>
 <% end %>
 </tr>
 

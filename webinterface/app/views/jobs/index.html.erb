@@ -26,6 +26,7 @@ $(document).ready(function(){
 <% else %>
 <p><%= t 'jobs.filter' %> <input type="text" size=10 id="jobfilter"></p>
 
+<%= will_paginate %>
 <table class="jobindex">
    <tr>
    <th width="400"><%= t 'jobs.th.name' %></th>
@@ -41,6 +42,7 @@ $(document).ready(function(){
    </tr>
    <%= render @jobs %>
 </table>
+<%= will_paginate %>
 <% end %>
 
 <ul class="upload_actions">

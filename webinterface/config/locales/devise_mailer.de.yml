@@ -1,0 +1,21 @@
+# Localization for german
+# Devise mailer
+
+de:
+   devise:
+      mailer:
+         hello:         "Hallo"
+         regards1:      "Viele Grüße,"
+         regards2:      "Ihr freundlicher HOT Export Server"
+
+         confirmation:
+            text1:      "Jemand (wahrscheinlich Sie) hat einen Account für den Hot export server unter dieser E-Mail-Adresse angemeldet. Wenn Sie wirklich einen Account möchten, bestätigen Sie dies bitte hier über den folgenden Link. Dann wird der Account vollständig aktiviert."
+            text2:      "Wenn Sie keinen Account angemeldet haben, ignorieren Sie diese Email bitte. Wir entschuldigen uns dann dafür."
+            link:       "Account vollständig aktivieren"
+
+         reset:
+            text1:      "Jemand (wahrscheinlich Sie) hat versucht Ihr Passwort zu ändern. Wenn Sie wirklich Ihr Passwort ändern möchten, folgen Sie dem Link, um Ihr Passwort zu ändern."
+            text2:      "Wenn Sie Ihr Passwort nicht ändern möchten, ignorieren Sie bitte diese Email. Wir entschuldigen uns dann dafür."
+            link:       "Passwort ändern."
+
+          

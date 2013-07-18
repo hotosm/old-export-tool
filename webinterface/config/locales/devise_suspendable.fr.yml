@@ -6,6 +6,6 @@ fr:
    devise:
       failure:
          user:
-            suspended: "Compte est suspendu."
+            suspended: "Le compte est suspendu."
 
    

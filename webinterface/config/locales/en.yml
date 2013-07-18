@@ -19,13 +19,11 @@ en:
        
    footer:
       your_account:           "Your Account"
+      lost_password:          "Lost password?"
       expert_functions:       "Expert Functions"
       user_administration:    "User Administration"
       logged_in_as:           "You are logged in as"
       text:                   "Copyright © 2013 Humanitarian OpenStreetMap Team · Map data from OpenStreetMap, ODbL 1.0 license"
 
-
    error:
-      
-
 

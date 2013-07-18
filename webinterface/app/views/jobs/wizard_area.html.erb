@@ -19,12 +19,14 @@ $(document).ready(function() {
 
    $(".select_area").click(function() { 
       init_drawfeature();
+      start_drawfeature();
    });
    
    $(".latlon").change(function() {
       init_drawfeature();
-      //box.deactivate();
-      init_values2box();
+      values2box();
+//box.deactivate();
+//transform.deactivate();
    });
 
 
@@ -33,6 +35,7 @@ $(document).ready(function() {
    // XXX check for "newwithconfiguration"
    init_drawfeature();
    box.deactivate();
+   transform.deactivate();
    init_values2box();
 <% end %>
 
@@ -127,7 +130,8 @@ function init_map(){
 function init_drawfeature() {
 
    if (vectors) { 
-      vectors.destroy();
+      map.removeLayer(vectors);
+      vectors=null;
    }
 
    vectors = new OpenLayers.Layer.Vector("Box", {
@@ -145,15 +149,16 @@ function init_drawfeature() {
    });
    box.handler.callbacks.done = draw_end;
    map.addControl(box);
-   //activate_drawfeature();
-
+   
    transform = new OpenLayers.Control.TransformFeature(vectors, {
       rotate: false,
       irregular: true
    });
    transform.events.register("transformcomplete", transform, transformComplete);
    map.addControl(transform);
+}
 
+function start_drawfeature() {
    box.activate();
 }
 
@@ -169,6 +174,7 @@ function draw_end(bbox) {
 }
 
 function draw_box(bounds) {
+   vectors.removeAllFeatures();
    var feature = new OpenLayers.Feature.Vector(bounds.toGeometry());
    vectors.addFeatures(feature);
    transform.setFeature(feature);
@@ -183,7 +189,7 @@ function set_bounds(bounds) {
 
    bounds.transform(projmerc,proj4326);
 
-   z = 10000
+   z = 10000;
 
    var left    = Math.round(bounds.left   * z) / z;
    var bottom  = Math.round(bounds.bottom * z) / z;
@@ -194,18 +200,34 @@ function set_bounds(bounds) {
    $("#job_latmin").val(bottom);
    $("#job_lonmax").val(right);
    $("#job_latmax").val(top);
+   $("form").resetClientSideValidations();
 }
 
 function init_values2box() {
 
-   xminlon = <%= @job.lonmin %>
-   xminlat = <%= @job.latmin %>
-   xmaxlon = <%= @job.lonmax %>
-   xmaxlat = <%= @job.latmax %>
+   <% unless @job.id.nil? %>
+   xminlon = <%= @job.lonmin %>;
+   xminlat = <%= @job.latmin %>;
+   xmaxlon = <%= @job.lonmax %>;
+   xmaxlat = <%= @job.latmax %>;
 
    bounds = new OpenLayers.Bounds(xminlon, xminlat, xmaxlon, xmaxlat);
    bounds.transform(proj4326,projmerc);
    draw_box(bounds);
+   <% end %>
+}
+
+function values2box() {
+
+   xminlon = $("#job_lonmin").val(); 
+   xminlat = $("#job_latmin").val();
+   xmaxlon = $("#job_lonmax").val();
+   xmaxlat = $("#job_latmax").val();
+
+   bounds = new OpenLayers.Bounds(xminlon, xminlat, xmaxlon, xmaxlat);
+   bounds.transform(proj4326,projmerc);
+   draw_box(bounds);
+   $("form").resetClientSideValidations();
 }
 
 function check_bounds(bounds) {

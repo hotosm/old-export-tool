@@ -12,10 +12,10 @@ class JobsController < ApplicationController
       # hide deleted:   no parameter or deleted = n
 
       if params['deleted'] == 'y'
-         @jobs = Job.all
+         @jobs = Job.includes(:region, :user).paginate(:page => params[:page], :per_page => 200)
          @hide_invisible = false
       else
-         @jobs = Job.where("visible = ?", true)
+         @jobs = Job.includes(:region, :user).where("visible = ?", true).paginate(:page => params[:page], :per_page => 200)
          @hide_invisible = true
       end
    end
@@ -34,10 +34,11 @@ class JobsController < ApplicationController
       @runs = Run.where("job_id = ?", params[:job_id])
 
       respond_to do |format|
-         if (current_user.try(:admin?)) 
-            format.json {render :json => @runs, :include => :user}
+         
+         if (current_user.try(:admin?))
+            format.json {render :json => @runs, :include => [:user, :downloads] }
          else
-            format.json {render :json => @runs }
+            format.json {render :json => @runs, :include => :downloads }
          end
       end
    end
@@ -276,7 +277,7 @@ private
    def up_prepare(uptype)
       upf = Upload.where("visibility=true and uptype=?", uptype)
       upfiles = Hash.new
-      upfiles['No File'] = 0      
+      upfiles[t('jobs.newjobconf.no_file')] = 0      
 
       upf.each do |up|
          upfiles[up.name] = up.id

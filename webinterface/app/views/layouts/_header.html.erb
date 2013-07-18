@@ -15,17 +15,21 @@
       </ul>
    </div>
    <div class="logo">
-      <img src="<%= asset_path 'layout/logo.png' %>" class="logo">
+      <img src="<%= asset_path 'layout/hot_logo_white.png' %>" class="logo">
       <h1>HOT Exports</h1>
    </div>
 </div>
+
 <div id="switch_language" style="float: right;">
+<% unless (params[:controller] == "jobs" and params[:action] == "wizard_configuration") %>
 <p>
+<%= link_to_unless I18n.locale == :fr, "Français", :locale => :fr %>
+|
 <%= link_to_unless I18n.locale == :en, "English", :locale => :en %>
 |
 <%= link_to_unless I18n.locale == :ja, "日本語", :locale => :ja %>
 |
 <%= link_to_unless I18n.locale == :de, "Deutsch", :locale => :de %>
 </p>
+<% end %>
 </div>
-

@@ -12,17 +12,17 @@ fr:
       edit_account:                 "Modifier les paramètres du compte"
       cancel_account:               "Annuler le compte"
       cancel_account_text:          "Voulez-vous supprimer votre compte?"
-      cancel_account_confirm:       "Etes-vous sûr??"
+      cancel_account_confirm:       "Etes-vous sûr ?"
       change_password:              "Modifier le mot de passe"
-      lost_password:                "Mot de passe perdu?"
+      lost_password:                "Mot de passe perdu ?"
       resend_confirmation:          "Recevoir à nouveau l'instruction de confirmation"
       no_confirmation:              "Vous n'avez pas reçu les instructions de confirmation?"
-      suspend_user:                 "Suspendre Utilisateur"
+      suspend_user:                 "Suspendre un utilisateur"
       active_users:                 "Utilisateurs actifs"
       locked_users:                 "Utilisateurs verrouillés"
       restore:                      "[Restaurer]"
-      unconfirmed_user:             "Utilisateur pas confirmé"
-      suspended_by:                 "Suspendue par"
+      unconfirmed_user:             "Utilisateur non confirmé"
+      suspended_by:                 "Suspendu par"
 
       locked:
          title:                     "Utilisateurs verrouillés"
@@ -37,30 +37,30 @@ fr:
          created_at:                "Date de création"
          locked_at:                 "Date de verrouillage"
          lock_reason:               "Raison de verrouillage"
-         admin:                     "Administrateur?"
+         admin:                     "Administrateur ?"
          restore:                   "Restaurer"
          suspend:                   "Verrouiller"
 
       button:
          login:                     "Connexion"
          update:                    "Sauver"
-         create_account:            "Créer Compte"
-         cancel_account:            "Annuler Compte"
+         create_account:            "Créer un compte"
+         cancel_account:            "Annuler un compte"
          logout:                    "Déconnexion"
          resend_confirmation:       "Recevoir à nouveau l'instruction de confirmation"
-         send_reset_password:       "Envoyez-moi instructions de réinitialisation de mot de passe"
+         send_reset_password:       "Envoyez-moi les instructions de réinitialisation de mot de passe"
          change_password:           "Changer mon mot de passe"
 
       message:
-         no_locked_users:           "Aucun membre verrouillés dans la base."
-         no_active_users:           "Pas utilisateurs actifs dans la base."
+         no_locked_users:           "Aucun membre verrouillé dans la base."
+         no_active_users:           "Pas d'utilisateurs actifs dans la base."
          leave_blank:               "Laissez ce champ vide si vous ne voulez pas le changer."
          need_current_password:     "Nous avons besoin de votre mot de passe actuel pour confirmer vos modifications."
 
       flash:
          success:
-            suspended:              "Utilisateur verrouillé avec succès:"
-            unsuspended:            "Utilisateur deverrouillé avec succès:"
+            suspended:              "Utilisateur verrouillé avec succès :"
+            unsuspended:            "Utilisateur deverrouillé avec succès :"
 
    
 

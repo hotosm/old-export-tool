@@ -20,6 +20,7 @@ de:
        
    footer:
       your_account:           "Ihr Account"
+      lost_password:          "Passwort vergessen?"
       expert_functions:       "Experten-Funktionen"
       user_administration:    "Benutzer-Verwaltung"
       logged_in_as:           "Sie sind eingeloggt als"

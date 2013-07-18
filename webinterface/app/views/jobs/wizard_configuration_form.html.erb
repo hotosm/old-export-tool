@@ -23,7 +23,7 @@
 <tr>
    <th><%= t 'jobs.newjobconf.th.preset' %></th>
    <td>
-      <%= select_tag('uploads[presetfile]', options_for_select(@upfiles['preset'])) %>
+      <%= select_tag('uploads[presetfile]', options_for_select(@upfiles['preset'], :selected => 0)) %>
    </td>
 </tr>
 <tr>
@@ -33,7 +33,7 @@
 <tr>
    <th><%= t 'jobs.newjobconf.th.translation' %></th>
    <td>
-      <%= select_tag('uploads[translation]', options_for_select(@upfiles['translation'])) %>
+      <%= select_tag('uploads[translation]', options_for_select(@upfiles['translation'], :selected => 0)) %>
    </td>
 </tr>
 <tr>
@@ -41,9 +41,9 @@
    <td>
       <ul>
       <% @upfiles['tagtransform'].each do |k, v| %>
-      <% if v != 0 %>
-      <li><%= check_box_tag('uploads[tagtransform][]', v) %><%= label_tag(v, k) %></li>
-      <% end %>
+         <% if v != 0 %>
+            <li><%= check_box_tag('uploads[tagtransform][]', v) %><%= label_tag(v, k) %></li>
+         <% end %>
       <% end %>
       </ul>
    </td>

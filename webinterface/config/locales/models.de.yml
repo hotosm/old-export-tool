@@ -31,11 +31,15 @@ de:
                      blank:         "Bitte geben Sie einen aussagekräftigen Namen an."
                   lonmin:
                      blank:         "Wählen Sie ein Gebiet aus."
+                     not_a_number:  "Bitte eine gültige Zahl eingeben."
                   lonmax:
                      blank:         "Wählen Sie ein Gebiet aus."
+                     not_a_number:  "Bitte eine gültige Zahl eingeben."
                   latmin:     
                      blank:         "Wählen Sie ein Gebiet aus."
+                     not_a_number:  "Bitte eine gültige Zahl eingeben."
                   latmax:
                      blank:         "Wählen Sie ein Gebiet aus."
+                     not_a_number:  "Bitte eine gültige Zahl eingeben."
 
 

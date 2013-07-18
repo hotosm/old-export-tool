@@ -54,6 +54,7 @@ en:
          message:
             jobrunning:    "job is running - no downloads available yet"
             nodownload:    "no download available"
+            no_created_by: "no created_by value"
      
       area:             
          h2:               "Area"
@@ -72,6 +73,7 @@ en:
       newjobconf:
          title:            "Job Configuration"
          h1:               "New Export Job - Configuration"
+         no_file:          "No File"
 
          th:
             name:          "Job Name"
@@ -84,14 +86,13 @@ en:
          title:            "New Export Job (with fixed Configuration)"
          h1:               "New Export Job (with fixed Configuration)"
 
-
-
       flash:
          success:
             job_created:         "Job successfully created!"
             run_saved:           "Run successfully started!"
             restored:            "Job successfully restored!"
             deleted:             "Job successfully deleted!"
+            run_started:         "New run started!"
 
          error:
             xml_parsing_failed:  "XML parsing failed. No job created."
@@ -101,6 +102,7 @@ en:
             no_run_started:      "No run started!"
             restored:            "Job not restored!"
             deleted:             "Job not deleted!"
+            run_started:         "New run started!"
 
       errors:
          no_valid_region:     "Your selected area is not in an valid region."
