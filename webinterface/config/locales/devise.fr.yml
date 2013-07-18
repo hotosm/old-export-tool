@@ -29,16 +29,16 @@ fr:
       updated: "Votre mot de passe a été changé. Vous êtes maintenant connecté."
     confirmations:
       send_instructions: "Vous allez recevoir un courriel contenant des instructions pour activer votre compte."
-      confirmed: "Votre compte a été activé. Vous êtes maintenant connecté."
+      confirmed: "Votre compte a été activé. Vous êtes maintenant connecté(e)."
     registrations:
       signed_up: "Votre inscription est enregistrée. Si demandé, un courriel de confirmation vous a été envoyé."
       updated: "Votre mise à jour a été prise en compte."
       destroyed: "Votre compte a été supprimé. Nous espérons vous revoir bientôt."
       user:
-        signed_up_but_unconfirmed: 'Un message contenant un lien de confirmation a été envoyé à votre adresse e-mail Adressse. Ouvrez le lien pour activer le compte.'
+        signed_up_but_unconfirmed: 'Un message contenant un lien de confirmation a été envoyé à votre courriel. Ouvrez le lien pour activer le compte.'
     unlocks:
       send_instructions: "Vous allez recevoir un courriel avec des instructions pour déverrouiller votre compte."
-      unlocked: "Votre compte est déverrouillé. Vous êtes maintenant connecté."
+      unlocked: "Votre compte est déverrouillé. Vous êtes maintenant connecté(e)."
     mailer:
       confirmation_instructions: "Instructions de confirmation"
       reset_password_instructions: "Instructions pour changer le mot de passe"
@@ -96,7 +96,7 @@ fr:
         # For "leave blank if you don't want to change it"
         password_instruction: "Laisser vide si vous ne voulez pas le changer"
         # For "we need your current password to confirm your changes"
-        current_password_instruction: "Vous devez saisir votre mot de passe courant pour confirmer vos changement"                
+        current_password_instruction: "Vous devez saisir votre mot de passe courant pour confirmer vos changements"                
         update: "Mettre à jour"
         cancel_my_account: "Annuler mon compte"
         unhappy?: "Pas content(e) ?"
