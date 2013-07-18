@@ -46,12 +46,12 @@ fr:
 
       th:
          name:          "Nom de fichier"
-         updated_at:    "Mis à jour à"
+         updated_at:    "Mis à jour le"
          created_by:    "Créé par"
          download:      "Télécharger"
          delete:        "Supprimer"
          update:        "Mettre à jour"
-         tagpreview:    "Prévisualisaiton de tag"
+         tagpreview:    "Prévisualisation de tag"
          tag:           "Tag"
          geometrytype:  "Type de géométrie"
          type:          "Catégorie"
@@ -63,9 +63,9 @@ fr:
          deleted_uploads:  "Uploads supprimés"
 
       action:
-         newupload:     "Nouveau téléchargement"
-         showdeleted:   "Afficher les téléchargements supprimés"
-         hidedeleted:   "Masquer les téléchargements supprimés"
+         newupload:     "Nouveau upload"
+         showdeleted:   "Afficher les uploads supprimés"
+         hidedeleted:   "Masquer les uploads supprimés"
          defaulttags:   "Tags par défaut"
 
       button:
@@ -76,20 +76,20 @@ fr:
 
       error:
          xml_corrupt:   "Le XML est corrompu et une exception est survenue."
-         xml_exception: "XML Exception"
+         xml_exception: "Exception XML"
 
       flash:
          error:
-            xml_parsing_failed:  "Le parsing XML a échoué. Le téléchargement n'a pas été enregistré."
-            not_saved:           "Téléchargement pas enregistré."
-            restored:            "Téléchargement pas restauré !"
-            deleted:             "Téléchargement pas supprimé !"
+            xml_parsing_failed:  "Le parsing XML a échoué. L'upload n'a pas été enregistré."
+            not_saved:           "Upload non enregistré."
+            restored:            "Upload non restauré !"
+            deleted:             "Upload non supprimé !"
 
          success:
             newversion_saved:    "Nouvelle version du fichier sauvegardé avec succès : "
-            saved:               "Téléchargement enregistré avec succès."
-            restored:            "Téléchargement restauré avec succès."
-            deleted:             "Téléchargement supprimé avec succès."
+            saved:               "Upload enregistré avec succès."
+            restored:            "Upload restauré avec succès."
+            deleted:             "Upload supprimé avec succès."
 
 
 
