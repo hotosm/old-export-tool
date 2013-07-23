@@ -1,0 +1,29 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+id:
+   tool:                      "Hot Exports"
+
+   locale:
+      english:                "Inggris"
+      german:                 "Jerman"
+      french:                 "Perancis"
+      japanese:               "Jepang"
+   
+   navigation:
+      home:                   "Halaman Muka"
+      help:                   "Bantuan"
+      jobs:                   "Job"
+      newjob:                 "Job Baru"
+      newjob_hint:            "Masuk atau membuat akun baru untuk job baru!"
+       
+   footer:
+      your_account:           "Akun anda"
+      lost_password:          "Lupa kata sandi?"
+      expert_functions:       "Fungsi Ahli"
+      user_administration:    "Administrasi Pengguna"
+      logged_in_as:           "Anda masuk sebagai"
+      text:                   "Hak Cipta © 2013 Humanitarian OpenStreetMap Team· Data peta dari OpenStreetMap, lisensi ODbL 1.0"
+
+   error:
+
