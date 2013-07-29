@@ -1,0 +1,96 @@
+# Localization for indonesian
+# Upload section
+
+en:
+   uploads:
+      h1:               "Konfigurasi"
+
+      newupload:
+         title:         "Upload Baru"
+         h1:            "Upload File Konfigurasi"
+         text:          'Konfigurasi file dapat menandai presets (siap didukung), atau mengubah SQL atau tabel terjemahan (direncanakan). Ketika Anda mengupload file, pilih nama yang terbaca orang lain untuk itu (misalnya "HOT Presets untuk Haiti v1.23"); ketika membuat job baru lagi, Anda dapat memilih beberapa file untuk diterapkan.'
+         name:          "Upload Baru"
+
+      index:
+         title:         "Konfigurasi"
+         h1:            "Konfigurasi"
+
+      presets:       
+         title:         "Upload | File Preset"
+         h1:            "File Preset"
+         name:          "File Preset"
+
+      tagtransforms:    
+         title:         "Upload | Tag Transform File SQL"
+         h1:            "Tag Transform File SQL"
+         name:          "Tag Transform File SQL"
+
+      translations:
+         title:         "Upload | Terjemahan"
+         h1:            "File Terjemahan"
+         name:          "File Terjemahan"
+
+      tagpreview:
+         title:         "Periksa Tag"
+         h1:            "Periksa Tag"
+         h2:            "Tag dari File Preset"
+
+      defaulttags:
+         title:         "Tag Standar"
+         h1:            "Tag Standar"
+
+      update:
+         title:         "Versi baru dari Upload"
+         h1:            "Upload Versi Baru dari File"
+         text:          "Jika Anda mengupload file baru, file lama akan tertimpa!"
+
+      th:
+         name:          "Nama File"
+         updated_at:    "Diperbaharui pada"
+         created_by:    "Dibuat oleh"
+         download:      "Download"
+         delete:        "Hapus"
+         update:        "Perbaharui"
+         tagpreview:    "Tampilan Tag"
+         tag:           "Tag"
+         geometrytype:  "Tipe Geometri"
+         type:          "Tipe"
+         file:          "File"
+
+      span:
+         show:             "Tunjukkan"
+         hide:             "Sembunyikan"
+         deleted_uploads:  "Upload dihapus"
+
+      action:
+         newupload:     "Upload Baru"
+         showdeleted:   "Tunjukkan upload yang telah dihapus"   
+         hidedeleted:   "Sembunyikan upload yang telah dihapus"
+         defaulttags:   "Tag Standar"
+
+      button:
+         save:          "Simpan"
+
+      message:
+         nofiles:       "File konfigurasi tidak diupload sampai sekarang."
+
+      error:
+         xml_corrupt:   "xml mengalami kerusakan dan terjadi pengecualian."
+         xml_exception: "Pengecualian XML"
+
+      flash:
+         error:
+            xml_parsing_failed:  "Penguraian XML gagal. Upload tidak disimpan."
+            not_saved:           "Upload tidak disimpan."
+            restored:            "Upload tidak dikembalikan!"
+            deleted:             "Upload tidak dihapus!"
+
+         success:
+            newversion_saved:    "Versi file baru berhasil disimpan untuk"
+            saved:               "Upload berhasil disimpan."
+            restored:            "Upload berhasil dikembalikan!"
+            deleted:             "Upload berhasil dihapus!"
+
+
+
+

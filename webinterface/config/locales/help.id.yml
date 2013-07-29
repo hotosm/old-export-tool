@@ -1,0 +1,111 @@
+# Localization for indonesia
+# Home and help section
+
+id:
+
+   home:
+      title:         "Halaman Muka"
+      h1:            "HOT Exports"
+      about:         
+         title:      "Tentang"
+         text:       "Aplikasi ini memperbolehkan anda untuk memperoleh data OpenStreetMap untuk berbagai wilayah. Anda dapat mengatur wilayah yang diinginkan beserta sebuah daftar fitur (tag OpenStreetMap) dalam prosesnya. Satu data yang diperoleh untuk wilayah tersebut akan tersedia dalam berbagai format untuk anda dalam beberapa menit."
+         
+
+      note:          
+         title:      "Catatan"
+         text:       "Sistem ini dipakai secara bersama-sama, mohon pertimbangkan permintaan data yang akan anda buat." 
+      new:           
+         title:      "Apa yang baru?"
+         text1:      "Upload file konfigurasi."
+         text2:      "Job dapat dihapus."
+         text3:      "Akun pengguna."
+
+
+   help:
+      title:         "Bantuan"
+      h1:            "Bantuan"
+      
+      newjob:
+         title:      "Membuat sebuah Job baru"
+         text:       'Klik pada "Job Baru" pada baris navigasi di atas untuk menjalankan permintaan data yang baru. Berikan sebuah nama dan deskripsi, sehingga anda (dan pengguna lainnya) dapat dengan mudah mengidentifikasinya kemudian. Kemudian pilih wilayah yang anda inginkan (saat ini hanya dapat berbentuk kotak). Pada langkah terakhir anda dapat menentukan tag. Terdapat dua cara. Anda dapat memilih sebuah preset JOSM dengan tag anda. Dan anda juga dapat memilih tag standar dengan memberi tanda pada kotak yang tersedia.'
+   
+      rerunjob:      
+         title:      "Menjalankan Ulang Job Saat Ini"
+         text:       'Pilih "Job" pada baris navigasi di atas. Cari job yang ingin anda jalankan ulang berdasarkan namanya. Sebuah penyaringan dapat membantu anda untuk mengurangi jumlah job pada daftar. Kemudian klik pada job anda untuk mendapatkan kembali halaman rinci, dan klik pada tombol "Mulai menjalankan yang baru". Job yang baru akan dijalankan, dan file download akan tersedia kembali setelah beberapa menit.' 
+
+      recyclejob:
+         title:      "Mendaur Ulang Job Saat Ini"
+         text:       'Anda dapat membuat sebuah job baru berdasarkan job saat ini dengan tombol "Buat Job" pada halaman rinci. Tombol tersebut akan mengarahkan anda ke "Job Baru" dimana anda dapat mengidentifikasi geometri yang berbeda, tetapi tag yang telah diatur akan kembali digunakan dari job yang saat ini dibuat.'
+
+      download:
+         title:      "Download Data Anda"
+         text:       "Setelah anda membuat sebuah job, maka job akan berjalan untuk anda dan sebuah halaman rincian akan ditunjukan untuk job tersebut - awalnya daftar akan terlihat kosong. Halaman ini akan diperbaharui secara otomatis, dan setelah beberapa menit anda akan melihat sejumlah file dengan berbagai format berbeda yang siap untuk didownload."
+
+      presets:
+         title:      "Konfigurasi File Preset"
+         text:       "Upload file preset anda dengan upload manajer. Jika sebuah file preset sudah tidak berlaku, anda dapat memperbaharuinya atau menghapusnya." 
+
+      advanced:
+         title:      "Topik Bantuan Lebih Lanjut"
+         text1:      "Menggunakan Tabel Terjemahan"
+         text2:      "Menggunakan Transformasi Database"
+
+
+      translation:
+         title:         "Bantuan Untuk Terjemahan"
+         h1:            "Menggunakan Tabel Terjemahan"
+         
+         whatfor:
+            title:      "Untuk apa tabel terjemahan?"
+            text1:       "Anda dapat membuat tabel terjemahan untuk menerjemahkan isi dari sebuah baris database (bukan dari nama sebuah barisnya)."
+            text2:      'Sebagai contoh, anda mungkin ingin menerjemahkan "bakery" menjadi "toko roti", dan "traffic_signals" menjadi "lampu lalu lintas".'
+
+         looklike:
+            title:      "Seperti Apa Contoh Tabel Terjemahan?"
+            text1:      "Anda dapat menuliskan tabel terjemahan seperti ini:"
+            text2:      "A tabel terjemahan merupakan sebuah file teks sederhana yang memiliki satu terjemahan setiap barisnya, dengan kata yang akan diterjemahkan pada sebelah kiri, diikuti satu karakter spasi atau lebih, kemudian terjemahannya."
+            text3:      "Sebuah tabel terjemahan dapat berisi garis yang kosong, atau garis yang dimulai dengan tanda tagar (#) untuk menandakan sebuah komentar."
+
+         howuse:
+            title:      "Bagaimana saya menggunakan Tabel Terjemahan?" 
+            text1:      'Anda dapat membuat sebuah tabel terjemahan menggunakan editor teks pilihan anda. Kemudian, pilih link "Upload Baru" pada fungsi lanjutan di bawah dan pilih untuk mengupload sebuah file terjemahan. Pada saat itu anda dapat memberikan sebuah nama simbolis untuk file terjemahan anda misalnya "Istilah Umum - Bahasa Indonesia" dan sebagainya.'
+            text2:      'Ketika anda membuat job yang baru, setelah memilih wilayah yang diinginkan, anda dapat memilih salah satu atau lebih tabel terjemahan yang telah diupload. Tabel ini akan diaplikasikan untuk setiap perintah job tersebut, dan akan mempengaruhi seluruh hasil dari format terkecuali data OSM dasar."
+
+         advancedtables:
+            title:      "Translation Tables Lanjut"
+            text:       'Dalam satu kasus, penting untuk membedakan antara fungsi yang berbeda pada istilah yang sama. Misalnya, anda mungkin ingin menerjemahkan istilah "residential" berbeda dengan objek yang muncul sebagai "building=residential" atau "highway=residential". Hal ini dapat dimungkinkan dengan menyisipkan key OSM pada objek dalam tabel terjemahan, contohnya:'
+
+
+      transform:
+         title:         "Bantuan untuk Transformasi Tag"
+         h1:            "Menggunakan Transformasi Database"
+
+         whatfor:
+            title:      "Apa Kegunaan Transformasi Database?"
+            text1:      'Anda dapat menggunakan transformasi database untuk menjalankan perintah SQL (spatialite) pada hasil eksport. Anda dapat, sebagai contoh, membuat kolom database baru, menghapus kolom database yang ada, mengatur nama kolom, menggabungkan kolom, atau menghapus daftar dari hasil eksport tergantung dari kriteria yang diinginkan.'
+            text2:      'Anda juga dapay mengubah isi kolom, mungkin jika anda ingin menimpa satu isi dengan isi lainnya, mekanisme tabel terjemahan mungkin akan menjadi pilihan yang lebih baik.'
+            text3:      'Transformasi database juga dapat digunakan untuk membuat tabel yang baru berdasarkan turunan tabel standar.'
+
+         looklike:
+            title:      "Seperti Apa Contoh Transformasi Database?"
+            text1:      'Transformasi database merupakan file SQL. Mereka harus mengandung SQL berlaku yang dapat dijalankan oleh penerjemah "spatialite" ketika diaplikasikan untuk sebuah file export SQLite standar yang dibuat oleh layanan ini.'
+            text2:      'Ini adalah sebuah contoh transformasi database yang sangat sederhana yang menyisipkan sebuah kolom baru pada tabel planet_osm_point dan mengisi kolom tersebut dengan sebuah salinan dari nilai "amenity":'
+            text3:      'Ini adalah sebuah contoh yang lebih kompleks yang menyisipkan dua buah kolom baru pada atbel, yaitu building_roof_material_stone dan building_roof_material_concrete, dan mengatur nilai mereka menjadi 1 apabila kolom building_roof_material yang sudah ada sebelumnya mengandung kondisi ini:'
+            text4:      'Pada SQL, komentar dimulai dengan karakter dua strip pada baris, jadi anda mungkin dapat menambahkan beberapa komentar.'
+
+         howtest:
+            title:      "Bagaimana Saya Dapat Melakukan Tes untuk Transformasi Database?"
+            text1:      'Dari HOT export yang sudah dijalankan sebelumnya, download file "extract.sqlite" file, dan buka melalui spatialite:'
+            text2:      'Sekarang anda dapat mencoba perintah SQL anda, dan ketika sudah puas dengan hasilnya, anda dapat menyalinnya ke dalam sebuah file transformasi database.'
+
+         howuse:
+            title:      "Bagaimana Saya Menggunakan Tranformasi Database?"
+            text1:      'Ketika membuat sebuah job yang baru, setelah memilih wilayah yang diinginkan, sekarang anda dapat memilih satu atau lebih transformasi database yang akan diaplikasikan untuk menjalankan job tersebut, dan hal tersebut akan mempengaruhi seluruh format output terkecuali data OSM dasar. Transofrmasi database akan diaplikasikan setelah tabel terjemahan.'
+            text2:       'Catatan setiap anda menjalankan job, HOT Export akan menghasilkan sebuah file "log.txt" untuk didownload; jika sesuatu yang salah terjadi dengan transformasi database anda, anda akan menemukan pesan kesalahan SQL terkait dalam file tersebut.'
+
+         advanced:
+            title:      "Transformasi Database Lebih Lanjut"
+            text:       'tbd'
+
+
+
