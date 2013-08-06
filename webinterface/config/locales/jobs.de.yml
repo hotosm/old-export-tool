@@ -38,6 +38,8 @@ de:
       action:
          show_deleted:     "Anzeige der gelöschten Jobs"
          hide_deleted:     "Verbergen der gelöschten Jobs"
+         show_notowner:    "Anzeigen aller Jobs, auch der anderer User"
+         hide_notowner:    "Verbergen von Jobs anderer User"
          select_area:      "Gebiet auswählen"
 
       button:

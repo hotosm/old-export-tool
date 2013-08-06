@@ -38,6 +38,8 @@ fr:
       action:
          show_deleted:     "Afficher les jobs supprimés"
          hide_deleted:     "Masquer les jobs supprimés"
+         show_notowner:    "Show all jobs including other users' jobs"
+         hide_notowner:    "Hide jobs from other users"
          select_area:      "Sélectionner la zone"
 
       button:

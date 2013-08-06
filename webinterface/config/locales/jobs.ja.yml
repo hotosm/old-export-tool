@@ -38,6 +38,8 @@ ja:
       action:
          show_deleted:     "削除されたジョブを表示"
          hide_deleted:     "削除されたジョブを非表示"
+         show_notowner:    "Show all jobs including other users' jobs"
+         hide_notowner:    "Hide jobs from other users"
          select_area:      "対象地域選択"
 
       button:

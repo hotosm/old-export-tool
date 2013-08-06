@@ -38,6 +38,8 @@ id:
       action:
          show_deleted:     "Tampilkan Job yang telah dihapus"
          hide_deleted:     "Sembunyikan Job yang telah dihapus"
+         show_notowner:    "Show all jobs including other users' jobs"
+         hide_notowner:    "Hide jobs from other users"
          select_area:      "Pilih area"
 
       button:
