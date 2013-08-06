@@ -36,8 +36,10 @@ en:
          maxlat:           "Max. Latitude"
 
       action:
-         show_deleted:     "Show deleted Jobs"
-         hide_deleted:     "Hide deleted Jobs"
+         show_deleted:     "Show deleted jobs"
+         hide_deleted:     "Hide deleted jobs"
+         show_notowner:    "Show all jobs including other users' jobs"
+         hide_notowner:    "Hide jobs from other users"
          select_area:      "Select Area"
 
       button:

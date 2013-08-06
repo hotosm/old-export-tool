@@ -11,12 +11,37 @@ class JobsController < ApplicationController
       # show deleted:   deleted = y 
       # hide deleted:   no parameter or deleted = n
 
-      if params['deleted'] == 'y'
-         @jobs = Job.includes(:region, :user).paginate(:page => params[:page], :per_page => 200)
-         @hide_invisible = false
+      if user_signed_in? then
+         if params['notowner'] == 'y' and params['deleted'] == 'y'
+            @jobs = Job.jobs_notowner_notvisible(params[:page])
+            @hide_notowner  = false
+            @hide_invisible = false
+
+         elsif params['deleted'] == 'y'
+            @jobs = Job.jobs_owner_notvisible(params[:page], current_user.id)
+            @hide_notowner  = true
+            @hide_invisible = false
+
+         elsif params['notowner'] == 'y'
+            @jobs = Job.jobs_notowner_visible(params[:page])
+            @hide_notowner  = false
+            @hide_invisible = true
+
+         else
+            @jobs = Job.jobs_owner_visible(params[:page], current_user.id)
+            @hide_notowner  = true
+            @hide_invisible = true
+         end
       else
-         @jobs = Job.includes(:region, :user).where("visible = ?", true).paginate(:page => params[:page], :per_page => 200)
-         @hide_invisible = true
+         if params['deleted'] == 'y'
+            @jobs = Job.jobs_notowner_notvisible(params[:page])
+            @hide_notowner  = false
+            @hide_invisible = false
+         else
+            @jobs = Job.jobs_notowner_visible(params[:page])
+            @hide_notowner  = false
+            @hide_invisible = true
+         end
       end
    end
    

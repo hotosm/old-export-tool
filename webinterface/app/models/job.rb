@@ -53,10 +53,30 @@ class Job < ActiveRecord::Base
    # maximum of (latmax-latmin) * (lonmax-lonmin)
    BBOX_MAX = 100
 
+   # pagination count per page
+   PPAGE = 200
+   
+   # jobs (owner and visible)
+   def self.jobs_owner_visible ppage, uid
+      jobs = Job.includes(:region, :user).where("user_id = ? and visible = ?", uid, true).paginate(:page => ppage, :per_page => Job::PPAGE)
+   end
+
+   # jobs (owner and not visible)
+   def self.jobs_owner_notvisible ppage, uid
+      jobs = Job.includes(:region, :user).where("user_id = ?", uid).paginate(:page => ppage, :per_page => Job::PPAGE)
+   end
+
+   # jobs (not owner and visible)   
+   def self.jobs_notowner_visible ppage
+      jobs = Job.includes(:region, :user).where("visible = ?", true).paginate(:page => ppage, :per_page => Job::PPAGE)
+   end
+
+   # all jobs (includes not owner and not visible jobs)
+   def self.jobs_notowner_notvisible ppage
+      jobs = Job.includes(:region, :user).paginate(:page => ppage, :per_page => Job::PPAGE)
+   end
 
 private
-
-
    def check_region
 
       if (!self.lonmin.is_a?(Numeric))
