@@ -69,7 +69,7 @@ id:
          howuse:
             title:      "Bagaimana saya menggunakan Tabel Terjemahan?" 
             text1:      'Anda dapat membuat sebuah tabel terjemahan menggunakan editor teks pilihan anda. Kemudian, pilih link "Upload Baru" pada fungsi lanjutan di bawah dan pilih untuk mengupload sebuah file terjemahan. Pada saat itu anda dapat memberikan sebuah nama simbolis untuk file terjemahan anda misalnya "Istilah Umum - Bahasa Indonesia" dan sebagainya.'
-            text2:      'Ketika anda membuat job yang baru, setelah memilih wilayah yang diinginkan, anda dapat memilih salah satu atau lebih tabel terjemahan yang telah diupload. Tabel ini akan diaplikasikan untuk setiap perintah job tersebut, dan akan mempengaruhi seluruh hasil dari format terkecuali data OSM dasar."
+            text2:      'Ketika anda membuat job yang baru, setelah memilih wilayah yang diinginkan, anda dapat memilih salah satu atau lebih tabel terjemahan yang telah diupload. Tabel ini akan diaplikasikan untuk setiap perintah job tersebut, dan akan mempengaruhi seluruh hasil dari format terkecuali data OSM dasar.'
 
          advancedtables:
             title:      "Translation Tables Lanjut"
