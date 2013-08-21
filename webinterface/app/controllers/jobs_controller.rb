@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
 
-   before_filter :authenticate_user!, :except => [:index, :show, :reload_runs]
+   before_filter :authenticate_user!, :except => [:index, :show, :reload_runs, :newrun]
 
    require 'xml/libxml'
    
@@ -229,9 +229,12 @@ class JobsController < ApplicationController
 
       @run = Run.new
       @run.job_id = params[:job_id]
-      @run.user_id = current_user.id
       @run.state = 'new'
-      
+     
+      # user_id if user logged in 
+      unless (current_user.nil?)
+         @run.user_id = try(:current_user).id
+      end
 
       # check if there is already a job runnning
       if Run.where("job_id = ? and state = 'new'", @job.id).count > 0 then

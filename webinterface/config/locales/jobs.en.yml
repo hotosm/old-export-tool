@@ -56,7 +56,7 @@ en:
          message:
             jobrunning:    "job is running - no downloads available yet"
             nodownload:    "no download available"
-            no_created_by: "no created_by value"
+            no_created_by: "anonymous"
      
       area:             
          h2:               "Area"
