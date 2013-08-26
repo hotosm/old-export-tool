@@ -223,7 +223,7 @@ function init_values2box() {
 </table>
 
 <!-- Start New Run //-->
-<%= form_tag(newrun_path, :method => "get") do %>
+<%= form_tag(newrun_path, :method => "post") do %>
 <%= hidden_field_tag("job_id", @job.id) %>
 <%= hidden_field_tag("locale", params[:locale]) %>
 <p><input type="submit" value="<%= t 'jobs.button.newrun' %>" name="commit"></p>
