@@ -178,17 +178,17 @@ if (my $run = $sth_fetch->fetchrow_hashref)
     mysystem("rm -rf /tmp/$rid-shp");
 
     # make KMZ file
-    mkdir ("/tmp/$rid-kml");
-    mysystem("ogr2ogr -f 'KML' /tmp/$rid-kml/doc.kml $OUTPUT_PATH/$rid/$name.sqlite");
-    mysystem("zip -j $OUTPUT_PATH/$rid/$name.kmz /tmp/$rid-kml/*");
-    mysystem("rm -rf /tmp/$rid-kml");
+    mkdir ("$OUTPUT_PATH/tmp/$rid-kml");
+    mysystem("ogr2ogr -f 'KML' $OUTPUT_PATH/tmp/$rid-kml/doc.kml $OUTPUT_PATH/$rid/$name.sqlite");
+    mysystem("zip -j $OUTPUT_PATH/$rid/$name.kmz $OUTPUT_PATH/tmp/$rid-kml/*");
+    mysystem("rm -rf $OUTPUT_PATH/tmp/$rid-kml");
     addfile($rid, "$name.kmz", "KML (KMZ) file");
 
     # ADD FURTHER ogr2ogr CALLS HERE!
-    mkdir ("/tmp/$rid-gmapsupp");
-    mysystem("java -Xmx3096m -jar /home/hot/mkgmap/mkgmap.jar --route --index -n 80000111 --description='$name' --gmapsupp --draw-priority=99 --family-id=3456 --nsis --series-name='$name' --output-dir=/tmp/$rid-gmapsupp $OUTPUT_PATH/$rid/rawdata.osm.pbf");
-    mysystem("gzip < /tmp/$rid-gmapsupp/gmapsupp.img > $OUTPUT_PATH/$rid/gmapsupp.img.gz", 1);
-    mysystem("rm -rf /tmp/$rid-gmapsupp");
+    mkdir ("$OUTPUT_PATH//tmp/$rid-gmapsupp");
+    mysystem("java -Xmx3096m -jar /home/hot/mkgmap/mkgmap.jar --route --index -n 80000111 --description='$name' --gmapsupp --draw-priority=99 --family-id=3456 --nsis --series-name='$name' --output-dir=$OUTPUT_PATH/tmp/$rid-gmapsupp $OUTPUT_PATH/$rid/rawdata.osm.pbf");
+    mysystem("gzip < $OUTPUT_PATH/tmp/$rid-gmapsupp/gmapsupp.img > $OUTPUT_PATH/$rid/gmapsupp.img.gz", 1);
+    mysystem("rm -rf $OUTPUT_PATH//tmp/$rid-gmapsupp");
     addfile($rid, "gmapsupp.img.gz", "Garmin map (EXPERIMENTAL; compressed)");
 
     # finally record log file
