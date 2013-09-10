@@ -128,7 +128,7 @@ if (my $run = $sth_fetch->fetchrow_hashref)
 
     # call ogr2ogr to make shape files in temporary directory
     mkdir "/tmp/$rid-shp";
-    mysystem("ogr2ogr -overwrite -f 'ESRI Shapefile' --config SHAPE_ENCODING UTF-8 /tmp/$rid-shp $OUTPUT_PATH/$rid/$name.sqlite");
+    mysystem("ogr2ogr -overwrite -f 'ESRI Shapefile' /tmp/$rid-shp $OUTPUT_PATH/$rid/$name.sqlite -lco ENCODING=UTF-8");
 
     # load ogr2ogr output to find out field name truncations
     my $crosswalk = {};
