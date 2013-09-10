@@ -1,0 +1,31 @@
+# Sample localization file for Spanish. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+   tool:                      "Hot Exports"
+
+   locale:
+      english:                "Inglés"
+      german:                 "Alemán"
+      french:                 "Francés"
+      japanese:               "Japonés"
+      indonesian:             "Indonesio"
+      spanish:                "Español"
+   
+   navigation:
+      home:                   "Inicio"
+      help:                   "Ayuda"
+      jobs:                   "Tareas"
+      newjob:                 "Nueva tarea"
+      newjob_hint:            "¡Inicia sesión o crea una cuenta para nuevas tareas!"
+       
+   footer:
+      your_account:           "Tu cuenta"
+      lost_password:          "¿Has olvidado tu contraseña?"
+      expert_functions:       "Funciones avanzadas"
+      user_administration:    "Gestión de usuarios"
+      logged_in_as:           "Iniciaste sesión como"
+      text:                   "Copyright © 2013 Humanitarian OpenStreetMap Team · Datos del mapa de OpenStreetMap, ODbL 1.0 license"
+
+   error:
+

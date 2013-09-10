@@ -1,0 +1,96 @@
+# Localization for Spanish
+# Upload section
+
+en:
+   uploads:
+      h1:               "Configuración"
+
+      newupload:
+         title:         "Nueva subida de datos"
+         h1:            "Subir un fichero de configuración"
+         text:          'Los ficheros de configuración pueden ser presets de etiquetado (ya soportados), o transformaciones SQL o tablas de traducción (planeadas). Cuando subas un fichero, elije para él un nombre legible por humanos (por ejemplo "Presets de HOT para Haití v1.23"). Cuando crees una nueva tare más tarde, puedes seleccionar cuál de esos ficheros subir.'
+         name:          "Nueva subida de ficheros"
+
+      index:
+         title:         "Configuración"
+         h1:            "Configuración"
+
+      presets:       
+         title:         "Subidas de ficheros | Ficheros de presets"
+         h1:            "Ficheros de presets"
+         name:          "Ficheros de presets"
+
+      tagtransforms:    
+         title:         "Subidas de ficheros | Ficheros de transformaciones SQL de etiquetas"
+         h1:            "Ficheros de transformaciones SQL de etiquetas"
+         name:          "Ficheros de transformaciones SQL de etiquetas"
+
+      translations:
+         title:         "Subidas de ficheros | Traducciones"
+         h1:            "Ficheros de traducciones"
+         name:          "Ficheros de traducciones"
+
+      tagpreview:
+         title:         "Comprobación de etiqueta"
+         h1:            "Comprobación de etiqueta"
+         h2:            "Etiquetas del fichero de presets"
+
+      defaulttags:
+         title:         "Etiquetas por defecto"
+         h1:            "Etiquetas por defecto"
+
+      update:
+         title:         "Nueva version de subida de fichero"
+         h1:            "Subir una nueva versión del fichero"
+         text:          "¡Si subes un nuevo fichero, se sobreescribirá el fichero antiguo!"
+
+      th:
+         name:          "Nombre de fichero"
+         updated_at:    "Fecha de actualización"
+         created_by:    "Creado por"
+         download:      "Descargar"
+         delete:        "Eliminar"
+         update:        "Actualizar"
+         tagpreview:    "Previsualización de etiqueta"
+         tag:           "Etiqueta"
+         geometrytype:  "Tipo de geometría"
+         type:          "Tipo"
+         file:          "Fichero"
+
+      span:
+         show:             "Mostrar"
+         hide:             "Ocultar"
+         deleted_uploads:  "Eliminar ficheros subidos"
+
+      action:
+         newupload:     "Nueva subida de fichero"
+         showdeleted:   "Mostrar subidas eliminadas"   
+         hidedeleted:   "Ocultar subidas eliminadas"
+         defaulttags:   "Etiquetas por defecto"
+
+      button:
+         save:          "Guardar"
+
+      message:
+         nofiles:       "Aún no hay ningún fichero de configuración subido."
+
+      error:
+         xml_corrupt:   "El fichero xml está roto y ocurrió una excepción."
+         xml_exception: "Excepción XML"
+
+      flash:
+         error:
+            xml_parsing_failed:  "El análisis del fichero XML ha fallado. No se ha guardado la subida de fichero."
+            not_saved:           "No se ha guardado la subida de fichero."
+            restored:            "¡No se ha restaurado la subida de fichero!"
+            deleted:             "¡No se ha eliminado la subida de fichero!"
+
+         success:
+            newversion_saved:    "Se ha salvado con éxito la nueva versión de fichero para"
+            saved:               "Se ha almacenado con éxito la subida de fichero."
+            restored:            "¡Se ha restaurado con éxito la subida de fichero!"
+            deleted:             "¡Se ha eliminado con éxito la subida de fichero!"
+
+
+
+

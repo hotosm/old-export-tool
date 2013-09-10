@@ -1,0 +1,66 @@
+# Localization for Spanish
+# User section
+
+en:
+   users:
+      title:                        "Usuarios"
+      h1:                           "Usuarios"
+
+      login:                        "Inicio de sesión"
+      logout:                       "Cerrar sesión"
+      create_account:               "Crear una cuenta de usuario"
+      edit_account:                 "Editar perfil de usuario"
+      cancel_account:               "Eliminar cuenta de usuario"
+      cancel_account_text:          "¿Quieres borrar tu cuenta de usuario?"
+      cancel_account_confirm:       "¿Estás seguro?"
+      change_password:              "Cambiar contraseña"
+      lost_password:                "¿Has olvidado tu contraseña?"
+      resend_confirmation:          "Reenviar las instrucciones de confirmación"
+      no_confirmation:              "¿No has recibido las instrucciones de confirmación?"
+      suspend_user:                 "Suspender usuario"
+      active_users:                 "Usuarios activos"
+      locked_users:                 "Usuarios bloqueados"
+      restore:                      "[Restaurar]"
+      unconfirmed_user:             "Usuario no confirmado"
+      suspended_by:                 "Suspendido por"
+
+      locked:
+         title:                     "Usuarios bloqueados"
+         h1:                        "Usuarios bloqueados"
+
+      th:
+         email:                     "Correo electrónico"
+         password:                  "Contraseña"
+         password_confirmation:     "Confirmar contraseña"
+         password_current:          "Contraseña actual"
+         password_new:              "Nueva contraseña"
+         created_at:                "Fecha de creación"
+         locked_at:                 "Fecha de bloqueo"
+         lock_reason:               "Razón del bloqueo"
+         admin:                     "¿Administrador?"
+         restore:                   "Restaurar usuario"
+         suspend:                   "Suspender usuario"
+
+      button:
+         login:                     "Iniciar sesión"
+         update:                    "Actualizar"
+         create_account:            "Crear cuenta"
+         cancel_account:            "Eliminar mi cuenta"
+         logout:                    "Cerrar sesión"
+         resend_confirmation:       "Reenviar instrucciones de confirmación"
+         send_reset_password:       "Enviarme instrucciones para reiniciar contraseña"
+         change_password:           "Cambiar mi contraseña"
+
+      message:
+         no_locked_users:           "No hay usuarios bloqueados en la base de datos."
+         no_active_users:           "No hay usuarios activos en la base de datos."
+         leave_blank:               "Déjalo en blanco si no quieres cambiarla."
+         need_current_password:     "Necesitamos tu contraseña actual para confirmar los cambios."
+
+      flash:
+         success:
+            suspended:              "Usuario suspendido con éxito:"
+            unsuspended:            "Cancelada con éxito la suspensión de usuario:"
+
+   
+
