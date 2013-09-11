@@ -27,7 +27,7 @@ es:
          state:            "Estado"
          download:         "Descarga"
          preset:           "Fichero de Etiquetas/Presets"
-         transform:        "Fichero de trasformadas SQL de etiquetas"
+         transform:        "Fichero de transformación SQL de etiquetas"
          translate:        "Fichero de traducción"
    
          minlon:           "Longitud mínima"
@@ -65,7 +65,7 @@ es:
          h2:               "Configuración de tarea"
 
       recycle:          
-         h2:               "Nueva tarea con configuración similar"
+         h2:               "Nueva tarea con una configuración similar"
          text:             "Crear una nueva tarea con una nueva área, pero con la misma configuración que esta tarea."
 
       newjob:
@@ -78,15 +78,15 @@ es:
          no_file:          "No hay fichero"
 
          th:
-            name:          "Nombre de tarea"
+            name:          "Nombre de la tarea"
             preset:        "Seleccionar un fichero de presets"
             default_tags:  "¿Añadir etiquetas por defecto?"
             transform:     "Fichero de transformaciones SQL de etiquetas"
             translation:   "Fichero de traducción"
 
       newjobwithconf:
-         title:            "Nueva tarea de exportación (con configuración fijada)"
-         h1:               "Nueva tarea de exportación (con configuración fijada)"
+         title:            "Nueva tarea de exportación (con configuración fija)"
+         h1:               "Nueva tarea de exportación (con configuración fija)"
 
       flash:
          success:

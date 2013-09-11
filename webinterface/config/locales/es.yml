@@ -24,8 +24,8 @@ es:
       lost_password:          "¿Has olvidado tu contraseña?"
       expert_functions:       "Funciones avanzadas"
       user_administration:    "Gestión de usuarios"
-      logged_in_as:           "Iniciaste sesión como"
-      text:                   "Copyright © 2013 Humanitarian OpenStreetMap Team · Datos del mapa de OpenStreetMap, ODbL 1.0 license"
+      logged_in_as:           "Has iniciado sesión como"
+      text:                   "Copyright © 2013 Humanitarian OpenStreetMap Team · Datos del mapa de OpenStreetMap, licencia ODbL 1.0"
 
    error:
 

@@ -44,7 +44,7 @@ es:
       button:
          login:                     "Iniciar sesión"
          update:                    "Actualizar"
-         create_account:            "Crear cuenta"
+         create_account:            "Crear una cuenta"
          cancel_account:            "Eliminar mi cuenta"
          logout:                    "Cerrar sesión"
          resend_confirmation:       "Reenviar instrucciones de confirmación"

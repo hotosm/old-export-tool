@@ -8,7 +8,7 @@ es:
       newupload:
          title:         "Nueva subida de datos"
          h1:            "Subir un fichero de configuración"
-         text:          'Los ficheros de configuración pueden ser presets de etiquetado (ya soportados), o transformaciones SQL o tablas de traducción (planeadas). Cuando subas un fichero, elije para él un nombre legible por humanos (por ejemplo "Presets de HOT para Haití v1.23"). Cuando crees una nueva tare más tarde, puedes seleccionar cuál de esos ficheros subir.'
+         text:          'Los ficheros de configuración pueden ser presets de etiquetado (ya soportados), o transformaciones SQL o tablas de traducción (planeadas). Cuando subas un fichero, elije para él un nombre legible por humanos (por ejemplo "Presets de HOT para Haití v1.23"). Cuando crees una nueva tarea más tarde, puedes seleccionar cuál de esos ficheros subir.'
          name:          "Nueva subida de ficheros"
 
       index:
@@ -31,8 +31,8 @@ es:
          name:          "Ficheros de traducciones"
 
       tagpreview:
-         title:         "Comprobación de etiqueta"
-         h1:            "Comprobación de etiqueta"
+         title:         "Comprobación de etiquetas"
+         h1:            "Comprobación de etiquetas"
          h2:            "Etiquetas del fichero de presets"
 
       defaulttags:
@@ -40,12 +40,12 @@ es:
          h1:            "Etiquetas por defecto"
 
       update:
-         title:         "Nueva version de subida de fichero"
+         title:         "Nueva version de subida del fichero"
          h1:            "Subir una nueva versión del fichero"
          text:          "¡Si subes un nuevo fichero, se sobreescribirá el fichero antiguo!"
 
       th:
-         name:          "Nombre de fichero"
+         name:          "Nombre del fichero"
          updated_at:    "Fecha de actualización"
          created_by:    "Creado por"
          download:      "Descargar"
@@ -75,7 +75,7 @@ es:
          nofiles:       "Aún no hay ningún fichero de configuración subido."
 
       error:
-         xml_corrupt:   "El fichero xml está roto y ocurrió una excepción."
+         xml_corrupt:   "El fichero xml está roto y ha ocurrido una excepción."
          xml_exception: "Excepción XML"
 
       flash:
