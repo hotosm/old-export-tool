@@ -1,7 +1,7 @@
 # Localization for english
 # Devise mailer
 
-en:
+es:
    devise:
       mailer:
          hello:         "Hola"

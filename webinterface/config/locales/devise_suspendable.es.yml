@@ -1,7 +1,7 @@
 # Localization for Spanish
 # Devise section
 
-en:
+es:
    
    devise:
       failure:
