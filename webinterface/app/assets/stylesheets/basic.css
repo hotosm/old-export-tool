@@ -315,7 +315,7 @@ table.latlon input {
 /* header, footer, content overwrites default styles */
 
 #content {
-   clear: left;
+   clear: both;
    margin: 0px 80px 0px 80px;
    padding: 0px;
 }
@@ -366,9 +366,9 @@ table.latlon input {
 
 
 #header div.logo {
-   width: 400px;
+   width: 300px;
    float: left;
-   padding: 10px 0px 40px 0px;
+   padding: 10px 0px 0px 0px;
 }
 
 #header div.logo img.logo {
