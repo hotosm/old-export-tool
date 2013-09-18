@@ -22,11 +22,11 @@ es:
          region:           "Región"
          created_at:       "Fecha de creación"
          created_by:       "Creada por"
-         based_preset:     "Basada en el fichero de presets"
+         based_preset:     "Basada en el fichero de predefinidos"
          delete:           "Eliminada"
          state:            "Estado"
          download:         "Descarga"
-         preset:           "Fichero de Etiquetas/Presets"
+         preset:           "Fichero de Etiquetas/Predefinidos"
          transform:        "Fichero de transformación SQL de etiquetas"
          translate:        "Fichero de traducción"
    
@@ -79,7 +79,7 @@ es:
 
          th:
             name:          "Nombre de la tarea"
-            preset:        "Seleccionar un fichero de presets"
+            preset:        "Seleccionar un fichero de predefinidos"
             default_tags:  "¿Añadir etiquetas por defecto?"
             transform:     "Fichero de transformaciones SQL de etiquetas"
             translation:   "Fichero de traducción"
@@ -98,7 +98,7 @@ es:
 
          error:
             xml_parsing_failed:  "Ha fallado el análisis XML. No se ha creado ninguna tarea."
-            no_tags:             "No se han encontrado etiquetas. No se ha creado ninguna tarea. Por favor, selecciona un fichero de presets o etiquetas por defecto."
+            no_tags:             "No se han encontrado etiquetas. No se ha creado ninguna tarea. Por favor, selecciona un fichero de predefinidos o etiquetas por defecto."
             not_saved:           "¡No se ha guardado ninguna tarea!"
             running_job:         "Hay ya una tarea en ejecución."
             no_run_started:      "¡No ha comenzado ninguna ejecución de tarea!"

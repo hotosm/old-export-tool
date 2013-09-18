@@ -27,7 +27,7 @@ es:
       
       newjob:
          title:      "Creando una nueva tarea"
-         text:       'Haz clic en "Nueva tarea" en la barra de navegación superior para ejecutar el menú que te guiará en la creación de la nueva tarea. Escribe el nombre y una descripción para la nueva tarea, para que tú, y otros, podáis identificarla fácilmente más tarde. Luego escoge la región en la que estás interesado (actualmente tiene que ser un rectángulo). En el último paso corriges las etiquetas. Existen dos maneras: Puedes escoger un fichero de presets JOSM con tus etiquetas, y también puedes seleccionar las etiquetas por defecto con un menú de selección.'
+         text:       'Haz clic en "Nueva tarea" en la barra de navegación superior para ejecutar el menú que te guiará en la creación de la nueva tarea. Escribe el nombre y una descripción para la nueva tarea, para que tú, y otros, podáis identificarla fácilmente más tarde. Luego escoge la región en la que estás interesado (actualmente tiene que ser un rectángulo). En el último paso corriges las etiquetas. Existen dos maneras: Puedes escoger un fichero de predefinidos JOSM con tus etiquetas, y también puedes seleccionar las etiquetas por defecto con un menú de selección.'
    
       rerunjob:      
          title:      "Volviendo a ejecutar una tarea existente"
@@ -42,8 +42,8 @@ es:
          text:       "Después de haber creado una tarea, ésta se empieza a procesar y se muestra una página detallada para la misma. Esta página contiene información de todas las ejecuciones previas de la tarea (inicialmente la lista está vacía). La página se actualiza automáticamente, y tras unos minutos podrás ver una serie de ficheros en diferentes formatos listos para descargar."
 
       presets:
-         title:      "Ficheros de presets de configuración"
-         text:       "Sube tus ficheros de presets con el gestor de subidas. Si un fichero de presets está obsoleto, sobreescríbelo con una versión actualizada o elimínalo."
+         title:      "Configuración de ficheros de predefinidos"
+         text:       "Sube tus ficheros de predefinidos con el gestor de subidas. Si un fichero de predefinidos está obsoleto, sobreescríbelo con una versión actualizada o elimínalo."
 
       advanced:
          title:      "Temas de ayuda avanzados"
