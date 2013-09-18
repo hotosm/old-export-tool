@@ -111,7 +111,12 @@ private
       if (region.is_a? Hash)
          self.region_id = region['id']
       else
-         errors.add(:lonmin, I18n.t('jobs.errors.no_valid_region'))
+      	 errors.add(:lonmin, I18n.t('jobs.errors.no_valid_region'))
+         
+         if Region.all.count==0
+            #should only happen during a fresh install
+            errors.add(:lonmin, I18n.t('jobs.errors.no_regions_defined'))
+         end
       end
    end
 

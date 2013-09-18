@@ -45,6 +45,7 @@ en:
       button:
          newrun:           "Start new run"
          recyclejob:       "Create Job"
+         createjob:        "Create Job"
          save:             "Save"
 
       job:
@@ -60,6 +61,9 @@ en:
      
       area:             
          h2:               "Area"
+         drag_to_select:   "Drag to select an area"
+         select_different: "Select a different area"
+         no_area_selected: "No area selected. Zoom in then click 'Select Area'"
 
       config:           
          h2:               "Job Configuration"
@@ -107,7 +111,8 @@ en:
             run_started:         "New run started!"
 
       errors:
-         no_valid_region:     "Your selected area is not in an valid region."
+         no_valid_region:     "Your selected area is not in a valid region."
+         no_regions_defined:  "No regions defined!"
          out_of_range:        "Value out of range."
          area_not_covered:    "Selected area is not covered by the service!"
          area_too_large:      "Selected Area is too large: "
