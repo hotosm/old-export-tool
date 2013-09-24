@@ -10,6 +10,14 @@ ja:
          title:      "概略"
          text:       "このサイトでは世界各地のOpenStreetMapの範囲を自分で指定し、エクスポートすることが可能です。エクスポート対象となる地域や地物の種類(OpenStreetMapタグ)も自身で指定することができます。対象地域における現在のOpenStreetMapデータ抽出結果は様々なファイル形式で出力可能で、数分のうちに完了します。"
 
+#fixme
+      get_started:
+         title:      "How to Get Started"
+         text1:      "If you are a new user, create an account. If you already have an account with HOT, log in below."
+         text2:      "Click on “Visual Tag Chooser” to upload new tag presets or to view existing tag presets. Note: This will take you to another site so make sure to come back to this page."
+         text3:      "If you would like to use tag preset files already uploaded to HOT Exports, you do not need to click on the “Visual Tag Chooser” link. The create a new job click “New Job”"
+         text4:      "To view an existing job, click on “Jobs” at the top right of your screen. Click on “New Job” to generate a new map."
+
       note:          
          title:      "注意事項"
          text:       "このシステムは多くのユーザ間での共有リソースとなっています。自身で作成されたジョブの内容にはご留意ください。"

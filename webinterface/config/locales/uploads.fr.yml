@@ -19,16 +19,22 @@ fr:
          title:         "Téléchargement | Fichier Preset"
          h1:            "Fichier Preset"
          name:          "Fichier Preset"
+# fixme
+         title:         "Configuration files that define the data downloaded."
 
       tagtransforms:    
          title:         "Téléchargement | Fichier Tag Transformation SQL"
          h1:            "Fichier Tag Transformation SQL"
          name:          "Fichier Tag Transformation SQL"
+# fixme
+         title:         "Defines translation of the data schema for the download."
 
       translations:
          title:         "Téléchargement | Traduction"
          h1:            "Fichier Traduction"
          name:          "Fichier Traduction"
+#fixme
+         title:         "Look-up tables to translate data from English into another language."
 
       tagpreview:
          title:         "Vérifier les tags"

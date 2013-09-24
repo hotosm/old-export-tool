@@ -43,15 +43,15 @@
 <ul>
 <li>
    <img src="<%= asset_path 'view.png' %>">
-   <%= link_to t('uploads.presets.name'), uploads_presets_path %>
+   <%= link_to t('uploads.presets.name'), uploads_presets_path, :title => t('uploads.presets.title') %>
 </li>
 <li>
    <img src="<%= asset_path 'view.png' %>">
-   <%= link_to t('uploads.tagtransforms.name'), uploads_tagtransforms_path %>
+   <%= link_to t('uploads.tagtransforms.name'), uploads_tagtransforms_path, :title => t('uploads.tagtransforms.title') %>
 </li>
 <li>
    <img src="<%= asset_path 'view.png' %>">
-   <%= link_to t('uploads.translations.name'), uploads_translations_path %>
+   <%= link_to t('uploads.translations.name'), uploads_translations_path, :title => t('uploads.translations.title') %>
 </li>
 
 <% if user_signed_in? %>
@@ -64,7 +64,7 @@
 <!-- Visual Tag Chooser //-->
 <li>
    <img src="<%= asset_path 'new.png' %>">
-   <a href="http://visualtags.hotosm.org">Visual Tag Chooser</a>
+   <%= link_to t('footer.visual_tag_chooser'), "http://visualtags.hotosm.org", :title => t('footer.visual_tag_chooser_title') %>
 </li>
 </ul>
 </div>

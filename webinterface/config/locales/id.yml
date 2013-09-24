@@ -21,6 +21,10 @@ id:
       your_account:           "Akun anda"
       lost_password:          "Lupa kata sandi?"
       expert_functions:       "Fungsi Ahli"
+#fixme
+      visual_tag_chooser:     "Visual Tag Chooser"
+#fixme
+      visual_tag_chooser_title:  "Visual application to create preset files."
       user_administration:    "Administrasi Pengguna"
       logged_in_as:           "Anda masuk sebagai"
       text:                   "Hak Cipta © 2013 Humanitarian OpenStreetMap Team· Data peta dari OpenStreetMap, lisensi ODbL 1.0"

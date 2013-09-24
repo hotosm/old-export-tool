@@ -19,16 +19,22 @@ ja:
          title:         "アップロード | 対象タグ定義ファイル"
          h1:            "対象タグ定義ファイル"
          name:          "対象タグ定義ファイル"
+#fixme
+         title:         "Configuration files that define the data downloaded."
 
       tagtransforms:    
          title:         "アップロード | データベース構造変換SQLファイル"
          h1:            "データベース構造変換SQLファイル"
          name:          "データベース構造変換SQLファイル"
+#fixme
+         title:         "Defines translation of the data schema for the download."
 
       translations:
          title:         "アップロード | タグ置換ファイル"
          h1:            "タグ置換ファイル"
          name:          "タグ置換ファイル"
+#fixme
+         title:         "Look-up tables to translate data from English into another language."
 
       tagpreview:
          title:         "対象タグのプレビュー"

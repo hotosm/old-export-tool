@@ -83,6 +83,11 @@ id:
             default_tags:  "Tambahkan tag awal?"
             transform:     "File Tag Transformasi SQL"
             translation:   "File Terjemahan"
+#fixme
+         notice:
+            default_tags:  "Default tags are typical data used in rendering an OSM map."
+            translation:   "Select a translation file to translate your data into another language."
+            transform:     "Select a SQL file to transform your data into another schema."
 
       newjobwithconf:
          title:            "Export Job Baru (dengan konfigurasi yang telah diperbaiki)"

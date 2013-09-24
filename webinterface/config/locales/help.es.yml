@@ -10,6 +10,14 @@ es:
          title:      "Acerca de"
          text:       "Esta plataforma te permite crear exportaciones de datos de OpenStreetMap para varias regiones. Puedes especificar una área de interés y una lista de características (etiquetas OpenStreetMap) para la exportación. Se creará, en cuestión de minutos y en varios formatos de datos, una extración de los datos de OpenStreetMap para esa área."
 
+#fixme
+      get_started:
+         title:      "How to Get Started"
+         text1:      "If you are a new user, create an account. If you already have an account with HOT, log in below."
+         text2:      "Click on “Visual Tag Chooser” to upload new tag presets or to view existing tag presets. Note: This will take you to another site so make sure to come back to this page."
+         text3:      "If you would like to use tag preset files already uploaded to HOT Exports, you do not need to click on the “Visual Tag Chooser” link. The create a new job click “New Job”"
+         text4:      "To view an existing job, click on “Jobs” at the top right of your screen. Click on “New Job” to generate a new map."
+
       note:          
          title:      "Nota"
          text:       "Este sistema es un recurso compartido. Por favor, sé consciente de las tareas que vayas a crear."

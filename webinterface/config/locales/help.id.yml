@@ -9,7 +9,14 @@ id:
       about:         
          title:      "Tentang"
          text:       "Aplikasi ini memperbolehkan anda untuk memperoleh data OpenStreetMap untuk berbagai wilayah. Anda dapat mengatur wilayah yang diinginkan beserta sebuah daftar fitur (tag OpenStreetMap) dalam prosesnya. Satu data yang diperoleh untuk wilayah tersebut akan tersedia dalam berbagai format untuk anda dalam beberapa menit."
-         
+
+#fixme
+      get_started:
+         title:      "How to Get Started"
+         text1:      "If you are a new user, create an account. If you already have an account with HOT, log in below."
+         text2:      "Click on “Visual Tag Chooser” to upload new tag presets or to view existing tag presets. Note: This will take you to another site so make sure to come back to this page."
+         text3:      "If you would like to use tag preset files already uploaded to HOT Exports, you do not need to click on the “Visual Tag Chooser” link. The create a new job click “New Job”"
+         text4:      "To view an existing job, click on “Jobs” at the top right of your screen. Click on “New Job” to generate a new map."
 
       note:          
          title:      "Catatan"
