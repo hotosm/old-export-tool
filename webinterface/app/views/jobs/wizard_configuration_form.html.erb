@@ -19,22 +19,26 @@
 <tr>
    <th><%= t 'jobs.newjobconf.th.name' %></th>
    <td><%= @job.name %></td>
+   <td></td>
 </tr>
 <tr>
    <th><%= t 'jobs.newjobconf.th.preset' %></th>
    <td>
       <%= select_tag('uploads[presetfile]', options_for_select(@upfiles['preset'], :selected => 0)) %>
    </td>
+   <td></td>
 </tr>
 <tr>
    <th><%= t 'jobs.newjobconf.th.default_tags' %></th>
    <td><%= check_box_tag('uploads[default_tags]', true, true) %></td>
+   <td class="notice"><%= t 'jobs.newjobconf.notice.default_tags' %></td>
 </tr>
 <tr>
    <th><%= t 'jobs.newjobconf.th.translation' %></th>
    <td>
       <%= select_tag('uploads[translation]', options_for_select(@upfiles['translation'], :selected => 0)) %>
    </td>
+   <td class="notice"><%= t 'jobs.newjobconf.notice.translation' %></td>
 </tr>
 <tr>
    <th><%= t 'jobs.newjobconf.th.transform' %></th>
@@ -47,6 +51,7 @@
       <% end %>
       </ul>
    </td>
+   <td class="notice"><%= t 'jobs.newjobconf.notice.transform' %></td>
 </tr>
 </table>
 

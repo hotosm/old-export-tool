@@ -45,6 +45,7 @@ de:
       button:
          newrun:           "Neuen Durchlauf starten"
          recyclejob:       "Job erzeugen"
+         createjob:        "Job erzeugen"
          save:             "Speichern"
 
       job:
@@ -83,6 +84,11 @@ de:
             default_tags:  "Default Tags hinzufügen?"
             transform:     "Tag Transform SQL File"
             translation:   "Translation File"
+
+         notice:
+            default_tags:  "Default tags sind typischerweise Daten, die dafür verwendet werden, OSM Karten zu rendern."
+            translation:   "Wählen Sie ein Translation File, um Ihre Daten in eine andere Sprache zu übersetzten."
+            transform:     "Wählen Sie ein Tag Transform SQL File, um Ihre Daten in ein anderes Schema zu transformieren."
 
       newjobwithconf:
          title:            "Neuer Export-Job (mit vorgegebener Konfiguration)"

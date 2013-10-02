@@ -263,6 +263,11 @@ table.wizard th {
    color: #2f2f2f;
 }
 
+table.wizard td.notice {
+   font-style: italic;   
+   font-size: 0.8em;
+}
+
 table.wizard input, table.wizard textarea {
    width: 450px;
 }

@@ -19,16 +19,22 @@ id:
          title:         "Upload | File Preset"
          h1:            "File Preset"
          name:          "File Preset"
+#fixme
+         title:         "Configuration files that define the data downloaded."
 
       tagtransforms:    
          title:         "Upload | Tag Transform File SQL"
          h1:            "Tag Transform File SQL"
          name:          "Tag Transform File SQL"
+#fixme
+         title:         "Defines translation of the data schema for the download."
 
       translations:
          title:         "Upload | Terjemahan"
          h1:            "File Terjemahan"
          name:          "File Terjemahan"
+#fixme
+         title:         "Look-up tables to translate data from English into another language."
 
       tagpreview:
          title:         "Periksa Tag"
