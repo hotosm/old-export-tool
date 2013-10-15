@@ -85,9 +85,9 @@ es:
             translation:   "Fichero de traducción"
 #fixme
          notice:
-            default_tags:  "Default tags are typical data used in rendering an OSM map."
-            translation:   "Select a translation file to translate your data into another language."
-            transform:     "Select a SQL file to transform your data into another schema."
+            default_tags:  "Las etiquetas por defecto son datos usados típicamente para el renderizado de un mapa de OSM."
+            translation:   "Selecciona el fichero de traducción para traducir tus datos a otra lengua."
+            transform:     "Selecciona un fichero SQL para transformar tus datos a otro esquema."
 
       newjobwithconf:
          title:            "Nueva tarea de exportación (con configuración fija)"

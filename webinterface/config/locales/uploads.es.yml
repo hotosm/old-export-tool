@@ -20,21 +20,21 @@ es:
          h1:            "Ficheros de predefinidos"
          name:          "Ficheros de predefinidos"
 #fixme
-         title:         "Configuration files that define the data downloaded."
+         title:         "Ficheros de configuración que definen los datos descargados."
 
       tagtransforms:    
          title:         "Subidas de ficheros | Ficheros de transformaciones SQL de etiquetas"
          h1:            "Ficheros de transformaciones SQL de etiquetas"
          name:          "Ficheros de transformaciones SQL de etiquetas"
 #fixme
-         title:         "Defines translation of the data schema for the download."
+         title:         "Define la traducción del esquema de datos para la descarga."
 
       translations:
          title:         "Subidas de ficheros | Traducciones"
          h1:            "Ficheros de traducciones"
          name:          "Ficheros de traducciones"
 #fixme
-         title:         "Look-up tables to translate data from English into another language."
+         title:         "Tablas para traducir datos del inglés a otra lengua."
 
       tagpreview:
          title:         "Comprobación de etiquetas"

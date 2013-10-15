@@ -23,9 +23,9 @@ es:
       your_account:           "Tu cuenta"
       lost_password:          "¿Has olvidado tu contraseña?"
       expert_functions:       "Funciones avanzadas"
-      visual_tag_chooser:     "Visual Tag Chooser"
+      visual_tag_chooser:     "Selector visual de etiquetas"
 #fixme
-      visual_tag_chooser_title:  "Visual application to create preset files."
+      visual_tag_chooser_title:  "Aplicación visual para crear ficheros de predefinidos."
       user_administration:    "Gestión de usuarios"
       logged_in_as:           "Has iniciado sesión como"
       text:                   "Copyright © 2013 Humanitarian OpenStreetMap Team · Datos del mapa de OpenStreetMap, licencia ODbL 1.0"
