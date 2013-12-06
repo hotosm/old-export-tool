@@ -8,15 +8,15 @@ fr:
       h1:            "HOT Exports"
       about:         
          title:      "A propos"
-         text:       "Cette plate-forme permet de créer des exports OpenStreetMap pour différentes zones géographiques. Vous pouvez spécifier une aire d'intérêt et une liste d'attributs (tags OpenStreetMap) pour l'export. Un extrait de la donnée OpenStreetMap actuelle pour cette zone est alors créé pour vous dans différents formats de données en quelques minutes."
+         text:       "Cette plate-forme permet de créer des tâche d'export de la donnée OpenStreetMap pour différentes zones géographiques. Vous pouvez spécifier une aire d'intérêt et une liste d'attributs OpenStreetMap pour l'export. Un extrait de la donnée OpenStreetMap actuelle pour cette zone est alors créé pour vous dans différents formats de données en quelques minutes."
 
 #fixme
       get_started:
-         title:      "How to Get Started"
-         text1:      "If you are a new user, create an account. If you already have an account with HOT, log in below."
-         text2:      "Click on “Visual Tag Chooser” to upload new tag presets or to view existing tag presets. Note: This will take you to another site so make sure to come back to this page."
-         text3:      "If you would like to use tag preset files already uploaded to HOT Exports, you do not need to click on the “Visual Tag Chooser” link. The create a new job click “New Job”"
-         text4:      "To view an existing job, click on “Jobs” at the top right of your screen. Click on “New Job” to generate a new map."
+         title:      "Comment déammrer ?"
+         text1:      "Si vous êtes un nouvel utilisateur, créez d'abord un compte. Si vous en avez déjà un, connectez-vous en bas de cette page."
+         text2:      "Cliquez sur le “Choix Visuel d'Attributs” pour charger de nouveaux modèles d'attributs ou pour regarder ceux déjà disponibles.  Note: cela vous conduira sur un nouveau site, donc assurez-vous de pouvoir revenir ensuite à cette page."
+         text3:      "Si vous voulez utilisez un modèle d'attributs déjà chargé dans HOT Exports, vous n'avez pas besoin de cliquer sur le lien du “Choix Visuel d'Attributs”. Pour créer une nouvelle tâche, cliquez sur “Nouvelle tâche"
+         text4:      "Pour accéder à une tâche existante, cliquez sur le lien "Tâches" en haut à droite de votre écran."
 
       note:          
          title:      "Note"
@@ -24,8 +24,8 @@ fr:
 
       new:           
          title:      "Quoi de neuf ?"
-         text1:      "Upload des fichiers de configuration"
-         text2:      "Les jobs peuvent être supprimés"
+         text1:      "Envoi des fichiers de configuration"
+         text2:      "Les tâches peuvent être supprimées"
          text3:      "Comptes utilisateurs"
 
 
@@ -34,53 +34,53 @@ fr:
       h1:            "Aide"
       
       newjob:
-         title:      "Créer un nouveau job"
-         text:       "Cliquer sur \"Nouveau job\" en haut de la barre de navigation pour lancer l'assistant de création de jobs. Saisissez un nom et une description pour le nouveau job, afin que vous (et d'autres) puissiez facilement l'identifier par la suite. Choisissez ensuite la zone géographique qui vous intéresse (pour le moment cela doit être un rectangle). Dans la dernière étape vous choisissez quels tags vous désirez pour l'export. Il y a deux possibilités : soit vous choisissez un preset JOSM qui comprend vos tags, soit vous pouvez sélectioner les tags par défaut en cochant la case."
+         title:      "Créer une nouvelle tâche"
+         text:       "Cliquez sur \"Nouvelle tâche\" en haut de la barre de navigation pour lancer l'assistant de création de tâches. Saisissez un nom et une description pour la nouvelle tâche, afin que vous (et d'autres) puissiez facilement l'identifier par la suite. Choisissez ensuite la zone géographique qui vous intéresse (pour le moment cela doit être un rectangle). Dans la dernière étape vous choisissez quels attributs vous désirez pour l'export. Il y a deux possibilités : soit vous choisissez un modèle d'attributs JOSM qui comprend vos attributs, soit vous pouvez sélectionner les attributs par défaut en cochant la case."
    
       rerunjob:      
-         title:      "Relancer un job existant"
-         text:       'Choisissez "Jobs" en haut de la page de navigation. Recherchez par son nom le job que vous voulez réutiliser. Un filtre aide à réduire le nombre de jobs dans la liste. CLiquez alors sur votre job pour accéder à sa page, et cliquer sur le bouton "Commencer une nouvelle extraction". Un nouveau chargement démarre en arrière-plan et, à nouveau, les fichiers de téléchargement seront disponibles après quelques intants.'
+         title:      "Relancer une tâche existante"
+         text:       'Choisissez "Tâches" en haut de la page de navigation. Recherchez par son nom la tâche que vous voulez réutiliser. Un filtre aide à réduire le nombre de tâches dans la liste. CLiquez alors sur votre tâche pour accéder à sa page, et cliquer sur le bouton "Commencer une nouvelle extraction". Un nouveau chargement démarre en arrière-plan et, à nouveau, les fichiers de téléchargement seront disponibles après quelques intants.'
 
       recyclejob:
-         title:      "Réutiliser un job existant"
-         text:       "Vous pouvez créer un nouveau job à partir d'un existant via le bouton \"Créer un job\" situé en pas de la page du job existant. Ce bouton lance l'assistant \"Nouveau job\" dans lequel vous pouvez spécifier une géométrie différente, mais les tags vont être réutilisés à partir du job existant."
+         title:      "Réutiliser une tâche existants"
+         text:       "Vous pouvez créer une nouvelle tâche à partir d'une déjà existante via le bouton \"Créer une tâche\" situé en pas de la page de la tâche existante. Ce bouton lance l'assistant \"Nouvelle tâche\" dans lequel vous pouvez spécifier une géométrie différente, mais les attributs vont être réutilisés à partir de la tâche existante."
 
       download:
          title:      "Télécharger la donnée"
-         text:       "Après sa création, le job est en cours de chargement en arrière-plan et une page qui détaille ses caractéristiques est affichée. Cette page montre les informations de tous les chargements précédents du job - lors du premier chargement cette liste est évidemment vide. La page est rafraîchie automatiquement, et après quelques minutes vous verrez un ensemble de fichiers sous différents formats, prêts à être téléchargés."
+         text:       "Après sa création, la tâche est en cours d'extraction en arrière-plan et une page qui détaille ses caractéristiques est affichée. Cette page montre les informations de toutes les extractions précédents de la tâche - lors de la première extraction cette liste est évidemment vide. La page est rafraîchie automatiquement, et après quelques minutes vous verrez un ensemble de fichiers sous différents formats, prêts à être téléchargés."
 
       presets:
          title:      "Configuration du fichier preset"
-         text:       "Uploader votre fichier de presets avec le gestionnaire d'upload. Si le fichier de presets est obsolète, vous pouvez y substituer une version à jour ou le supprimer."
+         text:       "Chargez votre fichier de modèle d'attributs avec le gestionnaire de chargement. Si le fichier de presets est obsolète, vous pouvez y substituer une version à jour ou le supprimer."
 
       advanced:
          title:      "Aide avancée"
-         text1:      "Utiliser les Translation Tables"
+         text1:      "Utiliser les Traductions de Tables"
          text2:      "Utiliser les transformations de base de données"
 
 
       translation:
-         title:         "Aide pour les Translations"
-         h1:            "Utiliser les Translation Tables"
+         title:         "Aide pour les Traductions"
+         h1:            "Utiliser les Traductions de Tables"
          
          whatfor:
-            title:      "A quoi servent les Translation Tables ?"
-            text1:      "Vous pouvez utiliser des translation tables pour traduire le contenu d'un champ de base de données (mais pas le nom du champ)."
+            title:      "A quoi servent les Traductions de Tables ?"
+            text1:      "Vous pouvez utiliser des Traductions de Tables pour traduire le contenu d'un champ de base de données (mais pas le nom du champ)."
             text2:      'Par exemple, il est possible de traduire le terme "bakery" par "boulangerie", et "traffic_signals" par "feu de signalisation".'
 
          looklike:
-            title:      "A quoi ressemblent les Translation Tables ?"
-            text1:      "Vous pouvez écrire une translation table de cette façon :"
-            text2:      "Une translation table est un simple fichier texte file qui a une traduction par ligne, avec le mot à traduire à gauche, suivi par un ou plusieurs espaces ou tabulations, et ensuite la traduction."
-            text3:      "Une translation table peut contenir des lignes vides, ou des lignes commençant par un dièse (#) pour placer un commentaire."
+            title:      "A quoi ressemblent les Traductions de Tables ?"
+            text1:      "Vous pouvez écrire une Traduction de Tables de cette façon :"
+            text2:      "Une Traduction de Tables est un simple fichier texte file qui a une traduction par ligne, avec le mot à traduire à gauche, suivi par un ou plusieurs espaces ou tabulations, et ensuite la traduction."
+            text3:      "Une Traduction de Tables peut contenir des lignes vides, ou des lignes commençant par un dièse (#) pour placer un commentaire."
 
          howuse:
-            title:      "Comment dois-je utiliser une Translation Table ?" 
-            text1:      "Vous pouvez créer une translation table sur votre ordinateur avec l'éditeur de texte de votre choix. Ensuite, choisissez le lien \"Nouvel Upload\" dans les fonctions avancées en bas puis sollicitez l'upload d'un fichier de traduction. A cette étape vous pouvez lui donner un nom symbolique comme \"Fichier générique - French\"."
-            text2:      "Lorsque vous créez un nouveau job, après avoir sélectionner la zone d'intérêt, vous pouvez alors choisir une ou plusieurs tables de traduction qui ont été uploadées. Ces tables seront appliquées à chaque nouveau chargement du job et affecteront tous les formats de fichier d'export, à l'exception de la donnée OSM brute." 
+            title:      "Comment dois-je utiliser une Traduction de Tables ?" 
+            text1:      "Vous pouvez créer une Traduction de Tables sur votre ordinateur avec l'éditeur de texte de votre choix. Ensuite, choisissez le lien \"Nouveau chargement\" dans les fonctions avancées en bas puis sollicitez le chargement d'un fichier de traduction. A cette étape vous pouvez lui donner un nom symbolique comme \"Fichier générique - French\"."
+            text2:      "Lorsque vous créez une nouvelle tâche, après avoir sélectionné la zone d'intérêt, vous pouvez alors choisir une ou plusieurs tables de traduction qui ont été chargées. Ces tables seront appliquées à chaque nouveau chargement du job et affecteront tous les formats de fichier d'export, à l'exception de la donnée OSM brute." 
 
          advancedtables:
-            title:      "Translation Tables avancées"
+            title:      "Traductions de Tables avancées"
             text:       "Dans certains cas il peut être nécessaire de distinguer entre différents usages du même terme. Par exemple, il se peut que vous vouliez traduire le terme \"residential\" de manière différente selon qu'il apparait dans \"building=residential\" ou dans \"highway=residential\". Cela est possible en prepending the OSM key to the item dans la translation table, par exemple :"
 
 
@@ -91,25 +91,25 @@ fr:
          whatfor:
             title:      "A quoi servent les transformations de base de données ?"
             text1:      "Vous pouvez utiliser les transformations de bases de données pour exécuter des commandes SQL (spatialite) sur les résultats d'un export personnalisé. Vous pouvez par exemple créer de nouveaux champs de données dans la base, supprimer des champs existants, fusionner des champs, ou supprimer des objets de la base en utilisant un filtre."
-            text2:      "Vous pouvez également changer le contenus des champs, mais si vous voulez simplement remplacer un contenu par un autre, la procédure de translation table est un meilleur choix."
+            text2:      "Vous pouvez également changer le contenus des champs, mais si vous voulez simplement remplacer un contenu par un autre, la procédure de traduction de table est un meilleur choix."
             text3:      "Les transformations de bases de données peuvent aussi être utilisées pour créer des tables complètement nouvelles à partir des tables standard."
 
          looklike:
             title:      "A quoi ressemblent les transformations de base de données ?"
             text1:      "Les transformations de bases de données sont des fichiers SQL. Ils doivent impérativement contenir du SQL valide qui peut être exécuté par l'interpréteur \"spatialite\" lorsque appliqué à un fichier au format SQLite créé par le service HOT exports."
-            text2:      "Voici une transformations de base de données très simple qui insère un nouveau champ dans la table planet_osm_point table et le remplit avec la valeur \"amenity\":"
+            text2:      "Voici une transformation de base de données très simple qui insère un nouveau champ dans la table planet_osm_point table et le remplit avec la valeur \"amenity\":"
             text3:      "Voici un exemple plus complexe qui ajoute deux nouveaux champs dans la table, appelés building_roof_material_stone et building_roof_material_concrete, et ajoute la valeur 1 lorsque le champ building_roof_material contient ces termes :"
             text4:      "En SQL, les commentaires commencent avec un double dièse en début de ligne, de sorte que vous pouvez ajouter n'importe quel nombre à ces commentaires."
 
          howtest:
             title:      "Comment puis-je tester les transformations de base de données ?"
-            text1:      "A partir d'un job HOT exports existant, téléchargez le fichier \"extract.sqlite\", et ouvrez-le dans spatiallite:"
+            text1:      "A partir d'une tâche HOT exports existante, téléchargez le fichier \"extract.sqlite\", et ouvrez-le dans spatiallite :"
             text2:      "Vous pouvez maintenant tester votre commande SQL, et lorsque vous êtes satisfait du résultat, copiez-le dans le fichier de transformations de base de données."
 
          howuse:
             title:      "Comment dois-je utiliser les transformations de base de données ?"
-            text1:      "Lors de la création d'un nouveau job, après avoir sélectionné l'aide d'intérêt, vous pouvez alors sélectionner une ou plusieurs transformations qui ont été uploadées. Ces transformations seront appliquées à chaque nouvelle extraction du job, et affecteront tous les formats de sortie à l'exception de la donnée OSM brute. Les transformations de base de données seront appliquées après les translation tables."
-            text2:      "Notez que chaque nouvelle extraction d'un job contient un fichier \"log.txt\" parmi les fichiers à télécharger disponibles; si quelque chose est incorrect dans votre transformation de base de données, vous trouverez les messages d'erreur SQL dans ce fichier."
+            text1:      "Lors de la création d'une nouvealle tâche, après avoir sélectionné l'aide d'intérêt, vous pouvez alors sélectionner une ou plusieurs transformations qui ont été chargées. Ces transformations seront appliquées à chaque nouvelle extraction du job, et affecteront tous les formats de sortie à l'exception de la donnée OSM brute. Les transformations de base de données seront appliquées après les traductions de tables."
+            text2:      "Notez que chaque nouvelle extraction d'une tâche contient un fichier \"log.txt\" parmi les fichiers à télécharger disponibles ; si quelque chose est incorrect dans votre transformation de base de données, vous trouverez les messages d'erreur SQL dans ce fichier."
 
          advanced:
             title:      "Transformations de base de données avancées"
