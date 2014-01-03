@@ -243,7 +243,7 @@ function check_bounds(bounds) {
    var poly = bounds.toGeometry();
    var covered_region = check_layer.features[0].geometry.intersects(poly);
    
-   var max_bounds_area = <%= Job::BBOX_MAX %>;
+   var max_bounds_area = <%= @max_bounds_area.to_s %>;
    var area = bounds.transform(projmerc, proj4326).toGeometry().getArea();
    bounds.transform(proj4326,projmerc);
 
@@ -255,7 +255,7 @@ function check_bounds(bounds) {
       return false;
    } else if (area > max_bounds_area) {
       //Area is too large
-      updateMapMessage('<span class="error"><%= t('jobs.errors.area_too_large') %>' + parseInt(area) + '<%= t('jobs.errors.bb_only_allowed', :bbox_max => Job::BBOX_MAX) %></span>'); 
+      updateMapMessage('<span class="error"><%= t('jobs.errors.area_too_large') %>' + parseInt(area) + '<%= t('jobs.errors.bb_only_allowed', :bbox_max => @max_bounds_area.to_s) %></span>'); 
       return false;
    } else {
       //All ok
