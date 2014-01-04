@@ -16,11 +16,11 @@ fr:
       unconfirmed: "Vous devez confirmer votre compte pour continuer."
       locked: "Votre compte est verrouillé."
       invalid: "Courriel ou mot de passe incorrect."
-      invalid_token: "Jeton d'authentification incorrect."
+      invalid_token: "Authentification incorrecte."
       timeout: "Votre session est expirée, veuillez vous reconnecter pour continuer."
       inactive: "Votre compte n'est pas encore activé."
       user:
-         not_found_in_database: "Jeton d'authentification incorrect."
+         not_found_in_database: "Authentification incorrecte."
     sessions:
       signed_in: "Connecté."
       signed_out: "Déconnecté."
@@ -35,7 +35,7 @@ fr:
       updated: "Votre mise à jour a été prise en compte."
       destroyed: "Votre compte a été supprimé. Nous espérons vous revoir bientôt."
       user:
-        signed_up_but_unconfirmed: 'Un message contenant un lien de confirmation a été envoyé à votre adresse e-mail Adressse. Ouvrez le lien pour activer le compte.'
+        signed_up_but_unconfirmed: 'Un message contenant un lien de confirmation a été envoyé à votre adresse e-mail. Ouvrez le lien pour activer le compte.'
     unlocks:
       send_instructions: "Vous allez recevoir un courriel avec des instructions pour déverrouiller votre compte."
       unlocked: "Votre compte est déverrouillé. Vous êtes maintenant connecté."
