@@ -51,8 +51,10 @@ class Job < ActiveRecord::Base
 
 
    # maximum of (latmax-latmin) * (lonmax-lonmin)
-   BBOX_MAX = 100
-
+   # For normal users max is 100, for admins 200, enforced by the form controller
+   # for purposes of the jobs model validation, the max is 200
+   BBOX_MAX = 200
+   
    # pagination count per page
    PPAGE = 200
    
