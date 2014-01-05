@@ -8,19 +8,19 @@ fr:
       h1:            "HOT Exports"
       about:         
          title:      "A propos"
-         text:       "Cette plate-forme permet de créer des tâche d'export de la donnée OpenStreetMap pour différentes zones géographiques. Vous pouvez spécifier une aire d'intérêt et une liste d'attributs OpenStreetMap pour l'export. Un extrait de la donnée OpenStreetMap actuelle pour cette zone est alors créé pour vous dans différents formats de données en quelques minutes."
+         text:       "Cette plate-forme permet de créer des tâches d'export de  la donnée OpenStreetMap pour différentes zones géographiques. Vous pouvez spécifier une aire d'intérêt et une liste d'attributs OpenStreetMap pour l'export. Un extrait de la donnée OpenStreetMap actuelle pour cette zone est alors créé pour vous en quelques minutes dans différents formats SIG."
 
 #fixme
       get_started:
-         title:      "Comment déammrer ?"
+         title:      "Comment démarrer ?"
          text1:      "Si vous êtes un nouvel utilisateur, créez d'abord un compte. Si vous en avez déjà un, connectez-vous en bas de cette page."
-         text2:      "Cliquez sur le “Choix Visuel d'Attributs” pour charger de nouveaux modèles d'attributs ou pour regarder ceux déjà disponibles.  Note: cela vous conduira sur un nouveau site, donc assurez-vous de pouvoir revenir ensuite à cette page."
-         text3:      "Si vous voulez utilisez un modèle d'attributs déjà chargé dans HOT Exports, vous n'avez pas besoin de cliquer sur le lien du “Choix Visuel d'Attributs”. Pour créer une nouvelle tâche, cliquez sur “Nouvelle tâche"
-         text4:      "Pour accéder à une tâche existante, cliquez sur le lien 'Tâches' en haut à droite de votre écran."
+         text2:      "Cliquez sur le “Choix Visuel d'Attributs” pour charger de nouveaux modèles d'attributs ou pour regarder ceux déjà disponibles. Note : cela vous conduira sur un autre site, donc assurez-vous de pouvoir revenir ensuite à cette page."
+         text3:      "Si vous voulez utilisez un modèle d'attributs déjà chargé dans HOT Exports, vous n'avez pas besoin de cliquer sur le lien du “Choix Visuel d'Attributs”. Pour créer une nouvelle tâche, cliquez sur “Nouvelle tâche".
+         text4:      "Pour accéder à une tâche existante, cliquez sur le lien "Tâches" en haut à droite de votre écran."
 
       note:          
          title:      "Note"
-         text:       "Cette plate-forme est une ressource partagée, veuillez donc SVP être attentif aux jobs d'export que vous créez."
+         text:       "Cette plate-forme est une ressource partagée, veuillez donc SVP être attentif aux tâches d'export que vous créez."
 
       new:           
          title:      "Quoi de neuf ?"
@@ -77,7 +77,7 @@ fr:
          howuse:
             title:      "Comment dois-je utiliser une Traduction de Tables ?" 
             text1:      "Vous pouvez créer une Traduction de Tables sur votre ordinateur avec l'éditeur de texte de votre choix. Ensuite, choisissez le lien \"Nouveau chargement\" dans les fonctions avancées en bas puis sollicitez le chargement d'un fichier de traduction. A cette étape vous pouvez lui donner un nom symbolique comme \"Fichier générique - French\"."
-            text2:      "Lorsque vous créez une nouvelle tâche, après avoir sélectionné la zone d'intérêt, vous pouvez alors choisir une ou plusieurs tables de traduction qui ont été chargées. Ces tables seront appliquées à chaque nouveau chargement du job et affecteront tous les formats de fichier d'export, à l'exception de la donnée OSM brute." 
+            text2:      "Lorsque vous créez une nouvelle tâche, après avoir sélectionné la zone d'intérêt, vous pouvez alors choisir une ou plusieurs tables de traduction qui ont été chargées. Ces tables seront appliquées à chaque nouveau chargement de la tâche et affecteront tous les formats de fichier d'export, à l'exception de la donnée OSM brute." 
 
          advancedtables:
             title:      "Traductions de Tables avancées"
@@ -108,7 +108,7 @@ fr:
 
          howuse:
             title:      "Comment dois-je utiliser les transformations de base de données ?"
-            text1:      "Lors de la création d'une nouvealle tâche, après avoir sélectionné l'aide d'intérêt, vous pouvez alors sélectionner une ou plusieurs transformations qui ont été chargées. Ces transformations seront appliquées à chaque nouvelle extraction du job, et affecteront tous les formats de sortie à l'exception de la donnée OSM brute. Les transformations de base de données seront appliquées après les traductions de tables."
+            text1:      "Lors de la création d'une nouvealle tâche, après avoir sélectionné l'aide d'intérêt, vous pouvez alors sélectionner une ou plusieurs transformations qui ont été chargées. Ces transformations seront appliquées à chaque nouvelle extraction de la tâche, et affecteront tous les formats de sortie à l'exception de la donnée OSM brute. Les transformations de base de données seront appliquées après les traductions de tables."
             text2:      "Notez que chaque nouvelle extraction d'une tâche contient un fichier \"log.txt\" parmi les fichiers à télécharger disponibles ; si quelque chose est incorrect dans votre transformation de base de données, vous trouverez les messages d'erreur SQL dans ce fichier."
 
          advanced:
