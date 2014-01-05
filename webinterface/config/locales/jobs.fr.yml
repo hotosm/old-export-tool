@@ -7,104 +7,104 @@ fr:
       title:               "Procédures"
       h1:                  "Procédures"
 
-      nojobs:              "Aucun procédure active dans la base."
-      filter:              "Filter"
+      nojobs:              "Aucune procédure active dans la base."
+      filter:              "Filtre"
 
-      not_owner:           "pas propriétaire"
+      not_owner:           "Non propriétaire"
       
       based_upon:
-         default_tags:     "seulement default tags"
-         directly:         "directly uploaded (old version)" 
+         default_tags:     "seulement les attributs par défaut"
+         directly:         "Directement chargé (ancienne version)" 
 
       th:
-         name:             "Name"
+         name:             "Nom"
          description:      "Description"
-         region:           "Region"
-         created_at:       "Created At"
-         created_by:       "Created By"
-         based_preset:     "Sur la base de fichier preset"
+         region:           "Région"
+         created_at:       "Créé à "
+         created_by:       "Créé par"
+         based_preset:     "Sur la base du fichier de modèle d'attributs"
          delete:           "Supprimer"
          state:            "Etat"
          download:         "Téléchargement"
-         preset:           "Fichier Tags/Preset"
-         transform:        "Fichier Tag Transformation SQL"
-         translate:        "Fichier Translation"
+         preset:           "Fichier modèle d'attributs"
+         transform:        "Fichier Transformation SQL d'attributs"
+         translate:        "Fichier Traduction"
    
-         minlon:           "Min. Longitude"
-         maxlon:           "Max. Longitude"
-         minlat:           "Min. Latitude"
-         maxlat:           "Max. Latitude"
+         minlon:           "ongitude mini"
+         maxlon:           "Longitude maxi"
+         minlat:           "Latitude mini"
+         maxlat:           "Latitude maxi"
 
       action:
-         show_deleted:     "Afficher procédures supprimés"
-         hide_deleted:     "Masquer procédures supprimés"
-         select_area:      "Selectionner la zone"
+         show_deleted:     "Afficher les tâches supprimées"
+         hide_deleted:     "Masquer les tâches supprimées"
+         select_area:      "Sélectionner la zone"
 
       button:
-         newrun:           "Commencer nouvelle procédure"
-         recyclejob:       "Créer une procédure"
+         newrun:           "Commencer une nouvelle tâche"
+         recyclejob:       "Réutiliser une tâche"
          save:             "Enregistrer"
 
       job:
-         h1:               "Procédure"
+         h1:               "Tâche"
          restore:          "Restaurer"
          
       runs:
          h2:               "Passages"
          message:
-            jobrunning:    "job is running - no downloads available yet"
-            nodownload:    "no download available"
+            jobrunning:    "La procédure est en cours - pas encore de téléchargement disponible"
+            nodownload:    "Pas de téléchargement disponible"
      
       area:             
          h2:               "Zone"
 
       config:           
-         h2:               "Configuration de Procédure"
+         h2:               "Configuration de la procédure"
 
       recycle:          
-         h2:               "Nouvelle procédureavec la même configuration"
-         text:             "Créer une nouvelle procédure avec une nouvelle zone mais la même configuration."
+         h2:               "Nouvelle tâche avec la même configuration"
+         text:             "Créer une nouvelle tâche avec une nouvelle zone mais la même configuration."
 
       newjob:
-         title:            "Nouvelle Procédure"
-         h1:               "Nouvelle Procédure"
+         title:            "Nouvelle tâche"
+         h1:               "Nouvelle tâche"
 
       newjobconf:
-         title:            "Configuration de procédure"
-         h1:               "Nouvelle Procédure - Configuration"
+         title:            "Configuration de tâche"
+         h1:               "Nouvelle tâche - Configuration"
 
          th:
-            name:          "Nom de Procédure"
-            preset:        "Selectionner le fichier preset"
-            default_tags:  "Ajouter Default Tags?"
-            transform:     "Fichier Tag Transformation SQL"
+            name:          "Nom de la tâche"
+            preset:        "Sélectionner le fichier de modèle d'attributs"
+            default_tags:  "Ajouter les attributs par défaut ?"
+            transform:     "Fichier Transformation SQL d'attributs"
             translation:   "Fichier Traduction"
 
-      newjobwithconf:
-         title:            "Nouvelle Procédure (avec la même Configuration)"
-         h1:               "Nouvelle Procédure (avec la même Configuration)"
+      newjobwithconfs 
+         title:            "Nouvelle tâche (avec la même configuration)"
+         h1:               "Nouvelle tâche (avec la même configuration)"
 
       flash:
          success:
-            job_created:         "Procédure crée!"
-            run_saved:           "Procédure commoncé!"
-            restored:            "Procédure restauré!"
-            deleted:             "Procédure supprimé!"
+            job_created:         "Tâche créée !"
+            run_saved:           "Tâche sauvegardée !"
+            restored:            "Tâche restaurée !"
+            deleted:             "Tâche supprimée !"
 
          error:
-            xml_parsing_failed:  "XML parsing failed. No job created."
-            no_tags:             "No tags found. No job created. Please select a preset file or default tags."
-            not_saved:           "No job saved!"
-            running_job:         "There is already a running job."
-            no_run_started:      "No run started!"
-            restored:            "Job not restored!"
-            deleted:             "Job not deleted!"
+            xml_parsing_failed:  "Echec d'analyse XML. La tâche n'a pas été créée."
+            no_tags:             "Pas d'attributs trouvés. La tâche n'a pas été créée. SVP sélectionnez un fichier de modèle d'attributs ou les attributs par défaut."
+            not_saved:           "La tâche n'a pas été sauvegardée."
+            running_job:         "Il y a déjà une tâche en cours de création."
+            no_run_started:      "Pas de mise à jour en cours."
+            restored:            "La tâche n'a pas été restaurée."
+            deleted:             "La tâche n'a pas été supprimée."
 
       errors:
-         no_valid_region:     "Your selected area is not in an valid region."
-         out_of_range:        "Value out of range."
-         area_not_covered:    "Selected area is not covered by the service!"
-         area_too_large:      "Selected Area is too large: "
-         bb_only_allowed:     " - Only %{bbox_max} is allowed."
+         no_valid_region:     "La zone sélectionnée n'est pas dans une région disponible."
+         out_of_range:        "Les valeurs ne sont pas dans les limites autorisées"
+         area_not_covered:    "La zone sélectionnée n'est pas couverte par le service"
+         area_too_large:      "La zone sélectionnée est trop grande"
+         bb_only_allowed:     " - Seul %{bbox_max} est autorisé."
 
 
