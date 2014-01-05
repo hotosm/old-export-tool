@@ -96,12 +96,12 @@ fr:
         # For "leave blank if you don't want to change it"
         password_instruction: "Laisser vide si vous ne voulez pas le changer"
         # For "we need your current password to confirm your changes"
-        current_password_instruction: "Vous devez saisir votre mot de passe courant pour confirmer vos changement"                
+        current_password_instruction: "Vous devez saisir votre mot de passe courant pour confirmer vos changements"                
         update: "Mettre à jour"
         cancel_my_account: "Annuler mon compte"
-        unhappy?: "Pas content(e) ?"
+        unhappy?: "Pas satisfait(e) ?"
         are_you_sure?: "Êtes-vous sûr ?"
         back: "Retour"
     unlocks:
       new:
-        resend_unlock_instructions: "Renvoyez le mail pour déverrouiller mon compte"          
+        resend_unlock_instructions: "Renvoyer le mail pour déverrouiller mon compte"          
