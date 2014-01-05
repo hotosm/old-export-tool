@@ -4,16 +4,16 @@
 fr:
 
    jobs:
-      title:               "Procédures"
-      h1:                  "Procédures"
+      title:               "Tâches"
+      h1:                  "Tâches"
 
-      nojobs:              "Aucune procédure active dans la base."
+      nojobs:              "Aucune tâche active dans la base."
       filter:              "Filtre"
 
       not_owner:           "Non propriétaire"
       
       based_upon:
-         default_tags:     "seulement les attributs par défaut"
+         default_tags:     "Seulement les attributs par défaut"
          directly:         "Directement chargé (ancienne version)" 
 
       th:
