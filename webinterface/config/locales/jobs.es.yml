@@ -1,0 +1,121 @@
+# Localization for Spanish
+# Jobs section
+
+es:
+
+   jobs:
+      title:               "Tareas"
+      h1:                  "Todas las tareas"
+
+      nojobs:              "No hay tareas activas en la base de datos."
+      filter:              "Filtro"
+
+      not_owner:           "no es propietario"
+      
+      based_upon:
+         default_tags:     "sólo etiquetas por defecto"
+         directly:         "subidas directamente (versión antigua)" 
+
+      th:
+         name:             "Nombre"
+         description:      "Descripción"
+         region:           "Región"
+         created_at:       "Fecha de creación"
+         created_by:       "Creada por"
+         based_preset:     "Basada en el fichero de predefinidos"
+         delete:           "Eliminada"
+         state:            "Estado"
+         download:         "Descarga"
+         preset:           "Fichero de Etiquetas/Predefinidos"
+         transform:        "Fichero de transformación SQL de etiquetas"
+         translate:        "Fichero de traducción"
+   
+         minlon:           "Longitud mínima"
+         maxlon:           "Longitud máxima"
+         minlat:           "Latitud mínima"
+         maxlat:           "Latitud máxima"
+
+      action:
+         show_deleted:     "Mostrar las tareas eliminadas"
+         hide_deleted:     "Ocultar las tareas eliminadas"
+         show_notowner:    "Mostrar todas las tareas, incluyendo las tareas de otros usuarios"
+         hide_notowner:    "Ocultar las tareas de otros usuarios"
+         select_area:      "Seleccionar una área"
+
+      button:
+         newrun:           "Ejecutar una nueva tarea"
+         recyclejob:       "Crear una nueva tarea"
+         save:             "Guardar"
+
+      job:
+         h1:               "Tarea"
+         restore:          "Restaurar"
+
+      runs:
+         h2:               "Ejecutar"
+         message:
+            jobrunning:    "tarea en ejecución - aún no hay descargas disponibles"
+            nodownload:    "no hay ninguna descarga disponible"
+            no_created_by: "anónimo"
+     
+      area:             
+         h2:               "Área"
+
+      config:           
+         h2:               "Configuración de tarea"
+
+      recycle:          
+         h2:               "Nueva tarea con una configuración similar"
+         text:             "Crear una nueva tarea con una nueva área, pero con la misma configuración que esta tarea."
+
+      newjob:
+         title:            "Nueva tarea de exportación"
+         h1:               "Nueva tarea de exportación"
+
+      newjobconf:
+         title:            "Configuración de tarea"
+         h1:               "Nueva tarea de exportación - Configuración"
+         no_file:          "No hay fichero"
+
+         th:
+            name:          "Nombre de la tarea"
+            preset:        "Seleccionar un fichero de predefinidos"
+            default_tags:  "¿Añadir etiquetas por defecto?"
+            transform:     "Fichero de transformaciones SQL de etiquetas"
+            translation:   "Fichero de traducción"
+#fixme
+         notice:
+            default_tags:  "Las etiquetas por defecto son datos usados típicamente para el renderizado de un mapa de OSM."
+            translation:   "Selecciona el fichero de traducción para traducir tus datos a otra lengua."
+            transform:     "Selecciona un fichero SQL para transformar tus datos a otro esquema."
+
+      newjobwithconf:
+         title:            "Nueva tarea de exportación (con configuración fija)"
+         h1:               "Nueva tarea de exportación (con configuración fija)"
+
+      flash:
+         success:
+            job_created:         "¡Tarea creada con éxito!"
+            run_saved:           "¡Ejecución comenzada con éxito!"
+            restored:            "¡Tarea restaurada con éxito!"
+            deleted:             "¡Tarea eliminada con éxito!"
+            run_started:         "¡Comenzada nueva ejecución!"
+
+         error:
+            xml_parsing_failed:  "Ha fallado el análisis XML. No se ha creado ninguna tarea."
+            no_tags:             "No se han encontrado etiquetas. No se ha creado ninguna tarea. Por favor, selecciona un fichero de predefinidos o etiquetas por defecto."
+            not_saved:           "¡No se ha guardado ninguna tarea!"
+            running_job:         "Hay ya una tarea en ejecución."
+            no_run_started:      "¡No ha comenzado ninguna ejecución de tarea!"
+            restored:            "¡Tarea no restaurada!"
+            deleted:             "¡Tarea no eliminada!"
+            run_started:         "¡Ha comenzado una nueva ejecución!"
+
+      errors:
+         no_valid_region:     "La área que has seleccionado no está en una región válida."
+         out_of_range:        "Valor fuera de rango."
+         area_not_covered:    "¡La área seleccionada no está cubierta por el servicio!"
+         area_too_large:      "La área seleccionada es demasiado grande: "
+         bb_only_allowed:     " - Sólo se permite %{bbox_max}."
+
+

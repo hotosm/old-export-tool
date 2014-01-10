@@ -38,6 +38,8 @@ fr:
       action:
          show_deleted:     "Afficher les tâches supprimées"
          hide_deleted:     "Masquer les tâches supprimées"
+         show_notowner:    "Show all jobs including other users' jobs"
+         hide_notowner:    "Hide jobs from other users"
          select_area:      "Sélectionner la zone"
 
       button:
@@ -50,7 +52,7 @@ fr:
          restore:          "Restaurer"
          
       runs:
-         h2:               "Passages"
+         h2:               "Exécution"
          message:
             jobrunning:    "La procédure est en cours - pas encore de téléchargement disponible"
             nodownload:    "Pas de téléchargement disponible"
@@ -79,6 +81,11 @@ fr:
             default_tags:  "Ajouter les attributs par défaut ?"
             transform:     "Fichier Transformation SQL d'attributs"
             translation:   "Fichier Traduction"
+#fixme
+         notice:
+            default_tags:  "Default tags are typical data used in rendering an OSM map."
+            translation:   "Select a translation file to translate your data into another language."
+            transform:     "Select a SQL file to transform your data into another schema."
 
       newjobwithconfs 
          title:            "Nouvelle tâche (avec la même configuration)"

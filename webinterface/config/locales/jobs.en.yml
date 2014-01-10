@@ -36,13 +36,16 @@ en:
          maxlat:           "Max. Latitude"
 
       action:
-         show_deleted:     "Show deleted Jobs"
-         hide_deleted:     "Hide deleted Jobs"
+         show_deleted:     "Show deleted jobs"
+         hide_deleted:     "Hide deleted jobs"
+         show_notowner:    "Show all jobs including other users' jobs"
+         hide_notowner:    "Hide jobs from other users"
          select_area:      "Select Area"
 
       button:
          newrun:           "Start new run"
          recyclejob:       "Create Job"
+         createjob:        "Create Job"
          save:             "Save"
 
       job:
@@ -54,9 +57,13 @@ en:
          message:
             jobrunning:    "job is running - no downloads available yet"
             nodownload:    "no download available"
+            no_created_by: "anonymous"
      
       area:             
          h2:               "Area"
+         drag_to_select:   "Drag to select an area"
+         select_different: "Select a different area"
+         no_area_selected: "No area selected. Zoom in then click 'Select Area'"
 
       config:           
          h2:               "Job Configuration"
@@ -72,6 +79,7 @@ en:
       newjobconf:
          title:            "Job Configuration"
          h1:               "New Export Job - Configuration"
+         no_file:          "No File"
 
          th:
             name:          "Job Name"
@@ -80,11 +88,14 @@ en:
             transform:     "Tag Transform SQL File"
             translation:   "Translation File"
 
+         notice:
+            default_tags:  "Default tags are typical data used in rendering an OSM map."
+            translation:   "Select a translation file to translate your data into another language."
+            transform:     "Select a SQL file to transform your data into another schema."
+
       newjobwithconf:
          title:            "New Export Job (with fixed Configuration)"
          h1:               "New Export Job (with fixed Configuration)"
-
-
 
       flash:
          success:
@@ -92,6 +103,7 @@ en:
             run_saved:           "Run successfully started!"
             restored:            "Job successfully restored!"
             deleted:             "Job successfully deleted!"
+            run_started:         "New run started!"
 
          error:
             xml_parsing_failed:  "XML parsing failed. No job created."
@@ -101,9 +113,11 @@ en:
             no_run_started:      "No run started!"
             restored:            "Job not restored!"
             deleted:             "Job not deleted!"
+            run_started:         "New run started!"
 
       errors:
-         no_valid_region:     "Your selected area is not in an valid region."
+         no_valid_region:     "Your selected area is not in a valid region."
+         no_regions_defined:  "No regions defined!"
          out_of_range:        "Value out of range."
          area_not_covered:    "Selected area is not covered by the service!"
          area_too_large:      "Selected Area is too large: "

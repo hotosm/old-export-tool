@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
 
-   before_filter :authenticate_user!, :except => [:index, :show, :reload_runs]
+   before_filter :authenticate_user!, :except => [:index, :show, :reload_runs, :newrun]
 
    require 'xml/libxml'
    
@@ -11,12 +11,37 @@ class JobsController < ApplicationController
       # show deleted:   deleted = y 
       # hide deleted:   no parameter or deleted = n
 
-      if params['deleted'] == 'y'
-         @jobs = Job.all
-         @hide_invisible = false
+      if user_signed_in? then
+         if params['notowner'] == 'y' and params['deleted'] == 'y'
+            @jobs = Job.jobs_notowner_notvisible(params[:page])
+            @hide_notowner  = false
+            @hide_invisible = false
+
+         elsif params['deleted'] == 'y'
+            @jobs = Job.jobs_owner_notvisible(params[:page], current_user.id)
+            @hide_notowner  = true
+            @hide_invisible = false
+
+         elsif params['notowner'] == 'y'
+            @jobs = Job.jobs_notowner_visible(params[:page])
+            @hide_notowner  = false
+            @hide_invisible = true
+
+         else
+            @jobs = Job.jobs_owner_visible(params[:page], current_user.id)
+            @hide_notowner  = true
+            @hide_invisible = true
+         end
       else
-         @jobs = Job.where("visible = ?", true)
-         @hide_invisible = true
+         if params['deleted'] == 'y'
+            @jobs = Job.jobs_notowner_notvisible(params[:page])
+            @hide_notowner  = false
+            @hide_invisible = false
+         else
+            @jobs = Job.jobs_notowner_visible(params[:page])
+            @hide_notowner  = false
+            @hide_invisible = true
+         end
       end
    end
    
@@ -34,10 +59,11 @@ class JobsController < ApplicationController
       @runs = Run.where("job_id = ?", params[:job_id])
 
       respond_to do |format|
-         if (current_user.try(:admin?)) 
-            format.json {render :json => @runs, :include => :user}
+         
+         if (current_user.try(:admin?))
+            format.json {render :json => @runs, :include => [:user, :downloads] }
          else
-            format.json {render :json => @runs }
+            format.json {render :json => @runs, :include => :downloads }
          end
       end
    end
@@ -47,6 +73,9 @@ class JobsController < ApplicationController
       @title   = t('jobs.newjob.title')
       @h1      = t('jobs.newjob.h1')
       @action  = 'wizard_configuration'
+      
+      @max_bounds_area = 100
+      @max_bounds_area = 200 if current_user.admin
    end
 
    def newwithconfiguration
@@ -62,6 +91,8 @@ class JobsController < ApplicationController
          @action  = 'newwithconfiguration_create'
 
          @max_bounds_area = 100
+         @max_bounds_area = 200 if current_user.admin
+      
          render :wizard_area
       end
    end
@@ -203,9 +234,12 @@ class JobsController < ApplicationController
 
       @run = Run.new
       @run.job_id = params[:job_id]
-      @run.user_id = current_user.id
       @run.state = 'new'
-      
+     
+      # user_id if user logged in 
+      unless (current_user.nil?)
+         @run.user_id = try(:current_user).id
+      end
 
       # check if there is already a job runnning
       if Run.where("job_id = ? and state = 'new'", @job.id).count > 0 then
@@ -276,7 +310,7 @@ private
    def up_prepare(uptype)
       upf = Upload.where("visibility=true and uptype=?", uptype)
       upfiles = Hash.new
-      upfiles['No File'] = 0      
+      upfiles[t('jobs.newjobconf.no_file')] = 0      
 
       upf.each do |up|
          upfiles[up.name] = up.id

@@ -13,7 +13,7 @@ module ApplicationHelper
          return false
       elsif current_user.admin?
          return true
-      elsif (my_obj.user == current_user)
+      elsif (my_obj.user_id == current_user.id)
          return true
       else
          return false

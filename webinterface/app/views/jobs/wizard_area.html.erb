@@ -14,17 +14,22 @@ $(document).ready(function() {
    var vectors;
    var box;
    var transform;
+   
+   var mapMessage = "";
 
    init_map();
 
-   $(".select_area").click(function() { 
+   $(".select_area").click(function(e) { 
+      e.preventDefault();//dont jump to top of page
       init_drawfeature();
+      start_drawfeature();
    });
    
    $(".latlon").change(function() {
       init_drawfeature();
-      //box.deactivate();
-      init_values2box();
+      values2box();
+//box.deactivate();
+//transform.deactivate();
    });
 
 
@@ -33,6 +38,7 @@ $(document).ready(function() {
    // XXX check for "newwithconfiguration"
    init_drawfeature();
    box.deactivate();
+   transform.deactivate();
    init_values2box();
 <% end %>
 
@@ -44,9 +50,9 @@ function init_map(){
    map = new OpenLayers.Map("map", {
       controls: [
          // new OpenLayers.Control.KeyboardDefaults(),
+         // new OpenLayers.Control.MousePosition()
          new OpenLayers.Control.Navigation(),
-         new OpenLayers.Control.ZoomPanel(),
-         new OpenLayers.Control.MousePosition()
+         new OpenLayers.Control.ZoomPanel()
       ],
       maxExtent:  new OpenLayers.Bounds(-20037508.34,-20037508.34,
                                          20037508.34, 20037508.34),
@@ -111,10 +117,10 @@ function init_map(){
   
    
 <% if @job.id.nil? %>
-
-   extent = new OpenLayers.Bounds(-180, -80, 180, 80);
-   extent.transform(proj4326,projmerc);
-   map.zoomToExtent(extent)
+   //extent = new OpenLayers.Bounds(-180, -80, 180, 80);
+   //extent.transform(proj4326,projmerc);
+   //map.zoomToExtent(extent);
+   map.zoomTo(1);
 <% else %>
 
    extent = new OpenLayers.Bounds(<%= @job.lonmin %>, <%= @job.latmin %>, <%= @job.lonmax %>, <%= @job.latmax %>);
@@ -122,12 +128,15 @@ function init_map(){
    map.zoomToExtent(extent.scale(2))
 <% end %>
    
+
+   updateMapMessage('<%=t('jobs.area.no_area_selected')%>');
 }
 
 function init_drawfeature() {
 
    if (vectors) { 
-      vectors.destroy();
+      map.removeLayer(vectors);
+      vectors=null;
    }
 
    vectors = new OpenLayers.Layer.Vector("Box", {
@@ -145,16 +154,19 @@ function init_drawfeature() {
    });
    box.handler.callbacks.done = draw_end;
    map.addControl(box);
-   //activate_drawfeature();
-
+   
    transform = new OpenLayers.Control.TransformFeature(vectors, {
       rotate: false,
       irregular: true
    });
    transform.events.register("transformcomplete", transform, transformComplete);
    map.addControl(transform);
+}
 
+function start_drawfeature() {
    box.activate();
+   updateMapMessage('<%=t('jobs.area.drag_to_select')%>');
+   $("p#select_area").css({"visibility":"hidden"});
 }
 
 function transformComplete(event) {
@@ -166,9 +178,11 @@ function draw_end(bbox) {
    draw_box(bounds);
    set_bounds(bounds);
    box.deactivate();
+   $("p#select_area").css({"visibility":"visible"});
 }
 
 function draw_box(bounds) {
+   vectors.removeAllFeatures();
    var feature = new OpenLayers.Feature.Vector(bounds.toGeometry());
    vectors.addFeatures(feature);
    transform.setFeature(feature);
@@ -183,7 +197,7 @@ function set_bounds(bounds) {
 
    bounds.transform(projmerc,proj4326);
 
-   z = 10000
+   z = 10000;
 
    var left    = Math.round(bounds.left   * z) / z;
    var bottom  = Math.round(bounds.bottom * z) / z;
@@ -194,47 +208,86 @@ function set_bounds(bounds) {
    $("#job_latmin").val(bottom);
    $("#job_lonmax").val(right);
    $("#job_latmax").val(top);
+   $("form").resetClientSideValidations();
 }
 
 function init_values2box() {
 
-   xminlon = <%= @job.lonmin %>
-   xminlat = <%= @job.latmin %>
-   xmaxlon = <%= @job.lonmax %>
-   xmaxlat = <%= @job.latmax %>
+   <% unless @job.id.nil? %>
+   xminlon = <%= @job.lonmin %>;
+   xminlat = <%= @job.latmin %>;
+   xmaxlon = <%= @job.lonmax %>;
+   xmaxlat = <%= @job.latmax %>;
 
    bounds = new OpenLayers.Bounds(xminlon, xminlat, xmaxlon, xmaxlat);
    bounds.transform(proj4326,projmerc);
    draw_box(bounds);
+   <% end %>
+}
+
+function values2box() {
+
+   xminlon = $("#job_lonmin").val(); 
+   xminlat = $("#job_latmin").val();
+   xmaxlon = $("#job_lonmax").val();
+   xmaxlat = $("#job_latmax").val();
+
+   bounds = new OpenLayers.Bounds(xminlon, xminlat, xmaxlon, xmaxlat);
+   bounds.transform(proj4326,projmerc);
+   draw_box(bounds);
+   $("form").resetClientSideValidations();
 }
 
 function check_bounds(bounds) {
 
    var poly = bounds.toGeometry();
-   var check = check_layer.features[0].geometry.intersects(poly);
+   var covered_region = check_layer.features[0].geometry.intersects(poly);
    
-   var max_bounds_area = <%= Job::BBOX_MAX %>;
+   var max_bounds_area = <%= @max_bounds_area.to_s %>;
    var area = bounds.transform(projmerc, proj4326).toGeometry().getArea();
    bounds.transform(proj4326,projmerc);
 
-   if (!check) {
-      alert('<%= t('jobs.errors.area_not_covered') %>');
+   $("a.select_area").text('<%=t('jobs.area.select_different') %>');
+   
+   if (!covered_region) {
+      //Area is out of the covered regions
+      updateMapMessage('<span class="error"><%= t('jobs.errors.area_not_covered') %></span>');
       return false;
-   }
-   else if (area > max_bounds_area) {
-      alert('<%= t('jobs.errors.area_too_large') %>' + parseInt(area) + '<%= t('jobs.errors.bb_only_allowed', :bbox_max => Job::BBOX_MAX) %>'); 
-   } else { 
+   } else if (area > max_bounds_area) {
+      //Area is too large
+      updateMapMessage('<span class="error"><%= t('jobs.errors.area_too_large') %>' + parseInt(area) + '<%= t('jobs.errors.bb_only_allowed', :bbox_max => @max_bounds_area.to_s) %></span>'); 
+      return false;
+   } else {
+      //All ok
+      updateMapMessage('&nbsp;');
       return true;
    }
 }
 
+function updateMapMessage(msg) {
+   mapMessage = msg
+   $("#mapmessage").html(mapMessage);
+}
+
+$("form#new_job").submit(function() {
+   //Extra validation, in addition to the standard stuff from the
+   //validation plugin.
+   if (mapMessage!="" && mapMessage!="&nbsp;") {   		   
+      alert( mapMessage );
+      return false
+   } else {
+      return true;
+   }
+});
 
 });
 </script>
 <h1><%= @h1 %></h1>
 
 <div class="wizard">
-   <%= form_for @job, :validate => true, :url => { :action => @action } do |f| %>
+   <%= form_for @job, :validate => true,
+                      :url => { :action => @action }  do |f| %>
+                      
    <%= hidden_field_tag(:old_job_id, @job.id) %>
    <%= render 'shared/error_messages' %>
    <table class="wizard">
@@ -247,40 +300,35 @@ function check_bounds(bounds) {
 //-->
       <tr>
          <th><%= f.label :name, t('jobs.th.name') %></th>
-         <td><%= f.text_field :name %></td>
+         <td><%= f.text_field :name, :style => "width: 320px;" %></td>
       </tr>
       <tr>
          <th><%= f.label :description, t('jobs.th.description') %></th>
-         <td><%= f.text_area :description %></td>
+         <td><%= f.text_area :description, :style => "width: 500px;" %></td>
+      </tr>
+      <tr>
+         <th><%= f.label :description, t('jobs.th.area') %></th>
+         <td>
+            <div id="mapmessage">&nsbp;</div>
+            <p id="select_area"><img src="/assets/Pointer.png" style="width:20px;" class="select_area"><a href="#" class="select_area"><%= t 'jobs.action.select_area' %></a></p>
+            <div id="map"></div>
+            
+            <%= f.hidden_field(:lonmin) %>
+            <%= f.hidden_field(:latmin) %>
+            <%= f.hidden_field(:lonmax) %>
+            <%= f.hidden_field(:latmax) %>
+         </td>
+      </tr>
+      <tr>
+      <td colspan="2">
+        <%= f.submit t('jobs.button.createjob'), :class=>'submit' %>
+      </td>
       </tr>
    </table>
 
-   <div id="map"></div>
 
-   <div id="latlon">
-   <p><img src="/assets/Pointer.png" style="width:20px;" class="select_area"><a href="#" class="select_area"><%= t 'jobs.action.select_area' %></a></p>
-   <table class="latlon">
-      <tr>
-         <th><%= f.label(:lonmin, t('jobs.th.minlon')) %></th>
-         <td><%= f.text_field(:lonmin, :class => 'latlon') %></td>
-      </tr>
-      <tr>
-         <th><%= f.label(:latmin, t('jobs.th.minlat')) %></th>
-         <td><%= f.text_field(:latmin, :class => 'latlon') %></td>
-      </tr>
-      <tr>
-         <th><%= f.label(:lonmax, t('jobs.th.maxlon')) %></th>
-         <td><%= f.text_field(:lonmax, :class => 'latlon') %></td>
-      </tr>
-      <tr>
-         <th><%= f.label(:latmax, t('jobs.th.maxlat')) %></th>
-         <td><%= f.text_field(:latmax, :class => 'latlon') %></td>
-      </tr>
-   </table>
-   </div>
 
-   <div style="clear: left;">
-   <%= f.submit t('jobs.button.save') %>
+   <div >
    </div>
    <% end %>
 </div>

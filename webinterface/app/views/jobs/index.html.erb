@@ -26,6 +26,7 @@ $(document).ready(function(){
 <% else %>
 <p><%= t 'jobs.filter' %> <input type="text" size=10 id="jobfilter"></p>
 
+<%= will_paginate %>
 <table class="jobindex">
    <tr>
    <th width="400"><%= t 'jobs.th.name' %></th>
@@ -41,16 +42,28 @@ $(document).ready(function(){
    </tr>
    <%= render @jobs %>
 </table>
+<%= will_paginate %>
 <% end %>
-
 <ul class="upload_actions">
 <!-- Show deleted //-->
 <li>
 <img src="<%= asset_path 'view.png' %>">
 <% if @hide_invisible == true %>
-<%= link_to t('jobs.action.show_deleted'), jobs_path(:deleted => 'y') %>
+<%= link_to t('jobs.action.show_deleted'), jobs_path(:notowner => params['notowner'], :deleted => 'y') %>
 <% else %>
-<%= link_to t('jobs.action.hide_deleted'), jobs_path %>
+<%= link_to t('jobs.action.hide_deleted'), jobs_path(:notowner => params['notowner']) %>
 <% end %>
 </li>
+
+<% if user_signed_in? %>
+<li>
+<img src="<%= asset_path 'view.png' %>">
+<% if @hide_notowner == true %>
+<%= link_to t('jobs.action.show_notowner'), jobs_path(:notowner => 'y', :deleted => params['deleted']) %>
+<% else %>
+<%= link_to t('jobs.action.hide_notowner'), jobs_path(:deleted => params['deleted']) %>
+<% end %>
+</li>
+<% end %>
+
 </ul>

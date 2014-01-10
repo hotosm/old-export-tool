@@ -1,0 +1,21 @@
+# Localization for indonesian
+# Devise mailer
+
+id:
+   devise:
+      mailer:
+         hello:         "Halo"
+         regards1:      "Salam"
+         regards2:      "Server HOT export anda"
+
+         confirmation:
+            text1:      "Seseorang (mungkin anda) telah meminta untuk membuat akun untuk alamat e-mail ini di server HOT export. Jika permintaan ini benar, silahkan konfirmasi link di bawah ini untuk menyelesaikan pembuatan akun anda."
+
+            text2:      "Jika anda tidak meminta untuk membuat sebuah akun, silahkan abaikan pesan ini dan kami meminta maaf."
+            link:       "Konfirmasi akun saya"
+
+         reset:
+            text1:      "Seseorang (mungkin anda) telah meminta untuk merubah kata sandi di server HOT export. Jika permintaan ini benar, anda dapat mengikuti link di bawah ini untuk merubah kata sandi anda."
+            text2:      "Jika anda tidak meminta untuk merubah kata sandi anda, silahkan abaikan pesan ini dan kami meminta maaf. Kata sandi anda tidak akan berubah jika anda tidak meng-klik link ini." 
+            link:       "Ganti kata sandi saya"
+          

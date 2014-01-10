@@ -19,16 +19,19 @@ en:
          title:         "Uploads | Preset Files"
          h1:            "Preset Files"
          name:          "Preset Files"
+         title:         "Configuration files that define the data downloaded."
 
       tagtransforms:    
          title:         "Uploads | Tag Transform SQL Files"
          h1:            "Tag Transform SQL Files"
          name:          "Tag Transform SQL Files"
+         title:         "Defines translation of the data schema for the download."
 
       translations:
          title:         "Uploads | Translations"
          h1:            "Translation Files"
          name:          "Translation Files"
+         title:         "Look-up tables to translate data from English into another language."
 
       tagpreview:
          title:         "Tag Check"

@@ -44,11 +44,11 @@ fr:
       button:
          login:                     "Connexion"
          update:                    "Sauver"
-         create_account:            "Créer Compte"
-         cancel_account:            "Annuler Compte"
+         create_account:            "Créer un compte"
+         cancel_account:            "Annuler un compte"
          logout:                    "Déconnexion"
          resend_confirmation:       "Recevoir à nouveau l'instruction de confirmation"
-         send_reset_password:       "Envoyez-moi instructions de réinitialisation de mot de passe"
+         send_reset_password:       "Envoyez-moi les instructions de réinitialisation de mot de passe"
          change_password:           "Changer mon mot de passe"
 
       message:
@@ -61,6 +61,7 @@ fr:
          success:
             suspended:              "Utilisateur verrouillé avec succès :"
             unsuspended:            "Utilisateur déverrouillé avec succès :"
+
 
    
 

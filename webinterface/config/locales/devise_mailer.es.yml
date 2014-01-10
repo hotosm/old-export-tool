@@ -1,0 +1,21 @@
+# Localization for Spanish
+# Devise mailer
+
+es:
+   devise:
+      mailer:
+         hello:         "Hola"
+         regards1:      "Saludos,"
+         regards2:      "tu simpático servidor de exportaciones de HOT"
+
+         confirmation:
+            text1:      "Alguien (posiblemente tú) ha solicitado abrir una cuenta para esta dirección de correo electrónico en el servidor de exportaciones HOT. Si esta solicitud es genuina, por favor haz clic en el enlace que se muestra más abajo para finalizar con el proceso de creación de la cuenta."
+
+            text2:      "Si no has solicitado la creación de una cuenta, por favor ignora este mensaje y acepta nuestras disculpas."
+            link:       "Confirmar mi cuenta"
+
+         reset:
+            text1:      "Alguien (posiblemente tú) ha solicitado cambiar tu contraseña en el servidor de exportaciones de HOT. Si esta solicitud es genuina, por favor haz clic en el enlace que se muestra más abajo para cambiar tu contraseña."
+            text2:      "Si no has solicitado un cambio de contraseña, por favor ignora este mensaje y acepta nuestras disculpas. Tu contraseña no cambiará si no haces clic en el enlace." 
+            link:       "Cambiar mi contraseña"
+          

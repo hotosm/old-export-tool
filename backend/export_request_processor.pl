@@ -128,7 +128,7 @@ if (my $run = $sth_fetch->fetchrow_hashref)
 
     # call ogr2ogr to make shape files in temporary directory
     mkdir "/tmp/$rid-shp";
-    mysystem("ogr2ogr -overwrite -f 'ESRI Shapefile' --config SHAPE_ENCODING UTF-8 /tmp/$rid-shp $OUTPUT_PATH/$rid/$name.sqlite");
+    mysystem("ogr2ogr -overwrite -f 'ESRI Shapefile' /tmp/$rid-shp $OUTPUT_PATH/$rid/$name.sqlite -lco ENCODING=UTF-8");
 
     # load ogr2ogr output to find out field name truncations
     my $crosswalk = {};
@@ -177,7 +177,19 @@ if (my $run = $sth_fetch->fetchrow_hashref)
     addfile($rid, "$name.shp.zip", "ESRI Shapefile (zipped)");
     mysystem("rm -rf /tmp/$rid-shp");
 
+    # make KMZ file
+    mkdir ("$OUTPUT_PATH/tmp/$rid-kml");
+    mysystem("ogr2ogr -f 'KML' $OUTPUT_PATH/tmp/$rid-kml/doc.kml $OUTPUT_PATH/$rid/$name.sqlite");
+    mysystem("zip -j $OUTPUT_PATH/$rid/$name.kmz $OUTPUT_PATH/tmp/$rid-kml/*");
+    mysystem("rm -rf $OUTPUT_PATH/tmp/$rid-kml");
+    addfile($rid, "$name.kmz", "Google Earth (KMZ) file");
+
     # ADD FURTHER ogr2ogr CALLS HERE!
+    mkdir ("$OUTPUT_PATH//tmp/$rid-gmapsupp");
+    mysystem("java -Xmx3096m -jar /home/hot/mkgmap/mkgmap.jar --route --index -n 80000111 --description='$name' --gmapsupp --draw-priority=99 --family-id=3456 --nsis --series-name='$name' --output-dir=$OUTPUT_PATH/tmp/$rid-gmapsupp $OUTPUT_PATH/$rid/rawdata.osm.pbf");
+    mysystem("gzip < $OUTPUT_PATH/tmp/$rid-gmapsupp/gmapsupp.img > $OUTPUT_PATH/$rid/gmapsupp.img.gz", 1);
+    mysystem("rm -rf $OUTPUT_PATH//tmp/$rid-gmapsupp");
+    addfile($rid, "gmapsupp.img.gz", "Garmin map (EXPERIMENTAL; compressed)");
 
     # finally record log file
     addfile($rid, "log.txt", "job log file (log.txt)");
@@ -200,8 +212,18 @@ sub mymsg
 sub mysystem 
 {
     my $call = shift;
+    my $nolog = shift;
+
     mymsg("$call\n");
-    system ("$call >> $logfile 2>&1");
+    if (defined($nolog) && $nolog) 
+    {
+        system ("$call 2>>$logfile");
+    }
+    else
+    {
+        system ("$call >> $logfile 2>&1");
+    }
+
     if ($? == -1) {
         mymsg("failed to execute: $!");
         return 0;

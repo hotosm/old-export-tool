@@ -51,12 +51,34 @@ class Job < ActiveRecord::Base
 
 
    # maximum of (latmax-latmin) * (lonmax-lonmin)
-   BBOX_MAX = 100
+   # For normal users max is 100, for admins 200, enforced by the form controller
+   # for purposes of the jobs model validation, the max is 200
+   BBOX_MAX = 200
+   
+   # pagination count per page
+   PPAGE = 200
+   
+   # jobs (owner and visible)
+   def self.jobs_owner_visible ppage, uid
+      jobs = Job.includes(:region, :user).where("user_id = ? and visible = ?", uid, true).paginate(:page => ppage, :per_page => Job::PPAGE)
+   end
 
+   # jobs (owner and not visible)
+   def self.jobs_owner_notvisible ppage, uid
+      jobs = Job.includes(:region, :user).where("user_id = ?", uid).paginate(:page => ppage, :per_page => Job::PPAGE)
+   end
+
+   # jobs (not owner and visible)   
+   def self.jobs_notowner_visible ppage
+      jobs = Job.includes(:region, :user).where("visible = ?", true).paginate(:page => ppage, :per_page => Job::PPAGE)
+   end
+
+   # all jobs (includes not owner and not visible jobs)
+   def self.jobs_notowner_notvisible ppage
+      jobs = Job.includes(:region, :user).paginate(:page => ppage, :per_page => Job::PPAGE)
+   end
 
 private
-
-
    def check_region
 
       if (!self.lonmin.is_a?(Numeric))
@@ -91,7 +113,12 @@ private
       if (region.is_a? Hash)
          self.region_id = region['id']
       else
-         errors.add(:lonmin, I18n.t('jobs.errors.no_valid_region'))
+      	 errors.add(:lonmin, I18n.t('jobs.errors.no_valid_region'))
+         
+         if Region.all.count==0
+            #should only happen during a fresh install
+            errors.add(:lonmin, I18n.t('jobs.errors.no_regions_defined'))
+         end
       end
    end
 

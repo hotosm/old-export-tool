@@ -42,7 +42,7 @@ de:
       confirmation_instructions:
         subject: 'Bestätigung Ihres Benutzerkontos'
       reset_password_instructions:
-        subject: 'Änderns Ihres Passworts'
+        subject: 'Ändern Ihres Passworts'
       unlock_instructions:
         subject: 'Entsperren Ihres Benutzerkontos'
 

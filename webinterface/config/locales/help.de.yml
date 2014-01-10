@@ -10,6 +10,13 @@ de:
          title:      "Über HOT Exports"
          text:       "Diese Platform ermöglicht Ihnen individuelle OpenStreetMap-Exporte für verschiedene Regionen zu erzeugen. Für den Export können Sie das Gebiet spezifieren und eine Liste von Features (OpenStreetMap-Tags). Mit diesen Parametern wird dann ein aktueller OpenStreetMap-Datenextrakt erzeugt. Der Export wird in verschiedenen Datenformaten bereit gestellt und dauert nur wenige Minuten."
 
+      get_started:
+         title:      "Erste Schritte"
+         text1:      "Wenn Sie neu hier sind, erstellen Sie sich bitte zuerst einen Account. Wenn Sie schon einen Account bei HOT haben, loggen Sie sich bitte unten ein."
+         text2:      "Gehen Sie zu “Visual Tag Chooser”, wenn Sie neue Presets hochladen möchten oder Sie schon existierende Presets sehen möchten. Achtung: Sie gelangen hierbei auf eine andere Seite. Stellen Sie sicher, dass Sie anschließend hier her zurückkehren."
+         text3:      "Wenn Sie ein Preset-File verwenden möchten, dass schon in HOT Exports hochgeladen wurde, müssen Sie nicht auf den “Visual Tag Chooser”-Link gehen. Sie erzeugen einen neuen Job, indem Sie auf “Neuer Job” (oben rechts) klicken."
+         text4:      "Um einen schon existierenden Job anzusehen klicken Sie auf “Jobs” oben rechts auf dem Screen. Klicken Sie auf “Neuer Job”, um einen neuen Export zu erzeugen."
+
       note:          
          title:      "Anmerkung"
          text:       "Dieses System hat beschränkte Resourcen. Bitte gehen Sie damit sorgsam um, wenn Sie einen Export-Job erstellen."

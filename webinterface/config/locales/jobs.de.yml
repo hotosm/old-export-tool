@@ -38,11 +38,14 @@ de:
       action:
          show_deleted:     "Anzeige der gelöschten Jobs"
          hide_deleted:     "Verbergen der gelöschten Jobs"
+         show_notowner:    "Anzeigen aller Jobs, auch der anderer User"
+         hide_notowner:    "Verbergen von Jobs anderer User"
          select_area:      "Gebiet auswählen"
 
       button:
          newrun:           "Neuen Durchlauf starten"
          recyclejob:       "Job erzeugen"
+         createjob:        "Job erzeugen"
          save:             "Speichern"
 
       job:
@@ -54,6 +57,7 @@ de:
          message:
             jobrunning:    "Der Job läuft - Downloads sind noch nicht verfügbar."
             nodownload:    "Keine Downloads verfügbar."
+            no_created_by: "Anonym"
      
       area:             
          h2:               "Gebiet"
@@ -72,6 +76,7 @@ de:
       newjobconf:
          title:            "Job-Konfiguration"
          h1:               "Neuer Export-Job - Konfiguration"
+         no_file:          "Kein File"
 
          th:
             name:          "Jobname"
@@ -79,6 +84,11 @@ de:
             default_tags:  "Default Tags hinzufügen?"
             transform:     "Tag Transform SQL File"
             translation:   "Translation File"
+
+         notice:
+            default_tags:  "Default tags sind typischerweise Daten, die dafür verwendet werden, OSM Karten zu rendern."
+            translation:   "Wählen Sie ein Translation File, um Ihre Daten in eine andere Sprache zu übersetzten."
+            transform:     "Wählen Sie ein Tag Transform SQL File, um Ihre Daten in ein anderes Schema zu transformieren."
 
       newjobwithconf:
          title:            "Neuer Export-Job (mit vorgegebener Konfiguration)"
@@ -92,6 +102,7 @@ de:
             run_saved:           "Der Durchlauf wurde gestartet!"
             restored:            "Der Job wurde wiederhergestellt!"
             deleted:             "Der Job wurde gelöscht!"
+            run_started:         "Ein neuer Durchlauf wurde gestartet!"
 
          error:
             xml_parsing_failed:  "Das Parsen des XML war nicht erfolgreich. Es wurde kein Job erzeugt."

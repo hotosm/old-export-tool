@@ -16,6 +16,7 @@ gem 'libxml-ruby'
 gem "devise", "~> 2.2.4"
 gem "devise_suspendable", "~> 0.6.1"
 
+gem "will_paginate", "~> 3.0.4"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -29,9 +30,6 @@ gem 'jquery-rails'
 gem 'execjs'
 gem 'therubyracer'
 gem "client_side_validations", "~> 3.2.5"
-
-# brings old toggle function back
-gem "jquery-migrate-rails", "~> 1.1.1"
 
 gem 'faker', '0.3.1'
 

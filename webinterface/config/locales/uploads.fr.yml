@@ -8,8 +8,8 @@ fr:
       newupload:
          title:         "Nouveau téléchargement"
          h1:            "Télécharger un fichier de configuration"
-         text:          'Configuration files can be tagging presets (already supported), or SQL transforms or translation tables (planned). When you upload a file, choose a human-readable name for it (e.g. "HOT Presets for Haiti v1.23"); when creating a new job later, you can then select which of these files to apply.'
-         name:          "Téléchargement nouveau"
+         text:          "Les fichiers de configuration peuvent être (déjà supporté) des presets JOSM, ou des tables SQL transforms (en cours de développement). Lorsque vous uploadez un fichier, choisissez un nom compréhensible (par exemple \"HOT Presets for Haiti v1.23\"); lors de la création d'un job plus tard, vous pouvez sélectionner le fichier désiré."
+         name:          "Nouveau téléchargement"
 
       index:
          title:         "Configuration"
@@ -19,16 +19,22 @@ fr:
          title:         "Téléchargement | Fichier Preset"
          h1:            "Fichier Preset"
          name:          "Fichier Preset"
+# fixme
+         title:         "Configuration files that define the data downloaded."
 
       tagtransforms:    
          title:         "Téléchargement | Fichier Tag Transformation SQL"
          h1:            "Fichier Tag Transformation SQL"
          name:          "Fichier Tag Transformation SQL"
+# fixme
+         title:         "Defines translation of the data schema for the download."
 
       translations:
          title:         "Téléchargement | Traduction"
          h1:            "Fichier Traduction"
          name:          "Fichier Traduction"
+#fixme
+         title:         "Look-up tables to translate data from English into another language."
 
       tagpreview:
          title:         "Vérifier les tags"
@@ -36,8 +42,8 @@ fr:
          h2:            "Tags des fichiers preset"
 
       defaulttags:
-         title:         "Default Tags"
-         h1:            "Default Tags"
+         title:         "Tags par défaut"
+         h1:            "Tags par défaut"
 
       update:
          title:         "Charger une nouvelle version du fichier"
@@ -80,7 +86,7 @@ fr:
 
       flash:
          error:
-            xml_parsing_failed:  "L'analyse XML a échoué. Le chargement n''a pas abouti."
+            xml_parsing_failed:  "L'analyse XML a échoué. Le chargement n'a pas abouti."
             not_saved:           "Chargement non abouti."
             restored:            "Chargement non restauré."
             deleted:             "Chargement non supprimé."
@@ -90,6 +96,7 @@ fr:
             saved:               "Chargement réussi."
             restored:            "Chargement restauré avec succès."
             deleted:             "Chargement supprimé avec succès."
+
 
 
 

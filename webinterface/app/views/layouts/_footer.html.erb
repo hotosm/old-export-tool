@@ -32,7 +32,7 @@
    </li>
    <li>
       <img src="<%= asset_path 'new.png' %>">
-      <%= link_to t('lost_password'), new_user_password_path %>
+      <%= link_to t('footer.lost_password'), new_user_password_path %>
    </li>
 <% end %>
 </ul>
@@ -43,15 +43,15 @@
 <ul>
 <li>
    <img src="<%= asset_path 'view.png' %>">
-   <%= link_to t('uploads.presets.name'), uploads_presets_path %>
+   <%= link_to t('uploads.presets.name'), uploads_presets_path, :title => t('uploads.presets.title') %>
 </li>
 <li>
    <img src="<%= asset_path 'view.png' %>">
-   <%= link_to t('uploads.tagtransforms.name'), uploads_tagtransforms_path %>
+   <%= link_to t('uploads.tagtransforms.name'), uploads_tagtransforms_path, :title => t('uploads.tagtransforms.title') %>
 </li>
 <li>
    <img src="<%= asset_path 'view.png' %>">
-   <%= link_to t('uploads.translations.name'), uploads_translations_path %>
+   <%= link_to t('uploads.translations.name'), uploads_translations_path, :title => t('uploads.translations.title') %>
 </li>
 
 <% if user_signed_in? %>
@@ -60,6 +60,12 @@
    <%= link_to t('uploads.newupload.name'), new_upload_path %>
 </li>
 <% end %>
+
+<!-- Visual Tag Chooser //-->
+<li>
+   <img src="<%= asset_path 'new.png' %>">
+   <%= link_to t('footer.visual_tag_chooser'), "http://visualtags.hotosm.org", :title => t('footer.visual_tag_chooser_title') %>
+</li>
 </ul>
 </div>
 
@@ -85,3 +91,19 @@
 </div>
 
 </div>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["trackPageView"]);
+  _paq.push(["enableLinkTracking"]);
+
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik.hotosm.org/";
+    _paq.push(["setTrackerUrl", u+"piwik.php"]);
+    _paq.push(["setSiteId", "1"]);
+    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+    g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->

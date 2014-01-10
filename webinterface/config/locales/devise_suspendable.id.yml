@@ -1,0 +1,11 @@
+# Localization for indonesian
+# Devise section
+
+id:
+   
+   devise:
+      failure:
+         user:
+            suspended: "Akun ditangguhkan."
+   
+

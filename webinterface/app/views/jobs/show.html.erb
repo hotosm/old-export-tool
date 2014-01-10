@@ -17,7 +17,7 @@ $(document).ready(function() {
       
       var html = "";
       $.ajax({
-         url: "/reload_runs",
+         url: "<%= reload_runs_path %>",
          type: "post",
          data: {"job_id" : <%= @job.id %>},
          success: function(data) {
@@ -52,8 +52,8 @@ $(document).ready(function() {
 
                // download
                var td_down  = $("<td/>");
+               var ul_down = $("<ul/>");
                if (run.state == 'success') {
-                  var ul_down = $("<ul/>");
 
                   for (i in run.downloads) {
                      var li_down = $("<li/>");
@@ -65,7 +65,7 @@ $(document).ready(function() {
 
                      var span_down = $("<span/>", {
                         class: 'size',
-                        text: run.downloads[i].size 
+                        text: " [" + run.downloads[i].size + "]"
                      });
 
                      a_down.appendTo(li_down);
@@ -91,9 +91,10 @@ $(document).ready(function() {
                // run.updated_at.strftime("%Y-%m-%d %H:%M")
 
                bb = new Date(run.updated_at);
+               mm = FormatNumberLength((bb.getMonth() + 1),2);
                var td_crat  = $("<td/>", {
                   text: bb.getFullYear().toString() + '-' + 
-                        bb.getMonth().toString()    + '-' +
+                        mm.toString() + '-' +
                         bb.getDate().toString()     + ' ' +
                         bb.getHours().toString()    + ':' +
                         bb.getMinutes().toString() 
@@ -101,7 +102,6 @@ $(document).ready(function() {
                td_crat.appendTo(tr_line);
 
                // created_by
-
                if (run.user) {
                   var td_crby = $("<td/>", {
                      text: run.user.email
@@ -118,6 +118,15 @@ $(document).ready(function() {
          }
       });
    }
+
+   function FormatNumberLength(num, length) {
+      var r = "" + num;
+      while (r.length < length) {
+         r = "0" + r;
+      }
+      return r;
+   }
+
 
 </script>
 <script type="text/javascript">
@@ -214,12 +223,10 @@ function init_values2box() {
 </table>
 
 <!-- Start New Run //-->
-<% if user_signed_in? %>
-   <%= form_tag("/newrun", :method => "get") do %>
-   <%= hidden_field_tag("job_id", @job.id) %>
-   <%= hidden_field_tag("locale", params[:locale]) %>
-   <p><input type="submit" value="<%= t 'jobs.button.newrun' %>" name="commit"></p>
-   <% end %>
+<%= form_tag(newrun_path, :method => "post") do %>
+<%= hidden_field_tag("job_id", @job.id) %>
+<%= hidden_field_tag("locale", params[:locale]) %>
+<p><input type="submit" value="<%= t 'jobs.button.newrun' %>" name="commit"></p>
 <% end %>
 
 <!-- Area //-->
@@ -291,12 +298,15 @@ function init_values2box() {
 </tr>
 </table>
 
-<h2><%= t 'jobs.recycle.h2' %></h2>
-<p><%= t 'jobs.recycle.text' %></p>
-<p>
-<%= form_tag("/newwithconfiguration", :method => "get") do %>
-<%= hidden_field_tag("job_id", @job.id) %>
-<%= hidden_field_tag("locale", params[:locale]) %>
-<input type="submit" value="<%= t 'jobs.button.recyclejob' %>" name="commit">
+<!-- recycle job //-->
+<% if user_signed_in? %>
+   <h2><%= t 'jobs.recycle.h2' %></h2>
+   <p><%= t 'jobs.recycle.text' %></p>
+   <p>
+   <%= form_tag(newwithconfiguration_path, :method => "get") do %>
+   <%= hidden_field_tag("job_id", @job.id) %>
+   <%= hidden_field_tag("locale", params[:locale]) %>
+   <input type="submit" value="<%= t 'jobs.button.recyclejob' %>" name="commit">
+   <% end %>
 <% end %>
 </p>

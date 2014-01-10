@@ -14,13 +14,13 @@
 </td>
 
 <!-- Region //-->
-<td><%= Region.find(job.region_id).name %></td>
+<td><%= job.region.name %></td>
 
 <!-- Created At //-->
 <td><%= job.updated_at.strftime("%Y-%m-%d %H:%M") %></td>
 
 <!-- Created By //-->
-<% if current_user.try(:admin?) and job.user.try(:email) %>
+<% if current_user.try(:admin?) and job.try(:user) %>
    <td><%= job.user.email %></td>
 <% end %>
 
