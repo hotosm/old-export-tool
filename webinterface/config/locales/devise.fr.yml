@@ -16,11 +16,11 @@ fr:
       unconfirmed: "Vous devez confirmer votre compte pour continuer."
       locked: "Votre compte est verrouillé."
       invalid: "Courriel ou mot de passe incorrect."
-      invalid_token: "Jeton d'authentification incorrect."
+      invalid_token: "Authentification incorrecte."
       timeout: "Votre session est expirée, veuillez vous reconnecter pour continuer."
       inactive: "Votre compte n'est pas encore activé."
       user:
-         not_found_in_database: "Jeton d'authentification incorrect."
+         not_found_in_database: "Authentification incorrecte."
     sessions:
       signed_in: "Connecté."
       signed_out: "Déconnecté."
@@ -99,7 +99,7 @@ fr:
         current_password_instruction: "Vous devez saisir votre mot de passe courant pour confirmer vos changements"                
         update: "Mettre à jour"
         cancel_my_account: "Annuler mon compte"
-        unhappy?: "Insatisfait(e) ?"
+        unhappy?: "Pas satisfait(e) ?"
         are_you_sure?: "Êtes-vous sûr ?"
         back: "Retour"
     unlocks:

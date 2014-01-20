@@ -8,15 +8,15 @@ fr:
 
       login:                        "Connexion"
       logout:                       "Déconnexion"
-      create_account:               "Créer un Compte"
+      create_account:               "Créer un compte"
       edit_account:                 "Modifier les paramètres du compte"
       cancel_account:               "Annuler le compte"
       cancel_account_text:          "Voulez-vous supprimer votre compte?"
-      cancel_account_confirm:       "Etes-vous sûr ?"
+      cancel_account_confirm:       "Etes-vous certain ?"
       change_password:              "Modifier le mot de passe"
       lost_password:                "Mot de passe perdu ?"
       resend_confirmation:          "Recevoir à nouveau l'instruction de confirmation"
-      no_confirmation:              "Vous n'avez pas reçu les instructions de confirmation?"
+      no_confirmation:              "Vous n'avez pas reçu les instructions de confirmation ?"
       suspend_user:                 "Suspendre un utilisateur"
       active_users:                 "Utilisateurs actifs"
       locked_users:                 "Utilisateurs verrouillés"
@@ -60,7 +60,8 @@ fr:
       flash:
          success:
             suspended:              "Utilisateur verrouillé avec succès :"
-            unsuspended:            "Utilisateur deverrouillé avec succès :"
+            unsuspended:            "Utilisateur déverrouillé avec succès :"
+
 
    
 

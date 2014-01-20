@@ -6,7 +6,7 @@ fr:
       h1:               "Configuration"
 
       newupload:
-         title:         "Téléchargement nouveau"
+         title:         "Nouveau téléchargement"
          h1:            "Télécharger un fichier de configuration"
          text:          "Les fichiers de configuration peuvent être (déjà supporté) des presets JOSM, ou des tables SQL transforms (en cours de développement). Lorsque vous uploadez un fichier, choisissez un nom compréhensible (par exemple \"HOT Presets for Haiti v1.23\"); lors de la création d'un job plus tard, vous pouvez sélectionner le fichier désiré."
          name:          "Nouveau téléchargement"
@@ -46,19 +46,19 @@ fr:
          h1:            "Tags par défaut"
 
       update:
-         title:         "Télécharger une nouvelle version du fichier"
-         h1:            "Télécharger une nouvelle version du fichier"
-         text:          "Si vous téléchargez un nouveau fichier, l'ancien fichier sera écrasé !"
+         title:         "Charger une nouvelle version du fichier"
+         h1:            "Charger une nouvelle version du fichier"
+         text:          "Si vous chargez un nouveau fichier, l'ancien fichier sera remplacé"
 
       th:
          name:          "Nom de fichier"
-         updated_at:    "Mis à jour à"
+         updated_at:    "Mise à jour à"
          created_by:    "Créé par"
          download:      "Télécharger"
          delete:        "Supprimer"
          update:        "Mettre à jour"
-         tagpreview:    "Prévisualisaiton de tag"
-         tag:           "Tag"
+         tagpreview:    "Prévisualisation des attributs"
+         tag:           "Attribut"
          geometrytype:  "Type de géométrie"
          type:          "Catégorie"
          file:          "Fichier"
@@ -66,36 +66,37 @@ fr:
       span:
          show:             "Afficher"
          hide:             "Masquer"
-         deleted_uploads:  "Uploads supprimés"
+         deleted_uploads:  "Supprimer des chargements"
 
       action:
-         newupload:     "Nouveau téléchargement"
-         showdeleted:   "Afficher les téléchargements supprimés"
-         hidedeleted:   "Masquer les téléchargements supprimés"
-         defaulttags:   "Tags par défaut"
+         newupload:     "Nouveau chargement"
+         showdeleted:   "Afficher les chargements supprimés"
+         hidedeleted:   "Masquer les chargements supprimés"
+         defaulttags:   "Attributs par défaut"
 
       button:
          save:          "Sauvegarder"
 
       message:
-         nofiles:       "Aucun fichier de configuration n'a encore été uploadé."
+         nofiles:       "Aucun fichier de configuration n'a encore été chargé."
 
       error:
          xml_corrupt:   "Le XML est corrompu et une exception est survenue."
-         xml_exception: "XML Exception"
+         xml_exception: "Exception XML"
 
       flash:
          error:
-            xml_parsing_failed:  "Le parsing XML a échoué. Le téléchargement n'a pas été enregistré."
-            not_saved:           "Téléchargement pas enregistré."
-            restored:            "Téléchargement pas restauré !"
-            deleted:             "Téléchargement pas supprimé !"
+            xml_parsing_failed:  "L'analyse XML a échoué. Le chargement n'a pas abouti."
+            not_saved:           "Chargement non abouti."
+            restored:            "Chargement non restauré."
+            deleted:             "Chargement non supprimé."
 
          success:
-            newversion_saved:    "Nouvelle version du fichier sauvegardé avec succès : "
-            saved:               "Téléchargement enregistré avec succès."
-            restored:            "Téléchargement restauré avec succès."
-            deleted:             "Téléchargement supprimé avec succès."
+            newversion_saved:    "La nouvelle version du fichier a été sauvegardée avec succès : "
+            saved:               "Chargement réussi."
+            restored:            "Chargement restauré avec succès."
+            deleted:             "Chargement supprimé avec succès."
+
 
 
 
