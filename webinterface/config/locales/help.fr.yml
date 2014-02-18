@@ -81,17 +81,17 @@ fr:
 
          advancedtables:
             title:      "Traductions de Tables avancées"
-            text:       "Dans certains cas il peut être nécessaire de distinguer entre différents usages du même terme. Par exemple, il se peut que vous vouliez traduire le terme \"residential\" de manière différente selon qu'il apparait dans \"building=residential\" ou dans \"highway=residential\". Cela est possible en prepending the OSM key to the item dans la translation table, par exemple :"
+            text:       "Dans certains cas il peut être nécessaire de distinguer entre différents usages du même terme. Par exemple, il se peut que vous vouliez traduire le terme \"residential\" de manière différente selon qu'il apparait dans \"building=residential\" ou dans \"highway=residential\". Cela est possible en plaçant le tag OSM dans la traduction de table, par exemple :"
 
 
       transform:
-         title:         "Aide pour Tagtransform"
+         title:         "Aide pour les transformations de bases de données"
          h1:            "Utiliser les transformations de bases de données"
 
          whatfor:
             title:      "A quoi servent les transformations de base de données ?"
             text1:      "Vous pouvez utiliser les transformations de bases de données pour exécuter des commandes SQL (spatialite) sur les résultats d'un export personnalisé. Vous pouvez par exemple créer de nouveaux champs de données dans la base, supprimer des champs existants, fusionner des champs, ou supprimer des objets de la base en utilisant un filtre."
-            text2:      "Vous pouvez également changer le contenus des champs, mais si vous voulez simplement remplacer un contenu par un autre, la procédure de traduction de table est un meilleur choix."
+            text2:      "Vous pouvez également changer le contenu des champs, mais si vous voulez simplement remplacer un contenu par un autre, la procédure de traduction de table est un meilleur choix."
             text3:      "Les transformations de bases de données peuvent aussi être utilisées pour créer des tables complètement nouvelles à partir des tables standard."
 
          looklike:
@@ -108,7 +108,7 @@ fr:
 
          howuse:
             title:      "Comment dois-je utiliser les transformations de base de données ?"
-            text1:      "Lors de la création d'une nouvealle tâche, après avoir sélectionné l'aide d'intérêt, vous pouvez alors sélectionner une ou plusieurs transformations qui ont été chargées. Ces transformations seront appliquées à chaque nouvelle extraction de la tâche, et affecteront tous les formats de sortie à l'exception de la donnée OSM brute. Les transformations de base de données seront appliquées après les traductions de tables."
+            text1:      "Lors de la création d'une nouvelle tâche, après avoir sélectionné l'aire d'intérêt, vous pouvez alors sélectionner une ou plusieurs transformations qui ont été chargées. Ces transformations seront appliquées à chaque nouvelle extraction de la tâche, et affecteront tous les formats de sortie à l'exception de la donnée OSM brute. Les transformations de base de données seront appliquées après les traductions de tables."
             text2:      "Notez que chaque nouvelle extraction d'une tâche contient un fichier \"log.txt\" parmi les fichiers à télécharger disponibles ; si quelque chose est incorrect dans votre transformation de base de données, vous trouverez les messages d'erreur SQL dans ce fichier."
 
          advanced:
