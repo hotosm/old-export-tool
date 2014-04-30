@@ -45,6 +45,7 @@ es:
       button:
          newrun:           "Ejecutar una nueva tarea"
          recyclejob:       "Crear una nueva tarea"
+         createjob:				 "Crear una nueva tarea"
          save:             "Guardar"
 
       job:
@@ -52,7 +53,7 @@ es:
          restore:          "Restaurar"
 
       runs:
-         h2:               "Ejecutar"
+         h2:               "Tareas en ejecución"
          message:
             jobrunning:    "tarea en ejecución - aún no hay descargas disponibles"
             nodownload:    "no hay ninguna descarga disponible"
@@ -60,6 +61,9 @@ es:
      
       area:             
          h2:               "Área"
+         drag_to_select:   "Arrastrar para seleccionar una área"
+         select_different: "Seleccionar una área diferente"
+         no_area_selected: "Ninguna área ha sido seleccionada. Acercarse con el zoom y luego hacer clic en 'Seleccionar área'"
 
       config:           
          h2:               "Configuración de tarea"
@@ -83,7 +87,7 @@ es:
             default_tags:  "¿Añadir etiquetas por defecto?"
             transform:     "Fichero de transformaciones SQL de etiquetas"
             translation:   "Fichero de traducción"
-#fixme
+
          notice:
             default_tags:  "Las etiquetas por defecto son datos usados típicamente para el renderizado de un mapa de OSM."
             translation:   "Selecciona el fichero de traducción para traducir tus datos a otra lengua."
@@ -113,6 +117,7 @@ es:
 
       errors:
          no_valid_region:     "La área que has seleccionado no está en una región válida."
+         no_regions_defined:  "¡No ha sido definida ninguna región!"
          out_of_range:        "Valor fuera de rango."
          area_not_covered:    "¡La área seleccionada no está cubierta por el servicio!"
          area_too_large:      "La área seleccionada es demasiado grande: "
