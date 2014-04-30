@@ -287,6 +287,7 @@ private
             flash[:success] = t('jobs.flash.success.restored')
          else
             flash[:success] = t('jobs.flash.success.deleted')
+            flash[:notice] = t('jobs.purge_notice')
          end
       else
          if (resdel == true)

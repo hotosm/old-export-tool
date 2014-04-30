@@ -11,6 +11,8 @@ en:
       filter:              "Filter"
 
       not_owner:           "not owner"
+
+      purge_notice:        "Deleted jobs will be automatically purged after 30 days. During this 30 day period, a job owner or an admin user can still restore it. It's not possible to recover purged jobs."
       
       based_upon:
          default_tags:     "default tags only"
