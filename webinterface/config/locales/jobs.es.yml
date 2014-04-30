@@ -45,7 +45,7 @@ es:
       button:
          newrun:           "Ejecutar una nueva tarea"
          recyclejob:       "Crear una nueva tarea"
-         createjob:				 "Crear una nueva tarea"
+         createjob:        "Crear una nueva tarea"
          save:             "Guardar"
 
       job:
