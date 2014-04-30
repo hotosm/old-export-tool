@@ -29,7 +29,7 @@
 <% if current_user.try(:admin?) %>
    <td>
    <% if run.try(:user) %>
-      <%= run.user.email %>
+      <%= run.user.email.split('@')[0] %>
    <% else %>
       <%= t 'jobs.runs.message.no_created_by' %>
    <% end %>
