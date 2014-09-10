@@ -5,6 +5,7 @@ import os.path
 import shutil
 
 PURGE_AFTER_DAYS = 30
+EXPIRE_AFTER_DAYS = 180
 
 DBNAME = 'hot_export_production'
 DBUSER = 'hot_export'
@@ -19,6 +20,20 @@ conn = psycopg2.connect(
 )
 
 cur = conn.cursor()
+
+sql_mark_as_expired = """WITH old_runs AS (select job_id
+    from runs
+    group by job_id
+    having max(updated_at) < (now() - INTERVAL '{} DAYS')
+)
+
+UPDATE jobs SET updated_at = now(), visible = 'f'
+FROM old_runs oru WHERE id = oru.job_id;
+""".format(EXPIRE_AFTER_DAYS)
+
+print 'Marking jobs as expired...',
+cur.execute(sql_mark_as_expired)
+print cur.rowcount
 
 sql_deleted_jobs = """SELECT j.id
 FROM jobs j
