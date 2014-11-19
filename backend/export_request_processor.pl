@@ -186,7 +186,7 @@ if (my $run = $sth_fetch->fetchrow_hashref)
 
     # ADD FURTHER ogr2ogr CALLS HERE!
     mkdir ("$OUTPUT_PATH//tmp/$rid-gmapsupp");
-    mysystem("java -Xmx3096m -jar /home/hot/mkgmap/mkgmap.jar --route --index -n 80000111 --description='$name' --gmapsupp --draw-priority=99 --family-id=3456 --nsis --series-name='$name' --output-dir=$OUTPUT_PATH/tmp/$rid-gmapsupp $OUTPUT_PATH/$rid/rawdata.osm.pbf");
+    mysystem("java -Xmx3096m -jar /home/hot/mkgmap/mkgmap.jar --keep-going --route --index -n 80000111 --description='$name' --gmapsupp --draw-priority=99 --family-id=3456 --nsis --series-name='$name' --output-dir=$OUTPUT_PATH/tmp/$rid-gmapsupp $OUTPUT_PATH/$rid/rawdata.osm.pbf");
     mysystem("gzip < $OUTPUT_PATH/tmp/$rid-gmapsupp/gmapsupp.img > $OUTPUT_PATH/$rid/gmapsupp.img.gz", 1);
     mysystem("rm -rf $OUTPUT_PATH//tmp/$rid-gmapsupp");
     addfile($rid, "gmapsupp.img.gz", "Garmin map (EXPERIMENTAL; compressed)");
