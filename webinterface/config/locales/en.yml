@@ -2,28 +2,31 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-   tool:                      "Hot Exports"
+   tool:                         "Hot Exports"
 
    locale:
-      english:                "English"
-      german:                 "German"
-      french:                 "French"
-      japanese:               "Japanese"
+      english:                   "English"
+      german:                    "German"
+      french:                    "French"
+      japanese:                  "Japanese"
+      spanish:                   "Spanish"
    
    navigation:
-      home:                   "Home"
-      help:                   "Help"
-      jobs:                   "Jobs"
-      newjob:                 "New Job"
-      newjob_hint:            "Log in or create an account for new jobs!"
+      home:                      "Home"
+      help:                      "Help"
+      jobs:                      "Jobs"
+      newjob:                    "New Job"
+      newjob_hint:               "Log in or create an account for new jobs!"
        
    footer:
-      your_account:           "Your Account"
-      lost_password:          "Lost password?"
-      expert_functions:       "Expert Functions"
-      user_administration:    "User Administration"
-      logged_in_as:           "You are logged in as"
-      text:                   "Copyright © 2013 Humanitarian OpenStreetMap Team · Map data from OpenStreetMap, ODbL 1.0 license"
+      your_account:              "Your Account"
+      lost_password:             "Lost password?"
+      expert_functions:          "Expert Functions"
+      visual_tag_chooser:        "Visual Tag Chooser"
+      visual_tag_chooser_title:  "Visual application to create preset files."
+      user_administration:       "User Administration"
+      logged_in_as:              "You are logged in as"
+      text:                      "Copyright © 2013 Humanitarian OpenStreetMap Team · Map data from OpenStreetMap, ODbL 1.0 license"
 
    error:
 

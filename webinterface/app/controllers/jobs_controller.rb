@@ -73,6 +73,9 @@ class JobsController < ApplicationController
       @title   = t('jobs.newjob.title')
       @h1      = t('jobs.newjob.h1')
       @action  = 'wizard_configuration'
+      
+      @max_bounds_area = 100
+      @max_bounds_area = 200 if current_user.admin
    end
 
    def newwithconfiguration
@@ -88,6 +91,8 @@ class JobsController < ApplicationController
          @action  = 'newwithconfiguration_create'
 
          @max_bounds_area = 100
+         @max_bounds_area = 200 if current_user.admin
+      
          render :wizard_area
       end
    end
@@ -282,6 +287,7 @@ private
             flash[:success] = t('jobs.flash.success.restored')
          else
             flash[:success] = t('jobs.flash.success.deleted')
+            flash[:notice] = t('jobs.purge_notice')
          end
       else
          if (resdel == true)

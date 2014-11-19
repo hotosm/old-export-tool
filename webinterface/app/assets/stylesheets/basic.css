@@ -237,6 +237,7 @@ table.jobaction td {
 /* wizard */
 div.wizard {
    border: 0px solid #ccc;
+   display: inline-block;
    margin: 10px 0px;
    padding: 0px;
 }
@@ -246,7 +247,6 @@ p.wizard {
 }
 
 table.wizard {
-   width: 900px;
    margin: 40px 0px;
 }
 
@@ -256,14 +256,20 @@ table.wizard th, table.wizard td {
 }
 
 table.wizard th {
-   text-align: left;
+   text-align: right;
+   vertical-align: top;
    width: 200px;
    background-color: #FFF;
    color: #2f2f2f;
 }
 
+table.wizard td.notice {
+   font-style: italic;   
+   font-size: 0.8em;
+}
+
 table.wizard input, table.wizard textarea {
-   width: 450px;   
+   width: 450px;
 }
 
 table.wizard textarea {
@@ -274,11 +280,20 @@ table.wizard label {
    margin-left: 10px;   
 }
 
+table.wizard input.submit,
+input.submit {
+   float:right;
+   width: 150px;
+   margin-bottom:50px;
+   font-size:1.1em;
+   font-weight:bold;
+}
+
 #map {
    float: left;
    border: 1px solid #920900;
-   width: 550px;
-   height: 400px;
+   width: 500px;
+   height: 380px;
 }
 
 /* table latlon */
@@ -315,7 +330,7 @@ table.latlon input {
 /* header, footer, content overwrites default styles */
 
 #content {
-   clear: left;
+   clear: both;
    margin: 0px 80px 0px 80px;
    padding: 0px;
 }
@@ -366,9 +381,9 @@ table.latlon input {
 
 
 #header div.logo {
-   width: 400px;
+   width: 350px;
    float: left;
-   padding: 10px 0px 40px 0px;
+   padding: 10px 0px 0px 0px;
 }
 
 #header div.logo img.logo {
@@ -490,7 +505,7 @@ div.error, div.alert {
 
 input.error { border: 1px solid red; }
 
-label.error {
+.error {
    color: red;
    padding-left: 0px;
    margin-left: 10px;
@@ -502,8 +517,6 @@ div.field_with_errors label.message {
    margin-left: 10px;
    font-size: 0.8em;   
 }
-
-
 
 
 

@@ -5,25 +5,29 @@ fr:
    tool:                      "Hot Exports"
 
    locale:
-      english:                "Anglais"
-      german:                 "Allemand"
+      english:                "English"
+      german:                 "Deutsh"
       french:                 "Français"
-      japanese:               "Japonais"
+      japanese:               "日本語"
    
    navigation:
       home:                   "Home"
       help:                   "Aide"
-      jobs:                   "Jobs"
-      newjob:                 "Nouveau job"
-      newjob_hint:            "Se connecter ou créer un compte pour créer de nouveaux jobs"
+      jobs:                   "Tâches"
+      newjob:                 "Nouvelle tâche"
+      newjob_hint:            "Se connecter ou créer un compte pour créer de nouvelles tâches"
        
    footer:
       your_account:           "Votre compte"
       lost_password:          "Mot de passe perdu ?"
       expert_functions:       "Fonctions avancées"
+#fixme
+      visual_tag_chooser:     "Choix Visuel d'Attributs"
+#fixme
+      visual_tag_chooser_title:  "Application de Choix Visuel pour créer des modèles d'attributs."
       user_administration:    "Gestion des utilisateurs"
-      logged_in_as:           "Vous êtes connecté(e) comme"
-      text:                   "Copyright © 2013 Humanitarian OpenStreetMap Team · Données d'OpenStreetMap, ODbL 1.0 license"
+      logged_in_as:           "Vous êtes connecté(e) sur le compte "
+      text:                   "Copyright © 2013 Humanitarian OpenStreetMap Team · Données OpenStreetMap, licence ODbL 1.0"
 
 
    error:

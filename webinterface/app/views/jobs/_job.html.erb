@@ -21,7 +21,7 @@
 
 <!-- Created By //-->
 <% if current_user.try(:admin?) and job.try(:user) %>
-   <td><%= job.user.email %></td>
+   <td><%= job.user.email.split('@')[0] %></td>
 <% end %>
 
 <!-- Based upon Presefile //-->

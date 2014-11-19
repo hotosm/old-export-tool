@@ -1,0 +1,11 @@
+# Localization for Spanish
+# Devise section
+
+es:
+   
+   devise:
+      failure:
+         user:
+            suspended: "La cuenta está suspendida."
+   
+

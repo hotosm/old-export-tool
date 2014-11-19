@@ -182,7 +182,7 @@ if (my $run = $sth_fetch->fetchrow_hashref)
     mysystem("ogr2ogr -f 'KML' $OUTPUT_PATH/tmp/$rid-kml/doc.kml $OUTPUT_PATH/$rid/$name.sqlite");
     mysystem("zip -j $OUTPUT_PATH/$rid/$name.kmz $OUTPUT_PATH/tmp/$rid-kml/*");
     mysystem("rm -rf $OUTPUT_PATH/tmp/$rid-kml");
-    addfile($rid, "$name.kmz", "KML (KMZ) file");
+    addfile($rid, "$name.kmz", "Google Earth (KMZ) file");
 
     # ADD FURTHER ogr2ogr CALLS HERE!
     mkdir ("$OUTPUT_PATH//tmp/$rid-gmapsupp");

@@ -1,30 +1,31 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+# Localization file for German
 
 de:
-   tool:                      "Hot Exports"
+   tool:                         "Hot Exports"
 
    locale:
-      english:                "Englisch"
-      german:                 "Deutsch"
-      french:                 "Französisch"
-      japanese:               "Japanisch"
+      english:                   "Englisch"
+      german:                    "Deutsch"
+      french:                    "Französisch"
+      japanese:                  "Japanisch"
 
    
    navigation:
-      home:                   "Home"
-      help:                   "Hilfe"
-      jobs:                   "Jobs"
-      newjob:                 "Neuer Job"
-      newjob_hint:            "Loggen Sie sich ein oder erstellen Sie sich einen Account, um einen neuen Job zu erzeugen!"
+      home:                      "Home"
+      help:                      "Hilfe"
+      jobs:                      "Jobs"
+      newjob:                    "Neuer Job"
+      newjob_hint:               "Loggen Sie sich ein oder erstellen Sie sich einen Account, um einen neuen Job zu erzeugen!"
        
    footer:
-      your_account:           "Ihr Account"
-      lost_password:          "Passwort vergessen?"
-      expert_functions:       "Experten-Funktionen"
-      user_administration:    "Benutzer-Verwaltung"
-      logged_in_as:           "Sie sind eingeloggt als"
-      text:                   "Copyright © 2013 Humanitarian OpenStreetMap Team · Karten-Daten von OpenStreetMap, ODbL 1.0 license"
+      your_account:              "Ihr Account"
+      lost_password:             "Passwort vergessen?"
+      expert_functions:          "Experten-Funktionen"
+      visual_tag_chooser:        "Visual Tag Chooser"
+      visual_tag_chooser_title:  "Tool zur Erzeugung von Preset-Files."
+      user_administration:       "Benutzer-Verwaltung"
+      logged_in_as:              "Sie sind eingeloggt als"
+      text:                      "Copyright © 2013 Humanitarian OpenStreetMap Team · Karten-Daten von OpenStreetMap, ODbL 1.0 license"
 
    error:
       
