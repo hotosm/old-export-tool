@@ -1,121 +1,101 @@
-# Localization for indonesian
-# Jobs section
-
 id:
-
-   jobs:
-      title:               "Job"
-      h1:                  "Job Baru"
-
-      nojobs:              "Tidak ada job yang aktif di database."
-      filter:              "Saringan"
-
-      not_owner:           "Bukan Pengguna"
-      
-      based_upon:
-         default_tags:     "hanya tag awal"
-         directly:         "langsung diupload (versi lama)" 
-
+  jobs:
+    title: "Job"
+    h1: "Job Baru"
+    nojobs: "Tidak ada job yang aktif di database."
+    filter: "Saringan"
+    not_owner: "Bukan Pengguna"
+    purge_notice: "Job yang dihapus akan dibersihkan secara otomatis setelah periode 30 hari, pemilik atau admin dapat mengembalikan job tersebut. Job yang sudah dibersihkan tidak akan mungkin dapat dikembalikan."
+    based_upon:
+      default_tags: "hanya tag awal"
+      directly: "langsung diupload (versi lama)"
+    th:
+      name: "Nama"
+      description: "Deskripsi"
+      region: "Wilayah"
+      created_at: "Dibuat pada"
+      created_by: "Dibuat oleh"
+      based_preset: "Berdasarkan presetfile"
+      delete: "Hapus"
+      state: "Negara Bagian"
+      download: "Download"
+      preset: "File Tag/Preset"
+      transform: "File Tag Transformasi SQL"
+      translate: "File Terjemahan"
+      minlon: "Garis Bujur Minimum"
+      maxlon: "Garis Bujur Maksimal"
+      minlat: "Garis Lintang Minimum"
+      maxlat: "Garis Lintang Maksimum"
+    action:
+      show_deleted: "Tampilkan Job yang telah dihapus"
+      hide_deleted: "Sembunyikan Job yang telah dihapus"
+      show_notowner: "Show all jobs including other users' jobs"
+      hide_notowner: "Hide jobs from other users"
+      select_area: "Pilih area"
+    button:
+      newrun: "Mulai run baru"
+      recyclejob: "Buat job"
+      createjob: "Buat Job"
+      save: "Simpan"
+    job:
+      h1: "Job"
+      restore: "Kembalikan"
+    runs:
+      h2: "Run"
+      message:
+        jobrunning: "job sedang berjalan - tidak ada download yang tersedia sekarang"
+        nodownload: "tidak ada download yang tersedia"
+        no_created_by: "tidak dibuat oleh value"
+    area:
+      h2: "Area"
+      drag_to_select: "Gambar kotak untuk memilih area"
+      select_different: "Pilih area yang berbeda"
+      no_area_selected: "Belum ada area yang terpilih. Perbesar dan klik 'Pilih Area'"
+    config:
+      h2: "Konfigurasi Job"
+    recycle:
+      h2: "Job dengan konfigurasi yang sama"
+      text: "Buat job baru dengan area yang baru tetapi dengan konfigurasi yang sama seperti job ini."
+    newjob:
+      title: "Export Job Baru"
+      h1: "Export Job Baru"
+    newjobconf:
+      title: "Konfigurasi Job"
+      h1: "Konfigurasi - Export Job Baru"
+      no_file: "Tidak Ada file"
       th:
-         name:             "Nama"
-         description:      "Deskripsi"
-         region:           "Wilayah"
-         created_at:       "Dibuat pada"
-         created_by:       "Dibuat oleh"
-         based_preset:     "Berdasarkan presetfile"
-         delete:           "Hapus"
-         state:            "Negara Bagian"
-         download:         "Download"
-         preset:           "File Tag/Preset"
-         transform:        "File Tag Transformasi SQL"
-         translate:        "File Terjemahan"
-   
-         minlon:           "Garis Bujur Minimum"
-         maxlon:           "Garis Bujur Maksimal"
-         minlat:           "Garis Lintang Minimum"
-         maxlat:           "Garis Lintang Maksimum"
-
-      action:
-         show_deleted:     "Tampilkan Job yang telah dihapus"
-         hide_deleted:     "Sembunyikan Job yang telah dihapus"
-         show_notowner:    "Show all jobs including other users' jobs"
-         hide_notowner:    "Hide jobs from other users"
-         select_area:      "Pilih area"
-
-      button:
-         newrun:           "Mulai run baru"
-         recyclejob:       "Buat job"
-         save:             "Simpan"
-
-      job:
-         h1:               "Job"
-         restore:          "Kembalikan"
-
-      runs:
-         h2:               "Run"
-         message:
-            jobrunning:    "job sedang berjalan - tidak ada download yang tersedia sekarang"
-            nodownload:    "tidak ada download yang tersedia"
-            no_created_by: "tidak dibuat oleh value"
-     
-      area:             
-         h2:               "Area"
-
-      config:           
-         h2:               "Konfigurasi Job"
-
-      recycle:          
-         h2:               "Job dengan konfigurasi yang sama"
-         text:             "Buat job baru dengan area yang baru tetapi dengan konfigurasi yang sama seperti job ini."
-
-      newjob:
-         title:            "Export Job Baru"
-         h1:               "Export Job Baru"
-
-      newjobconf:
-         title:            "Konfigurasi Job"
-         h1:               "Konfigurasi - Export Job Baru"
-         no_file:          "Tidak Ada file"
-
-         th:
-            name:          "Nama Job"
-            preset:        "Pilih file preset"
-            default_tags:  "Tambahkan tag awal?"
-            transform:     "File Tag Transformasi SQL"
-            translation:   "File Terjemahan"
-#fixme
-         notice:
-            default_tags:  "Default tags are typical data used in rendering an OSM map."
-            translation:   "Select a translation file to translate your data into another language."
-            transform:     "Select a SQL file to transform your data into another schema."
-
-      newjobwithconf:
-         title:            "Export Job Baru (dengan konfigurasi yang telah diperbaiki)"
-         h1:               "Export Job Baru (dengan konfigurasi yang telah diperbaiki)"
-
-      flash:
-         success:
-            job_created:         "Job telah berhasil dibuat!"
-            run_saved:           "Run telah berhasil dimulai!"
-            restored:            "Job telah berhasil dikembalikan!"
-            deleted:             "Job telah berhasil dihapus!"
-            run_started:         "Run baru telah dimulai!"
-
-         error:
-            xml_parsing_failed:  "Penguraian XML gagal. Tidak ada job yang dibuat."
-            no_tags:             "Tidak ada tag yang ditemukan. Tidak ada job yang dibuat. Silahkan pilih sebuah file preset atau tag awal."
-            not_saved:           "Tidak ada job yang disimpan!"
-            running_job:         "Telah ada job yang telah dijalankan."
-            no_run_started:      "Tidak ada run yang dimulai!"
-            restored:            "Tidak ada job yang dikembalikan!"
-            deleted:             "Job tidak dihapus!"
-            run_started:         "Run baru telah dimulai!"
-
-      errors:
-         no_valid_region:     "Area yang anda pilih bukan merupakan wilayah yang valid."
-         out_of_range:        "Value keluar dari jangkauan."
-         area_not_covered:    "Area yang dipilih tidak dijangkau oleh layanan!"
-         area_too_large:      "Area yang dipilih terlalu besar: "
-         bb_only_allowed:     " - Hanya %{bbox_max} yang diperbolehkan."
-
-
+        name: "Nama Job"
+        preset: "Pilih file preset"
+        default_tags: "Tambahkan tag awal?"
+        transform: "File Tag Transformasi SQL"
+        translation: "File Terjemahan"
+      notice:
+        default_tags: "Default tags are typical data used in rendering an OSM map."
+        translation: "Select a translation file to translate your data into another language."
+        transform: "Select a SQL file to transform your data into another schema."
+    newjobwithconf:
+      title: "Export Job Baru (dengan konfigurasi yang telah diperbaiki)"
+      h1: "Export Job Baru (dengan konfigurasi yang telah diperbaiki)"
+    flash:
+      success:
+        job_created: "Job telah berhasil dibuat!"
+        run_saved: "Run telah berhasil dimulai!"
+        restored: "Job telah berhasil dikembalikan!"
+        deleted: "Job telah berhasil dihapus!"
+        run_started: "Run baru telah dimulai!"
+      error:
+        xml_parsing_failed: "Penguraian XML gagal. Tidak ada job yang dibuat."
+        no_tags: "Tidak ada tag yang ditemukan. Tidak ada job yang dibuat. Silahkan pilih sebuah file preset atau tag awal."
+        not_saved: "Tidak ada job yang disimpan!"
+        running_job: "Telah ada job yang telah dijalankan."
+        no_run_started: "Tidak ada run yang dimulai!"
+        restored: "Tidak ada job yang dikembalikan!"
+        deleted: "Job tidak dihapus!"
+        run_started: "Run baru telah dimulai!"
+    errors:
+      no_valid_region: "Area yang anda pilih bukan merupakan wilayah yang valid."
+      no_regions_defined: "Tidak ada region yang ditentukan!"
+      out_of_range: "Value keluar dari jangkauan."
+      area_not_covered: "Area yang dipilih tidak dijangkau oleh layanan!"
+      area_too_large: "Area yang dipilih terlalu besar: "
+      bb_only_allowed: " - Hanya %{bbox_max} yang diperbolehkan."

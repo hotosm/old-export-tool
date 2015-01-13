@@ -1,33 +1,23 @@
-# Localization file for German
-
 de:
-   tool:                         "Hot Exports"
-
-   locale:
-      english:                   "Englisch"
-      german:                    "Deutsch"
-      french:                    "Französisch"
-      japanese:                  "Japanisch"
-
-   
-   navigation:
-      home:                      "Home"
-      help:                      "Hilfe"
-      jobs:                      "Jobs"
-      newjob:                    "Neuer Job"
-      newjob_hint:               "Loggen Sie sich ein oder erstellen Sie sich einen Account, um einen neuen Job zu erzeugen!"
-       
-   footer:
-      your_account:              "Ihr Account"
-      lost_password:             "Passwort vergessen?"
-      expert_functions:          "Experten-Funktionen"
-      visual_tag_chooser:        "Visual Tag Chooser"
-      visual_tag_chooser_title:  "Tool zur Erzeugung von Preset-Files."
-      user_administration:       "Benutzer-Verwaltung"
-      logged_in_as:              "Sie sind eingeloggt als"
-      text:                      "Copyright © 2013 Humanitarian OpenStreetMap Team · Karten-Daten von OpenStreetMap, ODbL 1.0 license"
-
-   error:
-      
-
-
+  tool: "Hot Exports"
+  locale:
+    english: "Englisch"
+    german: "Deutsch"
+    french: "Französisch"
+    japanese: "Japanisch"
+    spanish: "Spanisch"
+  navigation:
+    home: "Home"
+    help: "Hilfe"
+    jobs: "Jobs"
+    newjob: "Neuer Job"
+    newjob_hint: "Loggen Sie sich ein oder erstellen Sie sich einen Account, um einen neuen Job zu erzeugen!"
+  footer:
+    your_account: "Ihr Account"
+    lost_password: "Passwort vergessen?"
+    expert_functions: "Experten-Funktionen"
+    visual_tag_chooser: "Visual Tag Chooser"
+    visual_tag_chooser_title: "Tool zur Erzeugung von Preset-Files."
+    user_administration: "Benutzer-Verwaltung"
+    logged_in_as: "Sie sind eingeloggt als"
+    text: "Copyright © 2013 Humanitarian OpenStreetMap Team · Karten-Daten von OpenStreetMap, ODbL 1.0 license"

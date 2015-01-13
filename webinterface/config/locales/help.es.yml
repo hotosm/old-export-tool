@@ -1,119 +1,87 @@
-# Localization for Spanish
-# Home and help section
-
 es:
-
-   home:
-      title:         "Inicio"
-      h1:            "HOT Exports"
-      about:         
-         title:      "Acerca de"
-         text:       "Esta plataforma te permite crear exportaciones de datos de OpenStreetMap para varias regiones. Puedes especificar una área de interés y una lista de características (etiquetas OpenStreetMap) para la exportación. Se creará, en cuestión de minutos y en varios formatos de datos, una extración de los datos de OpenStreetMap para esa área."
-
-#fixme
-      get_started:
-         title:      "Cómo empezar"
-         text1:      "Si eres un nuevo usuario, crea una cuenta. Si ya tienes una cuenta en HOT, inicia sesión debajo."
-         text2:      "Haz clic en “Selector visual de etiquetas” para subir nuevos predefinidos de etiquetas o para ver los predefinidos de etiquetas existentes. Nota: Esto te enviará a un nuevo sitio web, por lo que debes asegurarte de volver de nuevo a esta página."
-         text3:      "Si quieres usar ficheros de predefinidos de etiquetas que ya han sido subidos a HOT Exports, no necesitas hacer clic en el enlace “Selector visual de etiquetas”. Para crear una nueva tarea haz clic en “Nueva tarea”"
-         text4:      "Para ver una tarea existente, haz clic en “Tareas” en la parte superior derecha de tu pantalla. Haz clic en “Nueva tarea” para generar un nuevo mapa."
-
-      note:          
-         title:      "Nota"
-         text:       "Este sistema es un recurso compartido. Por favor, sé consciente de las tareas que vayas a crear."
-
-      new:           
-         title:      "¿Qué hay nuevo?"
-         text1:      "Subir ficheros de configuración."
-         text2:      "Las tareas se pueden eliminar."
-         text3:      "Cuentas de usuario."
-
-
-   help:
-      title:         "Ayuda"
-      h1:            "Ayuda"
-      
-      newjob:
-         title:      "Creando una nueva tarea"
-         text:       'Haz clic en "Nueva tarea" en la barra de navegación superior para ejecutar el menú que te guiará en la creación de la nueva tarea. Escribe el nombre y una descripción para la nueva tarea, para que tú, y otros, podáis identificarla fácilmente más tarde. Luego escoge la región en la que estás interesado (actualmente tiene que ser un rectángulo). En el último paso corriges las etiquetas. Existen dos maneras: Puedes escoger un fichero de predefinidos JOSM con tus etiquetas, y también puedes seleccionar las etiquetas por defecto con un menú de selección.'
-   
-      rerunjob:      
-         title:      "Volviendo a ejecutar una tarea existente"
-         text:       'Escoge "Tareas" en la barra de navegación superior. Busca por el nombre la tarea que quieres volver a ejecutar. Puedes usar un filtro para reducir el número de tareas en la lista. Luego haz clic en tu tarea para ir de nuevo a la página detallada y haz clic en el botón "Ejecutar una nueva tarea". Una nueva ejecución comenzará, y los ficheros estarán disponibles en breve para su descarga.'
-
-      recyclejob:
-         title:      "Reciclando una tarea ya existente"
-         text:       'Puedes crear una nueva tarea tomando como base una tarea ya existente. Para ello debes hacer clic en el botón "Crear tarea" que se muestra en la parte inferior de la página de una tarea. Este botón te lleva al menú "Nueva tarea", en el cual puedes especificar una geometría diferente, pero las etiquetas subidas serán reutilizadas a partir de la tarea existente.'
-
-      download:
-         title:      "Descarga tus datos"
-         text:       "Después de haber creado una tarea, ésta se empieza a procesar y se muestra una página detallada para la misma. Esta página contiene información de todas las ejecuciones previas de la tarea (inicialmente la lista está vacía). La página se actualiza automáticamente, y tras unos minutos podrás ver una serie de ficheros en diferentes formatos listos para descargar."
-
-      presets:
-         title:      "Configuración de ficheros de predefinidos"
-         text:       "Sube tus ficheros de predefinidos con el gestor de subidas. Si un fichero de predefinidos está obsoleto, sobreescríbelo con una versión actualizada o elimínalo."
-
+  home:
+    title: "Inicio"
+    h1: "HOT Exports"
+    about:
+      title: "Acerca de"
+      text: "Esta plataforma te permite crear exportaciones de datos de OpenStreetMap para varias regiones. Puedes especificar una área de interés y una lista de características (etiquetas OpenStreetMap) para la exportación. Se creará, en cuestión de minutos y en varios formatos de datos, una extración de los datos de OpenStreetMap para esa área."
+    get_started:
+      title: "Cómo empezar"
+      text1: "Si eres un nuevo usuario, crea una cuenta. Si ya tienes una cuenta en HOT, inicia sesión debajo."
+      text2: "Haz clic en “Selector visual de etiquetas” para subir nuevos predefinidos de etiquetas o para ver los predefinidos de etiquetas existentes. Nota: Esto te enviará a un nuevo sitio web, por lo que debes asegurarte de volver de nuevo a esta página."
+      text3: "Si quieres usar ficheros de predefinidos de etiquetas que ya han sido subidos a HOT Exports, no necesitas hacer clic en el enlace “Selector visual de etiquetas”. Para crear una nueva tarea haz clic en “Nueva tarea”"
+      text4: "Para ver una tarea existente, haz clic en “Tareas” en la parte superior derecha de tu pantalla. Haz clic en “Nueva tarea” para generar un nuevo mapa."
+    note:
+      title: "Nota"
+      text: "Este sistema es un recurso compartido. Por favor, sé consciente de las tareas que vayas a crear."
+    new:
+      title: "¿Qué hay nuevo?"
+      text1: "Subir ficheros de configuración."
+      text2: "Las tareas se pueden eliminar."
+      text3: "Cuentas de usuario."
+  help:
+    title: "Ayuda"
+    h1: "Ayuda"
+    newjob:
+      title: "Creando una nueva tarea"
+      text: 'Haz clic en "Nueva tarea" en la barra de navegación superior para ejecutar el menú que te guiará en la creación de la nueva tarea. Escribe el nombre y una descripción para la nueva tarea, para que tú, y otros, podáis identificarla fácilmente más tarde. Luego escoge la región en la que estás interesado (actualmente tiene que ser un rectángulo). En el último paso corriges las etiquetas. Existen dos maneras: Puedes escoger un fichero de predefinidos JOSM con tus etiquetas, y también puedes seleccionar las etiquetas por defecto con un menú de selección.'
+    rerunjob:
+      title: "Volviendo a ejecutar una tarea existente"
+      text: 'Escoge "Tareas" en la barra de navegación superior. Busca por el nombre la tarea que quieres volver a ejecutar. Puedes usar un filtro para reducir el número de tareas en la lista. Luego haz clic en tu tarea para ir de nuevo a la página detallada y haz clic en el botón "Ejecutar una nueva tarea". Una nueva ejecución comenzará, y los ficheros estarán disponibles en breve para su descarga.'
+    recyclejob:
+      title: "Reciclando una tarea ya existente"
+      text: 'Puedes crear una nueva tarea tomando como base una tarea ya existente. Para ello debes hacer clic en el botón "Crear tarea" que se muestra en la parte inferior de la página de una tarea. Este botón te lleva al menú "Nueva tarea", en el cual puedes especificar una geometría diferente, pero las etiquetas subidas serán reutilizadas a partir de la tarea existente.'
+    download:
+      title: "Descarga tus datos"
+      text: "Después de haber creado una tarea, ésta se empieza a procesar y se muestra una página detallada para la misma. Esta página contiene información de todas las ejecuciones previas de la tarea (inicialmente la lista está vacía). La página se actualiza automáticamente, y tras unos minutos podrás ver una serie de ficheros en diferentes formatos listos para descargar."
+    presets:
+      title: "Configuración de ficheros de predefinidos"
+      text: "Sube tus ficheros de predefinidos con el gestor de subidas. Si un fichero de predefinidos está obsoleto, sobreescríbelo con una versión actualizada o elimínalo."
+    advanced:
+      title: "Temas de ayuda avanzados"
+      text1: "Usando las tablas de traducción"
+      text2: "Usando transformaciones de bases de datos"
+    translation:
+      title: "Ayuda para traducciones"
+      h1: "Usando tablas de traducción"
+      whatfor:
+        title: "¿Para qué son las tablas de traducción?"
+        text1: "Puedes usar las tablas de traducción para traducir el contenido de un campo de una base de datos (pero no el nombre de un campo)."
+        text2: 'Por ejemplo, podrías querer traducir el término "bakery" a "panadería" y "place_of_worship" a "lugar_de_culto".'
+      looklike:
+        title: "¿Cómo son las tablas de traducción?"
+        text1: "Podrías escribir una tabla de traducción así:"
+        text2: "Una tabla de traducción es un fichero de texto plano que contiene una traducción por línea, con la palabra a traducir en la izquierda, seguida por uno o varios caracteres de tabulación o espacio en blanco, y luego la traducción."
+        text3: "Una tabla de traducción puede contener líneas en blanco, o líneas que comienzan con una almohadilla (#) para indicar un comentario."
+      howuse:
+        title: "¿Cómo usar una tabla de traducción?"
+        text1: 'Puedes crear una tabla de traducción en tu ordenador usando un editor de texto plano de tu elección. Luego, escoge el enlace "Nueva subida de datos" dentro de las funciones avanzadas que encontrarás en la parte inferior y selecciona la subida de un fichero de traducción. En este paso puedes dar un nombre simbólico a tu fichero de traducción, como por ejemplo "Términos generales - Español" u otro por el estilo.'
+        text2: 'Cuando crees una nueva tarea, después de seleccionar la área de interés, puedes seleccionar una ó más tablas de traducción que han sido subidas. Estas tablas serán utilizadas en cada ejecución de esa tarea, y afectarán a todos los formatos de salida, con la excepción de los datos OSM en bruto.'
+      advancedtables:
+        title: "Tablas de traducción avanzadas"
+        text: 'En algunos casos puede ser necesario distinguir entre diferentes usos del mismo término. Por ejemplo, podrías querer traducir el término "residential" de forma diferente dependiendo de si aparece como "building=residential" o como "highway=residential". Esto es posible poniendo la etiqueta OSM enfrente del término en la tabla de traducción, como por ejemplo:'
+    transform:
+      title: "Ayuda para Tagtransform"
+      h1: "Usando transformaciones de bases de datos"
+      whatfor:
+        title: "¿Para qué son las transformaciones de bases de datos?"
+        text1: 'Puedes usar transformaciones de bases de datos para ejecutar órdenes SQL arbitrarias (spatialite) sobre los resultados de la exportación. Puedes, por ejemplo, crear nuevas columnas de datos, borrar columnas ya existentes de la base de datos, renombrar columnas, fusionar columnas o eliminar datos acorde a ciertos criterios de filtrado.'
+        text2: 'También puedes cambiar los contenidos de columnas, aunque si lo que quieres hacer es simplemente reemplazar un contenido por otro, el mecanismo de las tablas de traducción puede ser una elección más adecuada.'
+        text3: 'Las transformaciones de bases de datos pueden también ser usadas para crear completamente nuevas tablas derivadas de las tablas estándar.'
+      looklike:
+        title: "¿Cómo son las transformaciones de bases de datos?"
+        text1: 'Las transformaciones de bases de datos son ficheros SQL. Deben contener órdenes SQL que puedan ser ejecutadas por el intérprete "spatialite" cuando se aplican a un fichero de exportación de SQLite estándar creado por este servicio de exportación.'
+        text2: 'Aquí se muestra una transformación de base de datos muy simple que inserta una nueva columna en la tabla planet_osm_point y la rellena con una copia del valor "amenity":'
+        text3: 'Aquí mostramos un ejemplo más complejo que introduce dos nuevas columnas en la tabla llamadas building_roof_material_stone y building_roof_material_concrete, y les asigna el valor 1 si la columna existente building_roof_material contiene estos términos:'
+        text4: 'En SQL, los comentarios comienzan con doble barra inclinada al comienzo de cada línea, por lo que puedes añadir cualquier número de estos comentarios.'
+      howtest:
+        title: "¿Cómo puedo hacer un test de una transformación de base de datos?"
+        text1: 'Desde una ejecución de una exportación ya existente, descarga el fichero "extract.sqlite" y ábrelo en spatiallite:'
+        text2: 'Ahora puedes probar tus órdenes SQL, y cuando estés satisfecho/a con el resultado, cópialo y pégalo en un fichero de transformación de bases de datos.'
+      howuse:
+        title: "¿Cómo usar una transformación de base de datos?"
+        text1: 'Cuando crees una nueva tarea, después de seleccionar la área de interés, puedes seleccionar una o más transformaciones que ya han sido subidas. Estas transformaciones serán utilizadas en cada ejecución de esa tarea, y afectarán a todos los formatos de salida, con la excepción de los datos OSM en bruto. Las transformaciones de bases de datos se procesan después de las tablas de traducción.'
+        text2: 'Ten en cuenta que cada ejecución también contiene un fichero "log.txt" para su descarga. Si algo va mal con tu transformación de base de datos, encontrarás en ese fichero los mensajes de error SQL relevantes.'
       advanced:
-         title:      "Temas de ayuda avanzados"
-         text1:      "Usando las tablas de traducción"
-         text2:      "Usando transformaciones de bases de datos"
-
-
-      translation:
-         title:         "Ayuda para traducciones"
-         h1:            "Usando tablas de traducción"
-         
-         whatfor:
-            title:      "¿Para qué son las tablas de traducción?"
-            text1:      "Puedes usar las tablas de traducción para traducir el contenido de un campo de una base de datos (pero no el nombre de un campo)."
-            text2:      'Por ejemplo, podrías querer traducir el término "bakery" a "panadería" y "place_of_worship" a "lugar_de_culto".'
-
-         looklike:
-            title:      "¿Cómo son las tablas de traducción?"
-            text1:      "Podrías escribir una tabla de traducción así:"
-            text2:      "Una tabla de traducción es un fichero de texto plano que contiene una traducción por línea, con la palabra a traducir en la izquierda, seguida por uno o varios caracteres de tabulación o espacio en blanco, y luego la traducción."
-            text3:      "Una tabla de traducción puede contener líneas en blanco, o líneas que comienzan con una almohadilla (#) para indicar un comentario."
-
-         howuse:
-            title:      "¿Cómo usar una tabla de traducción?" 
-            text1:      'Puedes crear una tabla de traducción en tu ordenador usando un editor de texto plano de tu elección. Luego, escoge el enlace "Nueva subida de datos" dentro de las funciones avanzadas que encontrarás en la parte inferior y selecciona la subida de un fichero de traducción. En este paso puedes dar un nombre simbólico a tu fichero de traducción, como por ejemplo "Términos generales - Español" u otro por el estilo.'
-            text2:      'Cuando crees una nueva tarea, después de seleccionar la área de interés, puedes seleccionar una ó más tablas de traducción que han sido subidas. Estas tablas serán utilizadas en cada ejecución de esa tarea, y afectarán a todos los formatos de salida, con la excepción de los datos OSM en bruto.'
-
-         advancedtables:
-            title:      "Tablas de traducción avanzadas"
-            text:       'En algunos casos puede ser necesario distinguir entre diferentes usos del mismo término. Por ejemplo, podrías querer traducir el término "residential" de forma diferente dependiendo de si aparece como "building=residential" o como "highway=residential". Esto es posible poniendo la etiqueta OSM enfrente del término en la tabla de traducción, como por ejemplo:'
-
-
-      transform:
-         title:         "Ayuda para Tagtransform"
-         h1:            "Usando transformaciones de bases de datos"
-
-         whatfor:
-            title:      "¿Para qué son las transformaciones de bases de datos?"
-            text1:      'Puedes usar transformaciones de bases de datos para ejecutar órdenes SQL arbitrarias (spatialite) sobre los resultados de la exportación. Puedes, por ejemplo, crear nuevas columnas de datos, borrar columnas ya existentes de la base de datos, renombrar columnas, fusionar columnas o eliminar datos acorde a ciertos criterios de filtrado.'
-            text2:      'También puedes cambiar los contenidos de columnas, aunque si lo que quieres hacer es simplemente reemplazar un contenido por otro, el mecanismo de las tablas de traducción puede ser una elección más adecuada.'
-            text3:      'Las transformaciones de bases de datos pueden también ser usadas para crear completamente nuevas tablas derivadas de las tablas estándar.'
-
-         looklike:
-            title:      "¿Cómo son las transformaciones de bases de datos?"
-            text1:      'Las transformaciones de bases de datos son ficheros SQL. Deben contener órdenes SQL que puedan ser ejecutadas por el intérprete "spatialite" cuando se aplican a un fichero de exportación de SQLite estándar creado por este servicio de exportación.'
-            text2:      'Aquí se muestra una transformación de base de datos muy simple que inserta una nueva columna en la tabla planet_osm_point y la rellena con una copia del valor "amenity":'
-            text3:      'Aquí mostramos un ejemplo más complejo que introduce dos nuevas columnas en la tabla llamadas building_roof_material_stone y building_roof_material_concrete, y les asigna el valor 1 si la columna existente building_roof_material contiene estos términos:'
-            text4:      'En SQL, los comentarios comienzan con doble barra inclinada al comienzo de cada línea, por lo que puedes añadir cualquier número de estos comentarios.'
-
-         howtest:
-            title:      "¿Cómo puedo hacer un test de una transformación de base de datos?"
-            text1:      'Desde una ejecución de una exportación ya existente, descarga el fichero "extract.sqlite" y ábrelo en spatiallite:'
-            text2:      'Ahora puedes probar tus órdenes SQL, y cuando estés satisfecho/a con el resultado, cópialo y pégalo en un fichero de transformación de bases de datos.'
-
-         howuse:
-            title:     "¿Cómo usar una transformación de base de datos?"
-            text1:      'Cuando crees una nueva tarea, después de seleccionar la área de interés, puedes seleccionar una o más transformaciones que ya han sido subidas. Estas transformaciones serán utilizadas en cada ejecución de esa tarea, y afectarán a todos los formatos de salida, con la excepción de los datos OSM en bruto. Las transformaciones de bases de datos se procesan después de las tablas de traducción.'
-            text2:       'Ten en cuenta que cada ejecución también contiene un fichero "log.txt" para su descarga. Si algo va mal con tu transformación de base de datos, encontrarás en ese fichero los mensajes de error SQL relevantes.'
-
-         advanced:
-            title:      "Transformaciones de bases de datos avanzadas"
-            text:       'Por hacer'
-
-
-
+        title: "Transformaciones de bases de datos avanzadas"
+        text: 'Por hacer'

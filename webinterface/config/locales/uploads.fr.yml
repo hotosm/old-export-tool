@@ -1,103 +1,73 @@
-# Localization for french
-# Upload section
-
 fr:
-   uploads:
-      h1:               "Configuration"
-
-      newupload:
-         title:         "Nouveau téléchargement"
-         h1:            "Télécharger un fichier de configuration"
-         text:          "Les fichiers de configuration peuvent être (déjà supporté) des presets JOSM, ou des tables SQL transforms (en cours de développement). Lorsque vous uploadez un fichier, choisissez un nom compréhensible (par exemple \"HOT Presets for Haiti v1.23\"); lors de la création d'un job plus tard, vous pouvez sélectionner le fichier désiré."
-         name:          "Nouveau téléchargement"
-
-      index:
-         title:         "Configuration"
-         h1:            "Configuration"
-
-      presets:       
-         title:         "Téléchargement | Fichier Preset"
-         h1:            "Fichier Preset"
-         name:          "Fichier Preset"
-# fixme
-         title:         "Configuration files that define the data downloaded."
-
-      tagtransforms:    
-         title:         "Téléchargement | Fichier Tag Transformation SQL"
-         h1:            "Fichier Tag Transformation SQL"
-         name:          "Fichier Tag Transformation SQL"
-# fixme
-         title:         "Defines translation of the data schema for the download."
-
-      translations:
-         title:         "Téléchargement | Traduction"
-         h1:            "Fichier Traduction"
-         name:          "Fichier Traduction"
-#fixme
-         title:         "Look-up tables to translate data from English into another language."
-
-      tagpreview:
-         title:         "Vérifier les tags"
-         h1:            "Vérifier les tags"
-         h2:            "Tags des fichiers preset"
-
-      defaulttags:
-         title:         "Tags par défaut"
-         h1:            "Tags par défaut"
-
-      update:
-         title:         "Charger une nouvelle version du fichier"
-         h1:            "Charger une nouvelle version du fichier"
-         text:          "Si vous chargez un nouveau fichier, l'ancien fichier sera remplacé"
-
-      th:
-         name:          "Nom de fichier"
-         updated_at:    "Mise à jour à"
-         created_by:    "Créé par"
-         download:      "Télécharger"
-         delete:        "Supprimer"
-         update:        "Mettre à jour"
-         tagpreview:    "Prévisualisation des attributs"
-         tag:           "Attribut"
-         geometrytype:  "Type de géométrie"
-         type:          "Catégorie"
-         file:          "Fichier"
-
-      span:
-         show:             "Afficher"
-         hide:             "Masquer"
-         deleted_uploads:  "Supprimer des chargements"
-
-      action:
-         newupload:     "Nouveau chargement"
-         showdeleted:   "Afficher les chargements supprimés"
-         hidedeleted:   "Masquer les chargements supprimés"
-         defaulttags:   "Attributs par défaut"
-
-      button:
-         save:          "Sauvegarder"
-
-      message:
-         nofiles:       "Aucun fichier de configuration n'a encore été chargé."
-
+  uploads:
+    h1: "Configuration"
+    newupload:
+      title: "Nouveau téléchargement"
+      h1: "Télécharger un fichier de configuration"
+      text: 'Les fichiers de configuration peuvent être (déjà supporté) des presets JOSM, ou des tables SQL de Transformation d''Attributs (en cours de développement). Lorsque vous uploadez un fichier, choisissez un nom compréhensible (par exemple "HOT Presets for Haiti v1.23"). Par la suite, lors de la création d''une tâche de téléchargement, vous pourrez sélectionner le fichier désiré.'
+      name: "Nouveau téléchargement"
+    index:
+      title: "Configuration"
+      h1: "Configuration"
+    presets:
+      h1: "Fichier Preset"
+      name: "Fichier Preset"
+      title: "Fichiers de configuration qui définissent les attributs de la donnée téléchargée."
+    tagtransforms:
+      h1: "Fichier SQL de Transformation d'Attributs"
+      name: "Fichier SQL de Transformation d'Attributs"
+      title: "Définit la traduction du schéma de données pour le téléchargement."
+    translations:
+      h1: "Fichier Traduction"
+      name: "Fichier Traduction"
+      title: "Fichier Traduction de l'anglais vers une autre langue."
+    tagpreview:
+      title: "Vérification des attributs"
+      h1: "Vérification des attributs"
+      h2: "Attributs des fichiers preset"
+    defaulttags:
+      title: "Attributs par défaut"
+      h1: "Attributs par défaut"
+    update:
+      title: "Charger une nouvelle version du fichier"
+      h1: "Charger une nouvelle version du fichier"
+      text: "Si vous chargez un nouveau fichier, l'ancien fichier sera remplacé"
+    th:
+      name: "Nom de fichier"
+      updated_at: "Mise à jour à"
+      created_by: "Créé par"
+      download: "Télécharger"
+      delete: "Supprimer"
+      update: "Mettre à jour"
+      tagpreview: "Prévisualisation des attributs"
+      tag: "Attribut"
+      geometrytype: "Type de géométrie"
+      type: "Catégorie"
+      file: "Fichier"
+    span:
+      show: "Afficher"
+      hide: "Masquer"
+      deleted_uploads: "Supprimer des chargements"
+    action:
+      newupload: "Nouveau chargement"
+      showdeleted: "Afficher les chargements supprimés"
+      hidedeleted: "Masquer les chargements supprimés"
+      defaulttags: "Attributs par défaut"
+    button:
+      save: "Sauvegarder"
+    message:
+      nofiles: "Aucun fichier de configuration n'a encore été chargé."
+    error:
+      xml_corrupt: "Le XML est corrompu et une exception est survenue."
+      xml_exception: "Exception XML"
+    flash:
       error:
-         xml_corrupt:   "Le XML est corrompu et une exception est survenue."
-         xml_exception: "Exception XML"
-
-      flash:
-         error:
-            xml_parsing_failed:  "L'analyse XML a échoué. Le chargement n'a pas abouti."
-            not_saved:           "Chargement non abouti."
-            restored:            "Chargement non restauré."
-            deleted:             "Chargement non supprimé."
-
-         success:
-            newversion_saved:    "La nouvelle version du fichier a été sauvegardée avec succès : "
-            saved:               "Chargement réussi."
-            restored:            "Chargement restauré avec succès."
-            deleted:             "Chargement supprimé avec succès."
-
-
-
-
-
+        xml_parsing_failed: "L'analyse XML a échoué. Le chargement n'a pas abouti."
+        not_saved: "Chargement non abouti."
+        restored: "Chargement non restauré."
+        deleted: "Chargement non supprimé."
+      success:
+        newversion_saved: "La nouvelle version du fichier a été sauvegardée avec succès : "
+        saved: "Chargement réussi."
+        restored: "Chargement restauré avec succès."
+        deleted: "Chargement supprimé avec succès."

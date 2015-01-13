@@ -1,66 +1,54 @@
-# Localization for indonesian
-# User section
-
 id:
-   users:
-      title:                        "Pengguna"
-      h1:                           "Pengguna"
-
-      login:                        "Masuk"
-      logout:                       "Keluar"
-      create_account:               "Buat Akun"
-      edit_account:                 "Edit Profil"
-      cancel_account:               "Batalkan Akun"
-      cancel_account_text:          "Apakah Anda ingin menghapus akun Anda?"
-      cancel_account_confirm:       "Apakah Anda yakin?"
-      change_password:              "Ubah Kata Sandi"
-      lost_password:                "Kehilangan Kata Sandi?"
-      resend_confirmation:          "Kirim ulang petunjuk konfirmasi"
-      no_confirmation:              "Tidak menerima petunjuk konfirmasi?"
-      suspend_user:                 "Pengguna yang Ditangguhkan"
-      active_users:                 "Pengguna Aktif"
-      locked_users:                 "Pengguna yang Dikunci"
-      restore:                      "[Mengembalikan]"
-      unconfirmed_user:             "Pengguna yang Belum Dikonfirmasi"
-      suspended_by:                 "Ditangguhkan oleh"
-
-      locked:
-         title:                     "Pengguna yang Dikunci"
-         h1:                        "Pengguna yang Dikunci"
-
-      th:
-         email:                     "Email"
-         password:                  "Kata Sandi"
-         password_confirmation:     "Konfirmasi Kata Sandi"
-         password_current:          "Kata Sandi Saat Ini"
-         password_new:              "Kata Sandi Baru"
-         created_at:                "Dibuat di"
-         locked_at:                 "Dikunci di"
-         lock_reason:               "Alasan Penguncian"
-         admin:                     "Admin?"
-         restore:                   "Kembalikan Pengguna"
-         suspend:                   "Tangguhkan Pengguna"
-
-      button:
-         login:                     "Masuk"
-         update:                    "Perbaharui"
-         create_account:            "Buat Akun"
-         cancel_account:            "Batalkan akun saya"
-         logout:                    "Keluar"
-         resend_confirmation:       "Kirim ulang petunjuk konfirmasi"
-         send_reset_password:       "Kirimkan saya petunjuk untuk mengatur ulang kata sandi"
-         change_password:           "Ubah kata sandi saya"
-
-      message:
-         no_locked_users:           "Tidak ada pengguna yang dikunci di database."
-         no_active_users:           "Tidak ada pengguna aktif di database."
-         leave_blank:               "Biarkan kosong jika Anda tidak ingin mengubahnya."
-         need_current_password:     "Kami butuh kata sandi Anda saat ini untuk melakukan konfirmasi perubahan yang dibuat."
-
-      flash:
-         success:
-            suspended:              "Pengguna telah berhasil ditangguhkan:"
-            unsuspended:            "Pengguna telah berhasil tidak ditangguhkan."
-
-   
-
+  users:
+    title: "Pengguna"
+    h1: "Pengguna"
+    login: "Masuk"
+    logout: "Keluar"
+    create_account: "Buat Akun"
+    edit_account: "Edit Profil"
+    cancel_account: "Batalkan Akun"
+    cancel_account_text: "Apakah Anda ingin menghapus akun Anda?"
+    cancel_account_confirm: "Apakah Anda yakin?"
+    change_password: "Ubah Kata Sandi"
+    lost_password: "Kehilangan Kata Sandi?"
+    resend_confirmation: "Kirim ulang petunjuk konfirmasi"
+    no_confirmation: "Tidak menerima petunjuk konfirmasi?"
+    suspend_user: "Pengguna yang Ditangguhkan"
+    active_users: "Pengguna Aktif"
+    locked_users: "Pengguna yang Dikunci"
+    restore: "[Mengembalikan]"
+    unconfirmed_user: "Pengguna yang Belum Dikonfirmasi"
+    suspended_by: "Ditangguhkan oleh"
+    locked:
+      title: "Pengguna yang Dikunci"
+      h1: "Pengguna yang Dikunci"
+    th:
+      email: "Email"
+      password: "Kata Sandi"
+      password_confirmation: "Konfirmasi Kata Sandi"
+      password_current: "Kata Sandi Saat Ini"
+      password_new: "Kata Sandi Baru"
+      created_at: "Dibuat di"
+      locked_at: "Dikunci di"
+      lock_reason: "Alasan Penguncian"
+      admin: "Admin?"
+      restore: "Kembalikan Pengguna"
+      suspend: "Tangguhkan Pengguna"
+    button:
+      login: "Masuk"
+      update: "Perbaharui"
+      create_account: "Buat Akun"
+      cancel_account: "Batalkan akun saya"
+      logout: "Keluar"
+      resend_confirmation: "Kirim ulang petunjuk konfirmasi"
+      send_reset_password: "Kirimkan saya petunjuk untuk mengatur ulang kata sandi"
+      change_password: "Ubah kata sandi saya"
+    message:
+      no_locked_users: "Tidak ada pengguna yang dikunci di database."
+      no_active_users: "Tidak ada pengguna aktif di database."
+      leave_blank: "Biarkan kosong jika Anda tidak ingin mengubahnya."
+      need_current_password: "Kami butuh kata sandi Anda saat ini untuk melakukan konfirmasi perubahan yang dibuat."
+    flash:
+      success:
+        suspended: "Pengguna telah berhasil ditangguhkan:"
+        unsuspended: "Pengguna telah berhasil tidak ditangguhkan."

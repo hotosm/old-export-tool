@@ -1,102 +1,73 @@
-# Localization for english
-# Upload section
-
 ja:
-   uploads:
-      h1:               "アップロード設定"
-
-      newupload:
-         title:         "新規アップロード"
-         h1:            "設定ファイルのアップロード"
-         text:          '設定ファイルとして、抽出対象のタグ定義一覧(実装済み)、あるいはデータベース構造変換SQL文やタグ置換一覧(実装計画中)を指定することが可能です。ファイルをアップロードする際、利用者が判別しやすい名称(例: "ハイチ用HOTプリセット v1.23"等)を指定してください。アップロードされた設定ファイルは、ジョブを新規作成する時に指定することができます。'
-         name:          "新規アップロード"
-
-      index:
-         title:         "設定"
-         h1:            "設定"
-
-      presets:       
-         title:         "アップロード | 対象タグ定義ファイル"
-         h1:            "対象タグ定義ファイル"
-         name:          "対象タグ定義ファイル"
-#fixme
-         title:         "Configuration files that define the data downloaded."
-
-      tagtransforms:    
-         title:         "アップロード | データベース構造変換SQLファイル"
-         h1:            "データベース構造変換SQLファイル"
-         name:          "データベース構造変換SQLファイル"
-#fixme
-         title:         "Defines translation of the data schema for the download."
-
-      translations:
-         title:         "アップロード | タグ置換ファイル"
-         h1:            "タグ置換ファイル"
-         name:          "タグ置換ファイル"
-#fixme
-         title:         "Look-up tables to translate data from English into another language."
-
-      tagpreview:
-         title:         "対象タグのプレビュー"
-         h1:            "対象タグのプレビュー"
-         h2:            "対象タグ定義ファイルで指定されたタグ一覧"
-
-      defaulttags:
-         title:         "規定の対象タグ"
-         h1:            "規定の対象タグ"
-
-      update:
-         title:         "アップロード済みファイルの更新"
-         h1:            "アップロード済みファイルの更新を実施"
-         text:          "ファイルの更新アップロードを行うと、既存のファイルは上書きされます"
-
-      th:
-         name:          "ファイル名"
-         updated_at:    "アップロード"
-         created_by:    "作成者"
-         download:      "ダウンロード"
-         delete:        "削除"
-         update:        "更新"
-         tagpreview:    "対象タグ事前確認"
-         tag:           "タグ"
-         geometrytype:  "ジオメトリ種別"
-         type:          "種別"
-         file:          "ファイル"
-
-      span:
-         show:             "表示"
-         hide:             "非表示"
-         deleted_uploads:  "削除済みのアップロード"
-
-      action:
-         newupload:     "新規アップロード"
-         showdeleted:   "削除済みのアップロードを表示"   
-         hidedeleted:   "削除済みのアップロードを非表示"
-         defaulttags:   "規定の対象タグ"
-
-      button:
-         save:          "保存"
-
-      message:
-         nofiles:       "アップロード済みの設定ファイルはありません"
-
+  uploads:
+    h1: "アップロード設定"
+    newupload:
+      title: "新規アップロード"
+      h1: "設定ファイルのアップロード"
+      text: '設定ファイルとして、抽出対象のタグ定義一覧(実装済み)、あるいはデータベース構造変換SQL文やタグ置換一覧(実装計画中)を指定することが可能です。ファイルをアップロードする際、利用者が判別しやすい名称(例: "ハイチ用HOTプリセット v1.23"等)を指定してください。アップロードされた設定ファイルは、ジョブを新規作成する時に指定することができます。'
+      name: "新規アップロード"
+    index:
+      title: "設定"
+      h1: "設定"
+    presets:
+      h1: "対象タグ定義ファイル"
+      name: "対象タグ定義ファイル"
+      title: "Configuration files that define the data downloaded."
+    tagtransforms:
+      h1: "データベース構造変換SQLファイル"
+      name: "データベース構造変換SQLファイル"
+      title: "Defines translation of the data schema for the download."
+    translations:
+      h1: "タグ置換ファイル"
+      name: "タグ置換ファイル"
+      title: "Look-up tables to translate data from English into another language."
+    tagpreview:
+      title: "対象タグのプレビュー"
+      h1: "対象タグのプレビュー"
+      h2: "対象タグ定義ファイルで指定されたタグ一覧"
+    defaulttags:
+      title: "規定の対象タグ"
+      h1: "規定の対象タグ"
+    update:
+      title: "アップロード済みファイルの更新"
+      h1: "アップロード済みファイルの更新を実施"
+      text: "ファイルの更新アップロードを行うと、既存のファイルは上書きされます"
+    th:
+      name: "ファイル名"
+      updated_at: "アップロード"
+      created_by: "作成者"
+      download: "ダウンロード"
+      delete: "削除"
+      update: "更新"
+      tagpreview: "対象タグ事前確認"
+      tag: "タグ"
+      geometrytype: "ジオメトリ種別"
+      type: "種別"
+      file: "ファイル"
+    span:
+      show: "表示"
+      hide: "非表示"
+      deleted_uploads: "削除済みのアップロード"
+    action:
+      newupload: "新規アップロード"
+      showdeleted: "削除済みのアップロードを表示"
+      hidedeleted: "削除済みのアップロードを非表示"
+      defaulttags: "規定の対象タグ"
+    button:
+      save: "保存"
+    message:
+      nofiles: "アップロード済みの設定ファイルはありません"
+    error:
+      xml_corrupt: "xmlファイルが壊れているため例外が発生しました"
+      xml_exception: "XML例外発生"
+    flash:
       error:
-         xml_corrupt:   "xmlファイルが壊れているため例外が発生しました"
-         xml_exception: "XML例外発生"
-
-      flash:
-         error:
-            xml_parsing_failed:  "XMLのパースに失敗しました。アップロードは保存されていません"
-            not_saved:           "アップロードは保存されていません"
-            restored:            "アップロードは復元されていません"
-            deleted:             "アップロードは削除されていません"
-
-         success:
-            newversion_saved:    "更新アップロード完了: 対象ファイル "
-            saved:               "アップロードに成功しました"
-            restored:            "アップロードの復元に成功しました"
-            deleted:             "アップロードの削除に成功しました"
-
-
-
-
+        xml_parsing_failed: "XMLのパースに失敗しました。アップロードは保存されていません"
+        not_saved: "アップロードは保存されていません"
+        restored: "アップロードは復元されていません"
+        deleted: "アップロードは削除されていません"
+      success:
+        newversion_saved: "更新アップロード完了: 対象ファイル "
+        saved: "アップロードに成功しました"
+        restored: "アップロードの復元に成功しました"
+        deleted: "アップロードの削除に成功しました"

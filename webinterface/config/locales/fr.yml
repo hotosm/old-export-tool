@@ -1,33 +1,23 @@
-# Sample localization file for French. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 fr:
-   tool:                      "Hot Exports"
-
-   locale:
-      english:                "English"
-      german:                 "Deutsh"
-      french:                 "Français"
-      japanese:               "日本語"
-   
-   navigation:
-      home:                   "Home"
-      help:                   "Aide"
-      jobs:                   "Tâches"
-      newjob:                 "Nouvelle tâche"
-      newjob_hint:            "Se connecter ou créer un compte pour créer de nouvelles tâches"
-       
-   footer:
-      your_account:           "Votre compte"
-      lost_password:          "Mot de passe perdu ?"
-      expert_functions:       "Fonctions avancées"
-#fixme
-      visual_tag_chooser:     "Choix Visuel d'Attributs"
-#fixme
-      visual_tag_chooser_title:  "Application de Choix Visuel pour créer des modèles d'attributs."
-      user_administration:    "Gestion des utilisateurs"
-      logged_in_as:           "Vous êtes connecté(e) sur le compte "
-      text:                   "Copyright © 2013 Humanitarian OpenStreetMap Team · Données OpenStreetMap, licence ODbL 1.0"
-
-
-   error:
+  tool: "HOT Exports"
+  locale:
+    english: "English"
+    german: "Deutsch"
+    french: "Français"
+    japanese: "日本語"
+    spanish: "Español"
+  navigation:
+    home: "Home"
+    help: "Aide"
+    jobs: "Tâches"
+    newjob: "Nouvelle tâche"
+    newjob_hint: "Se connecter ou créer un compte pour créer de nouvelles tâches"
+  footer:
+    your_account: "Votre compte"
+    lost_password: "Mot de passe perdu ?"
+    expert_functions: "Fonctions avancées"
+    visual_tag_chooser: "Choix Visuel d'Attributs"
+    visual_tag_chooser_title: "Application de Choix Visuel pour créer des modèles d'attributs."
+    user_administration: "Gestion des utilisateurs"
+    logged_in_as: "Vous êtes connecté(e) sur le compte "
+    text: "Copyright © 2013 Humanitarian OpenStreetMap Team · Données OpenStreetMap, licence ODbL 1.0"

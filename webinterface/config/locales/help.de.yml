@@ -1,118 +1,87 @@
-# Localization for english
-# Home and help section
-
 de:
-
-   home:
-      title:         "Home"
-      h1:            "HOT Exports"
-      about:         
-         title:      "Über HOT Exports"
-         text:       "Diese Platform ermöglicht Ihnen individuelle OpenStreetMap-Exporte für verschiedene Regionen zu erzeugen. Für den Export können Sie das Gebiet spezifieren und eine Liste von Features (OpenStreetMap-Tags). Mit diesen Parametern wird dann ein aktueller OpenStreetMap-Datenextrakt erzeugt. Der Export wird in verschiedenen Datenformaten bereit gestellt und dauert nur wenige Minuten."
-
-      get_started:
-         title:      "Erste Schritte"
-         text1:      "Wenn Sie neu hier sind, erstellen Sie sich bitte zuerst einen Account. Wenn Sie schon einen Account bei HOT haben, loggen Sie sich bitte unten ein."
-         text2:      "Gehen Sie zu “Visual Tag Chooser”, wenn Sie neue Presets hochladen möchten oder Sie schon existierende Presets sehen möchten. Achtung: Sie gelangen hierbei auf eine andere Seite. Stellen Sie sicher, dass Sie anschließend hier her zurückkehren."
-         text3:      "Wenn Sie ein Preset-File verwenden möchten, dass schon in HOT Exports hochgeladen wurde, müssen Sie nicht auf den “Visual Tag Chooser”-Link gehen. Sie erzeugen einen neuen Job, indem Sie auf “Neuer Job” (oben rechts) klicken."
-         text4:      "Um einen schon existierenden Job anzusehen klicken Sie auf “Jobs” oben rechts auf dem Screen. Klicken Sie auf “Neuer Job”, um einen neuen Export zu erzeugen."
-
-      note:          
-         title:      "Anmerkung"
-         text:       "Dieses System hat beschränkte Resourcen. Bitte gehen Sie damit sorgsam um, wenn Sie einen Export-Job erstellen."
-
-      new:           
-         title:      "Was ist neu?"
-         text1:      "Das Hochladen von Konfigruations-Files."
-         text2:      "Jobs können gelöscht werden."
-         text3:      "Benutzer-Accounts."
-
-
-   help:
-      title:         "Hilfe"
-      h1:            "Hilfe"
-      
-      newjob:
-         title:      "Einen neuen Job erstellen"
-         text:       "Klicken Sie auf 'Neuer Job' oben in der Navigations-Leiste, um den Job-Wizard zu starten. Geben Sie einen Namen und eine Beschreibung für den neuen Job ein, so dass Sie (und andere) Ihren Job später leichter wiederfinden können. Dann wählen Sie die Region aus, für die Sie sich interessieren (im Moment muss es eine Box sein). Im letzten Schritt legen Sie die Tags fest, die exportiert werden sollen. Hierzu können Sie ein JOSM-Preset-File auswählen oder Sie können Default-Tags mit eine Checkbox auswählen."
-   
-      rerunjob:      
-         title:      "Einen existieren Job nochmal laufen lassen."
-         text:       'Wählen Sie "Jobs" oben in der Navigations-Leiste. Suchen Sie aus der Job-Liste, denjenigen Job heraus, den Sie nocheinmal laufen lassen möchten. Dann klicken Sie auf den Job, um auf die Detail-Seite des Jobs zu gelangen. Klicken Sie den "Neuen Durchlauf starten"-Button. Ein neuer Durchlauf wird im Hintergrund gestartet und wieder werden die Download-Files einige Minuten später zur Verfügung stehen.'
-
-      recyclejob:
-         title:      "Einen existierenden Job weiterverwerten"
-         text:       'Sie können auf der Basis eines schon existierenden Jobs einen neuen Job erstellen. Hierzu benutzen Sie den "Job erzeugen"-Button unten auf der Detail-Seite. Ein neuer Job auf der Grundlage der Konfiguration des alten Jobs wird erzeugt. Tags und Translations werden übernommen. Das Gebiet kann neu ausgewählt werden.'
-
-      download:
-         title:      "Download Ihrer Daten"
-         text:       'Nach dem Sie den Job erstellt haben, läuft im Hintergrund ein Prozess und im Browser wird die Detail-Ansicht des Jobs dargestellt. Die Detail-Ansicht enthält alle Informationen über alle Durchläufe des Jobs. Die Seite läd sich von selbst neu und zeigt an, wenn die Daten zum Download bereitstehen.'
-
-      presets:
-         title:      "Konfiguration der Preset Files"
-         text:       "Laden Sie ihre Preset-Files mit dem Upload Manager hoch. Wenn ein Preset-File obsolet wird, können Sie es mit einer neuen Version überschreiben oder löschen."
-
+  home:
+    title: "Home"
+    h1: "HOT Exports"
+    about:
+      title: "Über HOT Exports"
+      text: "Diese Platform ermöglicht Ihnen individuelle OpenStreetMap-Exporte für verschiedene Regionen zu erzeugen. Für den Export können Sie das Gebiet spezifieren und eine Liste von Features (OpenStreetMap-Tags). Mit diesen Parametern wird dann ein aktueller OpenStreetMap-Datenextrakt erzeugt. Der Export wird in verschiedenen Datenformaten bereit gestellt und dauert nur wenige Minuten."
+    get_started:
+      title: "Erste Schritte"
+      text1: "Wenn Sie neu hier sind, erstellen Sie sich bitte zuerst einen Account. Wenn Sie schon einen Account bei HOT haben, loggen Sie sich bitte unten ein."
+      text2: "Gehen Sie zu “Visual Tag Chooser”, wenn Sie neue Presets hochladen möchten oder Sie schon existierende Presets sehen möchten. Achtung: Sie gelangen hierbei auf eine andere Seite. Stellen Sie sicher, dass Sie anschließend hier her zurückkehren."
+      text3: "Wenn Sie ein Preset-File verwenden möchten, dass schon in HOT Exports hochgeladen wurde, müssen Sie nicht auf den “Visual Tag Chooser”-Link gehen. Sie erzeugen einen neuen Job, indem Sie auf “Neuer Job” (oben rechts) klicken."
+      text4: "Um einen schon existierenden Job anzusehen klicken Sie auf “Jobs” oben rechts auf dem Screen. Klicken Sie auf “Neuer Job”, um einen neuen Export zu erzeugen."
+    note:
+      title: "Anmerkung"
+      text: "Dieses System hat beschränkte Resourcen. Bitte gehen Sie damit sorgsam um, wenn Sie einen Export-Job erstellen."
+    new:
+      title: "Was ist neu?"
+      text1: "Das Hochladen von Konfigruations-Files."
+      text2: "Jobs können gelöscht werden."
+      text3: "Benutzer-Accounts."
+  help:
+    title: "Hilfe"
+    h1: "Hilfe"
+    newjob:
+      title: "Einen neuen Job erstellen"
+      text: 'Klicken Sie auf ''Neuer Job'' oben in der Navigations-Leiste, um den Job-Wizard zu starten. Geben Sie einen Namen und eine Beschreibung für den neuen Job ein, so dass Sie (und andere) Ihren Job später leichter wiederfinden können. Dann wählen Sie die Region aus, für die Sie sich interessieren (im Moment muss es eine Box sein). Im letzten Schritt legen Sie die Tags fest, die exportiert werden sollen. Hierzu können Sie ein JOSM-Preset-File auswählen oder Sie können Default-Tags mit eine Checkbox auswählen.'
+    rerunjob:
+      title: "Einen existieren Job nochmal laufen lassen."
+      text: 'Wählen Sie "Jobs" oben in der Navigations-Leiste. Suchen Sie aus der Job-Liste, denjenigen Job heraus, den Sie nocheinmal laufen lassen möchten. Dann klicken Sie auf den Job, um auf die Detail-Seite des Jobs zu gelangen. Klicken Sie den "Neuen Durchlauf starten"-Button. Ein neuer Durchlauf wird im Hintergrund gestartet und wieder werden die Download-Files einige Minuten später zur Verfügung stehen.'
+    recyclejob:
+      title: "Einen existierenden Job weiterverwerten"
+      text: 'Sie können auf der Basis eines schon existierenden Jobs einen neuen Job erstellen. Hierzu benutzen Sie den "Job erzeugen"-Button unten auf der Detail-Seite. Ein neuer Job auf der Grundlage der Konfiguration des alten Jobs wird erzeugt. Tags und Translations werden übernommen. Das Gebiet kann neu ausgewählt werden.'
+    download:
+      title: "Download Ihrer Daten"
+      text: "Nach dem Sie den Job erstellt haben, läuft im Hintergrund ein Prozess und im Browser wird die Detail-Ansicht des Jobs dargestellt. Die Detail-Ansicht enthält alle Informationen über alle Durchläufe des Jobs. Die Seite läd sich von selbst neu und zeigt an, wenn die Daten zum Download bereitstehen."
+    presets:
+      title: "Konfiguration der Preset Files"
+      text: "Laden Sie ihre Preset-Files mit dem Upload Manager hoch. Wenn ein Preset-File obsolet wird, können Sie es mit einer neuen Version überschreiben oder löschen."
+    advanced:
+      title: "Weitere Hilfe-Topics"
+      text1: "Verwendung von Translation-Tables"
+      text2: "Verwendung von Datenbank-Transformations"
+    translation:
+      title: "Hilfe für Translations"
+      h1: "Verwendung von Translation-Tables"
+      whatfor:
+        title: "Wofür sind Translation-Tables?"
+        text1: "Sie können Translation-Tables verwenden um die Inhalte eines Datenbank-Feldes (nicht den Namen des Feldes) zu übersetzen."
+        text2: 'Zum Beispiel wollen Sie den Ausdruck "bakery" in "Bäckerei" übersetzen und "traffic_signals" in "Ampeln".'
+      looklike:
+        title: "Wie sehen Translation-Tables aus?"
+        text1: "Sie können eine Translation-Table folgendermassen anfertigen:"
+        text2: "Eine Translation-Tabelle ist ein einfaches Text-File, das eine Übersetzung pro Zeile enthält. Das Wort, das übersetzt werden soll, steht links gefolgt von einem oder mehr Tabs oder Leerzeichen, danach folgt die Übersetzung."
+        text3: "Eine Translation-Table kann leere Zeile enthalten, auch Kommentarzeilen, die mit einem Hash-Zeichen (#) beginnen."
+      howuse:
+        title: "Wie benutzt man Translation-Tables?"
+        text1: 'Sie erzeugen eine Translation-Table auf ihrem eigenen Computer mit einem Text-Editor. Dann wählen Sie im Hot-Export-Tool den Link "Neuer Upload". Sie finden den Link unten unter Experten-Funktionen. Damit laden Sie das File hoch (Typ = Translation File). An dieser Stelle geben Sie dem File einen aussagekräftigen Namen, z.Bsp. "General Terms - French".'
+        text2: 'Beim Erstellen eines neuen Jobs können Sie später diese Translation-Table wieder auswählen. Sie können auch mehrere auswählen. Diese Tabellen werden bei jedem Durchlauf des Jobs angewendet und wirken auf alle Ausgabe-Formate mit der Ausnahme der OSM-Rohdaten.'
+      advancedtables:
+        title: "Fortgeschrittene Translation-Tables"
+        text: 'In manchen Fällen ist es notwendig zwischen verschiedenen Verwendungen eines Ausdrucks zu unterscheiden. Zum Beispiel möchten Sie "residential" unterschiedlich übersetzen, je nachdem ob es im Zusammenhang mit "buildings=residential" oder "highway=residential" auftritt. Hiefür stellen Sie den OSM-Key in der Translation-Table voran:'
+    transform:
+      title: "Hilfe zu Tag-Transformationen"
+      h1: "Hilfe zu Tag-Transformationen"
+      whatfor:
+        title: "Wofür sind Tag-Transformationen?"
+        text1: 'Sie können Tag-Transfomrationen verwenden um SQL-Kommandos auf das Ergebnis des Exports anzuwenden. Zum Beispiel könnnen Sie neue Datenbank-Felder erzeugen, existierendende Datenbank-Felder löschen, umbenennen, zusammenfügen. Sie können aber auch Ergebnis-Records abhängig von verschiednen Filter-Kriterien löschen.'
+        text2: 'Sie können den Inhalt von Feldern austauschen. Wenn Sie allerdings einfach einen Inhalt durch einen anderen ersetzen wollen, ist es sinnvoller Translation-Tables zu verwenden.'
+        text3: 'Tag-Transformationen könnnen auch verwendet werden, um komplexe neue Tabellen zu erzeugen, die von den Standard-Tabellen abgeleitet werden.'
+      looklike:
+        title: "Wie sehen Tag-Transformationen aus?"
+        text1: 'Tag-Transformationen sind SQL-Files. Sie müssen gültiges SQL enthalten, das vom "spatialite" Interpretor ausgeführt werden kann, wenn es auf normale SQLite-Export-Dateien angewendet werden, wie sie von diesem Service erzeugt werden.'
+        text2: 'Hier ist eine sehr einfache Tag-Transformation, die eine neue Spalte in die planet_osm_point Tabelle einfügt und sie mit einer Kopie des Wertes für "amenity" befüllt:'
+        text3: 'Hier ist ein etwas komplexeres Beispiel, das zwei neue Spalten einfügt, genannt building_roof_material_stone und building_roof_material_concrete. Die Werte werden auf 1 gesetzt, wenn die existierende Spalte building_roof_material diese Werte enthält:'
+        text4: 'In SQL beginnen Kommentare mit einem doppelten Minus-Zeichen. Sie können beliebig Kommentare einfügen.'
+      howtest:
+        title: "Wie kann man Tag-Transformationen testen?"
+        text1: 'Laden sie das "extract.sqlite"-File von einem schon existierenden Hot-Export-Durchlauf runter und öffnen Sie es in spatiallite:'
+        text2: 'Nun können Sie Ihre SQL-Kommandos ausprobieren. Wenn Sie mit dem Resultat zufrieden sind, kopieren Sie sie in Ihr Transformation-File.'
+      howuse:
+        title: "Wie kann man Tag-Transformationen benutzen?"
+        text1: 'Wenn Sie einen neuen Job erstellen und das Gebiet ausgewählt haben, das dieser Job verarbeiten soll, können Sie ein Tag-Transformation-File auswählen. Es muss vorher hochgeladen worden sein. Die Transformationen werden dann auf den Job angewandt und betreffen alle Ausgabe-Formate ausser die OSM-Rohdaten. Tag-Transformations werden nach den Translation-Tables ausgeführt.'
+        text2: 'Beachten Sie, dass jeder Durchlauf auch ein "log.txt" als Download-File besitzt. Wenn etwas schief ging bei der Tag-Tranformation, werden Sie hier die entsprechende SQL-Error-Nachricht finden.'
       advanced:
-         title:      "Weitere Hilfe-Topics"
-         text1:      "Verwendung von Translation-Tables"
-         text2:      "Verwendung von Datenbank-Transformations"
-
-
-      translation:
-         title:         "Hilfe für Translations"
-         h1:            "Verwendung von Translation-Tables"
-         
-         whatfor:
-            title:      "Wofür sind Translation-Tables?"
-            text1:       "Sie können Translation-Tables verwenden um die Inhalte eines Datenbank-Feldes (nicht den Namen des Feldes) zu übersetzen."
-            
-            text2:      'Zum Beispiel wollen Sie den Ausdruck "bakery" in "Bäckerei" übersetzen und "traffic_signals" in "Ampeln".'
-
-         looklike:
-            title:      "Wie sehen Translation-Tables aus?"
-            text1:      "Sie können eine Translation-Table folgendermassen anfertigen:"
-            text2:      "Eine Translation-Tabelle ist ein einfaches Text-File, das eine Übersetzung pro Zeile enthält. Das Wort, das übersetzt werden soll, steht links gefolgt von einem oder mehr Tabs oder Leerzeichen, danach folgt die Übersetzung."
-            text3:      "Eine Translation-Table kann leere Zeile enthalten, auch Kommentarzeilen, die mit einem Hash-Zeichen (#) beginnen."
-
-         howuse:
-            title:      "Wie benutzt man Translation-Tables?" 
-            text1:      'Sie erzeugen eine Translation-Table auf ihrem eigenen Computer mit einem Text-Editor. Dann wählen Sie im Hot-Export-Tool den Link "Neuer Upload". Sie finden den Link unten unter Experten-Funktionen. Damit laden Sie das File hoch (Typ = Translation File). An dieser Stelle geben Sie dem File einen aussagekräftigen Namen, z.Bsp. "General Terms - French".'
-            text2:      'Beim Erstellen eines neuen Jobs können Sie später diese Translation-Table wieder auswählen. Sie können auch mehrere auswählen. Diese Tabellen werden bei jedem Durchlauf des Jobs angewendet und wirken auf alle Ausgabe-Formate mit der Ausnahme der OSM-Rohdaten.'
-
-         advancedtables:
-            title:      "Fortgeschrittene Translation-Tables"
-            text:       'In manchen Fällen ist es notwendig zwischen verschiedenen Verwendungen eines Ausdrucks zu unterscheiden. Zum Beispiel möchten Sie "residential" unterschiedlich übersetzen, je nachdem ob es im Zusammenhang mit "buildings=residential" oder "highway=residential" auftritt. Hiefür stellen Sie den OSM-Key in der Translation-Table voran:'
-
-      transform:
-         title:         "Hilfe zu Tag-Transformationen"
-         h1:            "Hilfe zu Tag-Transformationen"
-
-         whatfor:
-            title:      "Wofür sind Tag-Transformationen?"
-            text1:      'Sie können Tag-Transfomrationen verwenden um SQL-Kommandos auf das Ergebnis des Exports anzuwenden. Zum Beispiel könnnen Sie neue Datenbank-Felder erzeugen, existierendende Datenbank-Felder löschen, umbenennen, zusammenfügen. Sie können aber auch Ergebnis-Records abhängig von verschiednen Filter-Kriterien löschen.'
-            text2:      'Sie können den Inhalt von Feldern austauschen. Wenn Sie allerdings einfach einen Inhalt durch einen anderen ersetzen wollen, ist es sinnvoller Translation-Tables zu verwenden.'
-            text3:      'Tag-Transformationen könnnen auch verwendet werden, um komplexe neue Tabellen zu erzeugen, die von den Standard-Tabellen abgeleitet werden.'
-
-         looklike:
-            title:      "Wie sehen Tag-Transformationen aus?"
-            text1:      'Tag-Transformationen sind SQL-Files. Sie müssen gültiges SQL enthalten, das vom "spatialite" Interpretor ausgeführt werden kann, wenn es auf normale SQLite-Export-Dateien angewendet werden, wie sie von diesem Service erzeugt werden.'
-            text2:      'Hier ist eine sehr einfache Tag-Transformation, die eine neue Spalte in die planet_osm_point Tabelle einfügt und sie mit einer Kopie des Wertes für "amenity" befüllt:'
-            text3:      'Hier ist ein etwas komplexeres Beispiel, das zwei neue Spalten einfügt, genannt building_roof_material_stone und building_roof_material_concrete. Die Werte werden auf 1 gesetzt, wenn die existierende Spalte building_roof_material diese Werte enthält:'
-            text4:      'In SQL beginnen Kommentare mit einem doppelten Minus-Zeichen. Sie können beliebig Kommentare einfügen.'
-
-         howtest:
-            title:      "Wie kann man Tag-Transformationen testen?"
-            text1:      'Laden sie das "extract.sqlite"-File von einem schon existierenden Hot-Export-Durchlauf runter und öffnen Sie es in spatiallite:'
-            text2:      'Nun können Sie Ihre SQL-Kommandos ausprobieren. Wenn Sie mit dem Resultat zufrieden sind, kopieren Sie sie in Ihr Transformation-File.'
-
-         howuse:
-            title:      "Wie kann man Tag-Transformationen benutzen?"
-            text1:      'Wenn Sie einen neuen Job erstellen und das Gebiet ausgewählt haben, das dieser Job verarbeiten soll, können Sie ein Tag-Transformation-File auswählen. Es muss vorher hochgeladen worden sein. Die Transformationen werden dann auf den Job angewandt und betreffen alle Ausgabe-Formate ausser die OSM-Rohdaten. Tag-Transformations werden nach den Translation-Tables ausgeführt.'
-            text2:       'Beachten Sie, dass jeder Durchlauf auch ein "log.txt" als Download-File besitzt. Wenn etwas schief ging bei der Tag-Tranformation, werden Sie hier die entsprechende SQL-Error-Nachricht finden.'
-
-         advanced:
-            title:      "Fortgeschrittene Tag-Transformationen"
-            text:       'tbd'
-
-
-
+        title: "Fortgeschrittene Tag-Transformationen"
+        text: 'tbd'

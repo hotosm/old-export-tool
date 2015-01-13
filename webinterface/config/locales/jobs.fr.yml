@@ -1,117 +1,101 @@
-# Localization for french
-# Jobs section
-
 fr:
-
-   jobs:
-      title:               "Tâches"
-      h1:                  "Tâches"
-
-      nojobs:              "Aucune tâche active dans la base."
-      filter:              "Filtre"
-
-      not_owner:           "Non propriétaire"
-      
-      based_upon:
-         default_tags:     "Seulement les attributs par défaut"
-         directly:         "Directement chargé (ancienne version)" 
-
+  jobs:
+    title: "Tâches"
+    h1: "Tâches"
+    nojobs: "Aucune tâche active dans la base."
+    filter: "Filtre"
+    not_owner: "Vous n'êtes pas le créateur"
+    purge_notice: "Les tâches supprimées seront automatiquement purgées après 30 jours. Durant cette période, le créateur d'une tâche ou un administrateur peut encore la récupérer. Il n'est pas possible de récupérer des tâches purgées. "
+    based_upon:
+      default_tags: "Seulement les attributs par défaut"
+      directly: "Directement chargé (ancienne version)"
+    th:
+      name: "Nom"
+      description: "Description"
+      region: "Région"
+      created_at: "Créé à "
+      created_by: "Créé par"
+      based_preset: "Sur la base du fichier de modèle d'attributs"
+      delete: "Supprimer"
+      state: "Etat"
+      download: "Téléchargement"
+      preset: "Fichier modèle d'attributs"
+      transform: "Fichier Transformation SQL d'attributs"
+      translate: "Fichier Traduction"
+      minlon: "Longitude mini"
+      maxlon: "Longitude maxi"
+      minlat: "Latitude mini"
+      maxlat: "Latitude maxi"
+    action:
+      show_deleted: "Afficher les tâches supprimées"
+      hide_deleted: "Masquer les tâches supprimées"
+      show_notowner: "Montrer toutes les tâches en incluant les tâches d'autres utilisateurs"
+      hide_notowner: "Masquer les tâches d'autres utilisateurs"
+      select_area: "Sélectionner la zone"
+    button:
+      newrun: "Lancer une mise à jour de la tâche"
+      recyclejob: "Réutiliser une tâche"
+      createjob: "Créer une tâche"
+      save: "Enregistrer"
+    job:
+      h1: "Tâche"
+      restore: "Restaurer"
+    runs:
+      h2: "Exécution"
+      message:
+        jobrunning: "La procédure est en cours - pas encore de téléchargement disponible"
+        nodownload: "Pas de téléchargement disponible"
+        no_created_by: "anonyme"
+    area:
+      h2: "Zone"
+      drag_to_select: "Dessiner un rectangle pour sélectionner une zone"
+      select_different: "Sélectionner une zone différente"
+      no_area_selected: "Pas de zone sélectionnée. Zoomer puis cliquer sur \"Sélectionner une zone\""
+    config:
+      h2: "Configuration de la procédure"
+    recycle:
+      h2: "Nouvelle tâche avec la même configuration"
+      text: "Créer une nouvelle tâche avec une nouvelle zone mais la même configuration."
+    newjob:
+      title: "Nouvelle tâche"
+      h1: "Nouvelle tâche"
+    newjobconf:
+      title: "Configuration de tâche"
+      h1: "Nouvelle tâche - Configuration"
+      no_file: "Pas de fichier"
       th:
-         name:             "Nom"
-         description:      "Description"
-         region:           "Région"
-         created_at:       "Créé à "
-         created_by:       "Créé par"
-         based_preset:     "Sur la base du fichier de modèle d'attributs"
-         delete:           "Supprimer"
-         state:            "Etat"
-         download:         "Téléchargement"
-         preset:           "Fichier modèle d'attributs"
-         transform:        "Fichier Transformation SQL d'attributs"
-         translate:        "Fichier Traduction"
-   
-         minlon:           "ongitude mini"
-         maxlon:           "Longitude maxi"
-         minlat:           "Latitude mini"
-         maxlat:           "Latitude maxi"
-
-      action:
-         show_deleted:     "Afficher les tâches supprimées"
-         hide_deleted:     "Masquer les tâches supprimées"
-         show_notowner:    "Show all jobs including other users' jobs"
-         hide_notowner:    "Hide jobs from other users"
-         select_area:      "Sélectionner la zone"
-
-      button:
-         newrun:           "Commencer une nouvelle tâche"
-         recyclejob:       "Réutiliser une tâche"
-         save:             "Enregistrer"
-
-      job:
-         h1:               "Tâche"
-         restore:          "Restaurer"
-         
-      runs:
-         h2:               "Exécution"
-         message:
-            jobrunning:    "La procédure est en cours - pas encore de téléchargement disponible"
-            nodownload:    "Pas de téléchargement disponible"
-     
-      area:             
-         h2:               "Zone"
-
-      config:           
-         h2:               "Configuration de la procédure"
-
-      recycle:          
-         h2:               "Nouvelle tâche avec la même configuration"
-         text:             "Créer une nouvelle tâche avec une nouvelle zone mais la même configuration."
-
-      newjob:
-         title:            "Nouvelle tâche"
-         h1:               "Nouvelle tâche"
-
-      newjobconf:
-         title:            "Configuration de tâche"
-         h1:               "Nouvelle tâche - Configuration"
-
-         th:
-            name:          "Nom de la tâche"
-            preset:        "Sélectionner le fichier de modèle d'attributs"
-            default_tags:  "Ajouter les attributs par défaut ?"
-            transform:     "Fichier Transformation SQL d'attributs"
-            translation:   "Fichier Traduction"
-#fixme
-         notice:
-            default_tags:  "Default tags are typical data used in rendering an OSM map."
-            translation:   "Select a translation file to translate your data into another language."
-            transform:     "Select a SQL file to transform your data into another schema."
-
-      newjobwithconfs:
-         title:            "Nouvelle tâche (avec la même configuration)"
-         h1:               "Nouvelle tâche (avec la même configuration)"
-
-      flash:
-         success:
-            job_created:         "Tâche créée !"
-            run_saved:           "Tâche sauvegardée !"
-            restored:            "Tâche restaurée !"
-            deleted:             "Tâche supprimée !"
-
-         error:
-            xml_parsing_failed:  "Echec d'analyse XML. La tâche n'a pas été créée."
-            no_tags:             "Pas d'attributs trouvés. La tâche n'a pas été créée. SVP sélectionnez un fichier de modèle d'attributs ou les attributs par défaut."
-            not_saved:           "La tâche n'a pas été sauvegardée."
-            running_job:         "Il y a déjà une tâche en cours de création."
-            no_run_started:      "Pas de mise à jour en cours."
-            restored:            "La tâche n'a pas été restaurée."
-            deleted:             "La tâche n'a pas été supprimée."
-
-      errors:
-         no_valid_region:     "La zone sélectionnée n'est pas dans une région disponible."
-         out_of_range:        "Les valeurs ne sont pas dans les limites autorisées"
-         area_not_covered:    "La zone sélectionnée n'est pas couverte par le service"
-         area_too_large:      "La zone sélectionnée est trop grande"
-         bb_only_allowed:     " - Seul %{bbox_max} est autorisé."
-
-
+        name: "Nom de la tâche"
+        preset: "Sélectionner le fichier de modèle d'attributs"
+        default_tags: "Ajouter les attributs par défaut ?"
+        transform: "Fichier Transformation SQL d'attributs"
+        translation: "Fichier Traduction"
+      notice:
+        default_tags: "Les attributs par défaut sont ceux des données qui apparaissent dans le rendu standard OSM."
+        translation: "Sélectionnez un Fichier Traduction pour traduire votre donnée dans une autre langue. "
+        transform: "Sélectionnez un fichier SQL pour transformer votre donnée en un autre schéma.  "
+    newjobwithconf:
+      title: "Nouvelle tâche d'export (selon une configuration précédente)"
+      h1: "Nouvelle tâche d'export (selon une configuration précédente)"
+    flash:
+      success:
+        job_created: "Tâche créée !"
+        run_saved: "Tâche sauvegardée !"
+        restored: "Tâche restaurée !"
+        deleted: "Tâche supprimée !"
+        run_started: "Nouvelle mise à jour en cours !"
+      error:
+        xml_parsing_failed: "Echec d'analyse XML. La tâche n'a pas été créée."
+        no_tags: "Pas d'attributs trouvés. La tâche n'a pas été créée. SVP sélectionnez un fichier de modèle d'attributs ou les attributs par défaut."
+        not_saved: "La tâche n'a pas été sauvegardée."
+        running_job: "Il y a déjà une tâche en cours de création."
+        no_run_started: "Pas de mise à jour en cours."
+        restored: "La tâche n'a pas été restaurée."
+        deleted: "La tâche n'a pas été supprimée."
+        run_started: "Nouvelle mise à jour en cours !"
+    errors:
+      no_valid_region: "La zone sélectionnée n'est pas dans une région disponible."
+      no_regions_defined: "Aucune région n'a été définie !"
+      out_of_range: "Les valeurs ne sont pas dans les limites autorisées"
+      area_not_covered: "La zone sélectionnée n'est pas couverte par le service"
+      area_too_large: "La zone sélectionnée est trop grande"
+      bb_only_allowed: " - Seul %{bbox_max} est autorisé."
