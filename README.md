@@ -15,7 +15,8 @@ Written by the awesome folks at https://github.com/geofabrik
 
 ##Setup and Modifications
 
-*This section was taken from the custom-extracts.pdf file found in the docu folder with additional comments italicized*
+*This section was taken from the custom-extracts.pdf file found in the docu folder with additional comments italicized. Please note that the repository may still have many missing assets (Ruby on Rails name for
+static files).* 
 
 Information in this chapter pertains to future installations on different servers; on hot-export.geofabrik.de, these steps are already in place.
 
