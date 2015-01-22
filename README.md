@@ -94,7 +94,8 @@ Adding new output file formats is relatively straightforward in the request proc
 ```
 	# call ogr2ogr to make Spatiallite file
     mysystem("ogr2ogr -overwrite -f 'SQLite' -dsco SPATIALLITE=YES $OUTPUT_PATH/
-$rid/extract.spatiallite $OUTPUT_PATH/$rid/extract.sqlite");      addfile($rid, "extract.spatiallite", "Spatiallite file");
+$rid/extract.spatiallite $OUTPUT_PATH/$rid/extract.sqlite");      
+addfile($rid, "extract.spatiallite", "Spatiallite file");
 ```
 
 The “mysystem” line runs an Unix utility, and the “addfile” line makes sure the resulting file is probed for its size and added to the output table in the database so that the user gets a download link for that later.
