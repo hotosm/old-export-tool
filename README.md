@@ -1,17 +1,8 @@
 # HOT Export server
 
-Accepts a JOSM preset for describing custom tags and a custom bounding box.
+The HOT export server ( http://export.hotosm.org ) allows you to create custom OpenStreetMap exports for various regions. You can specify an area of interest and a list of features (OpenStreetMap tags) for the export. A current OpenStreetMap data extract for that area in various data formats is then created for you within minutes
 
-Outputs jobs and tags found. Jobs can be re-run.
-
-Formats include:
-
- * pbf
- * SQLite / Spatialite
- * PostGIS sql dump
- * Zipped shapefiles
- 
-Written by the awesome folks at https://github.com/geofabrik
+This repo has the version 1 code which is still currently powering http://export.hotosm.org however all the more recent development can be found on a new version 2 repo: https://github.com/hotosm/osm-export-tool2 which has reached alpha release stage ([see blog post](http://hotosm.org/updates/2015-09-01_alpha_release_of_the_redeveloped_export_tool))
 
 ## License
 
