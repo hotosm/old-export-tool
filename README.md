@@ -1,8 +1,8 @@
 # HOT Export server
 
-The HOT export server ( http://export.hotosm.org ) allows you to create custom OpenStreetMap exports for various regions. You can specify an area of interest and a list of features (OpenStreetMap tags) for the export. A current OpenStreetMap data extract for that area in various data formats is then created for you within minutes
+This repo has the version 1 code which has now been superseded. **The live site at http://export.hotosm.org is now running code from the new version 2 repo: https://github.com/hotosm/osm-export-tool2** however (for a while at least) this code is still runnning at http://old-export.hotosm.org/
 
-This repo has the version 1 code which is still currently powering http://export.hotosm.org however all the more recent development can be found on a new version 2 repo: https://github.com/hotosm/osm-export-tool2 which has reached alpha release stage ([see blog post](http://hotosm.org/updates/2015-09-01_alpha_release_of_the_redeveloped_export_tool))
+The HOT export server allows you to create custom OpenStreetMap exports for various regions. You can specify an area of interest and a list of features (OpenStreetMap tags) for the export. A current OpenStreetMap data extract for that area in various data formats is then created for you within minutes
 
 ## License
 
